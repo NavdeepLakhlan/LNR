@@ -2,318 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhātu-yantra-pravartana Lab | Team</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Team – Dhātu-yantra-pravartana Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* --- General Styles --- */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0a0a0a;
-      color: #ccc;
+    html, body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      font-size: 18px;
+      scroll-behavior: smooth;
     }
-
-    a {
-      color: #ffd700;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    h2 {
-      color: #ffd700;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      font-size: 2.8rem;
-      letter-spacing: 1.5px;
-    }
-
-    main {
-      flex-grow: 1;
-      padding: 2rem 1rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    /* --- Navigation --- */
     nav {
-      background: #111;
-      padding: 1rem 2rem;
-      box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1.5rem;
       display: flex;
       justify-content: center;
-      gap: 3rem;
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      gap: 2rem;
+      z-index: 1000;
+      font-size: 16px;
     }
-
     nav a {
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.3rem 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
       transition: color 0.3s ease;
     }
-
-    nav a:hover,
-    nav a.active {
+    nav a:hover {
       color: #ffd700;
-      border-bottom: 2px solid #ffd700;
-      padding-bottom: 0.2rem;
     }
-
-    /* --- PI and Postdoc Card Sections --- */
-    section#pi, section#postdoc {
-      margin-bottom: 5rem;
+    section {
+      max-width: 1200px;
+      margin: 8rem auto 4rem;
+      padding: 2rem;
+      background-color: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
     }
-
-    .pi-cards, .postdoc-cards {
+    h1, h2 {
+      color: #ffd700;
+      text-align: center;
+    }
+    .pi-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      align-items: flex-start;
       gap: 2rem;
+      margin-top: 2rem;
     }
-
-    .pi-card, .postdoc-card {
-      background: #111;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
-      width: 280px;
-      padding: 1.5rem;
+    .pi-image-block {
+      flex: 1 1 200px;
       text-align: center;
-      color: #ddd;
-      transition: box-shadow 0.3s ease;
     }
-    .pi-card:hover, .postdoc-card:hover {
-      box-shadow: 0 0 45px rgba(255, 215, 0, 0.6);
-    }
-
-    .pi-card img, .postdoc-card img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    }
-
-    .postdoc-card img {
-      width: 140px;
-      height: 140px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-    }
-
-    .pi-card h3, .postdoc-card h3 {
-      margin: 0.5rem 0 0.4rem;
-      color: #ffd700;
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-
-    .postdoc-card h3 {
-      font-size: 1.3rem;
-    }
-
-    .pi-card p.role, .postdoc-card p.role {
-      font-style: italic;
-      font-weight: 600;
-      color: #bbb;
-      margin: 0 0 1rem;
-      font-size: 1.1rem;
-    }
-
-    .postdoc-card p.role {
-      font-size: 1.05rem;
-    }
-
-    .pi-card p.bio, .postdoc-card p.bio {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #ccc;
-      margin: 0;
-    }
-
-    .postdoc-card p.bio {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    /* --- PhD Students Carousel --- */
-    .carousel-container {
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto 5rem;
-      user-select: none;
-    }
-
-    .carousel {
-      display: flex;
-      overflow: hidden;
-      position: relative;
-      height: 380px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-item {
-      flex: 0 0 60%;
-      margin: 0 10px;
-      background: #111;
-      border-radius: 16px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
-      color: #ccc;
-      opacity: 0.3;
-      transform: scale(0.8);
-      transition: all 0.5s ease;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform-origin: center center;
-      padding: 2rem 2.5rem;
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      font-size: 1.05rem;
-    }
-
     .pi-image-block img {
-      width: 170px;
-      height: 170px;
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-      flex-shrink: 0;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
-
-    .carousel-item.active {
-      opacity: 1;
-      position: relative;
-      left: 0;
-      flex: 0 0 80%;
-      transform: scale(1);
-      color: #ffd700;
-      box-shadow: 0 0 35px rgba(255, 215, 0, 0.85);
-      z-index: 10;
-      font-size: 1.2rem;
-    }
-
-    .carousel-item.next {
-      position: absolute;
-      left: 75%;
-      opacity: 0.6;
-      transform: scale(0.85);
-      z-index: 5;
-    }
-
-    .carousel-item.next + .carousel-item {
-      left: 90%;
-      opacity: 0.4;
-      transform: scale(0.7);
-      z-index: 2;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 215, 0, 0.85);
-      border: none;
-      color: #0a0a0a;
-      font-size: 3rem;
-      padding: 0.3rem 0.9rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      user-select: none;
-      z-index: 20;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
-    }
-
-    .carousel-btn:hover {
-      background: #ffd700;
-    }
-
-    .carousel-btn.left {
-      left: -60px;
-    }
-
-    .carousel-btn.right {
-      right: -60px;
-    }
-
-    .pi-bio {
-      flex: 1;
-      line-height: 1.5;
-      color: #ddd;
-    }
-
     .pi-image-block h3 {
-      margin: 0.2rem 0 0.7rem;
-      font-weight: 700;
+      margin: 0.8rem 0 0.4rem;
       color: #ffd700;
-      font-size: 1.6rem;
-      letter-spacing: 0.5px;
+      font-size: 1rem;
     }
-
     .pi-image-block p {
+      font-size: 0.75rem;
+      color: #ccc;
       margin: 0;
-      font-weight: 600;
-      font-style: italic;
-      color: #bbb;
-      font-size: 1.1rem;
     }
-
-    /* --- Footer --- */
+    .pi-bio {
+      flex: 2 1 500px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .student-bio {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .student-bio.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     footer {
       background: #111;
+      padding: 3rem;
       text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-      color: #666;
-      box-shadow: inset 0 1px 0 #222;
+      color: #aaa;
     }
-
-    /* --- Responsive --- */
-    @media (max-width: 1024px) {
-      main {
-        padding: 2rem 1rem 3rem;
-      }
-      .carousel-container {
-        max-width: 90vw;
-      }
-      .carousel {
-        height: 350px;
-      }
-      .carousel-item {
-        padding: 1.5rem 2rem;
-      }
-      .pi-card, .postdoc-card {
-        width: 220px;
-      }
-    }
-
     @media (max-width: 768px) {
-      .carousel {
-        height: auto;
-        flex-wrap: nowrap;
+      .pi-container {
+        flex-direction: column;
+        align-items: center;
       }
-      .carousel-item {
-        position: relative !important;
-        flex: 0 0 90%;
-        margin: 0 10px;
-        opacity: 1 !important;
-        transform: scale(1) !important;
-        box-shadow: none !important;
-        color: #ffd700 !important;
-        padding: 1rem 1.2rem;
-        flex
+      .pi-bio {
+        text-align: justify;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">The Team</a>
+    <a href="#publications">Publications</a>
+    <a href="#research">Research</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#awards">Awards</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#funding">Funding</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section>
+    <h1>The Team</h1>
+    <h2>Principal Investigator (PI)</h2>
+    <div class="pi-container">
+      <div class="pi-image-block">
+        <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
+        <h3>Prof. Lakshmi Narayan Ramasubramanian</h3>
+        <p>PhD – IISc Bangalore, B.Tech. – VNIT Nagpur</p>
+      </div>
+      <div class="pi-bio">
+        <p>Prof. Lakshmi Narayan completed his B.Tech. in Metallurgical and Materials Science Engineering at VNIT Nagpur in 2008 and received his PhD from IISc Bangalore in 2014. He was a Postdoctoral Fellow at Carnegie Mellon (2015–2017), also working with Xi’an Jiaotong University. He received the NTU-SC3DP Fellowship in 2018 and joined IIT Delhi in 2019, currently serving as Associate Professor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Post Doctoral Fellow</h2>
+    <div class="pi-container">
+      <div class="pi-image-block">
+        <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" />
+        <h3>Dr. Ashwani Kumar</h3>
+        <p>PhD – IIT Kanpur</p>
+      </div>
+      <div class="pi-bio">
+        <p>Dr. Ashwani Kumar is a Postdoctoral Researcher at DMSE, IIT Delhi. His research focuses on ODS ferritic steels, duplex stainless steels, and AM metal matrix composites. He joined in Oct 2023 after his PhD from IIT Kanpur.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ph.D. Students</h2>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="ashwani.jpg" alt="Ashwani" />
+        <h3>Ashwani (Dec 2019)</h3>
+        <p>PhD Scholar</p>
+      </div>
+      <div class="pi-bio">
+     <p>Working on AM maraging steels. B.Tech. in Mechanical Engineering from UPTU. Joined IIT Delhi in 2019.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="amey.jpg" alt="Amey Parnaik" />
+        <h3>Amey Parnaik (Dec 2020)</h3>
+        <p>PhD Scholar (PMRF Fellow)</p>
+      </div>
+      <div class="pi-bio">
+        <p>B.Tech. in Mechanical Engineering from JNEC Aurangabad. M.Tech. in Materials Technology from NIT Warangal. Research on AM alloys for aerospace applications.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="pooja.jpg" alt="Pooja Sahu" />
+        <h3>Pooja Sahu (Jul 2021)</h3>
+        <p>Part-time PhD Scholar</p>
+      </div>
+      <div class="pi-bio">
+        <p>Senior scientist at CSIR-IMMT. M.Tech. from IIT Kharagpur (Silver Medalist), B.Tech. from NIT Raipur. Specializes in extractive metallurgy and patent analysis.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="simran.jpg" alt="Simran Nath" />
+        <h3>Simran Nath (Dec 2022)</h3>
+        <p>PhD Scholar (PMRF Fellow)</p>
+      </div>
+      <div class="pi-bio">
+        <p>M.Tech. in Materials Engineering from IISc Bangalore, B.Tech. from NIT Srinagar. Research on TiN/La₂O₃ reinforced Al-Si alloys via WAAM.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="karthik.jpg" alt="Karthik Kumar" />
+        <h3>Karthik Kumar (Dec 2022)</h3>
+        <p>PhD Scholar (PMRF Fellow)</p>
+      </div>
+      <div class="pi-bio">
+        <p>B.Tech. from NIT Puducherry and MS(R) from IIT Delhi. Developing novel high-strength Al alloys under Prof. Jayant Jain.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="akash.jpg" alt="Akash Mishra" />
+        <h3>Akash Mishra (Jan 2024)</h3>
+        <p>PhD Scholar</p>
+      </div>
+      <div class="pi-bio">
+        <p>B.Tech. in Metallurgical and Materials Engineering from NIT Rourkela. Research on mechanical behavior of AM alloys for aerospace. Email: msz238710@iitd.ac.in</p>
+      </div>
+    </div>
+
+    <!-- Duplicate Sukmaji bio for all 3 students -->
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="sukmaji.jpg" alt="Sukmaji Indro Cahyono" />
+        <h3>Sukmaji Indro Cahyono (Nov 2024)</h3>
+        <p>Joint PhD – UGM</p>
+      </div>
+      <div class="pi-bio">
+        <p>Sukmaji completed his master's in Korea and teaches in Indonesia. Research areas include additive manufacturing, solid mechanics, and 3D printing. Affiliated with CIMEDs under joint supervision of Profs. Muslim Mahardika and Budi Arifvianto.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="shantanu.jpg" alt="Shantanu Jain" />
+        <h3>Shantanu Jain (Jan 2025)</h3>
+        <p>PhD Scholar</p>
+      </div>
+      <div class="pi-bio">
+        <p>Sukmaji completed his master's in Korea and teaches in Indonesia. Research areas include additive manufacturing, solid mechanics, and 3D printing. Affiliated with CIMEDs under joint supervision of Profs. Muslim Mahardika and Budi Arifvianto.</p>
+      </div>
+    </div>
+
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="kishor.jpg" alt="Kishor Kumar" />
+        <h3>Kishor Kumar (Jan 2025)</h3>
+        <p>PhD Scholar</p>
+      </div>
+      <div class="pi-bio">
+        <p>Sukmaji completed his master's in Korea and teaches in Indonesia. Research areas include additive manufacturing, solid mechanics, and 3D printing. Affiliated with CIMEDs under joint supervision of Profs. Muslim Mahardika and Budi Arifvianto.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
+  </footer>
+
+  <script>
+    const bios = document.querySelectorAll('.student-bio');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    bios.forEach(bio => observer.observe(bio));
+  </script>
+</body>
+</html>
