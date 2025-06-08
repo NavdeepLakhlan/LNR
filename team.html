@@ -51,10 +51,9 @@
       opacity: 1;
       transform: translateY(0);
     }
-    h1 {
+    h1, h2 {
       color: #ffd700;
       text-align: center;
-      margin-bottom: 2rem;
     }
     .member {
       display: flex;
@@ -65,8 +64,8 @@
       padding-bottom: 1.5rem;
     }
     .member img {
-      width: 120px;
-      height: 120px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
@@ -84,6 +83,7 @@
   </style>
 </head>
 <body>
+  <!-- Navigation bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="team.html">The Team</a>
@@ -97,9 +97,12 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Team Section -->
   <section>
     <h1>The Team</h1>
 
+    <!-- Principal Investigator -->
+    <h2>Principal Investigator (PI)</h2>
     <div class="member">
       <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
       <div class="member-content">
@@ -109,6 +112,8 @@
       </div>
     </div>
 
+    <!-- Postdoctoral Researchers -->
+    <h2>Postdoctoral Researchers</h2>
     <div class="member">
       <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" />
       <div class="member-content">
@@ -120,12 +125,13 @@
 
   </section>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
+    &copy; 2025 Dhātu-yantra-pravartana Lab | R Lakshmi Narayan
   </footer>
 
   <script>
-    // Scroll animation
+    // Reveal animation for scrolling
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
