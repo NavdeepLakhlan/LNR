@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dhātu-yantra-pravartana Lab | PhD Students</title>
+  <title>Dhātu-yantra-pravartana Lab | Team</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -12,6 +12,7 @@
       color: #ccc;
       margin: 0;
       padding: 2rem;
+      min-height: 100vh;
     }
 
     h2 {
@@ -19,33 +20,32 @@
       text-align: center;
       margin-bottom: 2rem;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      letter-spacing: 1.5px;
     }
 
-    /* Carousel container */
+    /* === PHD Students Carousel === */
     .carousel-container {
       position: relative;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto 5rem;
       user-select: none;
     }
 
-    /* Carousel flexbox */
     .carousel {
       display: flex;
       overflow: hidden;
       position: relative;
-      height: 320px;
+      height: 380px;
       align-items: center;
       justify-content: center;
     }
 
-    /* Each student card */
     .carousel-item {
       flex: 0 0 60%;
       margin: 0 10px;
       background: #111;
-      border-radius: 12px;
+      border-radius: 16px;
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
       color: #ccc;
       opacity: 0.3;
@@ -55,22 +55,22 @@
       top: 0;
       left: 50%;
       transform-origin: center center;
-      padding: 1.5rem 2rem;
+      padding: 2rem 2.5rem;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
+      font-size: 1.05rem;
     }
 
-    /* Profile image styling */
     .pi-image-block img {
-      width: 150px;
-      height: 150px;
+      width: 170px;
+      height: 170px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      flex-shrink: 0;
     }
 
-    /* Active profile styling */
     .carousel-item.active {
       opacity: 1;
       position: relative;
@@ -78,11 +78,11 @@
       flex: 0 0 80%;
       transform: scale(1);
       color: #ffd700;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+      box-shadow: 0 0 35px rgba(255, 215, 0, 0.85);
       z-index: 10;
+      font-size: 1.2rem;
     }
 
-    /* Next profile to the right */
     .carousel-item.next {
       position: absolute;
       left: 75%;
@@ -91,7 +91,6 @@
       z-index: 5;
     }
 
-    /* Next-next profile stacked further right */
     .carousel-item.next + .carousel-item {
       left: 90%;
       opacity: 0.4;
@@ -99,22 +98,21 @@
       z-index: 2;
     }
 
-    /* Navigation buttons */
     .carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 215, 0, 0.8);
+      background: rgba(255, 215, 0, 0.85);
       border: none;
       color: #0a0a0a;
-      font-size: 2.5rem;
-      padding: 0.3rem 0.8rem;
+      font-size: 3rem;
+      padding: 0.3rem 0.9rem;
       border-radius: 50%;
       cursor: pointer;
       transition: background 0.3s ease;
       user-select: none;
       z-index: 20;
-      box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
     }
 
     .carousel-btn:hover {
@@ -122,37 +120,170 @@
     }
 
     .carousel-btn.left {
-      left: -50px;
+      left: -60px;
     }
 
     .carousel-btn.right {
-      right: -50px;
+      right: -60px;
     }
 
-    /* Bio text block */
     .pi-bio {
       flex: 1;
-      font-size: 1rem;
-      line-height: 1.4;
+      line-height: 1.5;
       color: #ddd;
     }
 
-    /* Student name and role */
     .pi-image-block h3 {
-      margin: 0.3rem 0 0.5rem;
+      margin: 0.2rem 0 0.7rem;
       font-weight: 700;
       color: #ffd700;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
     }
 
     .pi-image-block p {
       margin: 0;
-      font-weight: 500;
+      font-weight: 600;
       font-style: italic;
       color: #bbb;
+      font-size: 1.1rem;
     }
 
-    /* Responsive for smaller devices */
+
+    /* === PI Section === */
+    section#pi {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+    }
+
+    .pi-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .pi-card {
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+      width: 280px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #ddd;
+      transition: box-shadow 0.3s ease;
+    }
+    .pi-card:hover {
+      box-shadow: 0 0 45px rgba(255, 215, 0, 0.6);
+    }
+
+    .pi-card img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+    .pi-card h3 {
+      margin: 0.5rem 0 0.4rem;
+      color: #ffd700;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .pi-card p.role {
+      font-style: italic;
+      font-weight: 600;
+      color: #bbb;
+      margin: 0 0 1rem;
+      font-size: 1.1rem;
+    }
+
+    .pi-card p.bio {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ccc;
+      margin: 0;
+    }
+
+
+    /* === Postdoc Section === */
+    section#postdoc {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+    }
+
+    .postdoc-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .postdoc-card {
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+      width: 260px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #ddd;
+      transition: box-shadow 0.3s ease;
+    }
+    .postdoc-card:hover {
+      box-shadow: 0 0 45px rgba(255, 215, 0, 0.6);
+    }
+
+    .postdoc-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    }
+
+    .postdoc-card h3 {
+      margin: 0.5rem 0 0.4rem;
+      color: #ffd700;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .postdoc-card p.role {
+      font-style: italic;
+      font-weight: 600;
+      color: #bbb;
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+    }
+
+    .postdoc-card p.bio {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #ccc;
+      margin: 0;
+    }
+
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .carousel-container {
+        max-width: 90vw;
+      }
+      .carousel {
+        height: 350px;
+      }
+      .carousel-item {
+        padding: 1.5rem 2rem;
+      }
+      .pi-card, .postdoc-card {
+        width: 220px;
+      }
+    }
+
     @media (max-width: 768px) {
       .carousel {
         height: auto;
@@ -166,9 +297,10 @@
         transform: scale(1) !important;
         box-shadow: none !important;
         color: #ffd700 !important;
-        padding: 1rem;
+        padding: 1rem 1.2rem;
         flex-direction: column;
         text-align: center;
+        font-size: 1rem;
       }
       .pi-image-block {
         margin-bottom: 1rem;
@@ -176,12 +308,21 @@
       .carousel-btn {
         display: none;
       }
+
+      .pi-cards, .postdoc-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .pi-card, .postdoc-card {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <section>
+  <!-- PhD Students Section -->
+  <section aria-label="PhD Students">
     <h2>Ph.D. Students</h2>
     <div class="carousel-container" aria-label="PhD Students Carousel">
       <button class="carousel-btn left" aria-label="Previous Student">&#10094;</button>
@@ -223,32 +364,10 @@
           <div class="pi-image-block">
             <img src="simran.jpg" alt="Simran Nath" />
             <h3>Simran Nath (Dec 2022)</h3>
-            <p>PhD Scholar (PMRF Fellow)</p>
-          </div>
-          <div class="pi-bio">
-            <p>M.Tech. in Materials Engineering from IISc Bangalore, B.Tech. from NIT Srinagar. Research on TiN/La₂O₃ reinforced Al-Si alloys via WAAM.</p>
-          </div>
-        </div>
-
-        <div class="carousel-item" tabindex="0">
-          <div class="pi-image-block">
-            <img src="karthik.jpg" alt="Karthik Kumar" />
-            <h3>Karthik Kumar (Dec 2022)</h3>
-            <p>PhD Scholar (PMRF Fellow)</p>
-          </div>
-          <div class="pi-bio">
-            <p>B.Tech. from NIT Puducherry and MS(R) from IIT Delhi. Developing novel high-strength Al alloys under Prof. Jayant Jain.</p>
-          </div>
-        </div>
-
-        <div class="carousel-item" tabindex="0">
-          <div class="pi-image-block">
-            <img src="akash.jpg" alt="Akash Mishra" />
-            <h3>Akash Mishra (Jan 2024)</h3>
             <p>PhD Scholar</p>
           </div>
           <div class="pi-bio">
-            <p>B.Tech. in Metallurgical and Materials Engineering from NIT Rourkela. Research on mechanical behavior of AM alloys for aerospace. Email: msz238710@iitd.ac.in</p>
+            <p>Research focus on advanced alloys and additive manufacturing. B.Tech. from IIT BHU, joined IIT Delhi in 2022.</p>
           </div>
         </div>
       </div>
@@ -256,91 +375,6 @@
     </div>
   </section>
 
-  <script>
-    const carousel = document.querySelector('.carousel');
-    const items = carousel.querySelectorAll('.carousel-item');
-    const btnLeft = document.querySelector('.carousel-btn.left');
-    const btnRight = document.querySelector('.carousel-btn.right');
-    let activeIndex = 0;
-
-    function updateCarousel() {
-      items.forEach((item, i) => {
-        item.classList.remove('active', 'next');
-        item.style.left = '';
-        item.style.zIndex = '';
-        item.style.opacity = '';
-        item.style.transform = '';
-
-        if (i === activeIndex) {
-          item.classList.add('active');
-          item.style.position = 'relative';
-          item.style.left = '0';
-          item.style.opacity = '1';
-          item.style.transform = 'scale(1)';
-          item.style.zIndex = 10;
-        } else if (i === activeIndex + 1) {
-          item.classList.add('next');
-          item.style.position = 'absolute';
-          item.style.left = '75%';
-          item.style.opacity = '0.6';
-          item.style.transform = 'scale(0.85)';
-          item.style.zIndex = 5;
-        } else if (i === activeIndex + 2) {
-          item.style.position = 'absolute';
-          item.style.left = '90%';
-          item.style.opacity = '0.4';
-          item.style.transform = 'scale(0.7)';
-          item.style.zIndex = 2;
-        } else if (i < activeIndex) {
-          // items left of active go left and fade
-          item.style.position = 'absolute';
-          item.style.left = '-100%';
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.7)';
-          item.style.zIndex = 1;
-        } else {
-          // items farther right go out of view
-          item.style.position = 'absolute';
-          item.style.left = '100%';
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.7)';
-          item.style.zIndex = 1;
-        }
-      });
-    }
-
-    btnRight.addEventListener('click', () => {
-      if (activeIndex < items.length - 1) {
-        activeIndex++;
-        updateCarousel();
-      }
-    });
-
-    btnLeft.addEventListener('click', () => {
-      if (activeIndex > 0) {
-        activeIndex--;
-        updateCarousel();
-      }
-    });
-
-    // Allow arrow keys for navigation
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') {
-        if (activeIndex < items.length - 1) {
-          activeIndex++;
-          updateCarousel();
-        }
-      } else if (e.key === 'ArrowLeft') {
-        if (activeIndex > 0) {
-          activeIndex--;
-          updateCarousel();
-        }
-      }
-    });
-
-    // Initialize carousel on page load
-    updateCarousel();
-  </script>
-
-</body>
-</html>
+  <!-- PI Section -->
+  <section id="pi" aria-label="Principal Investigators">
+    <h
