@@ -12,7 +12,7 @@
       font-family: 'Roboto', sans-serif;
       background-color: #0a0a0a;
       color: #fff;
-      font-size: 18px;
+      font-size: 36px;
       scroll-behavior: smooth;
     }
     nav {
@@ -20,16 +20,17 @@
       top: 0;
       width: 100%;
       background: rgba(0, 0, 0, 0.8);
-      padding: 1rem;
+      padding: 1.5rem;
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 3rem;
       z-index: 1000;
+      transition: background 0.3s ease;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 700;
       transition: color 0.3s ease;
     }
     nav a:hover {
@@ -37,13 +38,19 @@
     }
     section {
       min-height: 100vh;
-      padding: 6rem 2rem 2rem;
+      padding: 8rem 4rem 4rem;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       text-align: center;
-      animation: fadeInUp 1s ease-in-out;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .hero {
       position: relative;
@@ -56,12 +63,12 @@
       overflow: hidden;
     }
     .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
+      font-size: 7rem;
+      margin-bottom: 2rem;
     }
     .hero p {
-      font-size: 1.5rem;
-      max-width: 600px;
+      font-size: 3rem;
+      max-width: 800px;
     }
     canvas {
       position: absolute;
@@ -75,15 +82,12 @@
       position: relative;
       z-index: 2;
     }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
     footer {
       background: #111;
-      padding: 2rem;
+      padding: 4rem;
       text-align: center;
       color: #aaa;
+      font-size: 2rem;
     }
   </style>
 </head>
@@ -157,6 +161,20 @@
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+    });
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    sections.forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>
