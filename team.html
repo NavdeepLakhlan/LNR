@@ -12,10 +12,9 @@
       font-family: 'Roboto', sans-serif;
       background-color: #0a0a0a;
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       scroll-behavior: smooth;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -28,18 +27,15 @@
       z-index: 1000;
       font-size: 16px;
     }
-
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 700;
       transition: color 0.3s ease;
     }
-
     nav a:hover {
       color: #ffd700;
     }
-
     section {
       max-width: 1200px;
       margin: 8rem auto 4rem;
@@ -48,25 +44,21 @@
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
     }
-
     h1, h2 {
       color: #ffd700;
       text-align: center;
     }
-
     .pi-container {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
       gap: 2rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
-
     .pi-image-block {
       flex: 1 1 300px;
       text-align: center;
     }
-
     .pi-image-block img {
       width: 300px;
       height: 300px;
@@ -74,31 +66,37 @@
       object-fit: cover;
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
-
     .pi-image-block h3 {
       margin: 1rem 0 0.5rem;
       color: #ffd700;
     }
-
     .pi-image-block p {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #ccc;
       margin-bottom: 0;
     }
-
     .pi-bio {
       flex: 2 1 500px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
     }
-
+    .student-bio {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .student-bio.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     footer {
       background: #111;
       padding: 3rem;
       text-align: center;
       color: #aaa;
     }
-
     @media (max-width: 768px) {
       .pi-container {
         flex-direction: column;
@@ -127,7 +125,6 @@
   <section>
     <h1>The Team</h1>
     <h2>Principal Investigator (PI)</h2>
-
     <div class="pi-container">
       <div class="pi-image-block">
         <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
@@ -135,43 +132,56 @@
         <p>PhD – IISc Bangalore, B.Tech. – VNIT Nagpur</p>
       </div>
       <div class="pi-bio">
-        <p>
-          Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and received his PhD from the Indian Institute of Science, Bangalore in 2014.
-        </p>
-        <p>
-          He joined Carnegie Mellon University as a Postdoctoral Fellow in April 2015. During this time (2015–2017), he was also a visiting scientist in Xi’an Jiaotong University, Xi’an, China.
-        </p>
-        <p>
-          In August 2018, he received the Gopalakrishnan-NTU Presidential Postdoctoral Fellowship in Nanyang Technological University, Singapore, and worked with the Singapore Centre for 3D Printing (SC3DP).
-        </p>
-        <p>
-          He joined the Department of Materials Science and Engineering, IIT Delhi in August 2019 as an Assistant Professor and is currently serving as Associate Professor.
-        </p>
+        <p>Prof. Lakshmi Narayan completed his B.Tech. in Metallurgical and Materials Science Engineering at VNIT Nagpur in 2008 and received his PhD from IISc Bangalore in 2014. He was a Postdoctoral Fellow at Carnegie Mellon (2015–2017), also working with Xi’an Jiaotong University. He received the NTU-SC3DP Fellowship in 2018 and joined IIT Delhi in 2019, currently serving as Associate Professor.</p>
       </div>
     </div>
   </section>
-<!-- Add this below Prof. Lakshmi's section -->
-<section>
-  <h2>Post Doctoral Fellow</h2>
 
-  <div class="pi-container">
-    <div class="pi-image-block" style="text-align:center;">
-      <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" style="width: 200px; height: 200px;" />
-      <h3>Dr. Ashwani Kumar</h3>
-      <p>PhD – IIT Kanpur, M.Tech – IIT Kanpur, B.Tech – UPTU Lucknow</p>
+  <section>
+    <h2>Post Doctoral Fellow</h2>
+    <div class="pi-container">
+      <div class="pi-image-block">
+        <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" style="width: 200px; height: 200px;" />
+        <h3>Dr. Ashwani Kumar</h3>
+        <p>PhD – IIT Kanpur, M.Tech. – IIT Kanpur</p>
+      </div>
+      <div class="pi-bio">
+        <p>Dr. Ashwani Kumar is a Postdoctoral Researcher at DMSE, IIT Delhi. He specializes in ODS ferritic steels, duplex stainless steels, and AM metal matrix composites. He joined IIT Delhi in October 2023 after completing his PhD at IIT Kanpur.</p>
+      </div>
     </div>
-    <div class="pi-bio">
-      <p>
-        Dr. Ashwani Kumar is currently a Postdoctoral Researcher at the Department of Materials Science and Engineering, IIT Delhi. His research focuses on Oxide Dispersion Strengthened (ODS) ferritic steels, duplex stainless steels, and additive manufacturing (AM) metal matrix composites.
-      </p>
-      <p>
-        He completed his B.Tech. from UPTU Lucknow in 2012, M.Tech. from IIT Kanpur in 2015, and received his PhD from IIT Kanpur in 2023. He joined IIT Delhi as a Postdoctoral Fellow in October 2023.
-      </p>
+  </section>
+
+  <section>
+    <h2>Ph.D. Students</h2>
+    <!-- Repeat below pattern for each student -->
+    <div class="pi-container student-bio">
+      <div class="pi-image-block">
+        <img src="ashwani.jpg" alt="Ashwani" />
+        <h3>Ashwani (Dec 2019 – ongoing)</h3>
+        <p>PhD Scholar</p>
+      </div>
+      <div class="pi-bio">
+        <p>Ashwani completed B.Tech. in Mechanical Engineering from UPTU and worked in industry and teaching. At IIT Delhi, he researches the structural and mechanical properties of AM maraging steels.</p>
+      </div>
     </div>
-  </div>
-</section>
+    <!-- Add other PhD students using the same structure -->
+  </section>
+
   <footer>
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
+
+  <script>
+    const bios = document.querySelectorAll('.student-bio');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    bios.forEach(bio => observer.observe(bio));
+  </script>
 </body>
 </html>
