@@ -15,6 +15,7 @@
       font-size: 20px;
       scroll-behavior: smooth;
     }
+
     nav {
       position: fixed;
       top: 0;
@@ -27,63 +28,89 @@
       z-index: 1000;
       font-size: 16px;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 700;
       transition: color 0.3s ease;
     }
+
     nav a:hover {
       color: #ffd700;
     }
+
     section {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 8rem auto 4rem;
       padding: 2rem;
       background-color: #111;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
     h1, h2 {
       color: #ffd700;
       text-align: center;
     }
-    .member {
+
+    .pi-container {
       display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 3rem;
     }
-    .member img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
+
+    .pi-image-block {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .pi-image-block img {
+      width: 300px;
+      height: 300px;
+      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
       object-fit: cover;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
-    .member-content h3 {
-      margin-bottom: 0.3rem;
+
+    .pi-image-block h3 {
+      margin: 1rem 0 0.5rem;
       color: #ffd700;
     }
+
+    .pi-image-block p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 0;
+    }
+
+    .pi-bio {
+      flex: 2 1 500px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     footer {
       background: #111;
       padding: 3rem;
       text-align: center;
       color: #aaa;
     }
+
+    @media (max-width: 768px) {
+      .pi-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .pi-bio {
+        text-align: justify;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Navigation bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="team.html">The Team</a>
@@ -97,51 +124,35 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Team Section -->
   <section>
     <h1>The Team</h1>
-
-    <!-- Principal Investigator -->
     <h2>Principal Investigator (PI)</h2>
-    <div class="member">
-      <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
-      <div class="member-content">
-        <h3>Prof. Lakshmi Narayan Ramasubramanian, PhD</h3>
-        <p><em>Associate Professor, Department of Materials Science & Engineering, IIT Delhi</em></p>
-        <p>Completed B.Tech. (VNIT Nagpur, 2008); PhD (IISc Bangalore, 2014); Postdoc at Carnegie Mellon (2015–17), visiting scientist at Xi’an Jiaotong University; awarded NTU‑SC3DP Fellowship (2018); joined IIT Delhi in 2019, now Associate Professor.</p>
+
+    <div class="pi-container">
+      <div class="pi-image-block">
+        <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
+        <h3>Prof. Lakshmi Narayan Ramasubramanian</h3>
+        <p>PhD – IISc Bangalore, B.Tech. – VNIT Nagpur</p>
+      </div>
+      <div class="pi-bio">
+        <p>
+          Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and received his PhD from the Indian Institute of Science, Bangalore in 2014.
+        </p>
+        <p>
+          He joined Carnegie Mellon University as a Postdoctoral Fellow in April 2015. During this time (2015–2017), he was also a visiting scientist in Xi’an Jiaotong University, Xi’an, China.
+        </p>
+        <p>
+          In August 2018, he received the Gopalakrishnan-NTU Presidential Postdoctoral Fellowship in Nanyang Technological University, Singapore, and worked with the Singapore Centre for 3D Printing (SC3DP).
+        </p>
+        <p>
+          He joined the Department of Materials Science and Engineering, IIT Delhi in August 2019 as an Assistant Professor and is currently serving as Associate Professor.
+        </p>
       </div>
     </div>
-
-    <!-- Postdoctoral Researchers -->
-    <h2>Postdoctoral Researchers</h2>
-    <div class="member">
-      <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" />
-      <div class="member-content">
-        <h3>Dr. Ashwani Kumar</h3>
-        <p><em>Postdoctoral Researcher, DMSE, IIT Delhi</em></p>
-        <p>Research on ODS ferritic steels, duplex stainless steels, and AM metal matrix composites. B.Tech. (UPTU Lucknow, 2012); M.Tech. (IIT Kanpur, 2015); PhD (IIT Kanpur, 2023); joined IIT Delhi in October 2023.</p>
-      </div>
-    </div>
-
   </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Dhātu-yantra-pravartana Lab | R Lakshmi Narayan
+    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
-
-  <script>
-    // Reveal animation for scrolling
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>
