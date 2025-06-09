@@ -16,18 +16,18 @@
       scroll-behavior: smooth;
     }
 
-    /* BMW-style navigation bar */
+    /* Updated navigation bar styling */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
     .nav-left {
@@ -37,52 +37,79 @@
     }
 
     .nav-left img {
-      height: 40px;
-      width: 40px;
+      height: 36px;
+      width: 36px;
     }
 
     .lab-title {
       font-size: 1.1rem;
-      color: white;
-    }
-
-    .lab-title strong {
+      color: #111;
       font-weight: 700;
+      letter-spacing: 1px;
     }
 
+    /* Nav links hidden by default, visible on hover */
     .nav-right {
       display: flex;
-      gap: 2rem;
+      gap: 1.2rem;
       align-items: center;
-      font-size: 0.75rem;
+      font-size: 0.82rem;
     }
 
     .nav-right a {
-      color: #fff;
+      color: #222;
       text-decoration: none;
       font-weight: 700;
-      padding-bottom: 4px;
+      padding: 2px 0;
       border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.82rem;
+      transition: 
+        color 0.3s,
+        border-color 0.3s,
+        opacity 0.25s;
     }
 
-    .nav-right a:hover {
+    header:hover .nav-right a,
+    .nav-right:hover a {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-right a:hover,
+    .nav-right a:focus {
       color: #ffd700;
       border-color: #ffd700;
+      outline: none;
     }
 
     .nav-right a.active {
-      color: white;
-      border-bottom: 2px solid white;
+      color: #111;
+      border-bottom: 2px solid #111;
+    }
+
+    /* Show nav text on focus for accessibility */
+    .nav-right:focus-within a {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .nav-right svg {
-      width: 18px;
-      height: 18px;
-      fill: #aaa;
+      width: 16px;
+      height: 16px;
+      fill: #888;
+      margin-left: 0.5rem;
       cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #ffd700;
+      opacity: 1;
     }
 
+    /* Section styling */
     section {
       min-height: 100vh;
       padding: 8rem 4rem 4rem;
@@ -95,7 +122,6 @@
       transform: translateY(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-
     section.visible {
       opacity: 1;
       transform: translateY(0);
@@ -151,9 +177,9 @@
   <header>
     <div class="nav-left">
       <img src="your-logo.png" alt="Lab Logo" />
-      <div class="lab-title">Dhātu-Yantra-<strong>Pravartana</strong></div>
+      <div class="lab-title">DYPP</div>
     </div>
-    <nav class="nav-right">
+    <nav class="nav-right" tabindex="0">
       <a href="#home" class="active">Home</a>
       <a href="team.html">The Team</a>
       <a href="Gallary.html">Gallary</a>
