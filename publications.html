@@ -7,64 +7,155 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #0077b6;
-      --bg: #fafbfc;
-      --card-bg: #fff;
-      --header-bg: #023e8a;
-      --header-fg: #fff;
-      --border: #e0e0e0;
-      --shadow: 0 2px 12px rgba(0,0,0,0.06);
-      --focus: #ffb703;
+      --accent: #ffd700;
+      --bg: #0a0a0a;
+      --card-bg: #181818;
+      --header-bg: #181818;
+      --header-fg: #ffd700;
+      --border: #ffd70038;
+      --shadow: 0 4px 24px 0 #000a;
+      --shadow-card: 0 1px 10px #000a;
+      --focus: #ffd700;
+      --text-main: #f6f6f6;
+      --text-muted: #bababa;
     }
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: var(--bg);
+    html, body {
+      height: 100%;
       margin: 0;
-      color: #222;
-      line-height: 1.6;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      font-size: 15px;
     }
+
+    /* Navigation bar styling */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1.5rem;
+      display: flex;
+      justify-content: right;
+      gap: 2.5rem;
+      z-index: 1000;
+      transition: background 0.3s ease;
+      font-size: 13px;
+      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.35);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+      letter-spacing: 1.2px;
+      position: relative;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
     header {
       background: var(--header-bg);
       color: var(--header-fg);
-      padding: 1.5em 0 1em 0;
+      padding: 4.2em 0 1.2em 0;
       text-align: center;
+      letter-spacing: 1.2px;
       box-shadow: var(--shadow);
     }
     header h1 {
-      font-size: 2.2em;
-      margin: 0 0 0.25em 0;
+      margin: 0 0 0.3em 0;
       font-weight: 700;
-      letter-spacing: 0.02em;
+      font-size: 2.1rem;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      text-shadow: 0 1px 6px #000;
+      text-transform: uppercase;
     }
     header p {
-      font-size: 1.13em;
       margin: 0;
+      font-weight: 400;
+      font-size: 1.08rem;
+      color: #ffd700bb;
     }
     .container {
-      max-width: 850px;
-      margin: 1.8em auto 2.8em auto;
+      max-width: 920px;
+      margin: 2.5em auto 3em auto;
+      padding: 2.5em 1.3em 2em 1.3em;
       background: var(--card-bg);
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
-      padding: 2.1em 1.5em 2em 1.5em;
+      border: 1.5px solid var(--border);
     }
     section {
-      margin-bottom: 2em;
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      border-left: 5px solid var(--accent);
+      padding-left: 0.7em;
+      font-size: 1.27rem;
+      margin-top: 2.2rem;
+      margin-bottom: 1.1rem;
+      color: var(--accent);
+      background: #ffd70011;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      text-shadow: 0 1px 6px #111;
+      width: fit-content;
+      border-radius: 4px;
     }
     .subsection-title {
-      font-size: 1.13em;
-      color: #555;
-      margin: 2em 0 0.7em 0;
+      font-size: 1.04em;
+      color: #ffd700c0;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      margin: 2em 0 0.7em 0;
+      letter-spacing: 0.2px;
+      text-shadow: 0 1px 4px #0006;
+    }
+    .simple-list, .pub-year-group, .pub-list, .pub-card, ul.simple-list {
+      background: linear-gradient(110deg,#151515 90%, #ffd70009 100%);
+      border-radius: 8px;
+      box-shadow: var(--shadow-card);
+      border-left: 3px solid var(--accent);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .simple-list {
+      padding: 1em 1.3em;
+      margin-bottom: 1.2em;
+      margin-top: 0.5em;
+      font-size: 1.07em;
+      background: #181818;
+      border-radius: 7px;
+      border-left: 4px solid var(--accent);
     }
     .pub-year-group {
-      margin-bottom: 1.7em;
+      margin-bottom: 1.5em;
+      background: none;
+      border: none;
+      box-shadow: none;
     }
     .pub-year-header {
-      background: #eaf6fb;
+      background: #181818;
       color: var(--accent);
-      font-size: 1.2rem;
+      font-size: 1.09rem;
       font-weight: bold;
       padding: 0.7em 1em;
       border-radius: 5px;
@@ -73,16 +164,22 @@
       outline: none;
       display: flex;
       align-items: center;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
+      box-shadow: 0 1px 4px #0009;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
     .pub-year-header:focus {
       border-color: var(--focus);
       box-shadow: 0 0 0 2px var(--focus);
+      color: #212121;
+      background: var(--accent);
     }
     .pub-year-header .chevron {
-      margin-right: 0.5em;
-      font-size: 1.2em;
+      margin-right: 0.7em;
+      font-size: 1.25em;
       transition: transform 0.2s;
+      color: var(--accent);
     }
     .pub-year-header[aria-expanded="true"] .chevron {
       transform: rotate(90deg);
@@ -90,25 +187,32 @@
     .pub-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 0.7em 0;
+      margin: 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      background: none;
+      box-shadow: none;
+      border-radius: 0 0 7px 7px;
     }
     .pub-card {
+      background: linear-gradient(90deg,#191919 75%, #ffd70013 100%);
       padding: 1.05em 1em 0.95em 1em;
       border-bottom: 1px solid var(--border);
-      background: var(--card-bg);
-      transition: box-shadow 0.14s, background 0.14s;
+      border-left: 4px solid var(--accent);
+      border-radius: 7px;
+      box-shadow: 0 1px 6px 0 #0006;
       font-size: 1.03em;
-      line-height: 1.3;
-      letter-spacing: 0.5px;
+      line-height: 1.4;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.5em;
+      color: var(--text-main);
     }
     .pub-card:last-child {
       border-bottom: none;
     }
     .pub-card:hover, .pub-card:focus-within {
-      box-shadow: 0 4px 24px rgba(0,119,182,0.11);
-      background: #f0fbff;
+      background: #222218;
+      box-shadow: 0 4px 24px #ffd70033;
     }
     .pub-num {
       font-weight: bold;
@@ -117,14 +221,22 @@
     }
     .pub-title {
       font-weight: 500;
+      color: #ffd700;
     }
     .pub-journal {
+      color: #bababa;
       font-style: italic;
       margin-left: 0.7em;
     }
     a {
       color: var(--accent);
       text-decoration: underline dotted;
+      transition: color 0.18s;
+    }
+    a:hover {
+      color: #fff;
+      background: #ffd70033;
+      border-radius: 3px;
     }
     a:focus {
       outline: 2px solid var(--focus);
@@ -137,29 +249,48 @@
       height: 1px;
       overflow: hidden;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
+      nav { font-size: 10px; gap: 1rem; padding: 0.7rem 0.5rem; }
       header {
-        padding: 1.1em 0 0.5em 0;
+        padding: 3em 0 0.5em 0;
       }
       .container {
+        padding: 0 0.5em 1em 0.5em;
         max-width: 98vw;
-        padding: 1em 0.5em 1.5em 0.5em;
       }
       .pub-year-header {
         font-size: 1em;
         padding: 0.6em 0.7em;
       }
+      h2 {
+        font-size: 1em;
+        padding-left: 0.45em;
+      }
+      .pub-card {
+        padding: 0.7em 0.7em;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Navigation bar added -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="team.html">The Team</a>
+    <a href="Gallary.html">Gallary</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="MEET LNR.html">MEET LNR</a>
+    <a href="news.html">Latest</a>
+    <a href="contact.html">Contact</a>
+  </nav>
   <header>
     <h1>Publications</h1>
     <p>R. Lakshmi Narayan – Articles, Editorials, Lectures, and More</p>
   </header>
   <main class="container" id="main-content" tabindex="-1">
     <section aria-labelledby="articles-title">
-      <h2 id="articles-title">Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
+      <h2 id="articles-title">Articles <span style="font-weight: 400; color:#bababa;">(in reverse chronology)</span></h2>
       <div class="subsection-title">International Journals</div>
       <div id="pubs-intl"></div>
       <div class="subsection-title">National Journals</div>
@@ -179,6 +310,10 @@
         <li>ICAMAT, Trichy, 2022, Invited talk</li>
         <li>AUT winter School, Iran, 2022, Invited Keynote</li>
         <li>IMAT Iran, 2021, Invited Keynote</li>
+        <li>ATAL Workshop, IIT Palakkad, 2021, Invited talk</li>
+        <li>ICMAT, Singapore, 2019, Invited talk</li>
+        <li>Silk Road Post-Doctoral Symposium, XJTU, China, 2019, Invited talk </li>
+        <li>Symposium on BMGs, TMS, January 2011, San Diego, USA, Invited talk</li>
         <li>IIT Madras, 2017, Invited lecture</li>
       </ul>
     </section>
