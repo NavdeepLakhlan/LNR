@@ -1,0 +1,135 @@
+// ProspectiveStudents.tsx
+import React from "react";
+import {
+  Mail,
+  GraduationCap,
+  FlaskConical,
+  Users,
+  MapPin,
+  FileText,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+
+const ProspectiveStudents = () => {
+  return (
+    <div className="px-6 md:px-12 py-12 max-w-7xl mx-auto">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold text-gray-800 mb-4">Join Our Research Group</h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Explore cutting-edge research opportunities in materials science and engineering at IIT Delhi.
+        </p>
+      </div>
+
+      {/* Image Carousel */}
+      <Carousel className="mb-12">
+        <CarouselContent className="flex gap-4 overflow-x-auto pb-4">
+          {[1, 2, 3, 4].map((i) => (
+            <CarouselItem key={i} className="min-w-[280px]">
+              <img
+                src={`/lab/gallery${i}.jpg`}
+                alt={`Lab Image ${i}`}
+                className="rounded-xl shadow-md object-cover w-full h-48"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      {/* Sections */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Opportunities</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="hover:shadow-xl transition duration-300">
+            <CardContent className="p-6 space-y-3">
+              <GraduationCap className="h-7 w-7 text-indigo-600" />
+              <h3 className="font-semibold text-lg text-gray-800">MS(R) & PhD</h3>
+              <p className="text-sm text-gray-600">
+                Contribute to original research in advanced materials. Apply through IIT Delhi’s PG admissions portal.
+              </p>
+              <a
+                href="https://home.iitd.ac.in/pg-admissions.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-600 underline text-sm"
+              >
+                Apply Now
+              </a>
+            </CardContent>
+          </Card>
+          <Card className="hover:shadow-xl transition duration-300">
+            <CardContent className="p-6 space-y-3">
+              <Users className="h-7 w-7 text-indigo-600" />
+              <h3 className="font-semibold text-lg text-gray-800">Internships</h3>
+              <p className="text-sm text-gray-600">
+                B.Tech and M.Tech students interested in summer/winter internships can apply via SIP or direct email.
+              </p>
+              <a
+                href="https://forms.gle/exampleform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-600 underline text-sm"
+              >
+                Internship Form
+              </a>
+            </CardContent>
+          </Card>
+          <Card className="hover:shadow-xl transition duration-300">
+            <CardContent className="p-6 space-y-3">
+              <FlaskConical className="h-7 w-7 text-indigo-600" />
+              <h3 className="font-semibold text-lg text-gray-800">Project Assistants</h3>
+              <p className="text-sm text-gray-600">
+                We recruit project staff through sponsored projects. Watch for announcements on IITD’s job portal.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Guide Downloads */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Resources</h2>
+        <div className="flex flex-col md:flex-row gap-6">
+          <Button variant="outline" className="gap-2">
+            <FileText className="h-5 w-5" />
+            CV Guidelines (PDF)
+          </Button>
+          <Button variant="outline" className="gap-2">
+            <FileText className="h-5 w-5" />
+            Statement of Purpose Tips
+          </Button>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Student Testimonials</h2>
+        <div className="bg-white shadow-md rounded-xl p-6">
+          <p className="italic text-gray-700 text-lg mb-2">
+            “The mentorship and exposure I received here shaped my research mindset and prepared me for graduate studies abroad.”
+          </p>
+          <p className="text-right text-gray-600 text-sm">– Former Intern, IIT Delhi</p>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Contact</h2>
+        <div className="flex flex-col space-y-2 text-gray-700">
+          <div className="flex items-center gap-2">
+            <Mail className="h-5 w-5 text-indigo-600" />
+            <span>Email: <a href="mailto:lakshmi.r@material.iitd.ac.in" className="underline">lakshmi.r@material.iitd.ac.in</a></span>
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPin className="h-5 w-5 text-indigo-600" />
+            <span>IIT Delhi, Department of Materials Science & Engineering</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ProspectiveStudents;
