@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research | Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     html, body {
       margin: 0;
@@ -124,12 +123,6 @@
       position: relative;
       border-left: 3.5px solid #ffd70044;
     }
-    .projects-list li i, .grants-list li i, .consult-list li i, .collab-list li i {
-      color: #ffd700b2;
-      font-size: 1rem;
-      min-width: 1.2rem;
-      margin-top: 2.5px;
-    }
     .grants-subtitle {
       color: #F9F9F9;
       margin-top: 1.1rem;
@@ -147,14 +140,18 @@
       margin-top: 0.7rem;
       justify-content: flex-start;
     }
-    .gallery img, .facilities-gallery img {
+    /* Updated: Make Research Gallery images same size as Research Facility images */
+    .gallery img, .facilities-gallery img, .facility-card img {
       border-radius: 7px;
       box-shadow: 0 1px 10px #000a;
       max-width: 200px;
       max-height: 120px;
+      width: 200px;
+      height: 120px;
       border: 2.5px solid #ffd70044;
       object-fit: cover;
       background: #232323;
+      display: block;
     }
     .gallery-placeholder, .videos-placeholder, .facilities-placeholder {
       color: #bababa;
@@ -212,7 +209,6 @@
       margin-top: 0.2rem;
       font-size: 0.93rem;
     }
-    /* Accent bars for visual pop */
     .section {
       border-top: 3.5px solid #ffd70060;
       border-bottom: 1.5px solid #ffd7001a;
@@ -222,7 +218,6 @@
       background: linear-gradient(90deg, #181818 90%, #ffd70011 100%);
       border-left: 2.5px solid #ffd70023;
     }
-    /* Responsive */
     @media (max-width: 700px) {
       main { padding: 4.2rem 2vw 2vw 2vw; }
       .section { padding: 0.7rem;}
@@ -230,13 +225,12 @@
       h2 { font-size: 0.8rem;}
       nav { font-size: 8.5px; gap: 0.7rem; padding: 0.6rem 0.3rem;}
       .facility-card { min-width: 100px; padding: 0.5rem;}
-      .gallery img, .facilities-gallery img { max-width: 100px; max-height: 60px;}
+      .gallery img, .facilities-gallery img, .facility-card img { max-width: 100px; max-height: 60px; width: 100px; height: 60px;}
       .videos iframe { width: 180px; height: 100px;}
     }
   </style>
 </head>
 <body>
-  <!-- Navigation bar copied from index.html -->
   <nav>
     <a href="#home">Home</a>
     <a href="team.html">The Team</a>
@@ -249,58 +243,60 @@
     <a href="contact.html">Contact</a>
   </nav>
   <main>
-    <h1><i class="fas fa-flask"></i>Research at Dhātu-yantra-pravartana Lab</h1>
+    <h1>Research at Dhātu-yantra-pravartana Lab</h1>
     <div class="section">
-      <h2><i class="fas fa-project-diagram"></i>Current Research Projects</h2>
+      <h2>Current Research Projects</h2>
       <ul class="projects-list">
-        <li><i class="fas fa-atom"></i> Fracture and Fatigue of BMGs and BMG composites</li>
-        <li><i class="fas fa-cubes"></i> Structure-Property correlations in 3D printed Maraging steels</li>
-        <li><i class="fas fa-magnet"></i> Mechanical behaviour of Heusler alloys</li>
-        <li><i class="fas fa-bolt"></i> Fracture of Mg alloys <span style="color:#ffd70099;font-size:0.97em;">(with Prof. Jayant Jain)</span></li>
-        <li><i class="fas fa-layer-group"></i> Mechanical behavior of 3D printed high entropy alloys</li>
-        <li><i class="fas fa-hard-hat"></i> Fracture and fatigue of reactor pressure vessel steels</li>
-        <li><i class="fas fa-cube"></i> Mechanical behaviour of SLM Al-Sc alloys</li>
-        <li><i class="fas fa-dna"></i> Fracture and Fatigue of 3D printed Ti alloys</li>
+        <li>Fracture and Fatigue of BMGs and BMG composites</li>
+        <li>Structure-Property correlations in 3D printed Maraging steels</li>
+        <li>Mechanical behaviour of Heusler alloys</li>
+        <li>Fracture of Mg alloys (with Prof. Jayant Jain)</li>
+        <li>Mechanical behavior of 3D printed high entropy alloys</li>
+        <li>Fracture and fatigue of reactor pressure vessel steels</li>
+        <li>Mechanical behaviour of SLM Al-Sc alloys</li>
+        <li>Fracture and Fatigue of 3D printed Ti alloys</li>
       </ul>
     </div>
     <div class="section">
-      <h2><i class="fas fa-coins"></i>Research Grants (as PI)</h2>
+      <h2>Research Grants (as PI)</h2>
       <ul class="grants-list">
-        <li><i class="fas fa-award"></i> "Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", <b>1500 Lakh</b>, Aerospace Research and Development board, DRDO, <span style="color:#ffd700b0;">(2025- Ongoing)</span>.</li>
-        <li><i class="fas fa-award"></i> "Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", <b>Rs. 50 Lakh</b>, India-Taiwan Program of collaboration in Science and Technology, <span style="color:#ffd700b0;">(2025-Ongoing)</span>.</li>
-        <li><i class="fas fa-award"></i> "Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", <b>Rs. 120 Lakh</b>, DST-IC-IMPACTS (India-Canada Joint Proposal) <span style="color:#ffd700b0;">(2023-Ongoing)</span>.</li>
-        <li><i class="fas fa-award"></i> Institute seed grant, <b>Rs. 20 Lakh</b> (2019-2020).</li>
-        <li><i class="fas fa-award"></i> "Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", <b>Rs. 33 Lakh</b>, Start-up Research Grant, SERB DST (2020-22).</li>
-        <li><i class="fas fa-award"></i> Institute equipment matching grant, <b>Rs. 22 lakh</b> (2020-2022).</li>
+        <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing).</li>
+        <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology, (2025-Ongoing).</li>
+        <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 120 Lakh, DST-IC-IMPACTS (India-Canada Joint Proposal) (2023-Ongoing).</li>
+        <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
+        <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
+        <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
       </ul>
       <div class="grants-subtitle">Research Grants (as co-PI)</div>
       <ul class="grants-list">
-        <li><i class="fas fa-hand-holding-heart"></i> "Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", <b>40 Lakh</b>, Ministry of Tribal affairs, <span style="color:#ffd700b0;">(2025- Ongoing)</span>.</li>
-        <li><i class="fas fa-hand-holding-heart"></i> "Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", <b>40 Lakh</b>, Ministry of Tribal affairs, <span style="color:#ffd700b0;">(2025- Ongoing)</span>.</li>
+        <li>"Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
+        <li>"Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
       </ul>
     </div>
     <div class="section">
-      <h2><i class="fas fa-tools"></i>Consultancies</h2>
+      <h2>Consultancies</h2>
       <ul class="consult-list">
-        <li><i class="fas fa-search"></i> Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), <b>Rs. 3.5 Lakh</b></li>
-        <li><i class="fas fa-flask"></i> Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, <b>Rs. 42 Lakh</b> (Completed).</li>
-        <li><i class="fas fa-chart-line"></i> Fatigue of steel, Senvion ltd, <b>4 lakh</b> (Completed).</li>
+        <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
+        <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
+        <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
       </ul>
-      <div style="margin-top:0.7rem;color:#ccc;font-size:0.95rem;">We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancy projects being handled.</div>
+      <div style="margin-top:0.7rem;color:#ccc;font-size:0.95rem;">
+        We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancy projects being handled.
+      </div>
     </div>
     <div class="section">
-      <h2><i class="fas fa-users"></i>Collaborations</h2>
+      <h2>Collaborations</h2>
       <ul class="collab-list">
-        <li><i class="fas fa-university"></i> NTU Singapore</li>
-        <li><i class="fas fa-university"></i> Shenyang National Laboratory, China</li>
-        <li><i class="fas fa-university"></i> Xi'an Jiaotong University, China</li>
-        <li><i class="fas fa-building"></i> Cyient Technologies</li>
-        <li><i class="fas fa-university"></i> Dalian Jiaotong University, Dalian</li>
-        <li><i class="fas fa-university"></i> HZB, Dresden</li>
+        <li>NTU Singapore</li>
+        <li>Shenyang National Laboratory, China</li>
+        <li>Xi'an Jiaotong University, China</li>
+        <li>Cyient Technologies</li>
+        <li>Dalian Jiaotong University, Dalian</li>
+        <li>HZB, Dresden</li>
       </ul>
     </div>
     <div class="section">
-      <h2><i class="fab fa-youtube"></i>Research Videos</h2>
+      <h2>Research Videos</h2>
       <div class="videos">
         <!-- YouTube video embed demo (replace src with your own) -->
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
@@ -310,21 +306,21 @@
       </div>
     </div>
     <div class="section">
-      <h2><i class="fas fa-images"></i>Research Gallery</h2>
+      <h2>Research Gallery</h2>
       <div class="gallery">
         <!-- Demo image, replace src with your own -->
         <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Demo Research Photo">
       </div>
     </div>
     <div class="section">
-      <h2><i class="fas fa-microscope"></i>Research Facilities</h2>
+      <h2>Research Facilities</h2>
       <div class="facilities-list">
         <div class="facility-card">
-          <h3><i class="fas fa-industry"></i> INDUSTRON NANOGURU NG50</h3>
+          <h3>INDUSTRON NANOGURU NG50</h3>
           <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
         </div>
         <div class="facility-card">
-          <h3><i class="fas fa-sync-alt"></i> ROTATING BENDING FATIGUE TESTING MACHINE</h3>
+          <h3>ROTATING BENDING FATIGUE TESTING MACHINE</h3>
           <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
         </div>
       </div>
