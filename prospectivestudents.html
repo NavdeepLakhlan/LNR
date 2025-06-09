@@ -192,9 +192,71 @@
       font-size: 0.98rem;
       margin-bottom: 0.1rem;
     }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(110deg,#181818 90%, #ffd70013 100%);
+      border-radius: 13px;
+      box-shadow: 0 3px 16px 0 #000a;
+      border: 0.5px solid #ffd70022;
+      padding: 1.6rem 1.6rem 2.2rem 1.6rem;
+      margin-bottom: 2.2rem;
+      animation: fadeinup 1.5s cubic-bezier(.2,1,.22,1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+    .contact-details {
+      flex: 1 1 300px;
+      min-width: 250px;
+      color: #f6f6f6;
+      font-size: 1.04rem;
+      letter-spacing: 0.02rem;
+      line-height: 1.7;
+    }
+    .contact-details strong {
+      color: #ffd700;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .contact-details a {
+      color: #ffd700;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+    .map-embed {
+      flex: 1 1 340px;
+      min-width: 250px;
+      max-width: 410px;
+      height: 265px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 16px #000c;
+      border: 2.5px solid #ffd70033;
+      background: #232323;
+    }
     @keyframes fadeinup {
       from { opacity: 0; transform: translateY(35px);}
       to { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 900px) {
+      .contact-section {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+      }
+      .map-embed {
+        max-width: 100%;
+        width: 100%;
+        height: 220px;
+      }
+      .contact-details {
+        font-size: 0.98rem;
+      }
     }
     @media (max-width: 700px) {
       main { padding: 4.2rem 2vw 2vw 2vw; }
@@ -204,6 +266,8 @@
       .intro-section, .cta-section, .faq-section { padding: 0.9rem;}
       .highlights { flex-direction: column; gap: 0.7rem;}
       .highlight-card { padding: 0.7rem; min-width: 120px;}
+      .contact-section { padding: 0.7rem;}
+      .map-embed { height: 160px; }
     }
   </style>
 </head>
@@ -279,6 +343,41 @@
         </li>
       </ul>
     </div>
+    <!-- Contact Section Starts Here -->
+    <div class="contact-section" id="contact">
+      <div class="contact-details">
+        <strong>Department of Materials Science & Engineering (DMSE)</strong><br>
+        Indian Institute of Technology Delhi (IIT Delhi)<br>
+        Hauz Khas, New Delhi-110016<br>
+        India<br>
+        <br>
+        <strong>Office:</strong> 310H, Academic Complex (West)<br>
+        <br>
+        <strong>Email:</strong> 
+        <a href="mailto:rlnarayan@mse.iitd.ac.in">rlnarayan@mse.iitd.ac.in</a>, 
+        <a href="mailto:rlnarayan@iitd.ac.in">rlnarayan@iitd.ac.in</a><br>
+        <strong>Tel. (office):</strong> +91-11-2659-1494<br>
+        <strong>Fax (Office):</strong> +91-11-2659-1421<br>
+        <br>
+        <strong>Address for Google Maps:</strong><br>
+        Academic Complex West · G5VR+7M6, IIT Campus,<br>
+        Indian Institute of Technology Delhi, Hauz Khas,<br>
+        New Delhi, Delhi 110016, India
+      </div>
+      <div class="map-embed">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d1%3A0x7c4b0f3e9b0f2b2e!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1718024257486!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="IIT Delhi Location">
+        </iframe>
+      </div>
+    </div>
+    <!-- Contact Section Ends Here -->
   </main>
   <footer style="background:#111; padding:1.4rem; text-align:center; color:#aaa; font-size:0.93rem;">
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
