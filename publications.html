@@ -14,12 +14,14 @@
       --header-fg: #fff;
       --border: #e0e0e0;
       --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --focus: #ffb703;
     }
     body {
       font-family: 'Roboto', sans-serif;
       background: var(--bg);
       margin: 0;
-      color: #282828;
+      color: #222;
+      line-height: 1.6;
     }
     header {
       background: var(--header-bg);
@@ -60,6 +62,35 @@
       line-height: 1.3;
       letter-spacing: 0.5px;
     }
+    .pub-year-group {
+      margin-bottom: 1.7em;
+    }
+    .pub-year-header {
+      background: #eaf6fb;
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0.7em 1em;
+      border-radius: 5px;
+      margin: 1.5em 0 0.8em 0;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+    }
+    .pub-year-header:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 2px var(--focus);
+    }
+    .pub-year-header .chevron {
+      margin-right: 0.5em;
+      font-size: 1.2em;
+      transition: transform 0.2s;
+    }
+    .pub-year-header[aria-expanded="true"] .chevron {
+      transform: rotate(90deg);
+    }
     .pub-list {
       list-style: none;
       padding: 0;
@@ -76,7 +107,7 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .pub-card:hover {
+    .pub-card:hover, .pub-card:focus-within {
       box-shadow: 0 4px 24px rgba(0,119,182,0.11);
       background: #f0fbff;
     }
@@ -94,12 +125,6 @@
       font-style: italic;
       margin-left: 0.7em;
     }
-    .pub-year {
-      float: right;
-      color: #999;
-      font-size: 0.98em;
-      margin-top: 0.18em;
-    }
     .subsection-title {
       font-size: 1.13em;
       color: #555;
@@ -115,6 +140,21 @@
       margin-bottom: 1.2em;
       margin-top: 0.5em;
       font-size: 1.07em;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline dotted;
+    }
+    a:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
     }
     @media (max-width: 600px) {
       header {
@@ -137,38 +177,30 @@
     <h1>Publications</h1>
     <p>R. Lakshmi Narayan – Articles, Editorials, Lectures, and More</p>
   </header>
-  <div class="container">
-    <section>
-      <h2>Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
+  <main class="container" id="main-content" tabindex="-1">
+    <section aria-labelledby="articles-title">
+      <h2 id="articles-title">Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
 
       <div class="subsection-title">International Journals</div>
-      <ul class="pub-list">
-        <li class="pub-card"><span class="pub-num">79.</span> Yaojie Wen, Yang Gao, R. Lakshmi Narayan*, Wei Cai, Pei Wang, Xiaoding Wei, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu, <span class="pub-title">"Tensile Behavior of Additively Manufactured Inconel 718 and Stainless Steel 316L with Compositionally Graded Joints"</span>, <span class="pub-journal">International Journal of Plasticity (2025), Accepted</span></li>
-        <li class="pub-card"><span class="pub-num">78.</span> Vijay Shankar Sridharan, Virendra Kumar Verma, R. Lakshmi Narayan*, Xu Lu, Du Siwei, Varun Chaudhary, Li Hua, Dong ZhiLi, <span class="pub-title">"Hydrogen embrittlement of Additively manufactured metallic materials"</span> <span class="pub-journal">International Journal of Hydrogen Energy (2025), Accepted.</span></li>
-        <li class="pub-card"><span class="pub-num">77.</span> D. Mishra, A. Dhalb, X. Li, S. Guo, R.L. Narayan, R.S. Mishra, J. Singh, S.S. Nene, <span class="pub-title">"Phase separation induced heterostructure promotes strength-ductility synergy in Cu-rich compositionally complex alloy in as-cast state"</span>, <span class="pub-journal">Materials Today Communications (2025), Accepted.</span></li>
-        <li class="pub-card"><span class="pub-num">76.</span> S.A. Smirnov, A.V. Filippova, O.N. Dubinin, S.A. Shalnova, A.P. Simonov, I.V Sergeichev, G. Qian, A. Dmitrieva, S.V. Zherebtsov, R. L. Narayan* and S.A. Evlashin <span class="pub-title">"In-Situ Alloying of Directed Energy Deposition fabricated Ti6Al4V with Nitrogen"</span>, <span class="pub-journal">Journal of Alloys and Compounds (2025), Accepted.</span></li>
-        <li class="pub-card"><span class="pub-num">75.</span> J. Vigneshwaran, Arunkumar Sakthivel, Ankita Kumari, R. L. Narayan*, V Chakkravarthy, Dibyajyoti Ghosh, and Sujin P J, <span class="pub-title">"Efficiently designed three-dimensional architecture of CoMn2O4 decorated V2CTx MXene for asymmetric supercapacitors"</span>, <span class="pub-journal">ACS Applied Materials and Interfaces (2024), Accepted.</span></li>
-        <!-- Continue with the rest in the same format for all 79 entries -->
-        <!-- ... (For brevity, only the first few are shown. Repeat the <li class="pub-card"> for each publication.) -->
-      </ul>
+      <div id="pubs-intl"></div>
 
       <div class="subsection-title">National Journals</div>
-      <div class="simple-list">
+      <div class="simple-list" id="pubs-national">
         K.S.N.S. Idury, R.L. Narayan*, "State-of-the-art in Laser Powder Bed Fusion of Aluminium Alloys", <em>IIM Metal News</em>, (2023), Accepted.
       </div>
 
       <div class="subsection-title">Editorials</div>
-      <div class="simple-list">
+      <div class="simple-list" id="editorials">
         1. Mangalampalli S.R.N. Kiran, D. Pamu, R. Lakshmi Narayan*, K. Eswara Prasad, Suresh Perumal, Srinivasa Rao Bakshi, “Advances in Functional and Structural Ceramics: Development, characterization, and applications”, <em>Ceramics International</em>, (2022).
       </div>
 
       <div class="subsection-title">Conference Proceedings</div>
-      <div class="simple-list">
+      <div class="simple-list" id="proceedings">
         1. V Chakkravarthy, Sujin P Jose, M Lakshmanan, P Manojkumar, R. Lakshmi Narayan, M Kumaran, "Additive manufacturing of novel Ti-30Nb-2Zr biomimetic scaffolds for successful limb salvage", <em>Materials Today: Proceedings</em> (2022), Accepted
       </div>
 
       <div class="subsection-title">Invited Lectures</div>
-      <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;">
+      <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;" id="invited">
         <li>ICAMAT, Trichy, 2022, Invited talk</li>
         <li>AUT winter School, Iran, 2022, Invited Keynote</li>
         <li>IMAT Iran, 2021, Invited Keynote</li>
@@ -179,6 +211,128 @@
         <li>IIT Madras, 2017, Invited lecture</li>
       </ul>
     </section>
-  </div>
+  </main>
+
+  <script>
+    // Data for publications (add more entries as needed)
+    const publications = [
+      {
+        num: 79,
+        authors: 'Yaojie Wen, Yang Gao, R. Lakshmi Narayan*, Wei Cai, Pei Wang, Xiaoding Wei, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu',
+        title: 'Tensile Behavior of Additively Manufactured Inconel 718 and Stainless Steel 316L with Compositionally Graded Joints',
+        journal: 'International Journal of Plasticity (2025), Accepted',
+        year: 2025
+      },
+      {
+        num: 78,
+        authors: 'Vijay Shankar Sridharan, Virendra Kumar Verma, R. Lakshmi Narayan*, Xu Lu, Du Siwei, Varun Chaudhary, Li Hua, Dong ZhiLi',
+        title: 'Hydrogen embrittlement of Additively manufactured metallic materials',
+        journal: 'International Journal of Hydrogen Energy (2025), Accepted.',
+        year: 2025
+      },
+      {
+        num: 77,
+        authors: 'D. Mishra, A. Dhalb, X. Li, S. Guo, R.L. Narayan, R.S. Mishra, J. Singh, S.S. Nene',
+        title: 'Phase separation induced heterostructure promotes strength-ductility synergy in Cu-rich compositionally complex alloy in as-cast state',
+        journal: 'Materials Today Communications (2025), Accepted.',
+        year: 2025
+      },
+      {
+        num: 76,
+        authors: 'S.A. Smirnov, A.V. Filippova, O.N. Dubinin, S.A. Shalnova, A.P. Simonov, I.V Sergeichev, G. Qian, A. Dmitrieva, S.V. Zherebtsov, R. L. Narayan* and S.A. Evlashin',
+        title: 'In-Situ Alloying of Directed Energy Deposition fabricated Ti6Al4V with Nitrogen',
+        journal: 'Journal of Alloys and Compounds (2025), Accepted.',
+        year: 2025
+      },
+      {
+        num: 75,
+        authors: 'J. Vigneshwaran, Arunkumar Sakthivel, Ankita Kumari, R. L. Narayan*, V Chakkravarthy, Dibyajyoti Ghosh, and Sujin P J',
+        title: 'Efficiently designed three-dimensional architecture of CoMn2O4 decorated V2CTx MXene for asymmetric supercapacitors',
+        journal: 'ACS Applied Materials and Interfaces (2024), Accepted.',
+        year: 2024
+      }
+      // ... Add more publications here
+    ];
+
+    // Helper: bold all "R. Lakshmi Narayan" variants in author strings
+    function boldLakshmiNarayan(str) {
+      // Accepts most variants: R. Lakshmi Narayan, R.L. Narayan, R. L. Narayan, R.Lakshmi Narayan, etc.
+      return str.replace(/(R\.?\s*L\.?\s*|R\.?\s*)?Lakshmi\s+Narayan(\*?)/gi, '<strong>R. Lakshmi Narayan$2</strong>');
+    }
+
+    // Group publications by year
+    function groupByYear(publications) {
+      const map = {};
+      publications.forEach(pub => {
+        const year = pub.year || 'Unknown';
+        if (!map[year]) map[year] = [];
+        map[year].push(pub);
+      });
+      // Sort years descending
+      const sorted = Object.entries(map).sort((a, b) => b[0] - a[0]);
+      return sorted;
+    }
+
+    // Render publications, grouped by year, collapsible
+    function renderPublications() {
+      const container = document.getElementById('pubs-intl');
+      const grouped = groupByYear(publications);
+      grouped.forEach(([year, pubs], idx) => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'pub-year-group';
+
+        // Collapsible year header
+        const header = document.createElement('button');
+        header.className = 'pub-year-header';
+        header.setAttribute('aria-expanded', idx === 0 ? "true" : "false");
+        header.setAttribute('aria-controls', `pub-list-${year}`);
+        header.setAttribute('tabindex', '0');
+        header.innerHTML =
+          `<span class="chevron" aria-hidden="true">&#9654;</span> ${year} <span class="sr-only">Publications for ${year}</span>`;
+
+        // Publications list
+        const list = document.createElement('ul');
+        list.className = 'pub-list';
+        list.id = `pub-list-${year}`;
+        list.style.display = idx === 0 ? "block" : "none";
+
+        pubs.forEach(pub => {
+          const li = document.createElement('li');
+          li.className = 'pub-card';
+          li.innerHTML = `<span class="pub-num">${pub.num}.</span> ${boldLakshmiNarayan(pub.authors)}, <span class="pub-title">"${pub.title}"</span>, <span class="pub-journal">${pub.journal}</span>`;
+          list.appendChild(li);
+        });
+
+        // Toggle collapse
+        header.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === "true";
+          this.setAttribute('aria-expanded', !expanded);
+          list.style.display = expanded ? "none" : "block";
+        });
+        // Keyboard accessibility for collapse
+        header.addEventListener('keydown', function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            this.click();
+          }
+        });
+
+        groupDiv.appendChild(header);
+        groupDiv.appendChild(list);
+        container.appendChild(groupDiv);
+      });
+    }
+
+    // Bold R. Lakshmi Narayan in other lists too
+    function boldNamesEverywhere() {
+      ['pubs-national', 'editorials', 'proceedings', 'invited'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = boldLakshmiNarayan(el.innerHTML);
+      });
+    }
+
+    renderPublications();
+    boldNamesEverywhere();
+  </script>
 </body>
 </html>
