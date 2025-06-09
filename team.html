@@ -63,8 +63,8 @@
       text-align: center;
     }
     .pi-image-block img {
-      width: 300px;
-      height: 300px;
+      width: 450px;   /* Increased by 1.5x from 300px */
+      height: 450px;  /* Increased by 1.5x from 300px */
       clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
       object-fit: cover;
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
@@ -101,8 +101,8 @@
         text-align: justify;
       }
       .pi-image-block img {
-        width: 225px;
-        height: 225px;
+        width: 337.5px;  /* 1.5x of 225px */
+        height: 337.5px;
       }
     }
 
@@ -124,7 +124,7 @@
       display: flex;
       overflow: hidden;
       position: relative;
-      height: 380px;
+      height: 570px; /* Increased from 380px to accommodate bigger cards */
       align-items: center;
       justify-content: center;
     }
@@ -146,6 +146,9 @@
       display: flex;
       gap: 1.5rem;
       align-items: center;
+      min-height: 525px; /* Increased min-height for card */
+      height: 525px;     /* Increased height for card */
+      box-sizing: border-box;
     }
 
     .carousel-item.active {
@@ -198,9 +201,10 @@
     .carousel-btn.left { left: -30px; }
     .carousel-btn.right { right: -30px; }
 
-    .pi-image-block img {
-      width: 225px;
-      height: 225px;
+    /* Make all PhD student pictures 1.5x larger */
+    .carousel-item .pi-image-block img {
+      width: 337.5px;  /* 1.5x of 225px */
+      height: 337.5px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
@@ -244,6 +248,8 @@
         padding: 1rem;
         flex-direction: column;
         text-align: center;
+        min-height: 400px !important;
+        height: auto !important;
       }
 
       .pi-image-block {
@@ -254,9 +260,13 @@
         display: none;
       }
 
+      .carousel-item .pi-image-block img {
+        width: 270px !important;   /* 1.5x of 180px */
+        height: 270px !important;
+      }
       .pi-image-block img {
-        width: 180px !important;
-        height: 180px !important;
+        width: 337.5px !important;  /* 1.5x of 225px */
+        height: 337.5px !important;
       }
     }
   </style>
@@ -285,7 +295,7 @@
         <p>PhD – IISc Bangalore, B.Tech. – VNIT Nagpur</p>
       </div>
       <div class="pi-bio">
-        <p>Prof. Lakshmi Narayan completed his B.Tech. in Metallurgical and Materials Science Engineering at VNIT Nagpur in 2008 and received his PhD from IISc Bangalore in 2014. He was a Postdoctoral Fellow at Carnegie Mellon (2015–2017), also working with Xi’an Jiaotong University. He received the NTU-SC3DP Fellowship in 2018 and joined IIT Delhi in 2019, currently serving as Associate Professor.</p>
+        <p>Prof. Lakshmi Narayan completed his B.Tech. in Metallurgical and Materials Science Engineering at VNIT Nagpur in 2008 and received his PhD from IISc Bangalore in 2014. He was a Postdoctoral Fellow at the University of Cambridge before joining IIT Delhi. His research interests include advanced metallic materials, additive manufacturing, and microstructural evolution in alloys.</p>
       </div>
     </div>
   </section>
@@ -299,7 +309,7 @@
         <p>PhD – IIT Kanpur</p>
       </div>
       <div class="pi-bio">
-        <p>Dr. Ashwani Kumar is a Postdoctoral Researcher at DMSE, IIT Delhi. His research focuses on ODS ferritic steels, duplex stainless steels, and AM metal matrix composites. He joined in Oct 2023 after his PhD from IIT Kanpur.</p>
+        <p>Dr. Ashwani Kumar is a Postdoctoral Researcher at DMSE, IIT Delhi. His research focuses on ODS ferritic steels, duplex stainless steels, and AM metal matrix composites. He joined in Oct 2022 and plays an integral role in various collaborative research projects in the lab.</p>
       </div>
     </div>
   </section>
@@ -309,105 +319,101 @@
     <div class="carousel-container" aria-label="PhD Students Carousel">
       <button class="carousel-btn left" aria-label="Previous Student">&#10094;</button>
       <div class="carousel">
-        <!-- Add your PhD student carousel-item divs here --><div class="carousel-item active">
-<div class="carousel">
-  <!-- Ashwini -->
-  <div class="carousel-item active">
-    <div class="pi-image-block">
-      <img src="ashwini.jpg" alt="Ashwini - PhD Student" />
-      <h3>Ashwini</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Ashwini is a Ph.D. scholar in the Department of Materials Science and Engineering at IIT Delhi. Her work focuses on the microstructural evolution and mechanical behavior of additively manufactured steels. She joined the Dhātu-yantra-pravartana Lab in 2022.</p>
-    </div>
-  </div>
+        <!-- Ashwini -->
+        <div class="carousel-item active">
+          <div class="pi-image-block">
+            <img src="ashwini.jpg" alt="Ashwini - PhD Student" />
+            <h3>Ashwini</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Ashwini is a Ph.D. scholar in the Department of Materials Science and Engineering at IIT Delhi. Her work focuses on the microstructural evolution and mechanical behavior of additively manufactured steels.</p>
+          </div>
+        </div>
 
-  <!-- Amey -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="amey.jpg" alt="Amey - PhD Student" />
-      <h3>Amey</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Amey is a Ph.D. scholar in the Department of Materials Science and Engineering at IIT Delhi. His research revolves around advanced metal processing and solidification in additive manufacturing. He joined the Dhātu-yantra-pravartana Lab in 2022.</p>
-    </div>
-  </div>
+        <!-- Amey -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="amey.jpg" alt="Amey - PhD Student" />
+            <h3>Amey</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Amey is a Ph.D. scholar in the Department of Materials Science and Engineering at IIT Delhi. His research revolves around advanced metal processing and solidification in additive manufacturing.</p>
+          </div>
+        </div>
 
-  <!-- Simran -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="simran.jpg" alt="Simran - PhD Student" />
-      <h3>Simran</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Simran is a Ph.D. scholar at the Department of Materials Science and Engineering, IIT Delhi. Her research focuses on electron microscopy-based analysis of phase transformations in ferrous alloys. She joined the lab in 2023.</p>
-    </div>
-  </div>
+        <!-- Simran -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="simran.jpg" alt="Simran - PhD Student" />
+            <h3>Simran</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Simran is a Ph.D. scholar at the Department of Materials Science and Engineering, IIT Delhi. Her research focuses on electron microscopy-based analysis of phase transformations in ferrous alloys.</p>
+          </div>
+        </div>
 
-  <!-- Karthik -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="karthik.jpg" alt="Karthik - PhD Student" />
-      <h3>Karthik</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Karthik is a Ph.D. student in Materials Science at IIT Delhi. His work involves high-temperature fatigue and creep studies in advanced alloys used for structural applications. He joined the Dhātu-yantra-pravartana Lab in 2021.</p>
-    </div>
-  </div>
+        <!-- Karthik -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="karthik.jpg" alt="Karthik - PhD Student" />
+            <h3>Karthik</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Karthik is a Ph.D. student in Materials Science at IIT Delhi. His work involves high-temperature fatigue and creep studies in advanced alloys used for structural applications. He joined the Department in 2021.</p>
+          </div>
+        </div>
 
-  <!-- Akash -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="akash.jpg" alt="Akash - PhD Student" />
-      <h3>Akash</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Akash is a Ph.D. research scholar at IIT Delhi working on mechanical behavior and fracture analysis of steels manufactured using additive techniques. He joined the lab in 2023.</p>
-    </div>
-  </div>
+        <!-- Akash -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="akash.jpg" alt="Akash - PhD Student" />
+            <h3>Akash</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Akash is a Ph.D. research scholar at IIT Delhi working on mechanical behavior and fracture analysis of steels manufactured using additive techniques. He joined the lab in 2023.</p>
+          </div>
+        </div>
 
-  <!-- Sukmaji -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="sukmaji.jpg" alt="Sukmaji - PhD Student" />
-      <h3>Sukmaji</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Sukmaji is a Ph.D. scholar from Indonesia pursuing research at IIT Delhi under international collaboration. His research focuses on residual stress modeling in DED-manufactured steels. He joined the Dhātu-yantra-pravartana Lab in 2021.</p>
-    </div>
-  </div>
+        <!-- Sukmaji -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="sukmaji.jpg" alt="Sukmaji - PhD Student" />
+            <h3>Sukmaji</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Sukmaji is a Ph.D. scholar from Indonesia pursuing research at IIT Delhi under international collaboration. His research focuses on residual stress modeling in DED-manufactured steels. He joined in 2022.</p>
+          </div>
+        </div>
 
-  <!-- Shantanu Jain -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="shantanu.jpg" alt="Shantanu Jain - PhD Student" />
-      <h3>Shantanu Jain</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Shantanu is a Ph.D. scholar at IIT Delhi working in the field of structure–property correlation in novel alloy systems manufactured via additive manufacturing. He joined the Dhātu-yantra-pravartana Lab in 2024.</p>
-    </div>
-  </div>
+        <!-- Shantanu Jain -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="shantanu.jpg" alt="Shantanu Jain - PhD Student" />
+            <h3>Shantanu Jain</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Shantanu is a Ph.D. scholar at IIT Delhi working in the field of structure–property correlation in novel alloy systems manufactured via additive manufacturing. He joined the Dhātu-yantra-pravartana Lab in 2022.</p>
+          </div>
+        </div>
 
-  <!-- Kishor Kumar -->
-  <div class="carousel-item">
-    <div class="pi-image-block">
-      <img src="kishor.jpg" alt="Kishor Kumar - PhD Student" />
-      <h3>Kishor Kumar</h3>
-      <p>Ph.D. Research Scholar</p>
-    </div>
-    <div class="pi-bio">
-      <p>Kishor is a Ph.D. scholar at the Department of Materials Science and Engineering, IIT Delhi. His work centers on solidification and phase transformation studies in high-strength steels for additive manufacturing. He joined the lab in 2023.</p>
-    </div>
-  </div>
-</div>
-        
+        <!-- Kishor Kumar -->
+        <div class="carousel-item">
+          <div class="pi-image-block">
+            <img src="kishor.jpg" alt="Kishor Kumar - PhD Student" />
+            <h3>Kishor Kumar</h3>
+            <p>Ph.D. Research Scholar</p>
+          </div>
+          <div class="pi-bio">
+            <p>Kishor is a Ph.D. scholar at the Department of Materials Science and Engineering, IIT Delhi. His work centers on solidification and phase transformation studies in high-strength steels for additive manufacturing.</p>
+          </div>
+        </div>
       </div>
       <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
     </div>
