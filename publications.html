@@ -20,15 +20,43 @@
       font-family: 'Roboto', sans-serif;
       background: var(--bg);
       margin: 0;
-      color: #282828;
       color: #222;
       line-height: 1.6;
     }
     header {
       background: var(--header-bg);
-@@ -60,6 +62,35 @@
-      line-height: 1.3;
-      letter-spacing: 0.5px;
+      color: var(--header-fg);
+      padding: 1.5em 0 1em 0;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    header h1 {
+      font-size: 2.2em;
+      margin: 0 0 0.25em 0;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    header p {
+      font-size: 1.13em;
+      margin: 0;
+    }
+    .container {
+      max-width: 850px;
+      margin: 1.8em auto 2.8em auto;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 2.1em 1.5em 2em 1.5em;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    .subsection-title {
+      font-size: 1.13em;
+      color: #555;
+      margin: 2em 0 0.7em 0;
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
     .pub-year-group {
       margin-bottom: 1.7em;
@@ -62,31 +90,37 @@
     .pub-list {
       list-style: none;
       padding: 0;
-@@ -76,7 +107,7 @@
+      margin: 0 0 0.7em 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .pub-card:hover {
+    .pub-card {
+      padding: 1.05em 1em 0.95em 1em;
+      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+      transition: box-shadow 0.14s, background 0.14s;
+      font-size: 1.03em;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+    }
+    .pub-card:last-child {
+      border-bottom: none;
+    }
     .pub-card:hover, .pub-card:focus-within {
       box-shadow: 0 4px 24px rgba(0,119,182,0.11);
       background: #f0fbff;
     }
-@@ -94,12 +125,6 @@
+    .pub-num {
+      font-weight: bold;
+      color: var(--accent);
+      margin-right: 0.85em;
+    }
+    .pub-title {
+      font-weight: 500;
+    }
+    .pub-journal {
       font-style: italic;
       margin-left: 0.7em;
-    }
-    .pub-year {
-      float: right;
-      color: #999;
-      font-size: 0.98em;
-      margin-top: 0.18em;
-    }
-    .subsection-title {
-      font-size: 1.13em;
-      color: #555;
-@@ -116,6 +141,21 @@
-      margin-top: 0.5em;
-      font-size: 1.07em;
     }
     a {
       color: var(--accent);
@@ -106,60 +140,49 @@
     @media (max-width: 600px) {
       header {
         padding: 1.1em 0 0.5em 0;
-@@ -137,38 +177,30 @@
+      }
+      .container {
+        max-width: 98vw;
+        padding: 1em 0.5em 1.5em 0.5em;
+      }
+      .pub-year-header {
+        font-size: 1em;
+        padding: 0.6em 0.7em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
     <h1>Publications</h1>
     <p>R. Lakshmi Narayan – Articles, Editorials, Lectures, and More</p>
   </header>
-  <div class="container">
-    <section>
-      <h2>Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
   <main class="container" id="main-content" tabindex="-1">
     <section aria-labelledby="articles-title">
       <h2 id="articles-title">Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
-
       <div class="subsection-title">International Journals</div>
-      <ul class="pub-list">
-        <li class="pub-card"><span class="pub-num">79.</span> Yaojie Wen, Yang Gao, R. Lakshmi Narayan*, Wei Cai, Pei Wang, Xiaoding Wei, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu, <span class="pub-title">"Tensile Behavior of Additively Manufactured Inconel 718 and Stainless Steel 316L with Compositionally Graded Joints"</span>, <span class="pub-journal">International Journal of Plasticity (2025), Accepted</span></li>
-        <li class="pub-card"><span class="pub-num">78.</span> Vijay Shankar Sridharan, Virendra Kumar Verma, R. Lakshmi Narayan*, Xu Lu, Du Siwei, Varun Chaudhary, Li Hua, Dong ZhiLi, <span class="pub-title">"Hydrogen embrittlement of Additively manufactured metallic materials"</span> <span class="pub-journal">International Journal of Hydrogen Energy (2025), Accepted.</span></li>
-        <li class="pub-card"><span class="pub-num">77.</span> D. Mishra, A. Dhalb, X. Li, S. Guo, R.L. Narayan, R.S. Mishra, J. Singh, S.S. Nene, <span class="pub-title">"Phase separation induced heterostructure promotes strength-ductility synergy in Cu-rich compositionally complex alloy in as-cast state"</span>, <span class="pub-journal">Materials Today Communications (2025), Accepted.</span></li>
-        <li class="pub-card"><span class="pub-num">76.</span> S.A. Smirnov, A.V. Filippova, O.N. Dubinin, S.A. Shalnova, A.P. Simonov, I.V Sergeichev, G. Qian, A. Dmitrieva, S.V. Zherebtsov, R. L. Narayan* and S.A. Evlashin <span class="pub-title">"In-Situ Alloying of Directed Energy Deposition fabricated Ti6Al4V with Nitrogen"</span>, <span class="pub-journal">Journal of Alloys and Compounds (2025), Accepted.</span></li>
-        <li class="pub-card"><span class="pub-num">75.</span> J. Vigneshwaran, Arunkumar Sakthivel, Ankita Kumari, R. L. Narayan*, V Chakkravarthy, Dibyajyoti Ghosh, and Sujin P J, <span class="pub-title">"Efficiently designed three-dimensional architecture of CoMn2O4 decorated V2CTx MXene for asymmetric supercapacitors"</span>, <span class="pub-journal">ACS Applied Materials and Interfaces (2024), Accepted.</span></li>
-        <!-- Continue with the rest in the same format for all 79 entries -->
-        <!-- ... (For brevity, only the first few are shown. Repeat the <li class="pub-card"> for each publication.) -->
-      </ul>
       <div id="pubs-intl"></div>
-
       <div class="subsection-title">National Journals</div>
-      <div class="simple-list">
       <div class="simple-list" id="pubs-national">
         K.S.N.S. Idury, R.L. Narayan*, "State-of-the-art in Laser Powder Bed Fusion of Aluminium Alloys", <em>IIM Metal News</em>, (2023), Accepted.
       </div>
-
       <div class="subsection-title">Editorials</div>
-      <div class="simple-list">
       <div class="simple-list" id="editorials">
         1. Mangalampalli S.R.N. Kiran, D. Pamu, R. Lakshmi Narayan*, K. Eswara Prasad, Suresh Perumal, Srinivasa Rao Bakshi, “Advances in Functional and Structural Ceramics: Development, characterization, and applications”, <em>Ceramics International</em>, (2022).
       </div>
-
       <div class="subsection-title">Conference Proceedings</div>
-      <div class="simple-list">
       <div class="simple-list" id="proceedings">
         1. V Chakkravarthy, Sujin P Jose, M Lakshmanan, P Manojkumar, R. Lakshmi Narayan, M Kumaran, "Additive manufacturing of novel Ti-30Nb-2Zr biomimetic scaffolds for successful limb salvage", <em>Materials Today: Proceedings</em> (2022), Accepted
       </div>
-
       <div class="subsection-title">Invited Lectures</div>
-      <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;">
       <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;" id="invited">
         <li>ICAMAT, Trichy, 2022, Invited talk</li>
         <li>AUT winter School, Iran, 2022, Invited Keynote</li>
         <li>IMAT Iran, 2021, Invited Keynote</li>
-@@ -179,6 +211,128 @@
         <li>IIT Madras, 2017, Invited lecture</li>
       </ul>
     </section>
-  </div>
   </main>
-
   <script>
     // Data for publications (add more entries as needed)
     const publications = [
@@ -198,7 +221,7 @@
         journal: 'ACS Applied Materials and Interfaces (2024), Accepted.',
         year: 2024
       }
-      // ... Add more publications here
+      // ... Add more publications here as needed
     ];
 
     // Helper: bold all "R. Lakshmi Narayan" variants in author strings
