@@ -190,6 +190,98 @@
       margin-bottom: 0.7rem;
       text-shadow: 0 1px 3px #111a;
     }
+    /* Awards Section Lists */
+    .awards-lists {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      margin-top: 1rem;
+    }
+    .awards-list, .honors-list {
+      flex: 1 1 300px;
+      background: #181818;
+      border-radius: 9px;
+      box-shadow: 0 1px 8px #0005;
+      border: 1.5px solid #ffd7001a;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.98rem;
+      color: #fafafa;
+    }
+    .awards-list ul, .honors-list ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+    .awards-list ul li, .honors-list ul li {
+      margin-bottom: 0.45rem;
+      line-height: 1.5;
+    }
+    .awards-list strong, .honors-list strong {
+      color: var(--gold);
+    }
+    .awards-section-title {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+      text-shadow: 0 1px 7px #0007;
+      font-size: 1.04rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 800;
+      border-bottom: 1px solid #ffd70033;
+      width: fit-content;
+      padding-bottom: 0.12rem;
+    }
+    /* Teaching Cards */
+    .teaching-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .teaching-videos, .teaching-courses {
+      flex: 1 1 320px;
+      background: #181818;
+      border-radius: 9px;
+      box-shadow: 0 1px 8px #0005;
+      border: 1.5px solid #ffd7001a;
+      padding: 1.1rem 1.2rem 1.3rem 1.2rem;
+      margin-bottom: 1.2rem;
+      color: #fafafa;
+    }
+    .teaching-videos h4, .teaching-courses h4 {
+      color: var(--gold);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.03rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 1px 6px #0006;
+      border-bottom: 1px solid #ffd70033;
+      padding-bottom: 0.12rem;
+      width: fit-content;
+    }
+    .video-placeholder {
+      color: #bbb;
+      font-style: italic;
+      background: #232323;
+      border-radius: 7px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.97rem;
+      text-align: center;
+      margin-top: 0.6rem;
+      box-shadow: 0 1px 5px #0004;
+    }
+    .teaching-courses ul {
+      margin: 0.7rem 0 0 0;
+      padding-left: 1.3rem;
+      font-size: 0.99rem;
+      color: #fff;
+    }
+    .teaching-courses li {
+      margin-bottom: 0.37rem;
+      line-height: 1.5;
+    }
     @keyframes fadeinup {
       from { opacity: 0; transform: translateY(35px);}
       to { opacity: 1; transform: translateY(0);}
@@ -199,6 +291,7 @@
       .profile { flex-direction: column; text-align: center; }
       .profile img { width: 60vw; max-width: 220px; height: 60vw; max-height: 220px; margin-bottom: 1.25rem;}
       header { padding-top: 5rem;}
+      .awards-lists, .teaching-cards { flex-direction: column; gap: 1.2rem;}
     }
     @media (max-width: 600px) {
       nav { font-size: 9px; gap: 0.5rem; padding: 0.5rem 0.2rem;}
@@ -207,6 +300,7 @@
       .container { padding: 0.3rem;}
       .profile img { width: 80vw; max-width: 150px; height: 80vw; max-height: 150px;}
       .section { padding: 1.1rem 0.7rem 1rem 0.7rem;}
+      .awards-list, .honors-list, .teaching-videos, .teaching-courses { padding: 0.7rem 0.6rem;}
     }
   </style>
 </head>
@@ -248,10 +342,73 @@
       <p>Every alloy has a story, every micrograph a message. I find joy in interpreting those stories—be it through fracture surfaces, diffusion gradients, or phase maps. My research is driven by a desire to understand how structure governs behavior, and how we can use that understanding to engineer better materials.</p>
       <p>I also deeply enjoy collaborative research—my work spans multiple countries, disciplines, and industries. I’ve been privileged to guide young researchers who have gone on to make significant contributions of their own.</p>
     </div>
+    <!-- AWARDS SECTION -->
     <div class="section">
-      <h3>Beyond the Lab</h3>
-      <p>When I’m not peering into a microscope or scribbling in my research notebook, you’ll find me enjoying Carnatic music, taking long nature walks, or catching up on philosophy and history books.</p>
-      <p>Ultimately, I believe science is a human endeavor—rooted in humility, shaped by community, and propelled by wonder.</p>
+      <h3>Awards</h3>
+      <div class="awards-lists">
+        <div class="awards-list">
+          <div class="awards-section-title">Key Awards & Distinctions</div>
+          <ul>
+            <li>INSA Young Scientist Award celebration - hosted by students</li>
+            <li>Young Achievers' Award, VNIT Nagpur 2024</li>
+            <li>Excellence in Teaching award, IIT Delhi 2024</li>
+            <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
+            <li>INSA Medal for Young Scientist in October 2021</li>
+            <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
+            <li>Gopalakrishnan-NTU Presidential Post-Doctoral Fellowship, NTU Singapore, 2018</li>
+            <li>K.P. Abraham Gold medal for Best PhD thesis, IISc, 2014-15</li>
+            <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
+            <li>Outstanding reviewer award for Scripta Materialia (2014, 2019), Acta Materialia (2018, 2020, 2021), and Transactions of IIM (2022)</li>
+            <li>Publons Peer Review award (top 1% reviewers in Materials Science, 2018, 2019)</li>
+            <li>DAAD fellowship for research, Technical University, Berlin (2010-2011)</li>
+            <li>Best poster award, iMdea, Madrid, Spain (2016)</li>
+            <li>Among 20 scientists chosen for China Innotour program for Young Scientists 2019, Kunming-Shanghai</li>
+          </ul>
+        </div>
+        <div class="honors-list">
+          <div class="awards-section-title">Honors & Positions of Responsibility</div>
+          <ul>
+            <li>Editor, IIM Metal News, 2023</li>
+            <li>PMRF Subject coordinator, 2023</li>
+            <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
+            <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
+            <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
+            <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
+            <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
+            <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
+            <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
+            <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
+            <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
+            <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- TEACHINGS SECTION -->
+    <div class="section">
+      <h3>Teachings</h3>
+      <div class="teaching-cards">
+        <div class="teaching-videos">
+          <h4>Videos</h4>
+          <div class="video-placeholder">
+            Videos coming soon!
+          </div>
+        </div>
+        <div class="teaching-courses">
+          <h4>Courses Taught</h4>
+          <ul>
+            <li>MLL100 (APL102): Introduction to Materials Science and Engineering</li>
+            <li>MLL714: Fracture Mechanics</li>
+            <li>MLP704: Materials Processing and Characterization Lab</li>
+            <li>MLV705: Special Topics in Materials Engineering</li>
+            <li>MLL711: Mechanical Behavior of Materials (PG)</li>
+            <li>APL753: Properties and Selection of Materials</li>
+            <li>MLL251: Mechanical Behavior of Materials (UG)</li>
+            <li>MLP352: Mechanical Behavior of Materials (UG Lab)</li>
+            <li>NIN100: Introduction to Materials Science and Engineering (UG Non graded)</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <footer style="background:#111; padding:1.4rem; text-align:center; color:#aaa; font-size:0.93rem;">
