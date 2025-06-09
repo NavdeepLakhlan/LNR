@@ -150,7 +150,6 @@
     </div>
   </section>
 
--->
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,7 +165,6 @@
       margin: 0;
       padding: 2rem;
     }
-
     h2 {
       color: #ffd700;
       text-align: center;
@@ -174,16 +172,12 @@
       font-weight: 700;
       font-size: 2.5rem;
     }
-
-    /* Carousel container */
     .carousel-container {
       position: relative;
       max-width: 900px;
       margin: 0 auto 5rem;
       user-select: none;
     }
-
-    /* Carousel flexbox */
     .carousel {
       display: flex;
       overflow: hidden;
@@ -192,8 +186,6 @@
       align-items: center;
       justify-content: center;
     }
-
-    /* Each student card */
     .carousel-item {
       flex: 0 0 60%;
       margin: 0 10px;
@@ -213,8 +205,6 @@
       gap: 1.5rem;
       align-items: center;
     }
-
-    /* Profile image styling */
     .pi-image-block img {
       width: 150px;
       height: 150px;
@@ -222,8 +212,6 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     }
-
-    /* Active profile styling */
     .carousel-item.active {
       opacity: 1;
       position: relative;
@@ -234,8 +222,6 @@
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
       z-index: 10;
     }
-
-    /* Next profile to the right */
     .carousel-item.next {
       position: absolute;
       left: 75%;
@@ -243,16 +229,12 @@
       transform: scale(0.85);
       z-index: 5;
     }
-
-    /* Next-next profile stacked further right */
     .carousel-item.next + .carousel-item {
       left: 90%;
       opacity: 0.4;
       transform: scale(0.7);
       z-index: 2;
     }
-
-    /* Navigation buttons */
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -269,43 +251,29 @@
       z-index: 20;
       box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
     }
-
     .carousel-btn:hover {
       background: #ffd700;
     }
-
-    .carousel-btn.left {
-      left: -50px;
-    }
-
-    .carousel-btn.right {
-      right: -50px;
-    }
-
-    /* Bio text block */
+    .carousel-btn.left { left: -50px; }
+    .carousel-btn.right { right: -50px; }
     .pi-bio {
       flex: 1;
       font-size: 1rem;
       line-height: 1.4;
       color: #ddd;
     }
-
-    /* Student name and role */
     .pi-image-block h3 {
       margin: 0.3rem 0 0.5rem;
       font-weight: 700;
       color: #ffd700;
       font-size: 1.4rem;
     }
-
     .pi-image-block p {
       margin: 0;
       font-weight: 500;
       font-style: italic;
       color: #bbb;
     }
-
-    /* Responsive for smaller devices */
     @media (max-width: 768px) {
       .carousel {
         height: auto;
@@ -339,7 +307,8 @@
     <div class="carousel-container" aria-label="PhD Students Carousel">
       <button class="carousel-btn left" aria-label="Previous Student">&#10094;</button>
       <div class="carousel">
-        <div class="carousel-item active" tabindex="0">
+        <!-- Student Cards -->
+        <div class="carousel-item active">
           <div class="pi-image-block">
             <img src="ashwani.jpg" alt="Ashwani" />
             <h3>Ashwani (Dec 2019)</h3>
@@ -350,7 +319,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" tabindex="0">
+        <div class="carousel-item">
           <div class="pi-image-block">
             <img src="amey.jpg" alt="Amey Parnaik" />
             <h3>Amey Parnaik (Dec 2020)</h3>
@@ -361,7 +330,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" tabindex="0">
+        <div class="carousel-item">
           <div class="pi-image-block">
             <img src="pooja.jpg" alt="Pooja Sahu" />
             <h3>Pooja Sahu (Jul 2021)</h3>
@@ -372,7 +341,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" tabindex="0">
+        <div class="carousel-item">
           <div class="pi-image-block">
             <img src="simran.jpg" alt="Simran Nath" />
             <h3>Simran Nath (Dec 2022)</h3>
@@ -383,7 +352,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" tabindex="0">
+        <div class="carousel-item">
           <div class="pi-image-block">
             <img src="karthik.jpg" alt="Karthik Kumar" />
             <h3>Karthik Kumar (Dec 2022)</h3>
@@ -394,7 +363,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" tabindex="0">
+        <div class="carousel-item">
           <div class="pi-image-block">
             <img src="akash.jpg" alt="Akash Mishra" />
             <h3>Akash Mishra (Jan 2024)</h3>
@@ -410,8 +379,7 @@
   </section>
 
   <script>
-    const carousel = document.querySelector('.carousel');
-    const items = carousel.querySelectorAll('.carousel-item');
+    const items = document.querySelectorAll('.carousel-item');
     const btnLeft = document.querySelector('.carousel-btn.left');
     const btnRight = document.querySelector('.carousel-btn.right');
     let activeIndex = 0;
@@ -419,10 +387,11 @@
     function updateCarousel() {
       items.forEach((item, i) => {
         item.classList.remove('active', 'next');
-        item.style.left = '';
-        item.style.zIndex = '';
-        item.style.opacity = '';
-        item.style.transform = '';
+        item.style.position = 'absolute';
+        item.style.opacity = '0';
+        item.style.zIndex = '1';
+        item.style.transform = 'scale(0.7)';
+        item.style.left = '100%';
 
         if (i === activeIndex) {
           item.classList.add('active');
@@ -430,91 +399,34 @@
           item.style.left = '0';
           item.style.opacity = '1';
           item.style.transform = 'scale(1)';
-          item.style.zIndex = 10;
-        } else if (i === activeIndex + 1) {
+          item.style.zIndex = '10';
+        } else if (i === (activeIndex + 1) % items.length) {
           item.classList.add('next');
-          item.style.position = 'absolute';
           item.style.left = '75%';
           item.style.opacity = '0.6';
           item.style.transform = 'scale(0.85)';
-          item.style.zIndex = 5;
-        } else if (i === activeIndex + 2) {
-          item.style.position = 'absolute';
+          item.style.zIndex = '5';
+        } else if (i === (activeIndex + 2) % items.length) {
           item.style.left = '90%';
           item.style.opacity = '0.4';
           item.style.transform = 'scale(0.7)';
-          item.style.zIndex = 2;
-        } else if (i < activeIndex) {
-          // items left of active go left and fade
-          item.style.position = 'absolute';
-          item.style.left = '-100%';
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.7)';
-          item.style.zIndex = 1;
-        } else {
-          // items farther right go out of view
-          item.style.position = 'absolute';
-          item.style.left = '100%';
-          item.style.opacity = '0';
-          item.style.transform = 'scale(0.7)';
-          item.style.zIndex = 1;
+          item.style.zIndex = '2';
         }
       });
     }
 
-    btnRight.addEventListener('click', () => {
-      if (activeIndex < items.length - 1) {
-        activeIndex++;
-        updateCarousel();
-      }
-    });
-
     btnLeft.addEventListener('click', () => {
-      if (activeIndex > 0) {
-        activeIndex--;
-        updateCarousel();
-      }
+      activeIndex = (activeIndex - 1 + items.length) % items.length;
+      updateCarousel();
     });
 
-    // Allow arrow keys for navigation
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') {
-        if (activeIndex < items.length - 1) {
-          activeIndex++;
-          updateCarousel();
-        }
-      } else if (e.key === 'ArrowLeft') {
-        if (activeIndex > 0) {
-          activeIndex--;
-          updateCarousel();
-        }
-      }
+    btnRight.addEventListener('click', () => {
+      activeIndex = (activeIndex + 1) % items.length;
+      updateCarousel();
     });
 
-    // Initialize carousel on page load
-    updateCarousel();
+    updateCarousel(); // Initial render
   </script>
 
 </body>
 </html>
-  </section>
-
-  <footer>
-    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
-  </footer>
-
-  <script>
-    const bios = document.querySelectorAll('.student-bio');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    bios.forEach(bio => observer.observe(bio));
-  </script>
-</body>
-</html>
-
-" Please merge the improved code in this one.Keep the PI and Post doc section same as this code has.
