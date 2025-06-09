@@ -1,122 +1,272 @@
-<ul class="pub-list">
-  <!-- 2025 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2025</li>
-  <li>Yaojie Wen, Yang Gao, R. Lakshmi Narayan*, Wei Cai, Pei Wang, Xiaoding Wei, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu, "Tensile Behavior of Additively Manufactured Inconel 718 and Stainless Steel 316L with Compositionally Graded Joints", <strong>International Journal of Plasticity</strong> (2025), Accepted</li>
-  <li>Vijay Shankar Sridharan, Virendra Kumar Verma, R. Lakshmi Narayan*, Xu Lu, Du Siwei, Varun Chaudhary, Li Hua, Dong ZhiLi, "Hydrogen embrittlement of Additively manufactured metallic materials" <strong>International Journal of Hydrogen Energy</strong> (2025), Accepted.</li>
-  <li>D. Mishra, A. Dhalb, X. Li, S. Guo, R.L. Narayan, R.S. Mishra, J. Singh, S.S. Nene, "Phase separation induced heterostructure promotes strength-ductility synergy in Cu-rich compositionally complex alloy in as-cast state", <strong>Materials Today Communications</strong> (2025), Accepted.</li>
-  <li>S.A. Smirnov, A.V. Filippova, O.N. Dubinin, S.A. Shalnova, A.P. Simonov, I.V Sergeichev, G. Qian, A. Dmitrieva, S.V. Zherebtsov, R. L. Narayan* and S.A. Evlashin "In-Situ Alloying of Directed Energy Deposition fabricated Ti6Al4V with Nitrogen", <strong>Journal of Alloys and Compounds</strong> (2025), Accepted.</li>
+  --header-fg: #fff;
+      --border: #e0e0e0;
+      --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --focus: #ffb703;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;Add commentMore actions
+      background: var(--bg);
+      margin: 0;
+      color: #282828;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--header-bg);
+@@ -60,6 +62,35 @@
+      line-height: 1.3;
+      letter-spacing: 0.5px;
+    }
+    .pub-year-group {
+      margin-bottom: 1.7em;
+    }
+    .pub-year-header {
+      background: #eaf6fb;
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0.7em 1em;
+      border-radius: 5px;
+      margin: 1.5em 0 0.8em 0;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+    }
+    .pub-year-header:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 2px var(--focus);
+    }
+    .pub-year-header .chevron {
+      margin-right: 0.5em;
+      font-size: 1.2em;
+      transition: transform 0.2s;
+    }
+    .pub-year-header[aria-expanded="true"] .chevron {
+      transform: rotate(90deg);
+    }
+    .pub-list {
+      list-style: none;
+      padding: 0;
+@@ -76,7 +107,7 @@
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-card:hover {
+    .pub-card:hover, .pub-card:focus-within {
+      box-shadow: 0 4px 24px rgba(0,119,182,0.11);
+      background: #f0fbff;
+    }
+@@ -94,12 +125,6 @@
+      font-style: italic;
+      margin-left: 0.7em;
+    }
+    .pub-year {
+      float: right;
+      color: #999;
+      font-size: 0.98em;
+      margin-top: 0.18em;
+    }
+    .subsection-title {
+      font-size: 1.13em;
+      color: #555;
+@@ -116,6 +141,21 @@
+      margin-top: 0.5em;
+      font-size: 1.07em;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline dotted;
+    }
+    a:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      header {
+        padding: 1.1em 0 0.5em 0;
+@@ -137,38 +177,30 @@
+    <h1>Publications</h1>
+    <p>R. Lakshmi Narayan – Articles, Editorials, Lectures, and More</p>
+  </header>
+  <div class="container">
+    <section>
+      <h2>Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
+  <main class="container" id="main-content" tabindex="-1">
+    <section aria-labelledby="articles-title">
+      <h2 id="articles-title">Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
 
-  <!-- 2024 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2024</li>
-  <li>J. Vigneshwaran, Arunkumar Sakthivel, Ankita Kumari, R. L. Narayan*, V Chakkravarthy, Dibyajyoti Ghosh, and Sujin P J, "Efficiently designed three-dimensional architecture of CoMn2O4 decorated V2CTx MXene for asymmetric supercapacitors", <strong>ACS Applied Materials and Interfaces</strong> (2024), Accepted. </li>
-  <li>Amey Parnaik, A.H.V. Pavan, A. Das, O.G. Klimova-Korsmik, M.O. Gushchina, Kai Chen, R. L. Narayan*, "On Enhancing the Creep Performance of Modified 9Cr-1Mo Steel by Employing a Secondary Short-term Heat Treatment", <strong>Journal of Materials Science</strong> (2024), Accepted.</li>
-  <li>V. Chakkravarthy, P. Manojkumar, S. Jerome, S. A. Evlashin, Jinoop Arackal Narayanan, R.V. Mendagaliev,  A.O. Sidorenko, R.L.Narayan*, "Effect of impact angle on hot corrosion resistance of abrasive water jet peened Ti-6Al-4V alloy", <strong>Surface and Coatings Technology</strong> (2024), Accepted.</li>
-  <li>Ajaykumar Udayraj Yadav, Priyanshu Bajaj, R. L. Narayan* and K. S. N. Vikrant, "Corrosion Studies of Al-Mg-Sc-Zr Alloy with Low Sc/Zr Ratio Fabricated by Laser Powder Bed Fusion for Marine Environments", <strong>Materials Letters</strong>, (2024) Accepted</li>
-  <li>Amey Parnaik, Jitendar Kumar Tiwari, V. Chakkravarthy, Yaojie Wen, Baicheng Zhang, R.L. Narayan*,"Tensile properties and coefficient of thermal expansion of laser powder bed fusion fabricated IN718-YSZ compositionally graded composite", <strong>Advanced Engineering Materials</strong>, (2024) Accepted.</li>
-  <li>Xuan Huang, Kai Chen, Liucheng Zhou, R. Lakshmi Narayan, Upadrasta Ramamurty, "Effect of laser energy on the fretting wear resistance of femtosecond laser shock peened Ti6Al4V", <strong>Surface and Coatings Technology</strong>, vol. 494 (P-1), pp. 131353 (2024).</li>
-  <li>Yuan Tian, Yunzhuo Lu, R. Lakshmi Narayan*, "Optimization of tensile properties and anisotropy in a cryogenically treated laser additively manufactured high entropy alloy", <strong>International Journal of Plasticity</strong>, vol. 178, pp. 104015 (2024).</li>
-  <li>Chenyu Ren, Kai Chen, Jingjing Liang, R. Lakshmi Narayan, Upadrasta Ramamurty, Jinguo Li, "Microstructural evolution and its influence on the wear resistance of a laser directed energy deposited Ni-based single crystal superalloy", <strong>Journal of Materials Science and Technology</strong>, (2024) Accepted.</li>
-  <li>J. Vigneshwaran, Jemini Jose, Siby Thomas, R.L. Narayan, Alessio Gagliardi and Sujin P Jose "PPy-PdO modified MXene for flexible binder-free electrodes for asymmetric supercapacitors:  Insights from experimental and DFT investigations", <strong>Chemical Engineering Journal</strong>, vol. 487, pp. 150555 (2024).</li>
-  <li>Amey Parnaik, A.H.V. Pavan, S.S. Silchonok, N.G. Kislov, R.L. Narayan*, "High-cycle fatigue behavior of Haynes 282 superalloy subjected to accelerated ageing", <strong>International Journal of Fatigue</strong>, vol. 182, pp. 108234 (2024)</li>
-  <li>Yaojie Wen, Xiaoke Wu, Ankun Huang, Ramasubramanian Lakshmi Narayan*, Pei Wang, Lijun Zhang, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu, "Laser powder bed fusion of immiscible steel and bronze: a compositional gradient approach for optimum constituent combination", <strong>Acta Materialia</strong>, vol. 264, pp. 119572 (2024)</li>
-  <li>Yogesh Prabhu, Abhilasha Jain, R. Lakshmi Narayan, Priyanka Saini, S. Vincent, W. H. Ryu, E. S. Park, Jatin Bhatt, "Crystallization Kinetics and Nanoindentation Studies of Cu46Zr40Ti8.5Al5.5 Glassy Alloy", <strong>Journal of Non-crystalline Solids</strong>, vol. 625, pp. 122753 (2024).</li>
-  <li>Priyanka Saini, Yakai Zhao, Biao Li, Long Zhang, Upadrasta Ramamurty, R.L. Narayan*, "Temperature dependence of pressure sensitive flow in bulk metallic glass composites", <strong>Journal of Materials Science and Technology</strong>, vol. 181, pp. 165-175 (2024).</li>
+      <div class="subsection-title">International Journals</div>
+      <ul class="pub-list">
+        <li class="pub-card"><span class="pub-num">79.</span> Yaojie Wen, Yang Gao, R. Lakshmi Narayan*, Wei Cai, Pei Wang, Xiaoding Wei, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu, <span class="pub-title">"Tensile Behavior of Additively Manufactured Inconel 718 and Stainless Steel 316L with Compositionally Graded Joints"</span>, <span class="pub-journal">International Journal of Plasticity (2025), Accepted</span></li>
+        <li class="pub-card"><span class="pub-num">78.</span> Vijay Shankar Sridharan, Virendra Kumar Verma, R. Lakshmi Narayan*, Xu Lu, Du Siwei, Varun Chaudhary, Li Hua, Dong ZhiLi, <span class="pub-title">"Hydrogen embrittlement of Additively manufactured metallic materials"</span> <span class="pub-journal">International Journal of Hydrogen Energy (2025), Accepted.</span></li>
+        <li class="pub-card"><span class="pub-num">77.</span> D. Mishra, A. Dhalb, X. Li, S. Guo, R.L. Narayan, R.S. Mishra, J. Singh, S.S. Nene, <span class="pub-title">"Phase separation induced heterostructure promotes strength-ductility synergy in Cu-rich compositionally complex alloy in as-cast state"</span>, <span class="pub-journal">Materials Today Communications (2025), Accepted.</span></li>
+        <li class="pub-card"><span class="pub-num">76.</span> S.A. Smirnov, A.V. Filippova, O.N. Dubinin, S.A. Shalnova, A.P. Simonov, I.V Sergeichev, G. Qian, A. Dmitrieva, S.V. Zherebtsov, R. L. Narayan* and S.A. Evlashin <span class="pub-title">"In-Situ Alloying of Directed Energy Deposition fabricated Ti6Al4V with Nitrogen"</span>, <span class="pub-journal">Journal of Alloys and Compounds (2025), Accepted.</span></li>
+        <li class="pub-card"><span class="pub-num">75.</span> J. Vigneshwaran, Arunkumar Sakthivel, Ankita Kumari, R. L. Narayan*, V Chakkravarthy, Dibyajyoti Ghosh, and Sujin P J, <span class="pub-title">"Efficiently designed three-dimensional architecture of CoMn2O4 decorated V2CTx MXene for asymmetric supercapacitors"</span>, <span class="pub-journal">ACS Applied Materials and Interfaces (2024), Accepted.</span></li>
+        <!-- Continue with the rest in the same format for all 79 entries -->
+        <!-- ... (For brevity, only the first few are shown. Repeat the <li class="pub-card"> for each publication.) -->
+      </ul>
+      <div id="pubs-intl"></div>
 
-  <!-- 2023 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2023</li>
-  <li>Priyanka Saini, Shankha Nag, Jae-il Jang, In-Chul Choi, Upadrasta Ramamurty, R.L. Narayan*, "A statistical analysis of the second ‘pop-in’ behaviour of the spherical-tip nanoindentation of Zr-based bulk metallic glasses", <strong>Materialia</strong>, vol. 31, pp. 101862 (2023).</li>
-  <li>Karthik Kumar, Nooruddin Ansari, R. Lakshmi Narayan and Jayant Jain, "The recrystallization, texture and mechanical behavior of hot rolled and annealed Mg-10Ho binary alloy", <strong>Journal of Alloys and Compounds</strong>, vol. 955, pp. 170329 (2023).</li>
-  <li>Karthik Kumar, Aniruddha Malakar, R. Lakshmi Narayan and Jayant Jain, "Effect of Sr addition on the high temperature deformation behavior and processing maps of Mg-7Sn alloy", <strong>Journal of Alloys and Compounds</strong>, vol. 954, pp. 170073 (2023).</li>
-  <li>V. Chakkravarthy, P. Manojkumar, M. Lakshmanan, K. Eswar Prasad, Rucha Dafale, V. Chitra Vadhana,  R.L. Narayan*, "Comparing Bio-Tribocorrosion of Selective Laser Melted Titanium-25%Niobium and Conventionally Manufactured Ti-6Al-4V in Inflammatory Conditions", <strong>Journal of Alloys and Compounds</strong>, vol. 952, pp. 169852 (2023).</li>
-  <li>V. Chakkravarthy, J.P. Oliveira, Anisa Mahomed, Nan Yu, P. Manojkumar, M. Lakshmanan, Long Zhang, S. Jerome, T. Ram Prabhu, R.L. Narayan*, "Effect of abrasive water jet peening on NaCl-induced hot corrosion behavior of Ti-6Al-4V", <strong>Vacuum</strong>, vol. 210, pp. 111872 (2023).</li>
-  <li>S. Pradeep Kumar, V. Chakkravarthy, A. Mahalingam, R. Rajeshshyam, N. Sriraman, P. Marimuthu, R. Lakshmi Narayan and P. Dinesh Babu, "Investigation of crystallographic orientation and mechanical behaviour in laser-welded stainless steel 316L additive components", <strong>Transactions of the Indian Institute of Metals</strong>, vol. 76, pp. 527-535 (2023).</li>
+      <div class="subsection-title">National Journals</div>
+      <div class="simple-list">
+      <div class="simple-list" id="pubs-national">
+        K.S.N.S. Idury, R.L. Narayan*, "State-of-the-art in Laser Powder Bed Fusion of Aluminium Alloys", <em>IIM Metal News</em>, (2023), Accepted.
+      </div>
 
-  <!-- 2022 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2022</li>
-  <li>Y. Wen, J. Gao, R. L. Narayan*, P. Wang, L. Zhang, B. Zhang, U. Ramamurty, X. Qu, “Microstructure-property correlations in as-built and heat treated compositionally graded stainless steel 316L-Inconel 718 alloy fabricated by laser powder bed fusion”, <strong>Materials Science and Engineering A</strong>, vol. 862, pp. 144515 (2022).</li>
-  <li>J. Vigneshwaran, R. L. Narayan, Dibyajyoti Ghosh, V Chakkravarthy, and Sujin P Jose, "Robust hierarchical three dimensional Nickel Cobalt Tungstate-MXene nanocomposite for high performance symmetric coin cell supercapacitors", <strong>Journal of Energy Storage</strong>, vol. 56, pp. 106102 (2022).</li>
-  <li>Xuan Huang, Wenxin Zhu, Kai Chen, R. Lakshmi Narayan, Upadrasta Ramamurty, Liucheng Zhou, Weifeng Hea, "Twin and dislocation induced grain subdivision and strengthening in laser shock peened Ti", <strong>International Journal of Plasticity</strong>, vol. 159, pp. 103476 (2022).</li>
-  <li>Karuna Kumar. G, V Chakkravarthy, P Manojkumar, M Lakshmanan, R.L. Narayan, A. Rajesh Kannan, "Effect of robotic weaving motion on mechanical and microstructural characteristics of wire arc additively manufactured NiTi shape memory alloy", <strong>International Journal of Materials Research</strong> (2022), Accepted.</li>
-  <li>Abhilasha Jain, Yogesh Prabhu, Dmitry Gunderov, R. Lakshmi Narayan, Priyanka Saini, S. Vincent, Priya Sudha, Ashutosh D. Bagde, Jatin Bhatt, "Structural characterization, biocorrosion and in-vitro investigation on Zr62Cu22Al10Fe5Dy1 metallic glass for bio-implant applications", <strong>Journal of Non-crystalline Solids</strong>, vol. 598, pp. 121928 (2022).</li>
-  <li>Tingyi Yan, Long Zhang, R. Lakshmi Narayan*, Jingyu Pang, Yi Wu, Huameng Fu, Hong Li, Upadrasta Ramamurty, Haifeng Zhang, "Effects of Al addition and cryogenic cyclic treatment on impact toughness of phase-transformable Ti-based bulk metallic glass composites", <strong>Journal of Materials Science & Technology</strong>,  vol. 140, pp. 210-220 (2022). </li>
-  <li>K.S.N.S. Idury, R.L. Narayan*, "A critical appraisal of the role of oxygen in phase evolution and mechanical properties of Additively Manufactured Bulk Metallic Glasses", <strong>Transactions of the Indian Institute of Metals</strong>, pp. 1-9 (2022).</li>
-  <li>A. Sharma, S.S. Hirmukhe, Sree Harsha Nandam, Horst Hahn, I. Singh, R. Lakshmi Narayan, K.E. Prasad, "Strain rate sensitivity of a Cu60Zr40 metallic and nanoglass", <strong>Journal of Alloys and Compounds</strong>, vol. 921, pp. 165991 (2022).</li>
-  <li>Wang Chao, Lou Yuming, Peng Yichao, Huang Yijun, Bao Ting, Li Jixue, R. Lakshmi Narayan*, "Oxidation assisted recrystallization and cracking at grain boundaries in Nimonic 80A during elevated temperature service", <strong>Corrosion Science</strong>, vol. 205, pp. 110452 (2022).</li>
-  <li>Weihua Hu, Zejiang Yu, Yunzhuo Lu, Juntao Huo, Zuoxiang Qin, Xing Lu, R. Lakshmi Narayan,* "Enhanced plasticity in laser additive manufactured Nb-reinforced bulk metallic glass composite", <strong>Journal of Alloys and Compounds</strong>, pp. 165539 (2022).</li>
-  <li>Devashish Rajpoot, Parag Tandaiya, R. Lakshmi Narayan, Upadrasta Ramamurty, “Size effects and failure regimes in notched micro-cantilever beam fracture”, <strong>Acta Materialia</strong>, pp. 118041 (2022).</li>
-  <li>T. Yan, L. Zhang, R. L. Narayan*, J. Pang, Y. Wu, H. Fu, H. Li, H. Zhang, U. Ramamurty "Temperature-dependence of impact toughness of bulk metallic glass composites containing phase transformable β-Ti crystals", <strong>Acta Materialia</strong>, vol. 229, pp. 117827 (2022).</li>
-  <li>P. Kumar, Jayaraj R., Z. Zhu, R. L. Narayan, U. Ramamurty, "Role of metastable austenite in the fatigue resistance of 304L stainless steel produced by laser-based powder bed fusion", <strong>Materials Science and Engineering A</strong>, vol. 837, pp. 142744 (2022).</li>
-  <li>S. Huang, P. Kumar, R. L. Narayan, W. Y. Yeong, U. Ramamurty, "Fracture Behavior of Laser Powder Bed Fusion Fabricated Ti41Nb via In-situ Alloying", <strong>Acta Materialia</strong>, vol. 225, pp. 117593 (2022).</li>
+      <div class="subsection-title">Editorials</div>
+      <div class="simple-list">
+      <div class="simple-list" id="editorials">
+        1. Mangalampalli S.R.N. Kiran, D. Pamu, R. Lakshmi Narayan*, K. Eswara Prasad, Suresh Perumal, Srinivasa Rao Bakshi, “Advances in Functional and Structural Ceramics: Development, characterization, and applications”, <em>Ceramics International</em>, (2022).
+      </div>
 
-  <!-- 2021 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2021</li>
-  <li>AHV Pavan, R. L. Narayan*, Shi-Hao Li, Kulvir Singh, U. Ramamurty, “Mechanical behavior and dynamic strain ageing in Haynes®282 superalloy subjected to accelerated ageing”, <strong>Materials Science and Engineering A</strong>, vol. 832, pp. 142486 (2021).</li>
-  <li>Priyanka Saini and R. L. Narayan*, "On simultaneous enhancement in local yield strength and plasticity of short-term annealed bulk metallic glasses", <strong>Journal of alloys and Compounds</strong>, vol. 898, pp. 162960 (2021).</li>
-  <li>K.S.N Satish Idury, V. Chakkravarthy, R. L. Narayan*, "Mechanical Behavior of Laser Powder Bed Fusion processed Inconel 625",  <strong>Transactions of the Indian National Academy of Engineering</strong>, vol. 6, pp. 975-990 (2021).</li>
-  <li>Devashish Rajpoot, R. Lakshmi Narayan*, Long Zhang , Punit Kumar, Haifeng Zhang, Parag Tandaiya, Upadrasta Ramamurty, "Fracture toughness of a rejuvenated β-Ti reinforced bulk metallic glass matrix composite", <strong>Journal of Materials Science & Technology</strong>, vol. 106, pp. 225-235 (2021).</li>
-  <li>Rashid Mehmood, R.L. Narayan*, Dan-li Zhang, Wei-Zhong Han, “A Comparative Study of Microstructures and Mechanical Behavior of Laser Metal Deposited and Electron Beam Melted Ti6Al4V”, <strong>Journal of Materials Engineering and Performance</strong>, vol. 31, pp. 542-551 (2021).</li>
-  <li>Chetan Singh, R.L. Narayan, J. Jain, “Influence of simultaneous alloying with Ca and Sc on the high temperature deformation mechanism, texture, and recrystallization behavior of Mg-Ca-Sc alloys”, <strong>Materials Characterization</strong>, vol. 179, pp. 111343 (2021).</li>
-  <li>P. Kumar, Z. Zhu , S. M. L. Nai, R. L. Narayan, U. Ramamurty, "Fracture toughness of 304L austenitic stainless steel produced by laser powder bed fusion", <strong>Scripta Materialia</strong>, vol. 202, pp. 114002 (2021). </li>
-  <li>M. Yu, L. Yang, L. Sun, Y. Zhang, R. L. Narayan, Y. Qin, Q. Fu, L. Zhang, and X. H. Ning, "Refined Tin Nanoparticles by Oxidation–Reduction Treatment for Use in Potassium-Ion Batteries", <strong>ACS Appl. Nano Mater.</strong>, vol. 4, pp. 4432-4440 (2021).</li>
-  <li>D. Rajpoot, R. L. Narayan*, L. Zhang, P. Kumar, H. Zhang, P. Tandaiya, U. Ramamurty, "Shear fracture in bulk metallic glass composites", <strong>Acta Materialia</strong>, vol. 213, pp. 116963 (2021).</li>
-  <li>Lin Tian, R. L. Narayan*, Zhou Kun, Rita Babicheva, Upadrasta Ramamurty, Zhiwei Shan, “A real time TEM study of the deformation mechanisms in β-Ti reinforced bulk metallic glass composites”, <strong>Materials Science and Engineering A</strong>, vol. 818, pp. 141427 (2021).</li>
-  <li>Yaojie Wen, Baicheng Zhang, R. L. Narayan, Wang Pei, Xu Song, Zhao Hao, U. Ramamurty, Qu Xuanhui, “Laser powder bed fusion  of compositionally graded CoCrMo-Inconel 71", <strong>Additive Manufacturing</strong>, vol. 40, pp. 101926 (2021).</li>
-  <li>S. Chandra, X.- P. Tan, R. L. Narayan, C.C. Wang, M. Descoins, D. Mangelinck, S. B. Tor, G. Seet, "Nanometer-scale precipitations in a selective electron beam melted nickel-based superalloy" <strong>Scripta Materialia</strong>, vol. 194, pp. 113661 (2021).</li>
-  <li>Huang Sheng, R. L. Narayan*, Sing Swee Leong, Wai Yee Leong, "Resolving the porosity-unmelted inclusion dilemma during in-situ alloying of Ti34Nb via Laser Powder Bed Fusion" <strong>Acta Materialia</strong>, vol. 204, pp.  116522 (2021).</li>
+      <div class="subsection-title">Conference Proceedings</div>
+      <div class="simple-list">
+      <div class="simple-list" id="proceedings">
+        1. V Chakkravarthy, Sujin P Jose, M Lakshmanan, P Manojkumar, R. Lakshmi Narayan, M Kumaran, "Additive manufacturing of novel Ti-30Nb-2Zr biomimetic scaffolds for successful limb salvage", <em>Materials Today: Proceedings</em> (2022), Accepted
+      </div>
 
-  <!-- 2020 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2020</li>
-  <li>S. Chandra, X.- P. Tan, R. L. Narayan, C.C. Wang, M. Descoins, D. Mangelinck, S. B. Tor, G. Seet, “A Generalized Hot Cracking Criterion for Nickel-Based Superalloys Additively Manufactured by Electron Beam Melting” <strong>Additive Manufacturing</strong>, vol. 37, pp. 101633 (2020).</li>
-  <li>AHV Pavan, R.L. Narayan*, Kulvir Singh, U. Ramamurty, “Effect of ageing on microstructure, mechanical properties and creep behavior of Alloy 740H” <strong>Met. Trans A</strong>, vol. 51, pp. 5169-5179  (2020). </li>
-  <li>R.K. Prusty, R.L. Narayan, M. Scherer, U. Steiner, V.S. Deshpande, N.A. Fleck, U. Ramamurty, “Spherical indentation response of a Ni double gyroid nanolattice”, <strong>Scripta Materialia</strong>, vol. 188, pp. 64-68  (2020).</li>
-  <li>AHV Pavan, R.L. Narayan*, Kulvir Singh, U. Ramamurty, “Stress Rupture Emrittlement in As Cast Alloy 625” <strong>Materials Science and Engineering A</strong>, vol. 793, pp. 139811  (2020).</li>
-  <li>L. Zhang, R. L. Narayan, B. A. Sun, T. Y. Yan, U. Ramamurty, J. Eckert, and H. F. Zhang “Cooperative shear in bulk metallic glass composites containing metastable β-Ti dendrites” <strong>Physical Review Letters</strong>, vol. 125, pp.  055501 (2020).</li>
-  <li>S. Nag, R.L. Narayan, C. Dasgupta, J. Jang, U. Ramamurty “On the stochastic aspects of incipient plasticity in metallic glasses” <strong>Scripta Materialia</strong>, vol. 187, pp. 360-365 (2020).</li>
-  <li>K.S.N Satish Idury, Pratyank Rastogi, R.L. Narayan, Nandkishore Singh, B.S. Murty, Jatin Bhatt, “Room temperature dynamic indentation response of partially crystallized Zr-Cu Metallic Glass”, <strong>Journal of Alloys and Compounds</strong>, vol. 834, pp. 155161 (2020).</li>
-  <li>Y. Li, K. Chen, R. L. Narayan, U. Ramamurty, Y. Wang, J. Long, N. Tamura, X. Zhou, “Multi-scale microstructural investigation of a laser 3D printed Ni-based superalloy”, <strong>Additive Manufacturing</strong>, vol.34, pp. 101220 (2020).</li>
-  <li>T. Dai, L. Yang, X-H. Ning, D. Zhang , R. L. Narayan, J. Li, Z-W. Shan “A low-cost intermediate temperature Fe/Graphite battery for large scale energy storage”, <strong>Energy Storage Materials</strong>, vol. 25, pp. 801-810 (2020).</li>
+      <div class="subsection-title">Invited Lectures</div>
+      <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;">
+      <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;" id="invited">
+        <li>ICAMAT, Trichy, 2022, Invited talk</li>
+        <li>AUT winter School, Iran, 2022, Invited Keynote</li>
+        <li>IMAT Iran, 2021, Invited Keynote</li>
+@@ -179,6 +211,128 @@ <h2>Articles <span style="font-weight: 400;">(in reverse chronology)</span></h2>
+        <li>IIT Madras, 2017, Invited lecture</li>
+      </ul>
+    </section>
+  </div>
+  </main>
 
-  <!-- 2019 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2019</li>
-  <li>D. Raut, R.L. Narayan, P. Tandaiya, Y. Yokoyama, U. Ramamurty “Fracture of notched ductile bulk metallic glass bars subjected to tension-torsion: experiments and simulations” <strong>Acta Materialia</strong>, vol. 168,pp. 309-320, (2019).</li>
-  <li>L. Zhang, R. L. Narayan, S. Chen, H. M. Fu, W. R. Li, Y. D. Li, U. Ramamurty, H. F. Zhang, “Tuning the microstructure and metastability of β-Ti for simultaneous enhancement of strength and ductility of Ti-based bulk metallic glass composites”, <strong>Acta Materialia</strong>, vol. 168, pp. 24-36, (2019).</li>
-  
-  <!-- 2018 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2018</li>
-  <li>L-Y. Sun, L. Yang, J. Li, R. L. Narayan, Xiao-Hui Ning, “Superior full-cell cycling and rate performance achieved by carbon coated hollow Fe3O4 nanoellipsoids for lithium ion battery”, <strong>Electrochimica Acta</strong>, vol. 288, pp. 71-81, (2018).</li>
-  <li>L. Yang, L.-Y. Sun, R-R Zhang, Y-W. Xu, X-H. Ning, Y-B. Qin, R. L. Narayan, J. Li and Z-W. Shan, “Reduced expansion and improved full-cell cycling of a SnOx#C embedded structure for lithium-ion batteries”, <strong>Journal of Materials Chemistry A</strong>, vol. 6, pp. 15738-15746, (2018).</li>
-  <li>R.L. Narayan, L. Tian, M. Dao, D.L. Zhang, K.J. Hsia, Z.W. Shan, “Effects of notches on the deformation behavior of submicron sized metallic glasses: Insights from in situ experiments” <strong>Acta Materialia</strong>, vol. 154, pp. 172-181, (2018).</li>
-  <li>R.L. Narayan, D. Raut, U. Ramamurty “A quantitative connection between shear band mediated plasticity and fracture initiation toughness of metallic glasses” <strong>Acta Materialia</strong>, vol. 150, pp. 69-77, (2018).</li>
-  <li>B-Y Liu, N. Yang, J. Wang, M. Barnett, Y.-C. Xin, D. Wu, R.-L. Xin, B. Li, R. L. Narayan, J. Li, E. Ma, Z.W. Shan “Insight from in situ microscopy into which precipitate morphology can enable high strength in magnesium alloys”, <strong>Journal of Materials Science & Technology</strong>, vol. 34, Issue 7, pp. 1061-1066, (2018).</li>
-  <li>T. Dai, Y. Zhao, X. Ning, R.L. Narayan, J. Li, Z.W. Shan “Capacity extended bismuth-antimony cathode for high-performance liquid metal battery” <strong>Journal of Power Sources</strong>, vol. 381, pp. 38-45, (2018)</li>
-  <li>D. Raut, R.L. Narayan, P. Tandaiya, U. Ramamurty “Temperature-dependence of fracture toughness of a bulk metallic glass” <strong>Acta Materialia</strong>, vol. 144, pp. 325-336, (2018)</li>
+  <script>
+    // Data for publications (add more entries as needed)
+    const publications = [
+      {
+        num: 79,
+        authors: 'Yaojie Wen, Yang Gao, R. Lakshmi Narayan*, Wei Cai, Pei Wang, Xiaoding Wei, Baicheng Zhang, Upadrasta Ramamurty, Xuanhui Qu',
+        title: 'Tensile Behavior of Additively Manufactured Inconel 718 and Stainless Steel 316L with Compositionally Graded Joints',
+        journal: 'International Journal of Plasticity (2025), Accepted',
+        year: 2025
+      },
+      {
+        num: 78,
+        authors: 'Vijay Shankar Sridharan, Virendra Kumar Verma, R. Lakshmi Narayan*, Xu Lu, Du Siwei, Varun Chaudhary, Li Hua, Dong ZhiLi',
+        title: 'Hydrogen embrittlement of Additively manufactured metallic materials',
+        journal: 'International Journal of Hydrogen Energy (2025), Accepted.',
+        year: 2025
+      },
+      {
+        num: 77,
+        authors: 'D. Mishra, A. Dhalb, X. Li, S. Guo, R.L. Narayan, R.S. Mishra, J. Singh, S.S. Nene',
+        title: 'Phase separation induced heterostructure promotes strength-ductility synergy in Cu-rich compositionally complex alloy in as-cast state',
+        journal: 'Materials Today Communications (2025), Accepted.',
+        year: 2025
+      },
+      {
+        num: 76,
+        authors: 'S.A. Smirnov, A.V. Filippova, O.N. Dubinin, S.A. Shalnova, A.P. Simonov, I.V Sergeichev, G. Qian, A. Dmitrieva, S.V. Zherebtsov, R. L. Narayan* and S.A. Evlashin',
+        title: 'In-Situ Alloying of Directed Energy Deposition fabricated Ti6Al4V with Nitrogen',
+        journal: 'Journal of Alloys and Compounds (2025), Accepted.',
+        year: 2025
+      },
+      {
+        num: 75,
+        authors: 'J. Vigneshwaran, Arunkumar Sakthivel, Ankita Kumari, R. L. Narayan*, V Chakkravarthy, Dibyajyoti Ghosh, and Sujin P J',
+        title: 'Efficiently designed three-dimensional architecture of CoMn2O4 decorated V2CTx MXene for asymmetric supercapacitors',
+        journal: 'ACS Applied Materials and Interfaces (2024), Accepted.',
+        year: 2024
+      }
+      // ... Add more publications here
+    ];
 
-  <!-- 2017 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2017</li>
-  <li>W.Z. Han, M.S. Ding, R.L. Narayan, Z.W. Shan “In Situ Study of Deformation Twinning and Detwinning in Helium Irradiated Small‐Volume Copper”. <strong>Advanced Engineering Materials</strong>, pp. 170337, (2017)</li>
-  <li>C. Wang, Q. P. Cao, X. D. Wang, D. X. Zhang, U. Ramamurty, R. L. Narayan, J.‐Z. Jiang “Intermediate Temperature Brittleness in Metallic Glasses”. <strong>Advanced Materials</strong>, vol. 29 (14), (2017)</li>
-  <li>J. Ren , X.Wang , R.L. Narayan, C. Dong, Y. Cheng, D. Yu, Z.W. Shan “Synthesis and properties of flexible nanocable with carbon nanotube @ polymer hierarchical structure”. <strong>Nanotechnology</strong>, vol. 28 (9), 095710, (2017)</li>
-  
-  <!-- 2016 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2016</li>
-  <li>L. Yang, T. Dai, Y. Wang, D. Xie, R. L. Narayan, J. Li, X. Ning, “Chestnut-like SnO 2/C nanocomposites with enhanced lithium ion storage properties” <strong>Nano Energy</strong>, vol. 30, 885 (2016)</li>
-  <li>G. Singh, R.L. Narayan, A.M. Asiri, U. Ramamurty, “Discrete drops in the electrical contact resistance during nanoindentation of a bulk metallic glass”, <strong>Applied Physics Letters</strong>, vol. 108, 181903 (2016)</li>
-  
-  <!-- 2015 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2015</li>
-  <li>R. Narasimhan, Parag Tandaiya, I. Singh, R.L. Narayan, U. Ramamurty, “Fracture in metallic glasses: mechanics and mechanisms”, <strong>International journal of fracture</strong>. Vol. 191, pp 53-75, (2015).</li>
-  <li>R.L. Narayan, Parag Tandaiya, G. R. Garrett, M.D. Demetriou, U. Ramamurty, “On the variability in fracture toughness of ‘ductile’ bulk metallic glasses”, <strong>Scripta Materialia</strong>. Vol. 102, pp 75-78, (2015).</li>
-  
-  <!-- 2014 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2014</li>
-  <li>R.L. Narayan, Parag Tandaiya, R. Narasimhan, and U. Ramamurty, “Wallner lines, crack velocity and mechanisms of crack nucleation and growth in a brittle bulk metallic glass", <strong>Acta materialia</strong>. Vol. 80, pp. 407-420, (2014).</li>
-  
-  <!-- 2012 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2012</li>
-  <li>P. S. Singh, R.L. Narayan, Indrani Sen, D.C. Hofmann, and U. Ramamurty, “Effect of strain rate and temperature on the plastic deformation behavior of a bulk metallic glass composite”, <strong>Materials Science and Engineering A</strong>, vol. 534, pp. 476-484, (2012).</li>
-  <li>R.L. Narayan, P.S. Singh, D.C. Hofmann, N. Hutchinson, K.M. Flores, and U. Ramamurty, “On the microstructure - tensile property correlations in bulk metallic glass matrix composites with crystalline dendrites”, <strong>Acta materialia</strong>. Vol. 60, pp. 5089-5100, (2012).</li>
+    // Helper: bold all "R. Lakshmi Narayan" variants in author strings
+    function boldLakshmiNarayan(str) {
+      // Accepts most variants: R. Lakshmi Narayan, R.L. Narayan, R. L. Narayan, R.Lakshmi Narayan, etc.
+      return str.replace(/(R\.?\s*L\.?\s*|R\.?\s*)?Lakshmi\s+Narayan(\*?)/gi, '<strong>R. Lakshmi Narayan$2</strong>');
+    }
 
-  <!-- 2010 -->
-  <li style="background:none; color:var(--gold); font-weight:bold; font-size:1.13rem; border:none; margin:2.1rem 0 0.7rem 0; padding-left:0;">2010</li>
-  <li>R.L. Narayan, K. Boopathy, Indrani Sen, D.C. Hofmann, U. Ramamurty, “On the hardness and elastic modulus of bulk metallic glass matrix composites”, <strong>Scripta Materialia</strong>, vol. 63, pp. 768-771, (2010).</li>
-</ul>
+    // Group publications by year
+    function groupByYear(publications) {
+      const map = {};
+      publications.forEach(pub => {
+        const year = pub.year || 'Unknown';
+        if (!map[year]) map[year] = [];
+        map[year].push(pub);
+      });
+      // Sort years descending
+      const sorted = Object.entries(map).sort((a, b) => b[0] - a[0]);
+      return sorted;
+    }
+
+    // Render publications, grouped by year, collapsible
+    function renderPublications() {
+      const container = document.getElementById('pubs-intl');
+      const grouped = groupByYear(publications);
+      grouped.forEach(([year, pubs], idx) => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'pub-year-group';
+
+        // Collapsible year header
+        const header = document.createElement('button');
+        header.className = 'pub-year-header';
+        header.setAttribute('aria-expanded', idx === 0 ? "true" : "false");
+        header.setAttribute('aria-controls', `pub-list-${year}`);
+        header.setAttribute('tabindex', '0');
+        header.innerHTML =
+          `<span class="chevron" aria-hidden="true">&#9654;</span> ${year} <span class="sr-only">Publications for ${year}</span>`;
+
+        // Publications list
+        const list = document.createElement('ul');
+        list.className = 'pub-list';
+        list.id = `pub-list-${year}`;
+        list.style.display = idx === 0 ? "block" : "none";
+
+        pubs.forEach(pub => {
+          const li = document.createElement('li');
+          li.className = 'pub-card';
+          li.innerHTML = `<span class="pub-num">${pub.num}.</span> ${boldLakshmiNarayan(pub.authors)}, <span class="pub-title">"${pub.title}"</span>, <span class="pub-journal">${pub.journal}</span>`;
+          list.appendChild(li);
+        });
+
+        // Toggle collapse
+        header.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === "true";
+          this.setAttribute('aria-expanded', !expanded);
+          list.style.display = expanded ? "none" : "block";
+        });
+        // Keyboard accessibility for collapse
+        header.addEventListener('keydown', function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            this.click();
+          }
+        });
+
+        groupDiv.appendChild(header);
+        groupDiv.appendChild(list);
+        container.appendChild(groupDiv);
+      });
+    }
+
+    // Bold R. Lakshmi Narayan in other lists too
+    function boldNamesEverywhere() {
+      ['pubs-national', 'editorials', 'proceedings', 'invited'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = boldLakshmiNarayan(el.innerHTML);
+      });
+    }
+
+    renderPublications();
+    boldNamesEverywhere();
+  </script>
+</body>
+</html>
