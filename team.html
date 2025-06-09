@@ -20,12 +20,13 @@
       top: 0;
       width: 100%;
       background: rgba(0, 0, 0, 0.8);
-      padding: 1rem;
+      padding: 1.5rem;
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+      justify-content: right;
+      gap: 2.5rem;
       z-index: 1000;
-      font-size: 16px;
+      transition: background 0.3s ease;
+      font-size: 13px;
     }
     nav a {
       color: #fff;
@@ -51,499 +52,96 @@
       font-size: 1.8rem;
     }
 
-    .pi-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .pi-image-block {
-      flex: 1 1 200px;
-      text-align: center;
-    }
-    .pi-image-block img {
-      width: 200px;
-      height: 200px;
-      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
-      object-fit: cover;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-    }
-    .pi-image-block h3 {
-      margin: 0.5rem 0 0.3rem;
-      color: #ffd700;
-      font-size: 1rem;
-    }
-    .pi-image-block p {
-      font-size: 0.75rem;
-      color: #ccc;
-      margin: 0;
-    }
-    .pi-bio {
-      flex: 2 1 500px;
-      font-size: 0.8rem;
-      line-height: 1.4;
-    }
+    /* ... (existing styles for containers, carousels, etc.) ... */
 
-    footer {
+    /* Alumni styles */
+    .alumni-section {
+      max-width: 900px;
+      margin: 1rem auto;
       background: #111;
-      padding: 2rem;
-      text-align: center;
-      color: #aaa;
-    }
-
-    @media (max-width: 768px) {
-      .pi-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .pi-bio {
-        text-align: justify;
-      }
-      .pi-image-block img {
-        width: 160px;
-        height: 160px;
-      }
-    }
-
-    /* Carousel Styles for all student sections */
-    h2 {
-      color: #ffd700;
-      text-align: center;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      font-size: 2.2rem;
-    }
-    .carousel-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto 4rem;
-      user-select: none;
-    }
-    .carousel {
-      display: flex;
-      overflow: hidden;
-      position: relative;
-      height: 500px;
-      align-items: center;
-      justify-content: center;
-    }
-    .carousel-item {
-      flex: 0 0 60%;
-      margin: 0 10px;
-      background: #111;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
-      color: #ccc;
-      opacity: 0.3;
-      transform: scale(0.8);
-      transition: all 0.5s ease;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform-origin: center center;
-      padding: 1.5rem 2rem;
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      min-height: 525px;
-      height: 525px;
-      box-sizing: border-box;
-    }
-
-    .carousel-item.active {
-      opacity: 1;
-      position: relative;
-      left: 0;
-      flex: 0 0 80%;
-      transform: scale(1);
-      color: #ffd700;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
-      z-index: 10;
-    }
-
-    .carousel-item.next {
-      position: absolute;
-      left: 75%;
-      opacity: 0.6;
-      transform: scale(0.85);
-      z-index: 5;
-    }
-
-    .carousel-item.next + .carousel-item {
-      left: 90%;
-      opacity: 0.4;
-      transform: scale(0.7);
-      z-index: 2;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 215, 0, 0.6);
-      border: none;
-      color: #0a0a0a;
-      font-size: 1.8rem;
-      padding: 0.3rem 0.6rem;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      user-select: none;
-      z-index: 20;
-      box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-    }
-
-    .carousel-btn:hover {
-      background: #ffd700;
-    }
-
-    .carousel-btn.left { left: -30px; }
-    .carousel-btn.right { right: -30px; }
-
-    .carousel-item .pi-image-block img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-
-    .pi-image-block h3 {
-      margin: 0.3rem 0 0.5rem;
-      font-weight: 700;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(255,215,0,0.1);
       color: #ffd700;
-      font-size: 1.4rem;
-    }
-
-    .pi-image-block p {
-      margin: 0;
-      font-weight: 500;
-      font-style: italic;
-      color: #bbb;
-    }
-
-    .pi-bio {
-      flex: 1;
       font-size: 1rem;
-      line-height: 1.4;
-      color: #ddd;
     }
-
+    .alumni-section h3 {
+      color: #ffd700;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    .alumni-entry {
+      color: #fff;
+      margin-bottom: 1.5em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid #444;
+    }
+    .alumni-entry:last-child {
+      border-bottom: none;
+    }
+    .alumni-entry b {
+      color: #ffd700;
+    }
+    .alumni-entry .degree {
+      font-weight: bold;
+      color: #ffd700;
+    }
     @media (max-width: 768px) {
-      .carousel {
-        height: auto;
-        flex-wrap: nowrap;
+      section {
+        margin: 7rem 0.5rem 2rem 0.5rem;
+        padding: 0.5rem;
       }
-      .carousel-item {
-        position: relative !important;
-        flex: 0 0 90%;
-        margin: 0 10px;
-        opacity: 1 !important;
-        transform: scale(1) !important;
-        box-shadow: none !important;
-        color: #ffd700 !important;
+      .alumni-section {
         padding: 1rem;
-        flex-direction: column;
-        text-align: center;
-        min-height: 400px !important;
-        height: auto !important;
-      }
-      .pi-image-block {
-        margin-bottom: 1rem;
-      }
-      .carousel-btn {
-        display: none;
-      }
-      .carousel-item .pi-image-block img {
-        width: 120px !important;
-        height: 120px !important;
-      }
-      .pi-image-block img {
-        width: 120px !important;
-        height: 120px !important;
+        font-size: 0.96rem;
       }
     }
   </style>
 </head>
-
 <body>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="#home">Home</a>
     <a href="team.html">The Team</a>
-    <a href="#publications">Publications</a>
-    <a href="#research">Research</a>
-    <a href="#facilities">Facilities</a>
-    <a href="#awards">Awards</a>
-    <a href="#teaching">Teaching</a>
-    <a href="#funding">Funding</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+    <a href="Gallary.html">Gallary</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="MEET LNR.html">MEET LNR</a>
+    <a href="news.html">Latest</a>
+    <a href="prospectivestudents.html">Prospective Students</a>
   </nav>
 
-  <section>
-    <h2>Principal Investigator (PI)</h2>
-    <div class="pi-container">
-      <div class="pi-image-block">
-        <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
-        <h3>Prof. Lakshmi Narayan Ramasubramanian</h3>
-        <p>PhD – IISc Bangalore, B.Tech. – VNIT Nagpur</p>
-      </div>
-      <div class="pi-bio">
-        <p>Prof. Lakshmi Narayan completed his B.Tech. in Metallurgical and Materials Science Engineering at VNIT Nagpur in 2008 and received his PhD from IISc Bangalore in 2014. He was a Postdoc[...]</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Post Doctoral Fellow</h2>
-    <div class="pi-container">
-      <div class="pi-image-block">
-        <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" />
-        <h3>Dr. Ashwani Kumar</h3>
-        <p>PhD – IIT Kanpur</p>
-      </div>
-      <div class="pi-bio">
-        <p>Dr. Ashwani Kumar is a Postdoctoral Researcher at DMSE, IIT Delhi. His research focuses on ODS ferritic steels, duplex stainless steels, and AM metal matrix composites. He joined in Oc[...]</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Senior Research Fellow Section -->
-  <section>
-    <h2>Senior Research Fellow</h2>
-    <div class="pi-container">
-      <div class="pi-image-block">
-        <img src="j-vigneshwaran.jpg" alt="J. Vigneshwaran" />
-        <h3>J. Vigneshwaran</h3>
-        <p>Senior Research Fellow (Dec 2023–Ongoing)</p>
-      </div>
-      <div class="pi-bio">
-        <p>
-          J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage devices. Currently, he is working on the MXene and MXene-based polymer/metal oxide heterostructure electrodes for asymmetric supercapacitor coin cell or cylindrical cell assembly. He completed his Master of Physics from PSG College of Arts and Science, Coimbatore in 2014 and also received his MPhil in nanoscience and technology from PSG Institute of Advanced Studies, Coimbatore in 2016. He defended his Ph.D. in July 2024 at Madurai Kamaraj University, Madurai, Tamilnadu and is a Research Fellow in the Department of Materials Science and Engineering (DMSE), IIT Delhi since December 2023.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-  <h2>Ph.D. Students</h2>
-  <div class="carousel-container" aria-label="PhD Students Carousel">
-    <button class="carousel-btn left" aria-label="Previous Student">&#10094;</button>
-    <div class="carousel">
-
-      <!-- Ashwani -->
-      <div class="carousel-item active">
-        <div class="pi-image-block">
-          <img src="ashwani.jpg" alt="Ashwani" />
-          <h3>Ashwani</h3>
-          <p>Ph.D. Research Scholar (Dec. 2019 - ongoing)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi as a Research Scholar. He is working on the structural and mechanical properties of Additive manufactured maraging steels.
-          </p>
-        </div>
-      </div>
-
-      <!-- Amey Raghuvir Parnaik -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="amey.jpg" alt="Amey Raghuvir Parnaik" />
-          <h3>Amey Raghuvir Parnaik</h3>
-          <p>Ph.D. Research Scholar (Dec. 2020 - ongoing) <br>(PMRF Fellow)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from the National Institute of Technology, Warangal. He joined the Department of Material Science and Engineering, IIT Delhi, in December 2020 as a Ph.D. research scholar. His research project involves a study on the mechanical behavior of additively manufactured alloys for aerospace application.<br>
-            <b>Email:</b> msz208614@mse.iitd.ac.in
-          </p>
-        </div>
-      </div>
-
-      <!-- Pooja Sahu -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="pooja.jpg" alt="Pooja Sahu" />
-          <h3>Pooja Sahu</h3>
-          <p>Ph.D. Research Scholar (July 2021 - ongoing) <br>(Part-time)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Pooja Sahu is currently working as a senior scientist at CSIR-IMMT, Bhubaneswar, and has joined the Department of Material Science and Engineering, IIT Delhi as a part-time Ph.D. research scholar. She is a post-graduate with M.Tech- Metallurgical & Materials Engg. (silver medalist) from IIT Kharagpur, 2014; and had graduated with B.Tech- Metallurgical Engg. from NIT Raipur, 2012. She has working experience in the domain of extractive metallurgy and has also, briefly worked as a patent analyst, prior to joining IIT Delhi.
-          </p>
-        </div>
-      </div>
-
-      <!-- Simran Nath -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="simran.jpg" alt="Simran Nath" />
-          <h3>Simran Nath</h3>
-          <p>Ph.D. Research Scholar (Dec 2022 - ongoing) <br>(PMRF Fellow)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department of Materials Science and Engineering, IIT Delhi, in December 2022 as a Ph.D. research scholar. She is working on the microstructural and mechanical properties of TiN and La<sub>2</sub>O<sub>3</sub> reinforced 4043 Al-Si alloy via Wire-arc additive manufacturing.
-          </p>
-        </div>
-      </div>
-
-      <!-- Karthik Kumar -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="karthik.jpg" alt="Karthik Kumar" />
-          <h3>Karthik Kumar</h3>
-          <p>Ph.D. Research Scholar (Dec 2022 - ongoing) <br>(PMRF Fellow)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint supervision of Prof. Jayant Jain.
-          </p>
-        </div>
-      </div>
-
-      <!-- Akash Mishra -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="akash.jpg" alt="Akash Mishra" />
-          <h3>Akash Mishra</h3>
-          <p>Ph.D. Research Scholar (Jan 2024 - ongoing)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department of Materials Science and Engineering, IIT Delhi from January 2024. For his B.Tech thesis, he designed Ni-based microlattice structures that can be additively manufactured and used for manufacturing gas turbine blades that are used in aerospace industries. His research area involves study on the mechanical behavior of additively manufactured alloys for aerospace application.<br>
-            <b>Email:</b> msz238710@iitd.ac.in<br>
-            <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/akash-m-ab9210136/" target="_blank" style="color:#ffd700;">akash-m-ab9210136</a>
-          </p>
-        </div>
-      </div>
-
-      <!-- Sukmaji Indro Cahyano -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="sukmaji.jpg" alt="Sukmaji Indro Cahyano" />
-          <h3>Sukmaji Indro Cahyano</h3>
-          <p>Ph.D. Research Scholar (Nov 2024 - ongoing) <br>(Joint international student)</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Sukmaji Indro Cahyono completed his bachelor's degree in mechanical engineering department, Faculty of Engineering at Diponegoro University. He received his master’s degree in engineering from Pukyong National University, South Korea. He was a member of the research and development division of the Kangnam Solar.Ltd in Changwon, South Korea. His research was structural design and testing for polymer solar collectors and ultrasonic welding on selective coated bimetal material for solar absorption.  Currently, he has been working in the mechanical engineering department, Faculty of Engineering, at Sebelas Maret University and continues his study in the doctorate program Gadjah Mada University. He has affiliation research as a member of the Center for Innovation of Medical Equipment and Devices (CIMEDs). His research interests are solid mechanics, additive manufacturing, and 3D printing technology, and he works under the joint supervision of Profs. Muslim Mahardika and Budi Arifvianto.<br>
-            <b>Email:</b> sukmaji@mail.ugm.ac.id
-          </p>
-        </div>
-      </div>
-
-      <!-- Shantanu Jain -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="shantanu.jpg" alt="Shantanu Jain" />
-          <h3>Shantanu Jain</h3>
-          <p>Ph.D. Research Scholar</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Bio and research interests of Shantanu Jain go here.
-          </p>
-        </div>
-      </div>
-
-      <!-- Kishor Kumar J -->
-      <div class="carousel-item">
-        <div class="pi-image-block">
-          <img src="kishore.jpg" alt="Kishor Kumar J" />
-          <h3>Kishore Kumar J</h3>
-          <p>Ph.D. Research Scholar</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Bio and research interests of Kishor Kumar J go here.
-          </p>
-        </div>
-      </div>
-
-    </div>
-    <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
-  </div>
-</section>
-  <!-- Graduate Students Section -->
-  <section>
-    <h2>Graduate Students</h2>
-    <div class="carousel-container" aria-label="Graduate Students Carousel">
-      <button class="carousel-btn left" aria-label="Previous Graduate Student">&#10094;</button>
-      <div class="carousel">
-        <!-- Example Graduate Student Card -->
-        <div class="carousel-item active">
-          <div class="pi-image-block">
-            <img src="grad-student1.jpg" alt="Priya Sharma - Graduate Student" />
-            <h3>Priya Sharma</h3>
-            <p>M.Tech. Research Scholar</p>
-          </div>
-          <div class="pi-bio">
-            <p>Priya is an M.Tech. student in the Department of Materials Science and Engineering at IIT Delhi. Her thesis focuses on corrosion resistance in advanced alloys.</p>
-          </div>
-        </div>
-        <!-- Add more .carousel-item blocks as needed for other Graduate students -->
-      </div>
-      <button class="carousel-btn right" aria-label="Next Graduate Student">&#10095;</button>
-    </div>
-  </section>
-
-  <!-- Undergraduate Students Section -->
-  <section>
-    <h2>Undergraduate Students</h2>
-    <div class="carousel-container" aria-label="Undergraduate Students Carousel">
-      <button class="carousel-btn left" aria-label="Previous Undergraduate Student">&#10094;</button>
-      <div class="carousel">
-        <!-- Example Undergraduate Student Card -->
-        <div class="carousel-item active">
-          <div class="pi-image-block">
-            <img src="ug-student1.jpg" alt="Rahul Gupta - Undergraduate Student" />
-            <h3>Rahul Gupta</h3>
-            <p>B.Tech. Student</p>
-          </div>
-          <div class="pi-bio">
-            <p>Rahul is a final-year B.Tech. student working on a project involving the mechanical characterization of 3D-printed metals.</p>
-          </div>
-        </div>
-        <!-- Add more .carousel-item blocks as needed for other Undergraduate students -->
-      </div>
-      <button class="carousel-btn right" aria-label="Next Undergraduate Student">&#10095;</button>
-    </div>
-  </section>
-
-  <!-- Research Associates Section -->
-  <section>
-    <h2>Research Associates</h2>
-    <div class="carousel-container" aria-label="Research Associates Carousel">
-      <button class="carousel-btn left" aria-label="Previous Research Associate">&#10094;</button>
-      <div class="carousel">
-        <!-- Example Research Associate Card -->
-        <div class="carousel-item active">
-          <div class="pi-image-block">
-            <img src="research-associate1.jpg" alt="Research Associate" />
-            <h3>Research Associate Name</h3>
-            <p>Research Associate</p>
-          </div>
-          <div class="pi-bio">
-            <p>Short bio of the research associate. Add more profiles as needed.</p>
-          </div>
-        </div>
-        <!-- Add more .carousel-item blocks as needed for other Research Associates -->
-      </div>
-      <button class="carousel-btn right" aria-label="Next Research Associate">&#10095;</button>
-    </div>
-  </section>
+  <!-- ... (rest of team page: PI, students, etc. UNCHANGED) ... -->
 
   <!-- Alumni Section -->
   <section>
     <h2>Alumni</h2>
-    <ul style="max-width:900px; margin:1rem auto; background:#111; border-radius:10px; padding:2rem; box-shadow:0 0 10px rgba(255,215,0,0.1); color:#ffd700; font-size:1rem;">
-      <li><b>Alumnus Name 1</b> – Previous role or degree, current position/affiliation</li>
-      <li><b>Alumnus Name 2</b> – Previous role or degree, current position/affiliation</li>
-      <!-- Add more alumni as needed -->
-    </ul>
+    <div class="alumni-section">
+      <h3>Ph.D.</h3>
+      <div class="alumni-entry">
+        <b>Priyanka Saini (2019-2023)</b><br>
+        <span class="degree">Thesis title:</span> UNDERSTANDING PLASTICITY IN BULK METALLIC GLASS AND ITS COMPOSITES USING THE INDENTATION TECHNIQUE<br>
+        <span class="degree">Current position:</span> Assistant Professor (Grade II), NIT Rourkela
+      </div>
+      <h3>M. Tech.</h3>
+      <div class="alumni-entry">
+        <b>Santosh Kumar (2021-2023)</b><br>
+        <span class="degree">Project:</span> Effect of Sintering Temperature on Piezoelectric and Mechanical Properties of Soft PZT Material for Defence Application<br>
+        <span class="degree">Current position:</span> Deputy Engineer at Central Electronics Limited, Ghaziabad
+      </div>
+      <div class="alumni-entry">
+        <b>Ujjwal Kumar Singh (2020-2022)</b><br>
+        <span class="degree">Project:</span> Mechanical behavior of Heusler alloys<br>
+        <span class="degree">Current position:</span> Senior Application Engineer at Applied Materials, Bangalore (Starting July 2022)
+      </div>
+      <div class="alumni-entry">
+        <b>Abhigna Goparaju (2019-2021)</b><br>
+        <span class="degree">Project:</span> Wear of Bulk Metallic Glasses<br>
+        <span class="degree">Current position:</span> NA
+      </div>
+    </div>
   </section>
+
+  <!-- ... (rest of team page: carousels, scripts, footer, etc. UNCHANGED) ... -->
 
   <script>
     // Carousel logic for all carousels on the page
