@@ -9,103 +9,107 @@
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #0a0a0a;
       color: #fff;
       font-size: 25px;
       scroll-behavior: smooth;
     }
 
-    /* BMW Navbar Styles (see above for comments) */
-    .bmw-navbar {
+    /* Updated navigation bar styling */
+    header {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
       width: 100%;
       background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      z-index: 1000;
-      font-family: 'Roboto', Arial, sans-serif;
-    }
-    .bmw-navbar-container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 32px;
-      height: 64px;
-    }
-    .bmw-navbar-logo img {
-      height: 38px;
-      width: 38px;
-      object-fit: contain;
-    }
-    .bmw-navbar-links {
-      display: flex;
-      gap: 2.2rem;
-    }
-    .bmw-navbar-links a {
-      color: #222;
-      text-decoration: none;
-      font-size: 0.93rem;
-      font-weight: 500;
-      letter-spacing: 0.7px;
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-      transition: color 0.18s, border-color 0.18s;
-      position: relative;
-    }
-    .bmw-navbar-links a:hover,
-    .bmw-navbar-links a.active {
-      color: #1c69d4;
-      border-bottom: 2px solid #1c69d4;
-    }
-    .bmw-navbar-icons {
-      display: flex;
       align-items: center;
-      gap: 1.2rem;
-    }
-    .bmw-search-btn {
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      transition: opacity 0.14s;
-    }
-    .bmw-search-btn svg {
-      display: block;
-      opacity: 0.82;
-      transition: stroke 0.2s, opacity 0.2s;
-    }
-    .bmw-search-btn:hover svg {
-      stroke: #1c69d4;
-      opacity: 1;
-    }
-    @media (max-width: 900px) {
-      .bmw-navbar-container {
-        padding: 0 12px;
-      }
-      .bmw-navbar-links {
-        gap: 1.1rem;
-        font-size: 0.92rem;
-      }
-    }
-    @media (max-width: 700px) {
-      .bmw-navbar-container {
-        flex-wrap: wrap;
-        height: auto;
-      }
-      .bmw-navbar-links {
-        width: 100%;
-        justify-content: center;
-        margin: 10px 0 0 0;
-        flex-wrap: wrap;
-      }
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
-    /* Section and Hero styles are unchanged */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .nav-left img {
+      height: 36px;
+      width: 36px;
+    }
+
+    .lab-title {
+      font-size: 1.1rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Nav links hidden by default, visible on hover */
+    .nav-right {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .nav-right a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 2px 0;
+      border-bottom: 2px solid transparent;
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0.82rem;
+      transition: 
+        color 0.3s,
+        border-color 0.3s,
+        opacity 0.25s;
+    }
+
+    header:hover .nav-right a,
+    .nav-right:hover a {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-right a:hover,
+    .nav-right a:focus {
+      color: #ffd700;
+      border-color: #ffd700;
+      outline: none;
+    }
+
+    .nav-right a.active {
+      color: #111;
+      border-bottom: 2px solid #111;
+    }
+
+    /* Show nav text on focus for accessibility */
+    .nav-right:focus-within a {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-right svg {
+      width: 16px;
+      height: 16px;
+      fill: #888;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #ffd700;
+      opacity: 1;
+    }
+
+    /* Section styling */
     section {
       min-height: 100vh;
       padding: 8rem 4rem 4rem;
@@ -122,6 +126,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+
     .hero {
       position: relative;
       height: 100vh;
@@ -132,14 +137,17 @@
       background: radial-gradient(circle at center, #8b0000, #000);
       overflow: hidden;
     }
+
     .hero h1 {
       font-size: 4rem;
       margin-bottom: 1rem;
     }
+
     .hero p {
       font-size: 1.5rem;
       max-width: 1000px;
     }
+
     canvas {
       position: absolute;
       top: 0;
@@ -148,10 +156,12 @@
       height: 100%;
       z-index: 0;
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
     }
+
     footer {
       background: #111;
       padding: 4rem;
@@ -163,34 +173,23 @@
 </head>
 <body>
 
-  <!-- BMW-style Navigation Bar -->
-  <header class="bmw-navbar">
-    <div class="bmw-navbar-container">
-      <!-- Logo / DYPP -->
-      <div class="bmw-navbar-logo">
-        <img src="your-logo.png" alt="DYPP" />
-      </div>
-      <!-- Center: Navigation Links -->
-      <nav class="bmw-navbar-links">
-        <a href="#home" class="active">Home</a>
-        <a href="team.html">The Team</a>
-        <a href="Gallary.html">Gallary</a>
-        <a href="publications.html">Publications</a>
-        <a href="research.html">Research</a>
-        <a href="MEET LNR.html">MEET LNR</a>
-        <a href="news.html">Latest</a>
-        <a href="prospectivestudents.html">Prospective Students</a>
-      </nav>
-      <!-- Right: Search Icon -->
-      <div class="bmw-navbar-icons">
-        <button class="bmw-search-btn" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#222" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="7"/>
-            <line x1="16.65" y1="16.65" x2="21" y2="21"/>
-          </svg>
-        </button>
-      </div>
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <img src="your-logo.png" alt="Lab Logo" />
+      <div class="lab-title">DYPP</div>
     </div>
+    <nav class="nav-right" tabindex="0">
+      <a href="#home" class="active">Home</a>
+      <a href="team.html">The Team</a>
+      <a href="Gallary.html">Gallary</a>
+      <a href="publications.html">Publications</a>
+      <a href="research.html">Research</a>
+      <a href="MEET LNR.html">MEET LNR</a>
+      <a href="news.html">Latest</a>
+      <a href="prospectivestudents.html">Prospective Students</a>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/></svg>
+    </nav>
   </header>
 
   <!-- Hero section -->
@@ -207,6 +206,7 @@
     <p>&copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     const canvas = document.getElementById('bubbleCanvas');
     const ctx = canvas.getContext('2d');
