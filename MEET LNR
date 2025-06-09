@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet LNR | R. Lakshmi Narayan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #023e8a;
+      --accent: #00b4d8;
+      --light-bg: #f0f8ff;
+      --text: #333;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: var(--light-bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0 0 0.3em 0;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile img {
+      width: 240px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .bio {
+      flex: 1;
+    }
+
+    .bio h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .bio p {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .quote-box {
+      background: #e6f7ff;
+      border-left: 5px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      font-style: italic;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .section {
+      background: white;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .section h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile img {
+        width: 80%;
+        margin-bottom: 1rem;
+      }
+
+      .bio h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meet LNR</h1>
+    <p>A Glimpse into the Mind and Journey of Prof. R. Lakshmi Narayan</p>
+  </header>
+
+  <div class="container">
+    <div class="profile">
+      <img src="your-image-path.jpg" alt="Prof. R. Lakshmi Narayan">
+      <div class="bio">
+        <h2>Prof. R. Lakshmi Narayan</h2>
+        <p>Hello! I'm Lakshmi — a curious mind with a passion for materials science, and a firm believer in learning by doing. My journey has taken me across academic institutions, industry collaborations, and international symposia, but at the heart of it all lies one goal: to ignite curiosity and critical thinking in young minds.</p>
+        <p>I currently serve as a faculty member at the Department of Materials Science and Engineering, IIT Delhi. I work at the exciting intersection of metal additive manufacturing, microstructure–property relationships, and advanced characterization.</p>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      “To me, science is not about answers—it’s about asking the right questions, and daring to explore the unknown with integrity and imagination.”
+    </div>
+
+    <div class="section">
+      <h3>My Teaching Philosophy</h3>
+      <p>Teaching, to me, is more than delivering lectures—it's about mentorship, dialogue, and mutual growth. I strive to create a space where questions are welcomed, mistakes are seen as learning milestones, and students are encouraged to challenge even the fundamentals.</p>
+      <p>Whether it’s in the lab or the classroom, I believe in learning by doing. I design courses and projects that bring theory to life—giving students the opportunity to build, break, analyze, and discover.</p>
+    </div>
+
+    <div class="section">
+      <h3>What Drives Me</h3>
+      <p>Every alloy has a story, every micrograph a message. I find joy in interpreting those stories—be it through fracture surfaces, diffusion gradients, or phase maps. My research is driven by a desire to understand how structure governs behavior, and how we can use that understanding to engineer better materials.</p>
+      <p>I also deeply enjoy collaborative research—my work spans multiple countries, disciplines, and industries. I’ve been privileged to guide young researchers who have gone on to make significant contributions of their own.</p>
+    </div>
+
+    <div class="section">
+      <h3>Beyond the Lab</h3>
+      <p>When I’m not peering into a microscope or scribbling in my research notebook, you’ll find me enjoying Carnatic music, taking long nature walks, or catching up on philosophy and history books.</p>
+      <p>Ultimately, I believe science is a human endeavor—rooted in humility, shaped by community, and propelled by wonder.</p>
+    </div>
+  </div>
+</body>
+</html>
