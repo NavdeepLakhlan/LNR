@@ -10,31 +10,30 @@
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       background: #0a0a0a;
-      color: #fff;
-      font-size: 20px;
+      color: #f6f6f6;
+      font-size: 15px;
       scroll-behavior: smooth;
     }
-
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      padding: 1.5rem 2rem;
+      background: rgba(0, 0, 0, 0.92);
+      padding: 1rem 2vw;
       display: flex;
       justify-content: right;
-      gap: 2.5rem;
+      gap: 1.7rem;
       z-index: 1000;
-      font-size: 13px;
+      font-size: 11px;
       box-shadow: 0 4px 24px 0 rgba(0,0,0,0.35);
     }
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       transition: color 0.3s;
       position: relative;
     }
@@ -55,163 +54,165 @@
     nav a:hover::after {
       width: 100%;
     }
-
     main {
-      padding: 8rem 2vw 2vw 2vw;
-      max-width: 1100px;
+      padding: 5.5rem 2vw 2vw 2vw;
+      max-width: 1000px;
       margin: auto;
       min-height: 100vh;
+      font-size: 0.92rem;
     }
-
     h1, h2 {
       font-weight: 700;
-      letter-spacing: 1px;
-      margin-top: 2.5rem;
-      margin-bottom: 1.2rem;
+      letter-spacing: 0.7px;
       color: #ffd700;
-      text-shadow: 0 2px 12px #111;
-      position: relative;
-      z-index: 2;
+      margin-top: 1.5rem;
+      margin-bottom: 0.7rem;
+      text-shadow: 0 1px 6px #111;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.45rem;
     }
     h1 {
-      font-size: 2.8rem;
+      font-size: 1.45rem;
       margin-top: 0;
-      margin-bottom: 2rem;
-      border-bottom: 3px solid #ffd70066;
-      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 2px solid #ffd70044;
+      padding-bottom: 0.25rem;
       width: fit-content;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     h2 {
-      font-size: 1.7rem;
-      border-bottom: 2px solid #ffd70044;
+      font-size: 1.01rem;
+      border-bottom: 1.5px solid #ffd70033;
       width: fit-content;
-      padding-bottom: 0.2rem;
+      padding-bottom: 0.1rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
     }
-
     .section {
-      margin-bottom: 3.5rem;
-      padding: 2rem;
-      border-radius: 18px;
-      background: rgba(30,30,30, 0.88);
-      box-shadow: 0 4px 32px 0 #0007;
-      animation: fadeinup 1.2s cubic-bezier(.2,1,.22,1);
-      transition: background 0.4s;
+      margin-bottom: 1.1rem;
+      padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+      border-radius: 11px;
+      background: linear-gradient(110deg,#151515 90%, #ffd7000f 100%);
+      box-shadow: 0 3px 16px 0 #000a;
+      border: 0.5px solid #ffd70022;
+      animation: fadeinup 0.8s cubic-bezier(.2,1,.22,1);
     }
-
     @keyframes fadeinup {
-      from { opacity: 0; transform: translateY(40px);}
+      from { opacity: 0; transform: translateY(35px);}
       to { opacity: 1; transform: translateY(0);}
     }
-
-    .projects-list, .grants-list, .consult-list, .collab-list {
-      display: grid;
-      gap: 1.3rem;
-      margin: 1.2rem 0 0 0;
+    ul, .collab-list, .consult-list, .projects-list, .grants-list {
+      margin: 0.5rem 0 0 0;
       padding: 0;
       list-style: none;
     }
-
+    .projects-list, .grants-list, .consult-list, .collab-list {
+      display: grid;
+      gap: 0.5rem;
+    }
     .projects-list li, .grants-list li, .consult-list li, .collab-list li {
-      background: linear-gradient(90deg,#111 80%, #ffd70022 100%);
-      padding: 1.1rem 1.2rem;
-      border-radius: 13px;
-      box-shadow: 0 2px 12px 0 #000a;
-      font-size: 1.1rem;
+      background: linear-gradient(90deg,#191919 75%, #ffd70013 100%);
+      padding: 0.55rem 0.7rem;
+      border-radius: 7px;
+      box-shadow: 0 1px 6px 0 #0006;
+      font-size: 0.97rem;
       display: flex;
       align-items: flex-start;
-      gap: 1rem;
+      gap: 0.7rem;
       position: relative;
-      transition: background 0.4s;
+      border-left: 3.5px solid #ffd70044;
     }
     .projects-list li i, .grants-list li i, .consult-list li i, .collab-list li i {
-      color: #ffd700cc;
-      font-size: 1.3rem;
-      min-width: 1.5rem;
-      margin-top: 2px;
+      color: #ffd700b2;
+      font-size: 1rem;
+      min-width: 1.2rem;
+      margin-top: 2.5px;
     }
-
     .grants-subtitle {
-      color: #eee;
-      margin-top: 1.7rem;
-      margin-bottom: 0.6rem;
-      font-size: 1.13rem;
+      color: #F9F9F9;
+      margin-top: 1.1rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.94rem;
       font-weight: 500;
-      text-shadow: 0 1px 6px #0008;
-      letter-spacing: 0.3px;
+      text-shadow: 0 1px 4px #0007;
+      letter-spacing: 0.1px;
     }
-
-    /* Research Gallery & Videos */
     .gallery, .videos, .facilities-gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.3rem;
-      min-height: 60px;
-      margin-top: 1.1rem;
+      gap: 0.8rem;
+      min-height: 35px;
+      margin-top: 0.7rem;
       justify-content: flex-start;
     }
     .gallery-placeholder, .videos-placeholder, .facilities-placeholder {
-      color: #bbb;
+      color: #bababa;
       font-style: italic;
-      font-size: 1.07rem;
+      font-size: 0.97rem;
       background: #1d1d1d;
-      border-radius: 10px;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 8px #0005;
+      border-radius: 7px;
+      padding: 0.7rem 1.1rem;
+      box-shadow: 0 1px 5px #0004;
     }
-
-    /* Facilities Cards */
     .facilities-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 2.5rem;
-      margin-top: 1.3rem;
+      gap: 1.5rem;
+      margin-top: 0.7rem;
     }
     .facility-card {
-      background: linear-gradient(120deg, #212121 75%, #ffd70022 100%);
-      border-radius: 13px;
-      box-shadow: 0 2px 18px #0007;
-      padding: 1.8rem 1.6rem;
-      min-width: 290px;
-      flex: 1 1 320px;
+      background: linear-gradient(120deg, #212121 80%, #ffd70014 100%);
+      border-radius: 8px;
+      box-shadow: 0 1.5px 8px #0007;
+      padding: 1rem 1rem 1.2rem 1rem;
+      min-width: 170px;
+      flex: 1 1 210px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: 1.2rem;
-      position: relative;
-      transition: background 0.4s;
+      margin-bottom: 0.7rem;
+      font-size: 0.98rem;
+      border-left: 3px solid #ffd70033;
     }
     .facility-card h3 {
-      color: #ffd700;
-      font-size: 1.2rem;
-      margin: 0 0 0.7rem 0;
+      color: #ffd700e0;
+      font-size: 1.01rem;
+      margin: 0 0 0.4rem 0;
       font-weight: 700;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.37rem;
+      letter-spacing: 0.7px;
     }
     .facility-placeholder {
       color: #bbb;
       font-style: italic;
       background: #1d1d1d;
-      border-radius: 8px;
-      padding: 0.7rem 1.2rem;
-      margin-top: 0.4rem;
-      font-size: 1rem;
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      margin-top: 0.2rem;
+      font-size: 0.93rem;
     }
-
+    /* Accent bars for visual pop */
+    .section {
+      border-top: 3.5px solid #ffd70060;
+      border-bottom: 1.5px solid #ffd7001a;
+      margin-bottom: 1.5rem;
+    }
+    .section:nth-child(even) {
+      background: linear-gradient(90deg, #181818 90%, #ffd70011 100%);
+      border-left: 2.5px solid #ffd70023;
+    }
     /* Responsive */
     @media (max-width: 700px) {
-      main {
-        padding: 7rem 2vw 2vw 2vw;
-      }
-      .section { padding: 1.1rem;}
-      h1 { font-size: 1.7rem;}
-      h2 { font-size: 1.1rem;}
-      nav { font-size: 11px; gap: 1.1rem; padding: 1rem 0.5rem;}
-      .facility-card { min-width: 150px; padding: 1rem;}
+      main { padding: 4.2rem 2vw 2vw 2vw; }
+      .section { padding: 0.7rem;}
+      h1 { font-size: 1rem;}
+      h2 { font-size: 0.8rem;}
+      nav { font-size: 8.5px; gap: 0.7rem; padding: 0.6rem 0.3rem;}
+      .facility-card { min-width: 100px; padding: 0.5rem;}
     }
   </style>
 </head>
@@ -243,7 +244,6 @@
         <li><i class="fas fa-dna"></i> Fracture and Fatigue of 3D printed Ti alloys</li>
       </ul>
     </div>
-
     <div class="section">
       <h2><i class="fas fa-coins"></i>Research Grants (as PI)</h2>
       <ul class="grants-list">
@@ -260,7 +260,6 @@
         <li><i class="fas fa-hand-holding-heart"></i> "Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", <b>40 Lakh</b>, Ministry of Tribal affairs, <span style="color:#ffd700b0;">(2025- Ongoing)</span>.</li>
       </ul>
     </div>
-
     <div class="section">
       <h2><i class="fas fa-tools"></i>Consultancies</h2>
       <ul class="consult-list">
@@ -268,9 +267,8 @@
         <li><i class="fas fa-flask"></i> Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, <b>Rs. 42 Lakh</b> (Completed).</li>
         <li><i class="fas fa-chart-line"></i> Fatigue of steel, Senvion ltd, <b>4 lakh</b> (Completed).</li>
       </ul>
-      <div style="margin-top:1.2rem;color:#ccc;font-size:1.08rem;">We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancy projects being handled.</div>
+      <div style="margin-top:0.7rem;color:#ccc;font-size:0.95rem;">We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancy projects being handled.</div>
     </div>
-
     <div class="section">
       <h2><i class="fas fa-users"></i>Collaborations</h2>
       <ul class="collab-list">
@@ -282,21 +280,18 @@
         <li><i class="fas fa-university"></i> HZB, Dresden</li>
       </ul>
     </div>
-
     <div class="section">
       <h2><i class="fab fa-youtube"></i>Research Videos</h2>
       <div class="videos">
         <div class="videos-placeholder">I'll fill in the link for youtube videos here</div>
       </div>
     </div>
-
     <div class="section">
       <h2><i class="fas fa-images"></i>Research Gallery</h2>
       <div class="gallery">
         <div class="gallery-placeholder">I'll fill in images here</div>
       </div>
     </div>
-
     <div class="section">
       <h2><i class="fas fa-microscope"></i>Research Facilities</h2>
       <div class="facilities-list">
@@ -311,7 +306,7 @@
       </div>
     </div>
   </main>
-  <footer style="background:#111; padding:3rem; text-align:center; color:#aaa; font-size:1.2rem;">
+  <footer style="background:#111; padding:1.4rem; text-align:center; color:#aaa; font-size:0.93rem;">
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
 </body>
