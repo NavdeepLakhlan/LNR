@@ -6,7 +6,6 @@
   <title>Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* General page styling */
     html, body {
       margin: 0;
       padding: 0;
@@ -17,31 +16,73 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation bar styling */
-    nav {
+    /* BMW-style navigation bar */
+    header {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.85);
       display: flex;
-      justify-content: right;
-      gap: 2.5rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       z-index: 1000;
-      transition: background 0.3s ease;
-      font-size: 13px; /* Normal readable size for nav links */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
-    nav a {
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .nav-left img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .lab-title {
+      font-size: 1.1rem;
+      color: white;
+    }
+
+    .lab-title strong {
+      font-weight: 700;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: 0.75rem;
+    }
+
+    .nav-right a {
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #ffd700;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
     }
 
-    /* Section styling */
+    .nav-right a:hover {
+      color: #ffd700;
+      border-color: #ffd700;
+    }
+
+    .nav-right a.active {
+      color: white;
+      border-bottom: 2px solid white;
+    }
+
+    .nav-right svg {
+      width: 18px;
+      height: 18px;
+      fill: #aaa;
+      cursor: pointer;
+    }
+
     section {
       min-height: 100vh;
       padding: 8rem 4rem 4rem;
@@ -54,12 +95,12 @@
       transform: translateY(50px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
+
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Hero section with animated background */
     .hero {
       position: relative;
       height: 100vh;
@@ -70,16 +111,17 @@
       background: radial-gradient(circle at center, #8b0000, #000);
       overflow: hidden;
     }
+
     .hero h1 {
       font-size: 4rem;
       margin-bottom: 1rem;
     }
+
     .hero p {
       font-size: 1.5rem;
       max-width: 1000px;
     }
 
-    /* Canvas for bubble background */
     canvas {
       position: absolute;
       top: 0;
@@ -88,12 +130,12 @@
       height: 100%;
       z-index: 0;
     }
+
     .hero-content {
       position: relative;
       z-index: 2;
     }
 
-    /* Footer styling */
     footer {
       background: #111;
       padding: 4rem;
@@ -104,19 +146,27 @@
   </style>
 </head>
 <body>
-  <!-- Navigation bar linking to separate HTML pages -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="team.html">The Team</a>
-    <a href="Gallary.html">Gallary</a>
-    <a href="publications.html">Publications</a>
-    <a href="research.html">Research</a>
-    <a href="MEET LNR.html">MEET LNR</a>
-    <a href="news.html">Latest</a>
-    <a href="prospectivestudents.html">Prospective Students</a>
-  </nav>
 
-  <!-- Hero section with lab title and subtitle -->
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <img src="your-logo.png" alt="Lab Logo" />
+      <div class="lab-title">Dhātu-Yantra-<strong>Pravartana</strong></div>
+    </div>
+    <nav class="nav-right">
+      <a href="#home" class="active">Home</a>
+      <a href="team.html">The Team</a>
+      <a href="Gallary.html">Gallary</a>
+      <a href="publications.html">Publications</a>
+      <a href="research.html">Research</a>
+      <a href="MEET LNR.html">MEET LNR</a>
+      <a href="news.html">Latest</a>
+      <a href="prospectivestudents.html">Prospective Students</a>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/></svg>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
   <section class="hero" id="home">
     <canvas id="bubbleCanvas"></canvas>
     <div class="hero-content">
@@ -125,14 +175,12 @@
     </div>
   </section>
 
-  <!-- Other informational sections on the homepage could go here -->
-
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi</p>
   </footer>
 
-  <!-- Script for animated bubble background and scroll-triggered animations -->
+  <!-- JavaScript -->
   <script>
     const canvas = document.getElementById('bubbleCanvas');
     const ctx = canvas.getContext('2d');
@@ -149,6 +197,7 @@
         opacity: Math.random() * 0.5 + 0.3
       });
     }
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let b of bubbles) {
@@ -169,7 +218,6 @@
       canvas.height = window.innerHeight;
     });
 
-    // Intersection observer for scroll animations
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
