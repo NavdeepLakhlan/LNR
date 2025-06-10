@@ -12,10 +12,6 @@
       --gold-mid: #ffe68c;
       --gold-blur: #ffea6e;
       --main-bg1: #fef8e4;
-      --main-bg2: #f8eed3;
-      --main-bg3: #f3e3ba;
-      --subtle-bg1: #faf8f2;   /* softer for second page */
-      --subtle-bg2: #f8f7f3;   /* even lighter for second page */
       --navbar-link: #1E3A8A;
       --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
@@ -57,6 +53,8 @@
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 22px; width: 22px;} .lab-title { font-size: 0.85rem;} .nav-right { gap: 0.3rem; font-size: 0.7rem;} .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;} }
+
+    /* HERO SECTION */
     .hero {
       min-height: 100vh;
       height: 100vh;
@@ -64,7 +62,7 @@
       align-items: stretch;
       justify-content: center;
       position: relative;
-      background: linear-gradient(130deg, var(--main-bg2) 0%, var(--main-bg1) 90%);
+      background: var(--main-bg1);
       overflow: hidden;
       margin-top: 0;
     }
@@ -168,14 +166,14 @@
       display: block;
       pointer-events: none;
     }
-    /* Second Page: side-by-side image and content, text right, image left */
+    /* Second Page: image left, text right, justified, same background as first */
     .second-page {
       min-height: 95vh;
       width: 100vw;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      background: linear-gradient(120deg, var(--subtle-bg1) 0%, var(--subtle-bg2) 90%, var(--main-bg1) 100%);
+      background: var(--main-bg1);
       position: relative;
       z-index: 2;
       padding: 0;
@@ -214,7 +212,7 @@
       color: #23272f;
       font-weight: 400;
       line-height: 1.6;
-      text-align: right;
+      text-align: justify;
       background: none;
       border: none;
       border-radius: 0;
@@ -234,7 +232,7 @@
       .hero-rect-img, .second-img { justify-content: center; padding-right: 0;}
       .hero-rect-img img, .second-img img { width: 98vw; max-width: 500px; height: 180px;}
       .second-flex { flex-direction: column; gap: 2rem; align-items: center; }
-      .second-desc { text-align: center; }
+      .second-desc { text-align: justify; }
     }
     @media (max-width: 900px) {
       .hero-english-titles { font-size: 2.9rem;}
@@ -306,7 +304,7 @@
       </div>
     </div>
   </section>
-  <!-- SECOND PAGE: Image left, text right, no container for text -->
+  <!-- SECOND PAGE: Image left, text right, justified, same background as first -->
   <section class="second-page">
     <div class="second-flex">
       <div class="second-img">
