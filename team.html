@@ -40,7 +40,7 @@
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.6s;
+      transition: opacity 0.7s; /* changed from 0.6s to 0.7s */
     }
     #punchlineOverlay.visible {
       opacity: 1;
@@ -136,13 +136,14 @@
     .pi-image-block img {
       width: 220px;
       height: 220px;
-      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+      /* Removed clip-path to make rectangular */
       object-fit: cover;
       box-shadow: 0 0 18px rgba(30,58,138,0.13);
       background: #f7f7f7;
       margin-bottom: 0.5rem;
       margin-right: 0.2rem;
       display: block;
+      border-radius: 6px; /* Optional: slightly rounded corners for modern look */
     }
     .pi-image-block h3 {
       margin: 0.2rem 0 0.2rem 0;
@@ -185,7 +186,6 @@
         padding-left: 0;
       }
     }
-    /* Carousel styles etc... (unchanged, keep as in your file) */
     .carousel-container {
       position: relative;
       max-width: 1100px;
@@ -264,10 +264,10 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(30,58,138,0.13);
+      border-radius: 6px; /* Optional: slightly rounded corners */
       background: #f7f7f7;
       margin-bottom: 0.4rem;
+      /* Removed clip-path to make rectangular */
     }
     .carousel-item .pi-image-block,
     .carousel-item .pi-bio {
@@ -338,46 +338,6 @@
     }
     .alumni-list b {
       color:#1E3A8A;
-    }
-
-    /* PI Card Magnify Styles */
-    .pi-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(255,255,255,0.97);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s;
-    }
-    .pi-container.magnified {
-      position: relative;
-      z-index: 10000;
-      transform: scale(2.2) translateY(0);
-      box-shadow: 0 0 80px 10px rgba(30,58,138,0.18);
-      transition: transform 0.4s cubic-bezier(.47,1.64,.41,.8), box-shadow 0.3s;
-      background: #fff;
-      border-radius: 16px;
-      padding: 2.5rem 2.5rem;
-    }
-    .pi-overlay .pi-container {
-      width: auto;
-      max-width: 650px;
-      min-width: 320px;
-    }
-    body.pi-magnified {
-      overflow: hidden !important;
-      touch-action: none;
-    }
-    @media (max-width: 800px) {
-      .pi-container.magnified {
-        transform: scale(1.08) !important;
-        padding: 1.1rem 0.1rem;
-      }
-      .pi-overlay .pi-container {
-        max-width: 98vw;
-      }
     }
   </style>
 </head>
@@ -462,7 +422,6 @@
       </div>
     </section>
 
-    <!-- Other sections unchanged -->
     <section>
       <h2>Ph.D. Students</h2>
       <div class="carousel-container" aria-label="PhD Students Carousel">
@@ -564,80 +523,7 @@
           overlay.style.display = 'none';
           mainContent.style.display = 'block';
         }, 200); // after fade out
-      }, 1300); // fade in + pause (0.7s in, 0.6s visible)
-
-      // --- PI Card Magnify logic ---
-      const piCard = document.getElementById('piCard');
-      let piOverlay = null;
-      let isMagnified = false;
-      let revertOnScroll = null;
-
-      function magnifyPiCard() {
-        if (isMagnified) return;
-        isMagnified = true;
-
-        // Create overlay
-        piOverlay = document.createElement('div');
-        piOverlay.className = 'pi-overlay';
-        document.body.appendChild(piOverlay);
-
-        // Move the PI card into the overlay
-        piOverlay.appendChild(piCard);
-        piCard.classList.add('magnified');
-        document.body.classList.add('pi-magnified');
-
-        // Listen for scroll or wheel to revert
-        revertOnScroll = function() {
-          shrinkPiCard();
-        };
-        window.addEventListener('scroll', revertOnScroll, { passive: true });
-        window.addEventListener('wheel', revertOnScroll, { passive: true });
-        window.addEventListener('touchmove', revertOnScroll, { passive: true });
-      }
-
-      function shrinkPiCard() {
-        if (!isMagnified) return;
-        isMagnified = false;
-
-        // Remove events
-        window.removeEventListener('scroll', revertOnScroll, { passive: true });
-        window.removeEventListener('wheel', revertOnScroll, { passive: true });
-        window.removeEventListener('touchmove', revertOnScroll, { passive: true });
-
-        // Remove magnified class and overlay, return card to original place
-        piCard.classList.remove('magnified');
-        document.body.classList.remove('pi-magnified');
-        if (piOverlay) {
-          // Move the card back to the original section
-          const piSection = document.querySelector('section h2');
-          if (piSection && piSection.textContent.includes('Principal Investigator')) {
-            piSection.parentNode.insertBefore(piCard, piSection.nextSibling);
-          }
-          piOverlay.remove();
-          piOverlay = null;
-        }
-      }
-
-      // Magnify on mouseenter, shrink on mouseleave if not hovered on overlay
-      piCard.addEventListener('mouseenter', function() {
-        magnifyPiCard();
-      });
-
-      // If mouse leaves overlay, shrink (but only if not scrolling)
-      document.body.addEventListener('mousemove', function(e) {
-        if (!isMagnified || !piOverlay) return;
-        // If mouse is not over the overlay or the pi-card, shrink
-        if (e.target !== piOverlay && !piOverlay.contains(e.target)) {
-          shrinkPiCard();
-        }
-      });
-
-      // Shrink also if click anywhere outside the card
-      document.addEventListener('mousedown', function(e) {
-        if (isMagnified && piOverlay && !piCard.contains(e.target)) {
-          shrinkPiCard();
-        }
-      });
+      }, 1400); // 0.7s fade-in + 0.7s visible
     });
 
     // Carousel logic for all carousels on the page (unchanged)
