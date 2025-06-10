@@ -16,18 +16,38 @@
       scroll-behavior: smooth;
     }
 
-    /* Updated navigation bar styling */
-    header {
+    /* NAVBAR CONTAINER STYLING */
+    .navbar-container {
       position: fixed;
-      top: 0;
-      width: 100%;
+      top: 24px;
+      left: 32px;
+      right: 32px;
       background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* NAVIGATION BAR ITEMS */
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      padding: 0.8rem 2rem;
+      gap: 2rem;
+      background: transparent;
     }
 
     .nav-left {
@@ -48,7 +68,6 @@
       letter-spacing: 1px;
     }
 
-    /* Nav links hidden by default, visible on hover */
     .nav-right {
       display: flex;
       gap: 1.2rem;
@@ -57,42 +76,29 @@
     }
 
     .nav-right a {
-      color: #222;
+      color: #0F4761;
       text-decoration: none;
       font-weight: 700;
-      padding: 2px 0;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
       border-bottom: 2px solid transparent;
-      opacity: 0;
-      pointer-events: none;
-      font-size: 0.82rem;
+      font-size: 0.95rem;
       transition: 
-        color 0.3s,
-        border-color 0.3s,
-        opacity 0.25s;
+        color 0.2s,
+        background 0.2s,
+        border-color 0.2s;
     }
-
-    header:hover .nav-right a,
-    .nav-right:hover a {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
     .nav-right a:hover,
     .nav-right a:focus {
-      color: #ffd700;
-      border-color: #ffd700;
+      background: #f0f8ff;
+      color: #0073e6;
+      border-color: #0073e6;
       outline: none;
     }
-
     .nav-right a.active {
       color: #111;
       border-bottom: 2px solid #111;
-    }
-
-    /* Show nav text on focus for accessibility */
-    .nav-right:focus-within a {
-      opacity: 1;
-      pointer-events: auto;
+      background: #f5f5f5;
     }
 
     .nav-right svg {
@@ -105,11 +111,29 @@
       transition: fill 0.2s, opacity 0.2s;
     }
     .nav-right svg:hover {
-      fill: #ffd700;
+      fill: #0073e6;
       opacity: 1;
     }
 
-    /* Section styling */
+    /* Accessibility: keep nav links visible on focus */
+    .nav-right:focus-within a {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Push hero down to make space for navbar */
+    .hero {
+      margin-top: 110px;
+      position: relative;
+      height: calc(100vh - 110px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #8b0000, #000);
+      overflow: hidden;
+    }
+
     section {
       min-height: 100vh;
       padding: 8rem 4rem 4rem;
@@ -125,17 +149,6 @@
     section.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at center, #8b0000, #000);
-      overflow: hidden;
     }
 
     .hero h1 {
@@ -169,28 +182,43 @@
       color: #aaa;
       font-size: 2rem;
     }
+
+    @media (max-width: 600px) {
+      .navbar-container {
+        left: 8px;
+        right: 8px;
+        top: 8px;
+        border-radius: 8px;
+      }
+      .navbar {
+        gap: 0.5rem;
+        padding: 0.5rem 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="nav-left">
-      <img src="your-logo.png" alt="Lab Logo" />
-      <div class="lab-title">DYPP</div>
-    </div>
-    <nav class="nav-right" tabindex="0">
-      <a href="#home" class="active">Home</a>
-      <a href="team.html">The Team</a>
-      <a href="Gallary.html">Gallary</a>
-      <a href="publications.html">Publications</a>
-      <a href="research.html">Research</a>
-      <a href="MEET LNR.html">MEET LNR</a>
-      <a href="news.html">Latest</a>
-      <a href="prospectivestudents.html">Prospective Students</a>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/></svg>
+  <!-- Navigation Bar Container -->
+  <div class="navbar-container" id="navbarContainer">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="your-logo.png" alt="Lab Logo" />
+        <div class="lab-title">DYPP</div>
+      </div>
+      <div class="nav-right" tabindex="0">
+        <a href="#home" class="active">Home</a>
+        <a href="team.html">The Team</a>
+        <a href="Gallary.html">Gallary</a>
+        <a href="publications.html">Publications</a>
+        <a href="research.html">Research</a>
+        <a href="MEET LNR.html">MEET LNR</a>
+        <a href="news.html">Latest</a>
+        <a href="prospectivestudents.html">Prospective Students</a>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/></svg>
+      </div>
     </nav>
-  </header>
+  </div>
 
   <!-- Hero section -->
   <section class="hero" id="home">
@@ -208,6 +236,7 @@
 
   <!-- JavaScript -->
   <script>
+    // Bubble animation
     const canvas = document.getElementById('bubbleCanvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -223,7 +252,6 @@
         opacity: Math.random() * 0.5 + 0.3
       });
     }
-
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let b of bubbles) {
@@ -244,6 +272,7 @@
       canvas.height = window.innerHeight;
     });
 
+    // Section fade-in on scroll
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -257,6 +286,26 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+    // Navbar show on hover and scroll up
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        // Scrolling up
+        navbarContainer.classList.add('visible');
+      } else {
+        // Scrolling down
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    // Show navbar on page load
+    navbarContainer.classList.add('visible');
   </script>
 </body>
 </html>
