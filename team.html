@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f6f7fa; /* Lighter background */
+      background-color: #f6f7fa;
       color: #222;
       font-size: 18px;
       scroll-behavior: smooth;
@@ -20,7 +20,7 @@
       text-align: justify;
     }
 
-    /* --- Navbar Styles from index.html --- */
+    /* --- Navbar Styles --- */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -83,7 +83,7 @@
       margin-left: auto;
     }
     .nav-right a {
-      color: #0F4761;
+      color: #1E3A8A;
       text-decoration: none;
       font-weight: 600;
       padding: 0.38rem 0.8rem;
@@ -95,15 +95,15 @@
     }
     .nav-right a:hover,
     .nav-right a:focus {
-      background: #f0f8ff;
-      color: #0073e6;
-      border-color: #0073e6;
+      background: #e4eaff;
+      color: #1E3A8A;
+      border-color: #1E3A8A;
       outline: none;
     }
     .nav-right a.active {
-      color: #111;
-      border-bottom: 2px solid #111;
-      background: #f5f5f5;
+      color: #1E3A8A;
+      border-bottom: 2px solid #1E3A8A;
+      background: #e4eaff;
     }
     .nav-right svg {
       width: 15px;
@@ -115,131 +115,123 @@
       transition: fill 0.2s, opacity 0.2s;
     }
     .nav-right svg:hover {
-      fill: #0073e6;
+      fill: #1E3A8A;
       opacity: 1;
     }
-
-    @media (max-width: 1300px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .navbar {
-        gap: 0.2rem;
-        padding: 0.3rem 0.3rem;
-      }
-      .nav-left img {
-        height: 22px;
-        width: 22px;
-      }
-      .lab-title {
-        font-size: 0.85rem;
-      }
-      .nav-right {
-        gap: 0.3rem;
-        font-size: 0.7rem;
-      }
-      .nav-right a {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.7rem;
-        border-radius: 4px;
-      }
-    }
-
     /* --- End Navbar Styles --- */
 
     section {
       max-width: 1200px;
       margin: 6rem auto 2rem;
-      padding: 1rem;
-      background-color: #fff; /* Lighter background for sections */
+      padding: 1.5rem;
+      background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(200,200,200,0.13);
     }
     h1, h2 {
-      color: #333333;
+      color: #1E3A8A;
       text-align: center;
-      font-size: 1.6rem;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1px;
     }
-
-    .pi-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .pi-image-block {
-      flex: 1 1 200px;
-      text-align: center;
-    }
-    .pi-image-block img {
-      width: 200px;
-      height: 200px;
-      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
-      object-fit: cover;
-      box-shadow: 0 0 15px rgba(248,180,0,0.18);
-      background: #f7f7f7;
-    }
-    .pi-image-block h3 {
-      margin: 0.5rem 0 0.3rem;
-      color: #f8b400;
-      font-size: 1rem;
-    }
-    .pi-image-block p {
-      font-size: 0.75rem;
-      color: #888;
-      margin: 0;
-    }
-    .pi-bio {
-      flex: 2 1 500px;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      color: #222;
-    }
-
-    footer {
-      background: #fff;
-      padding: 2rem;
-      text-align: center;
-      color: #aaa;
-    }
-
-    @media (max-width: 768px) {
-      .pi-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .pi-bio {
-        text-align: justify;
-      }
-      .pi-image-block img {
-        width: 160px;
-        height: 160px;
-      }
-    }
-
-    /* Carousel Styles for all student sections */
     h2 {
-      color: #f8b400;
-      text-align: center;
       margin-bottom: 2rem;
       font-weight: 700;
       font-size: 2.2rem;
     }
+    .punchline {
+      color: #fff;
+      background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
+      border-radius: 12px 12px 0 0;
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 2px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      box-shadow: 0 4px 24px 0 rgba(30,58,138,0.08);
+      margin: -2rem -1.5rem 1.5rem -1.5rem;
+      text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 700px) {
+      .punchline {
+        font-size: 1.15rem;
+        padding: 1.2rem 0.3rem 0.7rem 0.3rem;
+      }
+    }
+
+    /* Profile Info Sections (PI, Postdoc, SRF) - LEFT ALIGNED IMAGE */
+    .pi-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.3rem;
+      margin-top: 1.5rem;
+    }
+    .pi-image-block {
+      flex: 0 0 185px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .pi-image-block img {
+      width: 185px;
+      height: 185px;
+      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(30,58,138,0.11);
+      background: #f7f7f7;
+      margin-bottom: 0.5rem;
+      margin-right: 0.2rem;
+      display: block;
+    }
+    .pi-image-block h3 {
+      margin: 0.2rem 0 0.2rem 0;
+      color: #1E3A8A;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-align: left;
+    }
+    .pi-image-block p {
+      font-size: 0.92rem;
+      color: #445;
+      margin: 0;
+      text-align: left;
+    }
+    .pi-bio {
+      flex: 1 1 400px;
+      font-size: 1.02rem;
+      line-height: 1.5;
+      color: #23272f;
+      padding-top: 0.1rem;
+      padding-left: 0.1rem;
+      text-align: justify;
+    }
+
+    @media (max-width: 900px) {
+      .pi-container {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+      }
+      .pi-image-block {
+        align-items: center;
+        text-align: center;
+      }
+      .pi-image-block img {
+        width: 130px;
+        height: 130px;
+      }
+      .pi-bio {
+        text-align: justify;
+        padding-top: 0.6rem;
+        padding-left: 0;
+      }
+    }
+
+    /* Carousel Styles for student sections */
     .carousel-container {
       position: relative;
       max-width: 1100px;
@@ -255,9 +247,9 @@
       justify-content: center;
     }
     .carousel-item {
-      flex: 0 0 90%; /* Increased width */
+      flex: 0 0 90%;
       margin: 0 2vw;
-      background: #f9fafb; /* Lighter background for cards */
+      background: #f9fafb;
       border-radius: 18px;
       box-shadow: 0 4px 32px rgba(200,200,200,0.14);
       color: #333;
@@ -286,37 +278,22 @@
       opacity: 1;
       position: relative;
       left: 0;
-      flex: 0 0 98%; /* Wider when active */
+      flex: 0 0 98%;
       transform: scale(1);
-      color: #f8b400;
-      box-shadow: 0 0 30px rgba(248,180,0,0.13);
+      color: #1E3A8A;
+      box-shadow: 0 0 30px rgba(30,58,138,0.11);
       z-index: 10;
       background: #fff;
       animation: fadeInCard 0.6s;
-    }
-
-    .carousel-item.next {
-      position: absolute;
-      left: 75%;
-      opacity: 0.6;
-      transform: scale(0.85);
-      z-index: 5;
-    }
-
-    .carousel-item.next + .carousel-item {
-      left: 90%;
-      opacity: 0.4;
-      transform: scale(0.7);
-      z-index: 2;
     }
 
     .carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(248,180,0,0.3);
+      background: rgba(30,58,138,0.13);
       border: none;
-      color: #0a0a0a;
+      color: #1E3A8A;
       font-size: 2rem;
       padding: 0.3rem 0.7rem;
       border-radius: 50%;
@@ -324,10 +301,11 @@
       transition: background 0.3s;
       user-select: none;
       z-index: 20;
-      box-shadow: 0 0 5px rgba(248,180,0,0.13);
+      box-shadow: 0 0 5px rgba(30,58,138,0.11);
     }
     .carousel-btn:hover {
-      background: #f8b400;
+      background: #1E3A8A;
+      color: #fff;
     }
     .carousel-btn.left { left: -30px; }
     .carousel-btn.right { right: -30px; }
@@ -337,32 +315,37 @@
       height: 180px;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(248,180,0,0.13);
+      box-shadow: 0 0 10px rgba(30,58,138,0.11);
       background: #f7f7f7;
+      margin-bottom: 0.4rem;
     }
 
-    .pi-image-block h3 {
+    .carousel-item .pi-image-block,
+    .carousel-item .pi-bio {
+      text-align: left;
+    }
+
+    .carousel-item .pi-image-block h3 {
       margin: 0.3rem 0 0.5rem;
       font-weight: 700;
-      color: #f8b400;
+      color: #1E3A8A;
       font-size: 1.4rem;
+      text-align: left;
     }
-
-    .pi-image-block p {
+    .carousel-item .pi-image-block p {
       margin: 0;
       font-weight: 500;
       font-style: italic;
-      color: #888;
+      color: #445;
+      text-align: left;
     }
-
-    .pi-bio {
+    .carousel-item .pi-bio {
       flex: 1;
       font-size: 1rem;
       line-height: 1.45;
-      color: #222;
+      color: #23272f;
       text-align: justify;
     }
-
     @media (max-width: 768px) {
       .carousel {
         height: auto;
@@ -375,7 +358,7 @@
         opacity: 1 !important;
         transform: scale(1) !important;
         box-shadow: none !important;
-        color: #f8b400 !important;
+        color: #1E3A8A !important;
         background: #fff !important;
         padding: 1rem;
         flex-direction: column;
@@ -383,17 +366,33 @@
         min-height: 340px !important;
         height: auto !important;
       }
-      .pi-image-block {
+      .pi-image-block, .carousel-item .pi-image-block {
         margin-bottom: 1rem;
+        align-items: center;
+        text-align: center;
       }
       .carousel-btn {
         display: none;
       }
       .carousel-item .pi-image-block img,
       .pi-image-block img {
-        width: 120px !important;
-        height: 120px !important;
+        width: 110px !important;
+        height: 110px !important;
       }
+    }
+    /* Alumni styling */
+    .alumni-list {
+      max-width:900px;
+      margin:1rem auto;
+      background:#fff;
+      border-radius:10px;
+      padding:2rem;
+      box-shadow:0 0 10px rgba(200,200,200,0.13);
+      color:#1E3A8A;
+      font-size:1rem;
+    }
+    .alumni-list b {
+      color:#1E3A8A;
     }
   </style>
 </head>
@@ -424,6 +423,9 @@
   <!-- End Navbar -->
 
   <section>
+    <div class="punchline">
+      MEET THE FORCE BEHIND DYP's INNOVATION
+    </div>
     <h2>Principal Investigator (PI)</h2>
     <div class="pi-container">
       <div class="pi-image-block">
@@ -451,7 +453,6 @@
     </div>
   </section>
 
-  <!-- Senior Research Fellow Section -->
   <section>
     <h2>Senior Research Fellow</h2>
     <div class="pi-container">
@@ -488,34 +489,18 @@
           </div>
         </div>
 
-        <!-- Amey Raghuvir Parnaik -->
-        <div class="carousel-item">
-          <div class="pi-image-block">
-            <img src="amey.jpg" alt="Amey Raghuvir Parnaik" />
-            <h3>Amey Raghuvir Parnaik</h3>
-            <p>Ph.D. Research Scholar (Dec. 2020 - ongoing) <br>(PMRF Fellow)</p>
-          </div>
-          <div class="pi-bio">
-            <p>
-              Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from t[...]
-              <b>Email:</b> msz208614@mse.iitd.ac.in
-            </p>
-          </div>
-        </div>
-
-        <!-- ... other PhD students ... -->
+        <!-- Add more PhD students here as needed -->
 
       </div>
       <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
     </div>
   </section>
-  <!-- Graduate Students Section -->
+
   <section>
     <h2>Graduate Students</h2>
     <div class="carousel-container" aria-label="Graduate Students Carousel">
       <button class="carousel-btn left" aria-label="Previous Graduate Student">&#10094;</button>
       <div class="carousel">
-        <!-- Example Graduate Student Card -->
         <div class="carousel-item active">
           <div class="pi-image-block">
             <img src="grad-student1.jpg" alt="Priya Sharma - Graduate Student" />
@@ -526,19 +511,17 @@
             <p>Priya is an M.Tech. student in the Department of Materials Science and Engineering at IIT Delhi. Her thesis focuses on corrosion resistance in advanced alloys.</p>
           </div>
         </div>
-        <!-- Add more .carousel-item blocks as needed for other Graduate students -->
+        <!-- Add more graduate students here -->
       </div>
       <button class="carousel-btn right" aria-label="Next Graduate Student">&#10095;</button>
     </div>
   </section>
 
-  <!-- Undergraduate Students Section -->
   <section>
     <h2>Undergraduate Students</h2>
     <div class="carousel-container" aria-label="Undergraduate Students Carousel">
       <button class="carousel-btn left" aria-label="Previous Undergraduate Student">&#10094;</button>
       <div class="carousel">
-        <!-- Example Undergraduate Student Card -->
         <div class="carousel-item active">
           <div class="pi-image-block">
             <img src="ug-student1.jpg" alt="Rahul Gupta - Undergraduate Student" />
@@ -549,19 +532,17 @@
             <p>Rahul is a final-year B.Tech. student working on a project involving the mechanical characterization of 3D-printed metals.</p>
           </div>
         </div>
-        <!-- Add more .carousel-item blocks as needed for other Undergraduate students -->
+        <!-- Add more undergraduate students here -->
       </div>
       <button class="carousel-btn right" aria-label="Next Undergraduate Student">&#10095;</button>
     </div>
   </section>
 
-  <!-- Research Associates Section -->
   <section>
     <h2>Research Associates</h2>
     <div class="carousel-container" aria-label="Research Associates Carousel">
       <button class="carousel-btn left" aria-label="Previous Research Associate">&#10094;</button>
       <div class="carousel">
-        <!-- Example Research Associate Card -->
         <div class="carousel-item active">
           <div class="pi-image-block">
             <img src="research-associate1.jpg" alt="Research Associate" />
@@ -572,16 +553,15 @@
             <p>Short bio of the research associate. Add more profiles as needed.</p>
           </div>
         </div>
-        <!-- Add more .carousel-item blocks as needed for other Research Associates -->
+        <!-- Add more research associates here -->
       </div>
       <button class="carousel-btn right" aria-label="Next Research Associate">&#10095;</button>
     </div>
   </section>
 
-  <!-- Alumni Section -->
   <section>
     <h2>Alumni</h2>
-    <ul style="max-width:900px; margin:1rem auto; background:#fff; border-radius:10px; padding:2rem; box-shadow:0 0 10px rgba(200,200,200,0.13); color:#f8b400; font-size:1rem;">
+    <ul class="alumni-list">
       <li><b>Alumnus Name 1</b> – Previous role or degree, current position/affiliation</li>
       <li><b>Alumnus Name 2</b> – Previous role or degree, current position/affiliation</li>
       <!-- Add more alumni as needed -->
@@ -642,8 +622,7 @@
       }
     });
 
-    // --- Navbar JS from index.html ---
-    // NAVBAR show on hover and on scroll up
+    // Navbar JS
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
@@ -657,7 +636,6 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
-    // --- End Navbar JS ---
   </script>
 </body>
 </html>
