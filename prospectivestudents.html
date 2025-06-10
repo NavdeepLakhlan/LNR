@@ -15,44 +15,139 @@
       font-size: 15px;
       scroll-behavior: smooth;
     }
-    nav {
+    /* --- Navbar Styles (from index.html) --- */
+    .navbar-container {
       position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.92);
-      padding: 1rem 2vw;
-      display: flex;
-      justify-content: right;
-      gap: 1.7rem;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
       z-index: 1000;
-      font-size: 11px;
-      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.35);
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      transition: color 0.3s;
-      position: relative;
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
     }
-    nav a:hover {
-      color: #ffd700;
-    }
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #ffd700;
-      transition: width 0.3s;
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-    }
-    nav a:hover::after {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
+      background: transparent;
     }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+    .nav-left img {
+      height: 35px;
+      width: 35px;
+    }
+    .lab-title {
+      font-size: 0.97rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+    .nav-right a {
+      color: #0F4761;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-right a:hover,
+    .nav-right a:focus {
+      background: #f0f8ff;
+      color: #0073e6;
+      border-color: #0073e6;
+      outline: none;
+    }
+    .nav-right a.active {
+      color: #111;
+      border-bottom: 2px solid #111;
+      background: #f5f5f5;
+    }
+    .nav-right svg {
+      width: 15px;
+      height: 15px;
+      fill: #888;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #0073e6;
+      opacity: 1;
+    }
+    @media (max-width: 1300px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+      }
+    }
+    @media (max-width: 900px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .navbar {
+        gap: 0.2rem;
+        padding: 0.3rem 0.3rem;
+      }
+      .nav-left img {
+        height: 22px;
+        width: 22px;
+      }
+      .lab-title {
+        font-size: 0.85rem;
+      }
+      .nav-right {
+        gap: 0.3rem;
+        font-size: 0.7rem;
+      }
+      .nav-right a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        border-radius: 4px;
+      }
+    }
+    /* --- End Navbar Styles --- */
     main {
       padding: 5.5rem 2vw 2vw 2vw;
       max-width: 1000px;
@@ -192,7 +287,6 @@
       font-size: 0.98rem;
       margin-bottom: 0.1rem;
     }
-
     /* Contact Section */
     .contact-section {
       background: linear-gradient(110deg,#181818 90%, #ffd70013 100%);
@@ -259,10 +353,15 @@
       }
     }
     @media (max-width: 700px) {
+      .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;}
+      .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem; }
+      .nav-left img { height: 22px; width: 22px; }
+      .lab-title { font-size: 0.85rem; }
+      .nav-right { gap: 0.3rem; font-size: 0.7rem; }
+      .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;}
       main { padding: 4.2rem 2vw 2vw 2vw; }
       h1 { font-size: 1rem;}
       h2 { font-size: 0.87rem;}
-      nav { font-size: 8.5px; gap: 0.7rem; padding: 0.6rem 0.3rem;}
       .intro-section, .cta-section, .faq-section { padding: 0.9rem;}
       .highlights { flex-direction: column; gap: 0.7rem;}
       .highlight-card { padding: 0.7rem; min-width: 120px;}
@@ -272,23 +371,36 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="team.html">The Team</a>
-    <a href="Gallary.html">Gallary</a>
-    <a href="publications.html">Publications</a>
-    <a href="research.html">Research</a>
-    <a href="awards.html">Awards</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="latest.html">News</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Navbar (from index.html) -->
+  <div class="navbar-container" id="navbarContainer">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="your-logo.png" alt="Lab Logo" />
+        <div class="lab-title">DYPP</div>
+      </div>
+      <div class="nav-right" tabindex="0">
+        <a href="index.html">Home</a>
+        <a href="team.html">The&nbsp;Team</a>
+        <a href="Gallary.html">Gallary</a>
+        <a href="publications.html">Publications</a>
+        <a href="research.html">Research</a>
+        <a href="MEET LNR.html">MEET&nbsp;LNR</a>
+        <a href="news.html">Latest</a>
+        <a href="prospectivestudents.html" class="active">Prospective&nbsp;Students</a>
+        <!-- Search icon (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
+        </svg>
+      </div>
+    </nav>
+  </div>
+  <!-- End Navbar -->
   <main>
     <h1>Join Dhātu-yantra-pravartana Lab</h1>
     <div class="intro-section">
       <p>
         Are you passionate about advancing the frontiers of Materials Science and Engineering? <br>
-        If you are motivated, curious, and eager to work on innovative projects at the intersection of mechanics, metallurgy, and advanced manufacturing, we invite you to join our dynamic research group at IIT Delhi.
+        If you are motivated, curious, and eager to work on innovative projects at the intersection of mechanics, metallurgy, and advanced manufacturing, we invite you to join our dynamic research gro[...]
       </p>
     </div>
     <div class="highlights">
@@ -366,7 +478,7 @@
       </div>
       <div class="map-embed">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d1%3A0x7c4b0f3e9b0f2b2e!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1718024257486!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d1%3A0[...]"
           width="100%" 
           height="100%" 
           style="border:0;" 
@@ -382,5 +494,21 @@
   <footer style="background:#111; padding:1.4rem; text-align:center; color:#aaa; font-size:0.93rem;">
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
+  <script>
+    // NAVBAR show on hover and on scroll up (from index.html)
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        navbarContainer.classList.add('visible');
+      } else {
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+    navbarContainer.classList.add('visible');
+  </script>
 </body>
 </html>
