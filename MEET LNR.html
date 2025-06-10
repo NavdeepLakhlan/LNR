@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MEET LNR | Dhātu-yantra-pravartana Lab</title>
+  <title>Meet LNR | R. Lakshmi Narayan</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -208,74 +208,206 @@
       margin-bottom: 1.2rem;
       text-align: left;
     }
+    h3 {
+      color: #1E3A8A;
+      font-size: 1.13rem;
+      margin-top: 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      border-bottom: 1.3px solid #1E3A8A33;
+      width: fit-content;
+      padding-bottom: 0.12rem;
+      text-shadow: 0 1px 7px #1e3a8a10;
+    }
     p, ul, li {
       color: #23272f;
       font-size: 1.07rem;
       line-height: 1.6;
       text-align: justify;
     }
-    .bio-section {
-      margin-bottom: 2.5rem;
-      padding: 2rem 2.5rem;
-      border-radius: 14px;
-      background: #f6f7fa;
-      box-shadow: 0 1px 10px #c2d3ff33;
-      border-left: 5px solid #1E3A8A;
-      font-size: 1.09rem;
-    }
-    .bio-photo-block {
+    /* --- Profile Section --- */
+    .profile {
       display: flex;
       flex-wrap: wrap;
+      gap: 2rem;
       align-items: center;
-      gap: 2.3rem;
-      margin-bottom: 2rem;
+      background: #f6f7fa;
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 1px 10px #c2d3ff33;
+      border-left: 5px solid #1E3A8A;
+      margin-bottom: 1.7rem;
+      animation: fadeinup 0.9s cubic-bezier(.2,1,.22,1);
     }
-    .bio-photo-block img {
-      width: 220px;
-      height: 220px;
+    .profile img {
+      width: 210px;
+      height: 210px;
+      border-radius: 14px;
       object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 0 18px rgba(30,58,138,0.13);
-      background: #f7f7f7;
-      margin-bottom: 0.5rem;
+      box-shadow: 0 2px 14px #000a;
+      border: 3px solid #1E3A8A33;
+      background: #fff;
+      margin: 0 auto;
       display: block;
+      transition: box-shadow 0.3s;
     }
-    .bio-info {
-      flex: 1 1 400px;
-      font-size: 1.09rem;
-      line-height: 1.5;
+    .profile img:hover {
+      box-shadow: 0 0 30px #1E3A8A40, 0 2px 14px #000a;
+      border-color: #1E3A8A;
+    }
+    .bio {
+      flex: 1;
+      min-width: 230px;
+    }
+    .bio h2 {
+      color: #1E3A8A;
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+      text-shadow: 0 1px 7px #1e3a8a10;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 900;
+    }
+    .bio p {
+      margin-bottom: 1rem;
+      font-size: 1.07rem;
       color: #23272f;
-      padding-top: 0.1rem;
-      padding-left: 0.1rem;
+      text-shadow: 0 1px 3px #1e3a8a08;
+    }
+    .quote-box {
+      background: linear-gradient(100deg, #e4eaff 87%, #1E3A8A18 100%);
+      border-left: 6px solid #1E3A8A;
+      border-radius: 9px;
+      margin: 2.5rem 0 2rem 0;
+      box-shadow: 0 1.5px 10px #1e3a8a11;
+      padding: 1.4rem 2.1rem;
+      font-style: italic;
+      color: #1E3A8A;
+      font-size: 1.25rem;
+      text-shadow: 0 1px 6px #1e3a8a10;
+      animation: fadeinup 1.1s cubic-bezier(.2,1,.22,1);
+    }
+    .section {
+      background: #f6f7fa;
+      padding: 2rem 1.5rem 1.7rem 1.5rem;
+      margin-top: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 1px 10px #c2d3ff33;
+      border-top: 3px solid #1E3A8A40;
+      border-bottom: 1.5px solid #1E3A8A13;
+      border-left: 2.5px solid #1E3A8A13;
+      animation: fadeinup 1.2s cubic-bezier(.2,1,.22,1);
+    }
+    /* Awards Section Lists */
+    .awards-lists {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      margin-top: 1rem;
+    }
+    .awards-list, .honors-list {
+      flex: 1 1 300px;
+      background: #fff;
+      border-radius: 9px;
+      box-shadow: 0 1px 8px #1e3a8a08;
+      border: 1.5px solid #1E3A8A1a;
+      padding: 1.1rem 1.3rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.98rem;
+      color: #23272f;
+    }
+    .awards-list ul, .honors-list ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+    .awards-list ul li, .honors-list ul li {
+      margin-bottom: 0.45rem;
+      line-height: 1.5;
+    }
+    .awards-list strong, .honors-list strong {
+      color: #1E3A8A;
+    }
+    .awards-section-title {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #1E3A8A;
+      text-shadow: 0 1px 7px #1e3a8a11;
+      font-size: 1.04rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 800;
+      border-bottom: 1px solid #1E3A8A33;
+      width: fit-content;
+      padding-bottom: 0.12rem;
+    }
+    /* Teaching Cards */
+    .teaching-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .teaching-videos, .teaching-courses {
+      flex: 1 1 320px;
+      background: #fff;
+      border-radius: 9px;
+      box-shadow: 0 1px 8px #1e3a8a08;
+      border: 1.5px solid #1E3A8A1a;
+      padding: 1.1rem 1.2rem 1.3rem 1.2rem;
+      margin-bottom: 1.2rem;
+      color: #23272f;
+    }
+    .teaching-videos h4, .teaching-courses h4 {
+      color: #1E3A8A;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.03rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 1px 6px #1e3a8a07;
+      border-bottom: 1px solid #1E3A8A33;
+      padding-bottom: 0.12rem;
+      width: fit-content;
+    }
+    .video-placeholder {
+      color: #888;
+      font-style: italic;
+      background: #f6f7fa;
+      border-radius: 7px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.97rem;
+      text-align: center;
+      margin-top: 0.6rem;
+      box-shadow: 0 1px 5px #1e3a8a06;
+    }
+    .teaching-courses ul {
+      margin: 0.7rem 0 0 0;
+      padding-left: 1.3rem;
+      font-size: 0.99rem;
+      color: #23272f;
+    }
+    .teaching-courses li {
+      margin-bottom: 0.37rem;
+      line-height: 1.5;
+    }
+    @keyframes fadeinup {
+      from { opacity: 0; transform: translateY(35px);}
+      to { opacity: 1; transform: translateY(0);}
     }
     @media (max-width: 900px) {
-      .container {
-        padding: 0.7em 0.5em 1em 0.5em;
-        max-width: 98vw;
-      }
-      .meet-header {
-        font-size: 1.1rem;
-        padding: 1.3rem 0.4rem 1.1rem 0.4rem;
-        min-width: unset;
-        width: 99vw;
-      }
-      .meet-header-desc {
-        font-size: 0.98rem;
-        padding: 0.7rem 0.4rem;
-        max-width: 99vw;
-      }
-      .bio-photo-block {
-        flex-direction: column;
-        gap: 1.2rem;
-        align-items: center;
-      }
-      .bio-photo-block img {
-        width: 120px;
-        height: 120px;
-      }
-      h1 { font-size: 1.1rem;}
-      h2 { font-size: 1rem;}
-      .bio-section { padding: 1.1rem 0.7rem;}
+      .container { padding: 0.4rem;}
+      .profile { flex-direction: column; text-align: center; }
+      .profile img { width: 60vw; max-width: 220px; height: 60vw; max-height: 220px; margin-bottom: 1.25rem;}
+      .meet-header { padding-top: 5rem;}
+      .awards-lists, .teaching-cards { flex-direction: column; gap: 1.2rem;}
+      .meet-header { font-size: 1.1rem; padding: 1.3rem 0.4rem 1.1rem 0.4rem; min-width: unset; width: 99vw;}
+      .meet-header-desc { font-size: 0.98rem; padding: 0.7rem 0.4rem; max-width: 99vw;}
+      .profile img { width: 120px; height: 120px;}
+      .section { padding: 1.1rem 0.7rem 1rem 0.7rem;}
+      .awards-list, .honors-list, .teaching-videos, .teaching-courses { padding: 0.7rem 0.6rem;}
     }
   </style>
 </head>
@@ -306,41 +438,106 @@
   <!-- End Navbar -->
 
   <div class="meet-header">
-    Meet Prof. Lakshmi Narayan Ramasubramanian
+    Meet LNR
   </div>
   <div class="meet-header-desc">
-    Principal Investigator, Dhātu-yantra-pravartana Lab, IIT Delhi
+    A Glimpse into the Mind and Journey of Prof. R. Lakshmi Narayan
   </div>
 
-  <main class="container">
-    <section class="bio-section">
-      <div class="bio-photo-block">
-        <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
-        <div class="bio-info">
-          <h2>About Prof. Lakshmi Narayan</h2>
-          <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and received his Ph.D. from the Indian Institute of Science (IISc), Bangalore in 2015. <br><br>
-            Before joining IIT Delhi, he gained experience as a research associate at the Indian Institute of Science and as an Assistant Professor at IIT Jammu. His research interests include additive manufacturing, bulk metallic glasses, high entropy alloys, fatigue and fracture, and advanced characterization techniques.
-          </p>
+  <div class="container">
+    <div class="profile">
+      <img src="meetlnr.jpg" alt="Prof. R. Lakshmi Narayan">
+      <div class="bio">
+        <h2>Prof. R. Lakshmi Narayan</h2>
+        <p>Hello! I'm Lakshmi — a curious mind with a passion for materials science, and a firm believer in learning by doing. My journey has taken me across academic institutions, industry collaborations, and around the world.</p>
+        <p>I currently serve as a faculty member at the Department of Materials Science and Engineering, IIT Delhi. I work at the exciting intersection of metal additive manufacturing, microstructure evolution, and materials characterization.</p>
+      </div>
+    </div>
+    <div class="quote-box">
+      “To me, science is not about answers—it’s about asking the right questions, and daring to explore the unknown with integrity and imagination.”
+    </div>
+    <div class="section">
+      <h3>My Teaching Philosophy</h3>
+      <p>Teaching, to me, is more than delivering lectures—it's about mentorship, dialogue, and mutual growth. I strive to create a space where questions are welcomed, mistakes are seen as learning opportunities, and curiosity is the driving force.</p>
+      <p>Whether it’s in the lab or the classroom, I believe in learning by doing. I design courses and projects that bring theory to life—giving students the opportunity to build, break, analyze, and reflect.</p>
+    </div>
+    <div class="section">
+      <h3>What Drives Me</h3>
+      <p>Every alloy has a story, every micrograph a message. I find joy in interpreting those stories—be it through fracture surfaces, diffusion gradients, or phase maps. My research is driven by a fascination with how the tiniest details shape the biggest outcomes.</p>
+      <p>I also deeply enjoy collaborative research—my work spans multiple countries, disciplines, and industries. I’ve been privileged to guide young researchers who have gone on to make significant contributions of their own.</p>
+    </div>
+    <!-- AWARDS SECTION -->
+    <div class="section">
+      <h3>Awards</h3>
+      <div class="awards-lists">
+        <div class="awards-list">
+          <div class="awards-section-title">Key Awards & Distinctions</div>
           <ul>
-            <li><strong>Email:</strong> lnr@iitd.ac.in</li>
-            <li><strong>ORCID:</strong> 0000-0002-6178-8124</li>
-            <li><strong>Web:</strong> <a href="https://home.iitd.ac.in/faculty.php?fac=lnr" target="_blank">IIT Delhi Faculty Page</a></li>
+            <li>INSA Young Scientist Award celebration - hosted by students</li>
+            <li>Young Achievers' Award, VNIT Nagpur 2024</li>
+            <li>Excellence in Teaching award, IIT Delhi 2024</li>
+            <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
+            <li>INSA Medal for Young Scientist in October 2021</li>
+            <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
+            <li>Gopalakrishnan-NTU Presidential Post-Doctoral Fellowship, NTU Singapore, 2018</li>
+            <li>K.P. Abraham Gold medal for Best PhD thesis, IISc, 2014-15</li>
+            <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
+            <li>Outstanding reviewer award for Scripta Materialia (2014, 2019), Acta Materialia (2018, 2020, 2021), and Transactions of IIM (2022)</li>
+            <li>Publons Peer Review award (top 1% reviewers in Materials Science, 2018, 2019)</li>
+            <li>DAAD fellowship for research, Technical University, Berlin (2010-2011)</li>
+            <li>Best poster award, iMdea, Madrid, Spain (2016)</li>
+            <li>Among 20 scientists chosen for China Innotour program for Young Scientists 2019, Kunming-Shanghai</li>
+          </ul>
+        </div>
+        <div class="honors-list">
+          <div class="awards-section-title">Honors & Positions of Responsibility</div>
+          <ul>
+            <li>Editor, IIM Metal News, 2023</li>
+            <li>PMRF Subject coordinator, 2023</li>
+            <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
+            <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
+            <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
+            <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
+            <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
+            <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
+            <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
+            <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
+            <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
+            <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
           </ul>
         </div>
       </div>
-      <p>
-        Prof. Narayan has authored and co-authored numerous publications in reputed international journals, delivered invited talks at renowned conferences, and has been recognized for his contributions in the field of materials science and engineering. He is passionate about mentoring the next generation of researchers and collaborating widely on interdisciplinary problems.
-      </p>
-    </section>
-
-    <section class="bio-section">
-      <h2>Message from Prof. Narayan</h2>
-      <p>
-        "The journey of scientific discovery is as much about perseverance and curiosity as it is about expertise. At the Dhātu-yantra-pravartana Lab, we strive to push the boundaries of materials science through innovative research, team spirit, and a commitment to societal impact. I welcome collaborations and encourage students to join us in this exciting endeavor."
-      </p>
-    </section>
-  </main>
+    </div>
+    <!-- TEACHINGS SECTION -->
+    <div class="section">
+      <h3>Teachings</h3>
+      <div class="teaching-cards">
+        <div class="teaching-videos">
+          <h4>Videos</h4>
+          <div class="video-placeholder">
+            Videos coming soon!
+          </div>
+        </div>
+        <div class="teaching-courses">
+          <h4>Courses Taught</h4>
+          <ul>
+            <li>MLL100 (APL102): Introduction to Materials Science and Engineering</li>
+            <li>MLL714: Fracture Mechanics</li>
+            <li>MLP704: Materials Processing and Characterization Lab</li>
+            <li>MLV705: Special Topics in Materials Engineering</li>
+            <li>MLL711: Mechanical Behavior of Materials (PG)</li>
+            <li>APL753: Properties and Selection of Materials</li>
+            <li>MLL251: Mechanical Behavior of Materials (UG)</li>
+            <li>MLP352: Mechanical Behavior of Materials (UG Lab)</li>
+            <li>NIN100: Introduction to Materials Science and Engineering (UG Non graded)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer style="background:#111; padding:1.4rem; text-align:center; color:#aaa; font-size:0.93rem;">
+    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
+  </footer>
   <script>
     // NAVBAR show on hover and on scroll up
     let lastScrollY = window.scrollY;
