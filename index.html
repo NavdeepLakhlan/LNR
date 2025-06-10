@@ -204,30 +204,70 @@
       border: 3px solid #ffd70044;
       display: inline-block;
     }
-    .hero-title-hi {
+
+    /* --- SMOKE ROLL ANIMATION --- */
+    .smoke-heading-wrapper {
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      min-height: 160px;
+      position: relative;
+    }
+    .smoke-heading {
+      opacity: 0;
+      filter: blur(20px);
+      transform: translateX(-80vw) scale(1.15) skewX(-10deg) rotateZ(-2deg);
+      transition: none;
+      will-change: filter, opacity, transform;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .smoke-heading .hero-title-hi,
+    .smoke-heading .hero-title-en {
+      display: block;
+      text-align: left;
+      white-space: pre-line;
+    }
+    .smoke-heading .hero-title-hi {
       font-size: 82px;
       color: var(--gold);
       font-weight: 700;
-      font-family: 'Roboto', Arial, sans-serif;
-      text-shadow: 0 2px 8px #bbb8;
-      line-height: 1;
-      margin-bottom: 0.4rem;
       letter-spacing: 2px;
+      margin-bottom: 0.15em;
+      text-shadow: 0 4px 24px #ffd70060, 0 2px 8px #bbb8;
     }
-    .hero-title-en {
+    .smoke-heading .hero-title-en {
       font-size: 72px;
       color: var(--blue);
       font-weight: 500;
-      margin-bottom: 1.1rem;
       letter-spacing: 1.5px;
-      font-family: 'Roboto', Arial, sans-serif;
       text-shadow: 0 2px 8px #bbb8;
     }
+    .smoke-heading.revealed {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0) scale(1) skewX(0) rotateZ(0);
+      transition: 
+        opacity 0.9s cubic-bezier(.33,1.16,.64,1) 0.2s,
+        filter 1.05s cubic-bezier(.33,1.16,.64,1) 0.15s,
+        transform 1.1s cubic-bezier(.33,1.16,.64,1) 0.1s;
+    }
+
+    /* Hide the old hero title styles in this context */
+    .hero-title-hi, .hero-title-en {
+      display: none !important;
+    }
+
     .hero-desc {
       font-size: 1.23rem;
       color: #23272f;
       max-width: 700px;
-      margin: 0 auto 0.4rem auto;
+      margin: 1.1rem auto 0.4rem auto;
       font-weight: 400;
       line-height: 1.5;
       background: #fff;
@@ -238,16 +278,18 @@
       text-align: justify;
     }
     @media (max-width: 900px) {
-      .hero-title-hi { font-size: 44px; }
-      .hero-title-en { font-size: 36px; }
+      .smoke-heading .hero-title-hi { font-size: 44px; }
+      .smoke-heading .hero-title-en { font-size: 36px; }
       .hero-logo { width: 70px; height: 70px; }
       .hero-desc { font-size: 1rem; padding: 0.6rem 0.7rem;}
+      .smoke-heading-wrapper { min-height: 90px;}
     }
     @media (max-width: 600px) {
-      .hero-title-hi { font-size: 28px;}
-      .hero-title-en { font-size: 21px;}
+      .smoke-heading .hero-title-hi { font-size: 28px;}
+      .smoke-heading .hero-title-en { font-size: 21px;}
       .hero-logo { width: 44px; height: 44px;}
       .hero-desc { font-size: 0.92rem; padding: 0.4rem 0.5rem;}
+      .smoke-heading-wrapper { min-height: 48px;}
     }
     footer {
       background: #111;
@@ -287,11 +329,11 @@
     <canvas id="bubbleCanvas"></canvas>
     <div class="hero-content">
       <img src="your-logo.png" alt="Demo Logo" class="hero-logo" />
-      <div class="hero-title-hi">
-        धातु-यन्त्र-प्रवर्तन प्रयोगशाला
-      </div>
-      <div class="hero-title-en">
-        Dhātu-Yantra-Pravartaṇa Prayogsālā
+      <div class="smoke-heading-wrapper">
+        <div class="smoke-heading" id="smokeHeading">
+          <span class="hero-title-hi">धातु-यन्त्र-प्रवर्तन प्रयोगशाला</span>
+          <span class="hero-title-en">Dhātu-Yantra-Pravartaṇa Prayogsālā</span>
+        </div>
       </div>
       <div class="hero-desc">
         The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys, and High Entropy Alloys, using experimental, computational, and theoretical approaches. We strive to connect fundamental materials science with real-world applications and innovations.
@@ -339,6 +381,7 @@
       requestAnimationFrame(animate);
     }
     animate();
+
     // Navbar show/hide on scroll up
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
@@ -353,6 +396,13 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
+
+    // SMOKE ROLL-IN for heading (on first load)
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        document.getElementById('smokeHeading').classList.add('revealed');
+      }, 350); // Delay for effect
+    });
   </script>
 </body>
 </html>
