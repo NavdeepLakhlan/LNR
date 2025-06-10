@@ -4,19 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhātu-yantra-pravartana Lab</title>
-  <!-- Import Roboto font from Google Fonts -->
+  <!-- Import Roboto font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    /* Base styles for clean look */
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       background-color: #0a0a0a;
       color: #fff;
       font-size: 20px;
       scroll-behavior: smooth;
     }
 
+    /* Navbar styles matching prospectivestudents.html */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -31,20 +33,16 @@
       pointer-events: none;
       display: flex;
       justify-content: center;
-      /* Ensure enough space for all navbar items */
-      max-width: none;
       width: fit-content;
       min-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
-
     .navbar-container.visible,
     .navbar-container:hover {
       opacity: 1;
       pointer-events: auto;
     }
-
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -54,7 +52,6 @@
       gap: 1rem;
       background: transparent;
     }
-
     .nav-left {
       display: flex;
       align-items: center;
@@ -71,7 +68,6 @@
       font-weight: 700;
       letter-spacing: 0.8px;
     }
-
     .nav-right {
       display: flex;
       align-items: center;
@@ -86,9 +82,9 @@
       padding: 0.38rem 0.8rem;
       border-radius: 6px;
       border-bottom: 2px solid transparent;
-      font-size: 0.87rem;
+      font-size: 0.87rem; /* Match prospectivestudents.html */
       transition: color 0.2s, background 0.2s, border-color 0.2s;
-      white-space: nowrap; /* Prevent line breaks in nav items */
+      white-space: nowrap;
     }
     .nav-right a:hover,
     .nav-right a:focus {
@@ -115,7 +111,6 @@
       fill: #0073e6;
       opacity: 1;
     }
-
     @media (max-width: 1300px) {
       .navbar-container {
         min-width: 0;
@@ -124,7 +119,6 @@
         right: 0;
       }
     }
-
     @media (max-width: 900px) {
       .navbar-container {
         min-width: 0;
@@ -156,69 +150,107 @@
       }
     }
 
-    section {
-      min-height: 100vh;
-      padding: 8rem 4rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    /* Hero section - sleeker and fullscreen */
     .hero {
-      margin-top: 110px;
+      margin-top: 0;
       position: relative;
-      height: calc(100vh - 110px);
+      height: 100vh; /* Full viewport */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, #8b0000, #000);
+      background: radial-gradient(circle at center, #8b0000 0%, #000 100%);
       overflow: hidden;
+      padding: 0;
     }
-
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      max-width: 1000px;
-    }
-
-    canvas {
+    /* Bubble animation canvas fills .hero */
+    .hero canvas {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       z-index: 0;
+      display: block;
     }
-
+    /* Hero content above canvas, centered */
     .hero-content {
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 100vw;
+      padding: 0 1rem;
+      text-align: center;
     }
-
+    /* Demo logo styling */
+    .hero-logo {
+      width: 110px;
+      height: 110px;
+      margin-bottom: 1.2rem;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      background: #fff;
+      border: 3px solid #ffd70044;
+      display: inline-block;
+    }
+    /* Heading styles */
+    .hero-title-hi {
+      font-size: 82px;
+      color: #ffd700;
+      font-weight: 700;
+      font-family: 'Roboto', Arial, sans-serif;
+      text-shadow: 0 2px 8px #000a;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      letter-spacing: 2px;
+    }
+    .hero-title-en {
+      font-size: 72px;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 1.1rem;
+      letter-spacing: 1.5px;
+      font-family: 'Roboto', Arial, sans-serif;
+      text-shadow: 0 2px 8px #000a;
+    }
+    .hero-desc {
+      font-size: 1.23rem;
+      color: #fffbe7;
+      max-width: 700px;
+      margin: 0 auto 0.4rem auto;
+      font-weight: 400;
+      line-height: 1.5;
+      background: rgba(20,20,20,0.50);
+      border-radius: 10px;
+      padding: 1.1rem 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      border: 1.5px solid #ffd70033;
+    }
+    @media (max-width: 900px) {
+      .hero-title-hi { font-size: 44px; }
+      .hero-title-en { font-size: 36px; }
+      .hero-logo { width: 70px; height: 70px; }
+      .hero-desc { font-size: 1rem; padding: 0.6rem 0.7rem;}
+    }
+    @media (max-width: 600px) {
+      .hero-title-hi { font-size: 28px;}
+      .hero-title-en { font-size: 21px;}
+      .hero-logo { width: 44px; height: 44px;}
+      .hero-desc { font-size: 0.92rem; padding: 0.4rem 0.5rem;}
+    }
     footer {
       background: #111;
-      padding: 4rem;
+      padding: 1.4rem;
       text-align: center;
       color: #aaa;
-      font-size: 2rem;
+      font-size: 0.93rem;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -241,34 +273,51 @@
       </div>
     </nav>
   </div>
-
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <canvas id="bubbleCanvas"></canvas>
     <div class="hero-content">
-      <h1>Dhātu-yantra-pravartana Lab</h1>
-      <p>Laboratory for Multi-scale Mechanical Behavior of Materials</p>
+      <!-- Demo Logo -->
+      <img src="https://via.placeholder.com/110x110.png?text=Logo" alt="Demo Logo" class="hero-logo" />
+      <!-- Main Heading in Hindi -->
+      <div class="hero-title-hi">
+        धातु-यन्त्र-प्रवर्तन प्रयोगशाला
+      </div>
+      <!-- Main Heading in English -->
+      <div class="hero-title-en">
+        Dhātu-Yantra-Pravartaṇa Prayogsālā
+      </div>
+      <!-- Description -->
+      <div class="hero-desc">
+        The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys with special emphasis on fatigue, fracture and indentation behavior.
+      </div>
     </div>
   </section>
-
   <footer>
-    <p>&copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi</p>
+    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
-
   <script>
-    // Bubble animation background
+    // Bubble animation: fills hero section, sleeker, less bubbles
     const canvas = document.getElementById('bubbleCanvas');
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    function resizeCanvas() {
+      // Set canvas to hero size
+      const hero = document.querySelector('.hero');
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    // Fewer, smaller bubbles for sleekness
     const bubbles = [];
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 30; i++) {
       bubbles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 20 + 10,
-        dx: Math.random() * 2 - 1,
-        dy: Math.random() * 2 - 1,
-        opacity: Math.random() * 0.5 + 0.3
+        r: Math.random() * 18 + 6,
+        dx: Math.random() * 1.4 - 0.7,
+        dy: Math.random() * 1.4 - 0.7,
+        opacity: Math.random() * 0.4 + 0.25
       });
     }
     function animate() {
@@ -286,27 +335,8 @@
       requestAnimationFrame(animate);
     }
     animate();
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
 
-    // Reveal sections as they enter the viewport (fade-in effect)
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-
-    // NAVBAR show on hover and on scroll up
+    // Navbar show/hide on scroll up (as in prospectivestudents.html)
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
