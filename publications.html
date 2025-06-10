@@ -28,48 +28,139 @@
       color: var(--text-main);
       font-size: 15px;
     }
-
-    /* Navigation bar styling */
-    nav {
+    /* --- Navbar Styles (from index.html) --- */
+    .navbar-container {
       position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1.5rem;
-      display: flex;
-      justify-content: right;
-      gap: 2.5rem;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
       z-index: 1000;
-      transition: background 0.3s ease;
-      font-size: 13px;
-      box-shadow: 0 4px 24px 0 rgba(0,0,0,0.35);
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s ease;
-      letter-spacing: 1.2px;
-      position: relative;
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
     }
-    nav a:hover {
-      color: #ffd700;
-    }
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #ffd700;
-      transition: width 0.3s;
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-    }
-    nav a:hover::after {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
+      background: transparent;
     }
-
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+    .nav-left img {
+      height: 35px;
+      width: 35px;
+    }
+    .lab-title {
+      font-size: 0.97rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+    .nav-right a {
+      color: #0F4761;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-right a:hover,
+    .nav-right a:focus {
+      background: #f0f8ff;
+      color: #0073e6;
+      border-color: #0073e6;
+      outline: none;
+    }
+    .nav-right a.active {
+      color: #111;
+      border-bottom: 2px solid #111;
+      background: #f5f5f5;
+    }
+    .nav-right svg {
+      width: 15px;
+      height: 15px;
+      fill: #888;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #0073e6;
+      opacity: 1;
+    }
+    @media (max-width: 1300px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+      }
+    }
+    @media (max-width: 900px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .navbar {
+        gap: 0.2rem;
+        padding: 0.3rem 0.3rem;
+      }
+      .nav-left img {
+        height: 22px;
+        width: 22px;
+      }
+      .lab-title {
+        font-size: 0.85rem;
+      }
+      .nav-right {
+        gap: 0.3rem;
+        font-size: 0.7rem;
+      }
+      .nav-right a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        border-radius: 4px;
+      }
+    }
+    /* --- End Navbar Styles --- */
     header {
       background: var(--header-bg);
       color: var(--header-fg);
@@ -250,40 +341,46 @@
       overflow: hidden;
     }
     @media (max-width: 700px) {
-      nav { font-size: 10px; gap: 1rem; padding: 0.7rem 0.5rem; }
-      header {
-        padding: 3em 0 0.5em 0;
-      }
-      .container {
-        padding: 0 0.5em 1em 0.5em;
-        max-width: 98vw;
-      }
-      .pub-year-header {
-        font-size: 1em;
-        padding: 0.6em 0.7em;
-      }
-      h2 {
-        font-size: 1em;
-        padding-left: 0.45em;
-      }
-      .pub-card {
-        padding: 0.7em 0.7em;
-      }
+      .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;}
+      .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem; }
+      .nav-left img { height: 22px; width: 22px; }
+      .lab-title { font-size: 0.85rem; }
+      .nav-right { gap: 0.3rem; font-size: 0.7rem; }
+      .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;}
+      header { padding: 3em 0 0.5em 0; }
+      .container { padding: 0 0.5em 1em 0.5em; max-width: 98vw;}
+      .pub-year-header { font-size: 1em; padding: 0.6em 0.7em;}
+      h2 { font-size: 1em; padding-left: 0.45em;}
+      .pub-card { padding: 0.7em 0.7em;}
     }
   </style>
 </head>
 <body>
-  <!-- Navigation bar added -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="team.html">The Team</a>
-    <a href="Gallary.html">Gallary</a>
-    <a href="publications.html">Publications</a>
-    <a href="research.html">Research</a>
-    <a href="MEET LNR.html">MEET LNR</a>
-    <a href="news.html">Latest</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Navbar (from index.html) -->
+  <div class="navbar-container" id="navbarContainer">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="your-logo.png" alt="Lab Logo" />
+        <div class="lab-title">DYPP</div>
+      </div>
+      <div class="nav-right" tabindex="0">
+        <a href="index.html">Home</a>
+        <a href="team.html">The&nbsp;Team</a>
+        <a href="Gallary.html">Gallary</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="research.html">Research</a>
+        <a href="MEET LNR.html">MEET&nbsp;LNR</a>
+        <a href="news.html">Latest</a>
+        <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
+        <!-- Search icon (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
+        </svg>
+      </div>
+    </nav>
+  </div>
+  <!-- End Navbar -->
+
   <header>
     <h1>Publications</h1>
     <p>R. Lakshmi Narayan – Articles, Editorials, Lectures, and More</p>
@@ -319,6 +416,21 @@
     </section>
   </main>
   <script>
+    // NAVBAR show on hover and on scroll up (from index.html)
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        navbarContainer.classList.add('visible');
+      } else {
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+    navbarContainer.classList.add('visible');
+
     // Data for publications (add more entries as needed)
     const publications = [
       {
