@@ -2,33 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications | R. Lakshmi Narayan</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --accent: #ffd700;
-      --bg: #0a0a0a;
-      --card-bg: #181818;
-      --header-bg: #181818;
-      --header-fg: #ffd700;
-      --border: #ffd70038;
-      --shadow: 0 4px 24px 0 #000a;
-      --shadow-card: 0 1px 10px #000a;
-      --focus: #ffd700;
-      --text-main: #f6f6f6;
-      --text-muted: #bababa;
-    }
     html, body {
-      height: 100%;
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      font-size: 15px;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f6f7fa;
+      color: #222;
+      font-size: 18px;
+      scroll-behavior: smooth;
+      min-height: 100vh;
     }
-    /* --- Navbar Styles (from index.html) --- */
+    /* Navbar Styles (copied from team.html) */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -87,7 +75,7 @@
       margin-left: auto;
     }
     .nav-right a {
-      color: #0F4761;
+      color: #1E3A8A;
       text-decoration: none;
       font-weight: 600;
       padding: 0.38rem 0.8rem;
@@ -99,15 +87,15 @@
     }
     .nav-right a:hover,
     .nav-right a:focus {
-      background: #f0f8ff;
-      color: #0073e6;
-      border-color: #0073e6;
+      background: #e4eaff;
+      color: #1E3A8A;
+      border-color: #1E3A8A;
       outline: none;
     }
     .nav-right a.active {
-      color: #111;
-      border-bottom: 2px solid #111;
-      background: #f5f5f5;
+      color: #1E3A8A;
+      border-bottom: 2px solid #1E3A8A;
+      background: #e4eaff;
     }
     .nav-right svg {
       width: 15px;
@@ -119,7 +107,7 @@
       transition: fill 0.2s, opacity 0.2s;
     }
     .nav-right svg:hover {
-      fill: #0073e6;
+      fill: #1E3A8A;
       opacity: 1;
     }
     @media (max-width: 1300px) {
@@ -160,83 +148,71 @@
         border-radius: 4px;
       }
     }
-    /* --- End Navbar Styles --- */
-    header {
-      background: var(--header-bg);
-      color: var(--header-fg);
-      padding: 4.2em 0 1.2em 0;
+    /* Publications Page Header */
+    .pub-header {
+      background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
+      color: #fff;
+      border-radius: 22px;
+      font-size: 2rem;
+      font-weight: 800;
       text-align: center;
-      letter-spacing: 1.2px;
-      box-shadow: var(--shadow);
-    }
-    header h1 {
-      margin: 0 0 0.3em 0;
-      font-weight: 700;
-      font-size: 2.1rem;
       letter-spacing: 1.5px;
-      color: var(--accent);
-      text-shadow: 0 1px 6px #000;
-      text-transform: uppercase;
+      padding: 2.3rem 2rem 2.1rem 2rem;
+      box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
+      margin: 7.5rem auto 2.2rem auto;
+      width: 680px;
+      max-width: 95vw;
+      text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
+      border: 4px solid #1E3A8A;
+      display: block;
     }
-    header p {
-      margin: 0;
-      font-weight: 400;
-      font-size: 1.08rem;
-      color: #ffd700bb;
+    .pub-header-desc {
+      color: #1E3A8A;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.11rem;
+      margin: 0 auto 2.2rem auto;
+      max-width: 680px;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      box-shadow: 0 2px 14px rgba(30,58,138,0.07);
     }
+    /* Main Container */
     .container {
-      max-width: 920px;
-      margin: 2.5em auto 3em auto;
+      max-width: 1200px;
+      margin: 0 auto 3em auto;
       padding: 2.5em 1.3em 2em 1.3em;
-      background: var(--card-bg);
+      background: #fff;
       border-radius: 12px;
-      box-shadow: var(--shadow);
-      border: 1.5px solid var(--border);
+      box-shadow: 0 0 20px rgba(200,200,200,0.13);
+      border: none;
     }
     section {
       margin-bottom: 2.5rem;
     }
+    /* Section Titles & Subsection Titles */
     h2 {
-      border-left: 5px solid var(--accent);
-      padding-left: 0.7em;
-      font-size: 1.27rem;
-      margin-top: 2.2rem;
-      margin-bottom: 1.1rem;
-      color: var(--accent);
-      background: #ffd70011;
-      line-height: 1.3;
-      letter-spacing: 0.5px;
+      color: #1E3A8A;
+      text-align: left;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
       font-weight: 700;
-      text-shadow: 0 1px 6px #111;
-      width: fit-content;
-      border-radius: 4px;
+      font-size: 2.2rem;
+      margin-top: 0;
+      padding-top: 0.5rem;
     }
     .subsection-title {
-      font-size: 1.04em;
-      color: #ffd700c0;
+      font-size: 1.18rem;
+      color: #1E3A8A;
       font-weight: 700;
-      margin: 2em 0 0.7em 0;
+      margin: 2.3em 0 0.7em 0;
       letter-spacing: 0.2px;
-      text-shadow: 0 1px 4px #0006;
+      text-shadow: 0 1px 4px #e4eaff;
     }
-    .simple-list, .pub-year-group, .pub-list, .pub-card, ul.simple-list {
-      background: linear-gradient(110deg,#151515 90%, #ffd70009 100%);
-      border-radius: 8px;
-      box-shadow: var(--shadow-card);
-      border-left: 3px solid var(--accent);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      color: var(--text-main);
-    }
-    .simple-list {
-      padding: 1em 1.3em;
-      margin-bottom: 1.2em;
-      margin-top: 0.5em;
-      font-size: 1.07em;
-      background: #181818;
-      border-radius: 7px;
-      border-left: 4px solid var(--accent);
-    }
+    /* Publication Year Group (Collapsible) */
     .pub-year-group {
       margin-bottom: 1.5em;
       background: none;
@@ -244,95 +220,110 @@
       box-shadow: none;
     }
     .pub-year-header {
-      background: #181818;
-      color: var(--accent);
-      font-size: 1.09rem;
+      background: #e4eaff;
+      color: #1E3A8A;
+      font-size: 1.13rem;
       font-weight: bold;
-      padding: 0.7em 1em;
-      border-radius: 5px;
+      padding: 0.9em 1.3em;
+      border-radius: 8px;
       margin: 1.5em 0 0.8em 0;
       cursor: pointer;
       outline: none;
       display: flex;
       align-items: center;
-      border: 1.5px solid var(--border);
-      box-shadow: 0 1px 4px #0009;
+      border: 2px solid #1E3A8A33;
+      box-shadow: 0 1px 4px #c2d3ff66;
       letter-spacing: 0.3px;
       transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
     .pub-year-header:focus {
-      border-color: var(--focus);
-      box-shadow: 0 0 0 2px var(--focus);
-      color: #212121;
-      background: var(--accent);
+      border-color: #1E3A8A;
+      background: #fff;
+      color: #1E3A8A;
     }
     .pub-year-header .chevron {
       margin-right: 0.7em;
       font-size: 1.25em;
       transition: transform 0.2s;
-      color: var(--accent);
+      color: #1E3A8A;
     }
     .pub-year-header[aria-expanded="true"] .chevron {
       transform: rotate(90deg);
     }
+    /* Publication List and Card */
     .pub-list {
       list-style: none;
       padding: 0;
       margin: 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
       background: none;
       box-shadow: none;
       border-radius: 0 0 7px 7px;
     }
     .pub-card {
-      background: linear-gradient(90deg,#191919 75%, #ffd70013 100%);
+      background: #f6f7fa;
       padding: 1.05em 1em 0.95em 1em;
-      border-bottom: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
+      border-bottom: 1px solid #dbe6ff;
+      border-left: 5px solid #1E3A8A;
       border-radius: 7px;
-      box-shadow: 0 1px 6px 0 #0006;
-      font-size: 1.03em;
-      line-height: 1.4;
-      letter-spacing: 0.4px;
-      margin-bottom: 0.5em;
-      color: var(--text-main);
+      box-shadow: 0 1px 6px 0 #c2d3ff33;
+      font-size: 1.07em;
+      line-height: 1.55;
+      letter-spacing: 0.2px;
+      margin-bottom: 0.7em;
+      color: #222;
+      transition: background 0.18s, box-shadow 0.18s;
     }
     .pub-card:last-child {
       border-bottom: none;
     }
     .pub-card:hover, .pub-card:focus-within {
-      background: #222218;
-      box-shadow: 0 4px 24px #ffd70033;
+      background: #e4eaff;
+      box-shadow: 0 4px 24px #1e3a8a11;
     }
     .pub-num {
       font-weight: bold;
-      color: var(--accent);
+      color: #1E3A8A;
       margin-right: 0.85em;
     }
     .pub-title {
       font-weight: 500;
-      color: #ffd700;
+      color: #1E3A8A;
     }
     .pub-journal {
-      color: #bababa;
+      color: #445;
       font-style: italic;
       margin-left: 0.7em;
     }
+    /* Simple-list blocks (for non-collapsible lists) */
+    .simple-list, ul.simple-list {
+      background: #f6f7fa;
+      border-radius: 8px;
+      box-shadow: 0 1px 10px #c2d3ff33;
+      border-left: 5px solid #1E3A8A;
+      border-top: 1px solid #dbe6ff;
+      border-bottom: 1px solid #dbe6ff;
+      color: #222;
+      padding: 1em 1.3em;
+      margin-bottom: 1.2em;
+      margin-top: 0.5em;
+      font-size: 1.07em;
+    }
+    /* Links */
     a {
-      color: var(--accent);
-      text-decoration: underline dotted;
+      color: #1E3A8A;
+      text-decoration: underline;
       transition: color 0.18s;
     }
     a:hover {
-      color: #fff;
-      background: #ffd70033;
+      color: #0073e6;
+      background: #e4eaff;
       border-radius: 3px;
     }
     a:focus {
-      outline: 2px solid var(--focus);
+      outline: 2px solid #1E3A8A;
       outline-offset: 2px;
     }
+    /* Accessibility */
     .sr-only {
       position: absolute;
       left: -9999px;
@@ -340,23 +331,43 @@
       height: 1px;
       overflow: hidden;
     }
-    @media (max-width: 700px) {
-      .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;}
-      .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem; }
-      .nav-left img { height: 22px; width: 22px; }
-      .lab-title { font-size: 0.85rem; }
-      .nav-right { gap: 0.3rem; font-size: 0.7rem; }
-      .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;}
-      header { padding: 3em 0 0.5em 0; }
-      .container { padding: 0 0.5em 1em 0.5em; max-width: 98vw;}
-      .pub-year-header { font-size: 1em; padding: 0.6em 0.7em;}
-      h2 { font-size: 1em; padding-left: 0.45em;}
-      .pub-card { padding: 0.7em 0.7em;}
+    /* Responsive styles */
+    @media (max-width: 900px) {
+      .container {
+        padding: 0.7em 0.5em 1em 0.5em;
+        max-width: 98vw;
+      }
+      .pub-header {
+        font-size: 1.1rem;
+        padding: 1.3rem 0.4rem 1.1rem 0.4rem;
+        min-width: unset;
+        width: 99vw;
+      }
+      .pub-header-desc {
+        font-size: 0.98rem;
+        padding: 0.7rem 0.4rem;
+        max-width: 99vw;
+      }
+      h2 {
+        font-size: 1.1rem;
+        padding-left: 0.45em;
+      }
+      .subsection-title {
+        font-size: 1.02rem;
+      }
+      .pub-year-header {
+        font-size: 1em;
+        padding: 0.6em 0.7em;
+      }
+      .pub-card {
+        padding: 0.7em 0.7em;
+        font-size: 0.97em;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navbar (from index.html) -->
+  <!-- Navbar (from team.html) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -381,13 +392,16 @@
   </div>
   <!-- End Navbar -->
 
-  <header>
-    <h1>Publications</h1>
-    <p>R. Lakshmi Narayan – Articles, Editorials, Lectures, and More</p>
-  </header>
+  <div class="pub-header">
+    Publications
+  </div>
+  <div class="pub-header-desc">
+    R. Lakshmi Narayan – Articles, Editorials, Lectures, and More
+  </div>
+
   <main class="container" id="main-content" tabindex="-1">
     <section aria-labelledby="articles-title">
-      <h2 id="articles-title">Articles <span style="font-weight: 400; color:#bababa;">(in reverse chronology)</span></h2>
+      <h2 id="articles-title">Articles <span style="font-weight: 400; color:#445; font-size:1.12rem;">(in reverse chronology)</span></h2>
       <div class="subsection-title">International Journals</div>
       <div id="pubs-intl"></div>
       <div class="subsection-title">National Journals</div>
@@ -396,11 +410,11 @@
       </div>
       <div class="subsection-title">Editorials</div>
       <div class="simple-list" id="editorials">
-        1. Mangalampalli S.R.N. Kiran, D. Pamu, R. Lakshmi Narayan*, K. Eswara Prasad, Suresh Perumal, Srinivasa Rao Bakshi, “Advances in Functional and Structural Ceramics: Development, charac[...]
+        1. Mangalampalli S.R.N. Kiran, D. Pamu, R. Lakshmi Narayan*, K. Eswara Prasad, Suresh Perumal, Srinivasa Rao Bakshi, “Advances in Functional and Structural Ceramics: Development, characterization, and applications”, <em>Transactions of the Indian Ceramic Society</em>, 2023, 82:2, 75-77.
       </div>
       <div class="subsection-title">Conference Proceedings</div>
       <div class="simple-list" id="proceedings">
-        1. V Chakkravarthy, Sujin P Jose, M Lakshmanan, P Manojkumar, R. Lakshmi Narayan, M Kumaran, "Additive manufacturing of novel Ti-30Nb-2Zr biomimetic scaffolds for successful limb salvage"[...]
+        1. V Chakkravarthy, Sujin P Jose, M Lakshmanan, P Manojkumar, R. Lakshmi Narayan, M Kumaran, "Additive manufacturing of novel Ti-30Nb-2Zr biomimetic scaffolds for successful limb salvage", <em>Proc. of International Conference on Additive Manufacturing and Allied Technologies, ICAMAT-2022</em>.
       </div>
       <div class="subsection-title">Invited Lectures</div>
       <ul class="simple-list" style="list-style: disc; padding-left: 1.5em;" id="invited">
@@ -416,7 +430,7 @@
     </section>
   </main>
   <script>
-    // NAVBAR show on hover and on scroll up (from index.html)
+    // NAVBAR show on hover and on scroll up (from team.html)
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
