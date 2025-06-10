@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhātu-yantra-pravartana Lab</title>
-  <!-- Import Roboto font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,6 +14,8 @@
       --main-bg1: #fef8e4;
       --main-bg2: #f8eed3;
       --main-bg3: #f3e3ba;
+      --subtle-bg1: #faf8f2;   /* softer for second page */
+      --subtle-bg2: #f8f7f3;   /* even lighter for second page */
       --navbar-link: #1E3A8A;
       --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
@@ -56,8 +57,6 @@
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 22px; width: 22px;} .lab-title { font-size: 0.85rem;} .nav-right { gap: 0.3rem; font-size: 0.7rem;} .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;} }
-
-    /* HERO SECTION */
     .hero {
       min-height: 100vh;
       height: 100vh;
@@ -69,7 +68,6 @@
       overflow: hidden;
       margin-top: 0;
     }
-    /* Golden blobs */
     .dope-blob {
       position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.34; z-index: 0; pointer-events: none;
       animation: blobFloat 22s infinite alternate ease-in-out;
@@ -153,7 +151,6 @@
       object-fit: cover;
       border-radius: 30px;
       background: #fff;
-      /* REMOVE border, outline, box-shadow, padding, hover effect! */
       border: none !important;
       outline: none !important;
       box-shadow: none !important;
@@ -171,18 +168,17 @@
       display: block;
       pointer-events: none;
     }
-
     /* Second Page: side-by-side image and content, text right, image left */
     .second-page {
       min-height: 95vh;
       width: 100vw;
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* right align content */
-      background: linear-gradient(150deg, var(--main-bg2) 0%, var(--main-bg3) 60%, var(--main-bg1) 100%);
+      justify-content: flex-end;
+      background: linear-gradient(120deg, var(--subtle-bg1) 0%, var(--subtle-bg2) 90%, var(--main-bg1) 100%);
       position: relative;
       z-index: 2;
-      padding: 0 0 0 0;
+      padding: 0;
     }
     .second-flex {
       display: flex;
@@ -282,7 +278,6 @@
         <a href="MEET LNR.html">MEET&nbsp;LNR</a>
         <a href="news.html">Latest</a>
         <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
-        <!-- Search icon (SVG) -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
         </svg>
@@ -291,14 +286,11 @@
   </div>
   <!-- HERO SECTION -->
   <section class="hero" id="home">
-    <!-- Golden background blobs -->
     <div class="dope-blob blob1"></div>
     <div class="dope-blob blob2"></div>
     <div class="dope-blob blob3"></div>
-    <!-- Gold sparkle bubbles canvas overlay -->
     <canvas id="bubbleCanvas"></canvas>
     <div class="hero-content-flex">
-      <!-- LEFT: Titles (Hindi + English) -->
       <div class="hero-left">
         <div class="hero-hindi-small">
           धातु-यन्त्र-प्रवर्तन प्रयोगशाला
@@ -309,7 +301,6 @@
           <span class="pl">Prayogsālā</span>
         </div>
       </div>
-      <!-- RIGHT: Large rectangular image (replace src!) -->
       <div class="hero-rect-img">
         <img src="your-image.jpg" alt="Lab Research" />
       </div>
@@ -326,7 +317,6 @@
       </div>
     </div>
   </section>
-  <!-- FOOTER -->
   <footer>
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
@@ -354,13 +344,12 @@
         opacity: Math.random() * 0.38 + 0.22
       });
     }
-    // Animation loop for moving gold bubbles
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let b of bubbles) {
         ctx.beginPath();
         ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 215, 0, ${b.opacity})`; // gold color
+        ctx.fillStyle = `rgba(255, 215, 0, ${b.opacity})`;
         ctx.fill();
         b.x += b.dx;
         b.y += b.dy;
@@ -370,7 +359,6 @@
       requestAnimationFrame(animate);
     }
     animate();
-
     // Navbar show/hide on scroll up
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
