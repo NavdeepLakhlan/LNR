@@ -27,9 +27,6 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-    section, .pi-bio, .carousel-item .pi-bio {
-      text-align: justify;
-    }
     .navbar-container {
       position: fixed; top: 16px; left: 16px; right: 16px;
       background: var(--navbar-bg);
@@ -57,13 +54,24 @@
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img {height: 28px; width: 28px;} }
 
-    /* Punchline */
+    /* Punchline animation */
+    #team-section {
+      position: relative;
+      min-height: 400px;
+    }
+    #big-punchline {
+      position: absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; justify-content:center; z-index:10;
+      font-family: 'Roboto', sans-serif; font-size: 3rem; font-weight: 900; letter-spacing:1.5px; text-align:center; color:#1E3A8A; background:transparent; transition: opacity 0.7s;
+    }
+    #fade-content {
+      opacity:0; transition: opacity 0.7s;
+    }
     .punchline-wrapper {
       width: 100%;
       display: flex;
       justify-content: center;
       margin-bottom: 3rem;
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
     .punchline {
       color: #fff;
@@ -87,6 +95,7 @@
     @media (max-width: 700px) {
       .punchline { font-size: 1.05rem; padding: 1.1rem 0.3rem 1rem 0.3rem; min-width: unset; width: 99vw;}
       .punchline-wrapper { margin-top: 1.2rem; margin-bottom: 1.2rem;}
+      #big-punchline { font-size: 1.6rem; }
     }
 
     section {
@@ -105,86 +114,160 @@
     }
     h2 { margin-bottom: 2rem; font-weight: 700; font-size: 2.2rem; }
 
-    /* PI card effect */
-    .pi-container {
+    /* PI effect card */
+    .pi-effect-container {
       display: flex;
-      align-items: flex-start;
-      gap: 2.3rem;
-      margin-top: 1.5rem;
-      justify-content: flex-start;
-      position: relative;
+      justify-content: center;
+      align-items: center;
     }
-    .pi-member-card {
+    .pi-effect-card {
+      width: 500px;
+      min-height: 350px;
+      max-width: 98vw;
       background: #23272f;
       border-radius: 18px;
+      position: relative;
       box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-      overflow: hidden;
-      width: 250px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.2s;
-      cursor: pointer;
-      margin-right: 2.5rem;
-      min-width: 220px;
-      z-index: 1;
-    }
-    .pi-member-card:hover {
-      transform: translateY(-10px) scale(1.04);
-    }
-    .pi-photo {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-bottom: 2px solid var(--gold);
-      transition: filter 0.3s;
-    }
-    .pi-member-card:hover .pi-photo {
-      filter: blur(2px) brightness(0.7);
-    }
-    .pi-info {
-      padding: 1rem;
-      position: relative;
-    }
-    .pi-name {
-      color: var(--gold);
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.2rem;
-      font-weight: bold;
-    }
-    .pi-bio-hover {
-      color: #fff;
-      background: rgba(35,39,47,0.98);
-      border-radius: 12px;
-      padding: 0.8rem;
-      position: absolute;
-      left: 0; right: 0; top: 0; bottom: 0;
-      opacity: 0;
-      z-index: 2;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: opacity 0.4s;
-      pointer-events: none;
-      font-size: 1rem;
+      transition: box-shadow 0.3s, width 0.3s;
+      cursor: pointer;
+      overflow: hidden;
     }
-    .pi-member-card:hover .pi-bio-hover {
+    .pi-effect-imgblock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 
+        width 0.4s cubic-bezier(.68,-0.55,.27,1.55),
+        align-items 0.4s, 
+        padding 0.4s;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .pi-effect-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 4px solid var(--gold, #ffd700);
+      margin-bottom: 1rem;
+      transition: 
+        width 0.4s cubic-bezier(.68,-0.55,.27,1.55),
+        height 0.4s cubic-bezier(.68,-0.55,.27,1.55),
+        border-radius 0.4s,
+        margin 0.4s;
+    }
+    .pi-effect-name {
+      color: var(--gold, #ffd700);
+      font-size: 1.35rem;
+      font-weight: bold;
+      text-align: center;
+      transition: text-align 0.4s, font-size 0.4s;
+    }
+    .pi-effect-bio {
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      max-width: 0;
+      overflow: hidden;
+      transition: 
+        opacity 0.35s,
+        width 0.45s cubic-bezier(.68,-0.55,.27,1.55),
+        max-width 0.45s cubic-bezier(.68,-0.55,.27,1.55);
+      color: #fff;
+      background: rgba(35,39,47,0.0);
+      padding: 0;
+      margin-left: 0;
+      font-size: 1rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .pi-effect-card:hover, .pi-effect-card:focus-within {
+      box-shadow: 0 16px 52px rgba(0,0,0,0.21);
+      width: 700px;
+      justify-content: flex-start;
+    }
+    .pi-effect-card:hover .pi-effect-imgblock,
+    .pi-effect-card:focus-within .pi-effect-imgblock {
+      width: 40%;
+      align-items: flex-start;
+      padding-left: 2rem;
+      padding-right: 0;
+      justify-content: flex-start;
+    }
+    .pi-effect-card:hover .pi-effect-img,
+    .pi-effect-card:focus-within .pi-effect-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+    }
+    .pi-effect-card:hover .pi-effect-name,
+    .pi-effect-card:focus-within .pi-effect-name {
+      text-align: left;
+      font-size: 1.08rem;
+    }
+    .pi-effect-card:hover .pi-effect-bio,
+    .pi-effect-card:focus-within .pi-effect-bio {
       opacity: 1;
       pointer-events: auto;
-      animation: fadeInUp 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+      width: 60%;
+      max-width: 390px;
+      background: rgba(35,39,47,0.96);
+      padding: 1.5rem 1.6rem 1.5rem 1.3rem;
+      margin-left: 0;
+      border-radius: 0 18px 18px 0;
+      box-sizing: border-box;
+      transition-delay: 0.05s;
     }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px);}
       to   { opacity: 1; transform: translateY(0);}
     }
-    /* Hide regular PI bio for card version */
-    .pi-bio { display: none !important; }
     @media (max-width:900px) {
-      .pi-container { flex-direction: column; gap: 1.2rem; align-items: center; }
-      .pi-member-card { width: 95vw; min-width: 0; margin-right: 0;}
+      .pi-effect-card, .pi-effect-card:hover {
+        flex-direction: column !important;
+        width: 97vw !important;
+        min-width: unset;
+        max-width: 99vw;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+      .pi-effect-imgblock,
+      .pi-effect-card:hover .pi-effect-imgblock {
+        width: 100% !important;
+        align-items: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        justify-content: center !important;
+      }
+      .pi-effect-bio,
+      .pi-effect-card:hover .pi-effect-bio {
+        width: 100% !important;
+        max-width: 99vw !important;
+        border-radius: 0 0 18px 18px !important;
+        margin-left: 0 !important;
+        padding: 1.1rem !important;
+        font-size: 0.99rem;
+        background: rgba(35,39,47,0.94);
+        order: 2;
+        opacity: 1;
+        pointer-events: auto;
+        position: relative;
+      }
+      .pi-effect-bio {
+        opacity: 0;
+        pointer-events: none;
+      }
     }
     /* --- Keep your other styles below --- */
-    /* Profile Info Sections (Postdoc, SRF, etc.) */
     .pi-image-block {
       flex: 0 0 240px;
       text-align: left;
@@ -244,7 +327,6 @@
         padding-left: 0;
       }
     }
-    /* Carousel Styles for student sections */
     .carousel-container {
       position: relative;
       max-width: 1100px;
@@ -401,7 +483,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -423,33 +504,37 @@
       </div>
     </nav>
   </div>
-  <!-- End Navbar -->
 
-  <div class="punchline-wrapper">
-    <div class="punchline">
-      MEET THE FORCE BEHIND DYP's&nbsp;INNOVATION
+  <!-- PUNCHLINE & PI SECTION with animation -->
+  <section id="team-section">
+    <div id="big-punchline">
+      MEET THE FORCE BEHIND DYP's INNOVATION
     </div>
-  </div>
-
-  <section>
-    <h2>Principal Investigator (PI)</h2>
-    <div class="pi-container">
-      <div class="pi-member-card">
-        <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" class="pi-photo"/>
-        <div class="pi-info">
-          <div class="pi-name">Lakshmi Narayan Ramasubramanian</div>
+    <div id="fade-content">
+      <div class="punchline-wrapper">
+        <div class="punchline">
+          MEET THE FORCE BEHIND DYP's INNOVATION
         </div>
-        <div class="pi-bio-hover">
-          <div>
-            <strong>PhD – IISc Bangalore , B.Tech. – VNIT Nagpur</strong><br/>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his Ph.D. in Materials Engineering at the Indian Institute of Science, Bangalore, in 2015. After post-doctoral research at MPIE, Germany, and the University of California, Santa Barbara, he joined IIT Delhi as an Assistant Professor.<br>
-            <br>ORCID: 0000-0002-6178-8124
+      </div>
+      <div class="pi-effect-container">
+        <div class="pi-effect-card">
+          <div class="pi-effect-imgblock">
+            <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" class="pi-effect-img" />
+            <div class="pi-effect-name">Lakshmi Narayan Ramasubramanian</div>
+          </div>
+          <div class="pi-effect-bio">
+            <div>
+              <strong>PhD – IISc Bangalore , B.Tech. – VNIT Nagpur</strong><br/>
+              Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his Ph.D. in Materials Engineering at the Indian Institute of Science, Bangalore, in 2015. After post-doctoral research at MPIE, Germany, and the University of California, Santa Barbara, he joined IIT Delhi as an Assistant Professor.<br>
+              <br>ORCID: 0000-0002-6178-8124
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- OTHER TEAM SECTIONS (unchanged) -->
   <section>
     <h2>Post Doctoral Fellow</h2>
     <div class="pi-container">
@@ -463,7 +548,6 @@
       </div>
     </div>
   </section>
-
   <section>
     <h2>Senior Research Fellow</h2>
     <div class="pi-container">
@@ -477,7 +561,6 @@
       </div>
     </div>
   </section>
-
   <section>
     <h2>Ph.D. Students</h2>
     <div class="carousel-container" aria-label="PhD Students Carousel">
@@ -500,7 +583,6 @@
       <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
     </div>
   </section>
-
   <section>
     <h2>Graduate Students</h2>
     <div class="carousel-container" aria-label="Graduate Students Carousel">
@@ -521,7 +603,6 @@
       <button class="carousel-btn right" aria-label="Next Graduate Student">&#10095;</button>
     </div>
   </section>
-
   <section>
     <h2>Undergraduate Students</h2>
     <div class="carousel-container" aria-label="Undergraduate Students Carousel">
@@ -542,7 +623,6 @@
       <button class="carousel-btn right" aria-label="Next Undergraduate Student">&#10095;</button>
     </div>
   </section>
-
   <section>
     <h2>Research Associates</h2>
     <div class="carousel-container" aria-label="Research Associates Carousel">
@@ -563,7 +643,6 @@
       <button class="carousel-btn right" aria-label="Next Research Associate">&#10095;</button>
     </div>
   </section>
-
   <section>
     <h2>Alumni</h2>
     <ul class="alumni-list">
@@ -574,6 +653,17 @@
   </section>
 
   <script>
+    // Punchline intro effect
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        document.getElementById('big-punchline').style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById('big-punchline').style.display = 'none';
+          document.getElementById('fade-content').style.opacity = 1;
+        }, 700);
+      }, 1500);
+    });
+
     // Carousel logic for all carousels on the page
     document.querySelectorAll('.carousel-container').forEach(function(container) {
       const items = container.querySelectorAll('.carousel-item');
@@ -611,18 +701,15 @@
           }
         });
       }
-
       if (btnLeft && btnRight && items.length > 0) {
         btnLeft.addEventListener('click', () => {
           activeIndex = (activeIndex - 1 + items.length) % items.length;
           updateCarousel();
         });
-
         btnRight.addEventListener('click', () => {
           activeIndex = (activeIndex + 1) % items.length;
           updateCarousel();
         });
-
         updateCarousel();
       }
     });
