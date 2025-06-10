@@ -9,21 +9,18 @@
   <style>
     :root {
       --gold: #ffd700;
-      --dark-bg: #0a0a0a;
-      --navbar-txt: #111;
-      --navbar-link: #0F4761;
-      --navbar-link-hover: #0073e6;
+      --blue: #1E3A8A;
+      --light-bg: #f6f7fa;
+      --navbar-link: #1E3A8A;
+      --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
-      --card-bg: #161616;
-      --section-bg: linear-gradient(110deg, #191919 90%, #ffd7000f 100%);
-      --text: #f6f6f6;
-      --shadow: 0 3px 18px 0 #000a;
+      --text: #222;
     }
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', Arial, sans-serif;
-      background: var(--dark-bg);
+      background: var(--light-bg);
       color: var(--text);
       font-size: 20px;
       scroll-behavior: smooth;
@@ -75,7 +72,7 @@
     }
     .lab-title {
       font-size: 0.97rem;
-      color: var(--navbar-txt);
+      color: #111;
       font-weight: 700;
       letter-spacing: 0.8px;
     }
@@ -99,15 +96,15 @@
     }
     .nav-right a:hover,
     .nav-right a:focus {
-      background: #f0f8ff;
+      background: #e4eaff;
       color: var(--navbar-link-hover);
       border-color: var(--navbar-link-hover);
       outline: none;
     }
     .nav-right a.active {
-      color: var(--navbar-txt);
-      border-bottom: 2px solid var(--gold);
-      background: #191919;
+      color: var(--blue);
+      border-bottom: 2px solid var(--blue);
+      background: #e4eaff;
       font-weight: 700;
       letter-spacing: 0.2px;
     }
@@ -163,16 +160,17 @@
       }
     }
 
-    /* Hero section */
+    /* Hero section - light background, blue/gold accents */
     .hero {
       margin-top: 0;
       position: relative;
       height: 100vh;
+      min-height: 650px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, #232323 0%, #000 100%);
+      background: linear-gradient(90deg, #e4eaff 80%, #fff 100%);
       overflow: hidden;
       padding: 0;
     }
@@ -181,6 +179,7 @@
       top: 0; left: 0; width: 100%; height: 100%;
       z-index: 0;
       display: block;
+      pointer-events: none;
     }
     .hero-content {
       position: relative;
@@ -200,7 +199,7 @@
       margin-bottom: 1.2rem;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
       background: #fff;
       border: 3px solid #ffd70044;
       display: inline-block;
@@ -210,32 +209,32 @@
       color: var(--gold);
       font-weight: 700;
       font-family: 'Roboto', Arial, sans-serif;
-      text-shadow: 0 2px 8px #000a;
+      text-shadow: 0 2px 8px #bbb8;
       line-height: 1;
       margin-bottom: 0.4rem;
       letter-spacing: 2px;
     }
     .hero-title-en {
       font-size: 72px;
-      color: var(--text);
+      color: var(--blue);
       font-weight: 500;
       margin-bottom: 1.1rem;
       letter-spacing: 1.5px;
       font-family: 'Roboto', Arial, sans-serif;
-      text-shadow: 0 2px 8px #000a;
+      text-shadow: 0 2px 8px #bbb8;
     }
     .hero-desc {
       font-size: 1.23rem;
-      color: #fffbe7;
+      color: #23272f;
       max-width: 700px;
       margin: 0 auto 0.4rem auto;
       font-weight: 400;
       line-height: 1.5;
-      background: rgba(20,20,20,0.50);
+      background: #fff;
       border-radius: 10px;
       padding: 1.1rem 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      border: 1.5px solid #ffd70033;
+      box-shadow: 0 2px 12px #c2d3ff33;
+      border: 1.5px solid #e4eaff;
       text-align: justify;
     }
     @media (max-width: 900px) {
@@ -287,17 +286,13 @@
   <section class="hero" id="home">
     <canvas id="bubbleCanvas"></canvas>
     <div class="hero-content">
-      <!-- Demo Logo -->
       <img src="your-logo.png" alt="Demo Logo" class="hero-logo" />
-      <!-- Main Heading in Hindi -->
       <div class="hero-title-hi">
         धातु-यन्त्र-प्रवर्तन प्रयोगशाला
       </div>
-      <!-- Main Heading in English -->
       <div class="hero-title-en">
         Dhātu-Yantra-Pravartaṇa Prayogsālā
       </div>
-      <!-- Description -->
       <div class="hero-desc">
         The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys, and High Entropy Alloys, using experimental, computational, and theoretical approaches. We strive to connect fundamental materials science with real-world applications and innovations.
       </div>
@@ -307,7 +302,7 @@
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
   <script>
-    // Bubble animation: fills hero section, sleeker, less bubbles
+    // Bubble animation: fills hero section, sleeker, less bubbles, gold color
     const canvas = document.getElementById('bubbleCanvas');
     const ctx = canvas.getContext('2d');
     function resizeCanvas() {
