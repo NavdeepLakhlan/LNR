@@ -40,12 +40,12 @@
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.7s;
+      transition: opacity 0.9s; /* changed from 0.6s to 0.7s */
     }
     #punchlineOverlay.visible {
       opacity: 1;
       pointer-events: all;
-      transition: opacity 0.7s;
+      transition: opacity 0.9s;
     }
     #punchlineOverlay.fadeout {
       opacity: 0;
@@ -136,13 +136,14 @@
     .pi-image-block img {
       width: 220px;
       height: 220px;
+      /* Removed clip-path to make rectangular */
       object-fit: cover;
       box-shadow: 0 0 18px rgba(30,58,138,0.13);
       background: #f7f7f7;
       margin-bottom: 0.5rem;
       margin-right: 0.2rem;
       display: block;
-      border-radius: 6px;
+      border-radius: 6px; /* Optional: slightly rounded corners for modern look */
     }
     .pi-image-block h3 {
       margin: 0.2rem 0 0.2rem 0;
@@ -263,9 +264,10 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 6px; /* Optional: slightly rounded corners */
       background: #f7f7f7;
       margin-bottom: 0.4rem;
+      /* Removed clip-path to make rectangular */
     }
     .carousel-item .pi-image-block,
     .carousel-item .pi-bio {
@@ -337,20 +339,6 @@
     .alumni-list b {
       color:#1E3A8A;
     }
-    /* Wavy Divider */
-    .wavy-divider {
-      margin: 0;
-      padding: 0;
-      line-height: 0;
-      width: 100%;
-      overflow: hidden;
-      background: none;
-    }
-    .wavy-divider svg {
-      display: block;
-      width: 100%;
-      height: 36px;
-    }
   </style>
 </head>
 <body>
@@ -371,7 +359,6 @@
       <div class="nav-right" tabindex="0">
         <a href="index.html">Home</a>
         <a href="team.html" class="active">The&nbsp;Team</a>
-        <a href="Gallary.html">Gallary</a>
         <a href="publications.html">Publications</a>
         <a href="research.html">Research</a>
         <a href="MEET LNR.html">MEET&nbsp;LNR</a>
@@ -405,13 +392,6 @@
       </div>
     </section>
 
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
-
     <!-- Post Doctoral Fellow -->
     <section>
       <h2>Post Doctoral Fellow</h2>
@@ -427,13 +407,6 @@
       </div>
     </section>
 
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
-
     <section>
       <h2>Senior Research Fellow</h2>
       <div class="pi-container">
@@ -447,13 +420,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
 
     <section>
       <h2>Ph.D. Students</h2>
@@ -477,14 +443,6 @@
         <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
       </div>
     </section>
-
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
-
     <section>
       <h2>Graduate Students</h2>
       <div class="carousel-container" aria-label="Graduate Students Carousel">
@@ -504,14 +462,6 @@
         <button class="carousel-btn right" aria-label="Next Graduate Student">&#10095;</button>
       </div>
     </section>
-
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
-
     <section>
       <h2>Undergraduate Students</h2>
       <div class="carousel-container" aria-label="Undergraduate Students Carousel">
@@ -531,14 +481,6 @@
         <button class="carousel-btn right" aria-label="Next Undergraduate Student">&#10095;</button>
       </div>
     </section>
-
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
-
     <section>
       <h2>Research Associates</h2>
       <div class="carousel-container" aria-label="Research Associates Carousel">
@@ -558,14 +500,6 @@
         <button class="carousel-btn right" aria-label="Next Research Associate">&#10095;</button>
       </div>
     </section>
-
-    <!-- Wavy Divider -->
-    <div class="wavy-divider">
-      <svg viewBox="0 0 120 20" preserveAspectRatio="none">
-        <path d="M0 10 Q 30 20 60 10 T 120 10 V20 H0Z" fill="#ffe68c" />
-      </svg>
-    </div>
-
     <section>
       <h2>Alumni</h2>
       <ul class="alumni-list">
@@ -588,7 +522,7 @@
           overlay.style.display = 'none';
           mainContent.style.display = 'block';
         }, 200); // after fade out
-      }, 1400); // 0.7s fade-in + 0.7s visible
+      }, 1800); // 0.7s fade-in + 0.7s visible
     });
 
     // Carousel logic for all carousels on the page (unchanged)
