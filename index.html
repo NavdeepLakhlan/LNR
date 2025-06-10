@@ -7,7 +7,6 @@
   <!-- Import Roboto font from Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset margins, set font and background for the whole page */
     html, body {
       margin: 0;
       padding: 0;
@@ -18,92 +17,89 @@
       scroll-behavior: smooth;
     }
 
-    /* Sleek floating NAVBAR CONTAINER styling */
     .navbar-container {
-      position: fixed;           /* Keep navbar always visible on scroll */
-      top: 16px;                 /* Space from top of viewport */
-      left: 16px;                /* Space from left edge */
-      right: 10px;               /* Space from right edge */
-      background: #fff;          /* White background for container */
-      border-radius: 0px;        /* Rounded corners for a card-like look */
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Subtle shadow */
-      transition: opacity 0.3s, top 0.3s;      /* Smooth show/hide and move */
-      z-index: 1000;             /* Stay above all content */
-      opacity: 0;                /* Hidden by default */
-      pointer-events: none;      /* Can't interact unless visible */
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
       display: flex;
-      justify-content: center;   /* Center the navbar horizontally */
-      max-width: 900px;          /* Limit container width for sleekness */
-      margin-left: auto;         /* Center horizontally in viewport */
+      justify-content: center;
+      /* Ensure enough space for all navbar items */
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
       margin-right: auto;
     }
 
-    /* Show navbar when hovered or when .visible is added by JS */
     .navbar-container.visible,
     .navbar-container:hover {
       opacity: 1;
       pointer-events: auto;
     }
 
-    /* NAVBAR content styling */
     .navbar {
       display: flex;
-      justify-content: space-between; /* Space between left and right content */
+      justify-content: space-between;
       align-items: center;
       width: 100%;
-      padding: 0.5rem 1.2rem;        /* Less vertical and horizontal padding for sleekness */
-      gap: 1rem;                     /* Smaller gap between left and right */
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
       background: transparent;
     }
 
-    /* LEFT side: logo and lab title */
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 0.6rem;                   /* Space between logo and text */
+      gap: 0.6rem;
+      flex-shrink: 0;
     }
     .nav-left img {
-      height: 35px;                  /* Smaller logo image */
+      height: 35px;
       width: 35px;
     }
     .lab-title {
-      font-size: 0.97rem;            /* Slightly smaller title text */
+      font-size: 0.97rem;
       color: #111;
       font-weight: 700;
       letter-spacing: 0.8px;
     }
 
-    /* RIGHT side: navigation links */
     .nav-right {
       display: flex;
-      gap: 0.7rem;                   /* Less gap between nav links */
       align-items: center;
-      font-size: 0.8rem;             /* Smaller nav link text */
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
     }
-
     .nav-right a {
-      color: #0F4761;                /* BMW-like blue for links */
+      color: #0F4761;
       text-decoration: none;
       font-weight: 600;
-      padding: 0.38rem 0.8rem;       /* Smaller padding for sleeker look */
+      padding: 0.38rem 0.8rem;
       border-radius: 6px;
       border-bottom: 2px solid transparent;
       font-size: 0.87rem;
-      transition: 
-        color 0.2s,
-        background 0.2s,
-        border-color 0.2s;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap; /* Prevent line breaks in nav items */
     }
     .nav-right a:hover,
     .nav-right a:focus {
-      background: #f0f8ff;           /* Subtle blue background on hover */
-      color: #0073e6;                /* Brighter blue text on hover */
+      background: #f0f8ff;
+      color: #0073e6;
       border-color: #0073e6;
       outline: none;
     }
     .nav-right a.active {
       color: #111;
-      border-bottom: 2px solid #111; /* Highlight the active link */
+      border-bottom: 2px solid #111;
       background: #f5f5f5;
     }
     .nav-right svg {
@@ -120,14 +116,23 @@
       opacity: 1;
     }
 
-    /* Responsive: Make navbar fit on small screens */
-    @media (max-width: 600px) {
+    @media (max-width: 1300px) {
       .navbar-container {
-        left: 4px;
-        right: 4px;
-        top: 4px;
-        border-radius: 6px;
-        max-width: 100vw;
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
       }
       .navbar {
         gap: 0.2rem;
@@ -151,7 +156,6 @@
       }
     }
 
-    /* Section styling, unchanged from your original */
     section {
       min-height: 100vh;
       padding: 8rem 4rem 4rem;
@@ -170,7 +174,7 @@
     }
 
     .hero {
-      margin-top: 110px;             /* Push hero down to make space for navbar */
+      margin-top: 110px;
       position: relative;
       height: calc(100vh - 110px);
       display: flex;
@@ -215,14 +219,6 @@
   </style>
 </head>
 <body>
-
-  <!--
-    Sleek, floating navigation bar
-    - .navbar-container: floating card with space from top and sides
-    - .navbar: flex container for left and right nav sections
-    - .nav-left: logo and lab title
-    - .nav-right: navigation links and search icon
-  -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -231,13 +227,13 @@
       </div>
       <div class="nav-right" tabindex="0">
         <a href="#home" class="active">Home</a>
-        <a href="team.html">The Team</a>
+        <a href="team.html">The&nbsp;Team</a>
         <a href="Gallary.html">Gallary</a>
         <a href="publications.html">Publications</a>
         <a href="research.html">Research</a>
-        <a href="MEET LNR.html">MEET LNR</a>
+        <a href="MEET LNR.html">MEET&nbsp;LNR</a>
         <a href="news.html">Latest</a>
-        <a href="prospectivestudents.html">Prospective Students</a>
+        <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
         <!-- Search icon (SVG) -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
@@ -246,7 +242,6 @@
     </nav>
   </div>
 
-  <!-- Hero section with animated bubbles and lab intro -->
   <section class="hero" id="home">
     <canvas id="bubbleCanvas"></canvas>
     <div class="hero-content">
@@ -255,19 +250,16 @@
     </div>
   </section>
 
-  <!-- Footer section -->
   <footer>
     <p>&copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi</p>
   </footer>
 
-  <!-- JavaScript for bubbles, navbar behavior, and section fade-in -->
   <script>
     // Bubble animation background
     const canvas = document.getElementById('bubbleCanvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    // Generate bubbles with random position, size, speed, and opacity
     const bubbles = [];
     for (let i = 0; i < 60; i++) {
       bubbles.push({
@@ -279,13 +271,12 @@
         opacity: Math.random() * 0.5 + 0.3
       });
     }
-    // Animate bubbles: move, bounce off edges, redraw
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let b of bubbles) {
         ctx.beginPath();
         ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 215, 0, ${b.opacity})`; // Gold bubbles
+        ctx.fillStyle = `rgba(255, 215, 0, ${b.opacity})`;
         ctx.fill();
         b.x += b.dx;
         b.y += b.dy;
@@ -295,7 +286,6 @@
       requestAnimationFrame(animate);
     }
     animate();
-    // Resize canvas when window size changes
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -317,22 +307,18 @@
     });
 
     // NAVBAR show on hover and on scroll up
-    let lastScrollY = window.scrollY; // Track previous scroll position
+    let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
-    // On scroll, show navbar if scrolling up, hide if scrolling down (unless hovered)
     window.addEventListener('scroll', () => {
       if (window.scrollY < lastScrollY) {
-        // Scrolling up: show navbar
         navbarContainer.classList.add('visible');
       } else {
-        // Scrolling down: hide navbar (unless hovered)
         if (!navbarContainer.matches(':hover')) {
           navbarContainer.classList.remove('visible');
         }
       }
       lastScrollY = window.scrollY;
     });
-    // Show navbar on page load
     navbarContainer.classList.add('visible');
   </script>
 </body>
