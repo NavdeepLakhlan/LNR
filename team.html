@@ -6,7 +6,6 @@
   <title>The Team – Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ... keep your existing CSS up to line 402 ... */
     :root {
       --gold: #ffd700;
       --gold-light: #ffefb6;
@@ -28,53 +27,90 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-    /* ...rest of your CSS... */
-    .punchline-fade {
+    /* Punchline overlay */
+    #punchlineOverlay {
+      position: fixed;
+      left: 0; top: 0; right: 0; bottom: 0;
+      z-index: 5000;
+      width: 100vw;
+      height: 100vh;
+      background: var(--main-bg1);
       display: flex;
-      justify-content: center;
       align-items: center;
-      min-height: 40vh;
+      justify-content: center;
+      transition: opacity 0.6s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    #punchlineOverlay.visible {
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity 0.7s;
+    }
+    #punchlineOverlay.fadeout {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    #punchlineText {
       font-size: 3.2rem;
       font-weight: 900;
       color: #111;
       background: none;
       text-shadow: 2px 3px 20px #fff, 0 2px 10px #ffd;
       letter-spacing: 2.4px;
-      opacity: 0;
-      transition: opacity 0.7s;
-      z-index: 10;
-      position: relative;
-      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 20px;
       border: none;
+      box-shadow: none;
+      max-width: 90vw;
+      line-height: 1.1;
     }
-    .punchline-fade.visible {
-      opacity: 1;
-      animation: punchFadeIn 0.7s cubic-bezier(.44,1.5,.55,1.1) 0s 1 normal both;
+    @media (max-width: 700px) {
+      #punchlineText { font-size: 1.5rem; padding: 1rem; }
     }
-    .punchline-fade.hide {
-      opacity: 0;
-      transition: opacity 0.2s;
-      pointer-events: none;
+    #mainContent { display: none; }
+    /* ----------- YOUR ORIGINAL STYLES CONTINUE BELOW ------------ */
+    section, .pi-bio, .carousel-item .pi-bio { text-align: justify; }
+    .navbar-container {
+      position: fixed; top: 16px; left: 16px; right: 16px;
+      background: var(--navbar-bg);
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0; pointer-events: none;
+      display: flex; justify-content: center;
+      width: fit-content; min-width: 1200px;
+      margin-left: auto; margin-right: auto;
     }
-    @keyframes punchFadeIn {
-      from { opacity: 0; transform: scale(1.25);}
-      to   { opacity: 1; transform: scale(1);}
-    }
-    .main-content-hidden {
-      display: none;
-    }
-    .main-content-visible {
-      display: block;
-      animation: mainContentFadeIn 0.3s;
-    }
-    @keyframes mainContentFadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-    /* Keep all your existing styles after this point unchanged */
+    .navbar-container.visible,
+    .navbar-container:hover { opacity: 1; pointer-events: auto; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.5rem 1.2rem; gap: 1rem; background: transparent;}
+    .nav-left { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+    .nav-left img { height: 35px; width: 35px; }
+    .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
+    .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
+    .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
+    .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
+    .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
+    @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 25px; width: 25px;} }
+    /* ...rest of your original CSS here (unchanged)... */
+    /* Everything from .punchline-wrapper, .pi-container, .carousel, etc. as in your original file */
   </style>
 </head>
 <body>
+  <!-- Punchline Overlay -->
+  <div id="punchlineOverlay">
+    <div id="punchlineText">
+      MEET THE FORCE BEHIND DYP's&nbsp;INNOVATION
+    </div>
+  </div>
+
   <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
@@ -99,20 +135,9 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- Punchline Fade-In -->
-  <div id="punchlineFade" class="punchline-fade">
-    MEET THE FORCE BEHIND DYP's&nbsp;INNOVATION
-  </div>
-
   <!-- Main Content -->
-  <div id="mainContent" class="main-content-hidden">
-    <div class="punchline-wrapper" style="display:none">
-      <!-- This is hidden, the main punchline is above -->
-      <div class="punchline">
-        MEET THE FORCE BEHIND DYP's&nbsp;INNOVATION
-      </div>
-    </div>
-
+  <div id="mainContent">
+    <!-- Do NOT include any punchline-wrapper here! -->
     <section>
       <h2>Principal Investigator (PI)</h2>
       <div class="pi-container">
@@ -131,8 +156,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ...keep the rest of your sections unchanged... -->
     <section>
       <h2>Post Doctoral Fellow</h2>
       <div class="pi-container">
@@ -159,7 +182,6 @@
         </div>
       </div>
     </section>
-    <!-- ...keep all your other sections (PhD, Graduate, Undergraduate, Research Associates, Alumni) unchanged... -->
     <section>
       <h2>Ph.D. Students</h2>
       <div class="carousel-container" aria-label="PhD Students Carousel">
@@ -182,7 +204,6 @@
         <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
       </div>
     </section>
-    <!-- ...other sections... -->
     <section>
       <h2>Graduate Students</h2>
       <div class="carousel-container" aria-label="Graduate Students Carousel">
@@ -251,21 +272,18 @@
   </div>
 
   <script>
-    // Punchline fade-in and vanish logic
+    // Punchline Animation
     document.addEventListener('DOMContentLoaded', function() {
-      const punch = document.getElementById('punchlineFade');
+      const overlay = document.getElementById('punchlineOverlay');
       const mainContent = document.getElementById('mainContent');
+      overlay.classList.add('visible');
       setTimeout(() => {
-        punch.classList.add('visible');
+        overlay.classList.add('fadeout');
         setTimeout(() => {
-          punch.classList.add('hide');
-          setTimeout(() => {
-            punch.style.display = 'none';
-            mainContent.classList.remove('main-content-hidden');
-            mainContent.classList.add('main-content-visible');
-          }, 200); // 0.2s vanish
-        }, 1300); // punch line visible for 1.3s (0.7s fade-in + 0.6s pause)
-      }, 100); // slight delay to start fade in
+          overlay.style.display = 'none';
+          mainContent.style.display = 'block';
+        }, 200); // after fade out
+      }, 1300); // fade in + pause (0.7s in, 0.6s visible)
     });
 
     // Carousel logic for all carousels on the page (unchanged)
@@ -321,7 +339,7 @@
       }
     });
 
-    // Navbar JS (unchanged)
+    // Navbar JS
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
