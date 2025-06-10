@@ -4,20 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhātu-yantra-pravartana Lab</title>
-  <!-- Import Roboto font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --gold: #ffd700;
-      --blue: #1E3A8A;
+      --accent1: #ececec;
+      --accent2: #dbdbdb;
+      --accent3: #f2f2f2;
       --peach-bg: #FBF1E6;
-      --accent1: #ffe7c7;
-      --accent2: #ffe1e1;
-      --accent3: #e4eaff;
       --navbar-link: #1E3A8A;
       --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
       --text: #222;
+      --grey-bubble: #bbbbbb;
     }
     html, body {
       margin: 0;
@@ -51,11 +49,12 @@
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
     .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
-    .nav-right a.active { color: var(--blue); border-bottom: 2px solid var(--blue); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right a.active { color: var(--navbar-link); border-bottom: 2px solid var(--navbar-link); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 22px; width: 22px;} .lab-title { font-size: 0.85rem;} .nav-right { gap: 0.3rem; font-size: 0.7rem;} .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;} }
+
     /* HERO Section Reimagined */
     .hero {
       margin-top: 0;
@@ -68,16 +67,16 @@
       background: var(--peach-bg);
       overflow: hidden;
     }
-    /* Visually dope abstract blobs */
+    /* Visually dope abstract blobs in subtle grey */
     .dope-blob {
-      position: absolute; border-radius: 50%; filter: blur(40px); opacity: 0.55; z-index: 0;
+      position: absolute; border-radius: 50%; filter: blur(44px); opacity: 0.38; z-index: 0;
       pointer-events: none;
       animation: blobFloat 20s infinite alternate ease-in-out;
       mix-blend-mode: multiply;
     }
-    .blob1 { width: 430px; height: 340px; left: -110px; top: -60px; background: var(--accent1); animation-delay: 0s;}
-    .blob2 { width: 340px; height: 350px; left: 50vw; top: 60vh; background: var(--accent2); animation-delay: 3s;}
-    .blob3 { width: 370px; height: 250px; right: -100px; top: 30vh; background: var(--accent3); animation-delay: 6s;}
+    .blob1 { width: 470px; height: 330px; left: -120px; top: -60px; background: var(--accent1); animation-delay: 0s;}
+    .blob2 { width: 360px; height: 370px; left: 52vw; top: 64vh; background: var(--accent2); animation-delay: 3s;}
+    .blob3 { width: 390px; height: 250px; right: -90px; top: 33vh; background: var(--accent3); animation-delay: 6s;}
     @keyframes blobFloat {
       0% { transform: translateY(0) scale(1); }
       100% { transform: translateY(-40px) scale(1.08);}
@@ -91,11 +90,11 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      max-width: 1280px;
+      max-width: 1380px;
       margin: 0 auto;
       height: 100%;
       padding: 0 2.2rem;
-      gap: 2.8rem;
+      gap: 3.2rem;
     }
     .hero-left {
       flex: 1.2;
@@ -104,14 +103,14 @@
       align-items: flex-start;
       justify-content: center;
       min-width: 340px;
-      max-width: 600px;
+      max-width: 660px;
       padding-top: 2.5vw;
       padding-bottom: 2vw;
       position: relative;
     }
     .hero-hindi-small {
       font-size: 1.2rem;
-      color: #7b6f59;
+      color: #666;
       font-weight: 500;
       letter-spacing: 1.2px;
       margin-bottom: 0.2em;
@@ -119,55 +118,40 @@
       opacity: 0.9;
       font-family: 'Roboto', sans-serif;
     }
-    .hero-dy {
-      font-size: 3.8rem;
-      font-weight: 800;
-      color: var(--blue);
+    .hero-main-title {
+      font-size: 4.2rem;
+      font-weight: 900;
+      color: #111;
       font-family: 'Roboto', Arial, sans-serif;
-      letter-spacing: 1.7px;
-      margin-bottom: 0.18em;
-      text-shadow: 0 2px 12px #e2b80011;
-    }
-    .hero-pv {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #b8891f;
-      letter-spacing: 1.2px;
-      margin-bottom: 0.12em;
-      text-shadow: 0 2px 8px #ffd70033;
-    }
-    .hero-pl {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #8f5c0e;
-      letter-spacing: 1px;
-      margin-bottom: 0.16em;
-      text-shadow: 0 2px 8px #ffd70018;
+      letter-spacing: 2.2px;
+      line-height: 1.08;
+      margin-bottom: 0.1em;
+      text-shadow: 0 2px 18px #bbbbbb26;
+      word-break: keep-all;
     }
     .hero-rect-img {
-      flex: 1;
+      flex: 1.1;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 2vw;
+      padding-right: 1vw;
     }
     .hero-rect-img img {
-      width: 420px;
-      height: 270px;
+      width: 600px;
+      height: 400px;
       object-fit: cover;
-      border-radius: 24px;
-      box-shadow: 0 12px 36px #c9a14c44, 0 2px 8px #fff8;
-      border: 4px solid #ffe6b7;
+      border-radius: 28px;
+      box-shadow: 0 12px 36px #bbbbbb44, 0 2px 8px #fff8;
+      border: 4px solid #f2f2f2;
       background: #fff;
       transition: transform 0.2s;
-      outline: 2px solid #e3c18480;
+      outline: 2px solid #bbbbbb60;
     }
     .hero-rect-img img:hover {
       transform: scale(1.025) rotate(-2deg);
-      box-shadow: 0 20px 48px #ffd70033,0 2px 10px #fff;
-      outline: 3.5px solid var(--gold);
+      box-shadow: 0 20px 48px #bbbbbb44,0 2px 10px #fff;
+      outline: 3.5px solid #bbbbbb;
     }
-    /* Retain the floating gold bubbles on hero */
     .hero canvas {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -182,7 +166,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(155deg, #ffe7c7 0%, #ffe1e1 60%, #FBF1E6 100%);
+      background: linear-gradient(155deg, #ececec 0%, #f2f2f2 60%, #FBF1E6 100%);
       position: relative;
       z-index: 2;
     }
@@ -192,27 +176,30 @@
       font-size: 1.25rem;
       background: #fff8f3e6;
       border-radius: 24px;
-      box-shadow: 0 4px 32px #e9c89144, 0 1px 7px #e4eaff22;
+      box-shadow: 0 4px 32px #bbbbbb22, 0 1px 7px #e4eaff22;
       padding: 2.2rem 2.5rem;
       color: #23272f;
       font-weight: 400;
       line-height: 1.6;
-      border: 2.2px solid #ffe6b7aa;
+      border: 2.2px solid #ecececaa;
       text-align: justify;
     }
     /* Responsive */
+    @media (max-width: 1300px) {
+      .hero-content-flex { gap: 1.5rem; }
+      .hero-rect-img img { width: 480px; height: 320px;}
+    }
     @media (max-width: 1100px) {
       .hero-content-flex { flex-direction: column; gap: 0.4rem; align-items: stretch; justify-content: center;}
       .hero-rect-img { justify-content: center; padding-right: 0;}
+      .hero-rect-img img { width: 98vw; max-width: 350px; height: 200px;}
     }
     @media (max-width: 900px) {
-      .hero-dy { font-size: 2.1rem;}
-      .hero-pv { font-size: 1.3rem;}
-      .hero-pl { font-size: 1.1rem;}
+      .hero-main-title { font-size: 2.4rem;}
       .hero-content-flex { padding: 0 0.7em; }
       .hero-hindi-small { font-size: 1rem;}
       .second-content { font-size: 1.02rem; padding: 1.15rem 0.6rem;}
-      .hero-rect-img img { width: 98vw; max-width: 330px; height: 170px;}
+      .hero-rect-img img { width: 98vw; max-width: 320px; height: 150px;}
       .hero-left { max-width: 100vw; min-width: 0; }
     }
     @media (max-width: 600px) {
@@ -220,7 +207,7 @@
       .hero-hindi-small { font-size: 0.84rem;}
       .second-content { font-size: 0.93rem; padding: 0.65rem 0.15rem;}
       .hero-rect-img img { max-width: 98vw; width: 100%; height: 110px; }
-      .hero-dy, .hero-pv, .hero-pl { margin-bottom: 0.12em;}
+      .hero-main-title { margin-bottom: 0.12em;}
     }
     footer {
       background: #111;
@@ -231,114 +218,4 @@
       z-index: 2;
       position: relative;
     }
-  </style>
-</head>
-<body>
-  <!-- Navbar -->
-  <div class="navbar-container" id="navbarContainer">
-    <nav class="navbar">
-      <div class="nav-left">
-        <img src="your-logo.png" alt="Lab Logo" />
-        <div class="lab-title">DYPP</div>
-      </div>
-      <div class="nav-right" tabindex="0">
-        <a href="#home" class="active">Home</a>
-        <a href="team.html">The&nbsp;Team</a>
-        <a href="Gallary.html">Gallary</a>
-        <a href="publications.html">Publications</a>
-        <a href="research.html">Research</a>
-        <a href="MEET LNR.html">MEET&nbsp;LNR</a>
-        <a href="news.html">Latest</a>
-        <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
-        <!-- Search icon (SVG) -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
-        </svg>
-      </div>
-    </nav>
-  </div>
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <!-- Dope background blobs -->
-    <div class="dope-blob blob1"></div>
-    <div class="dope-blob blob2"></div>
-    <div class="dope-blob blob3"></div>
-    <canvas id="bubbleCanvas"></canvas>
-    <div class="hero-content-flex">
-      <div class="hero-left">
-        <div class="hero-hindi-small">
-          धातु-यन्त्र-प्रवर्तन प्रयोगशाला
-        </div>
-        <div class="hero-dy">Dhātu Yantra</div>
-        <div class="hero-pv">Pravartaṇa</div>
-        <div class="hero-pl">Prayogsālā</div>
-      </div>
-      <div class="hero-rect-img">
-        <!-- Replace with your real image! -->
-        <img src="your-image.jpg" alt="Lab Research" />
-      </div>
-    </div>
-  </section>
-  <section class="second-page">
-    <div class="second-content">
-      The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys, and High Entropy Alloys, using experimental, computational, and theoretical approaches. We strive to connect fundamental materials science with real-world applications and innovations.
-    </div>
-  </section>
-  <footer>
-    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
-  </footer>
-  <script>
-    // Bubble animation: fills hero section, sleeker, less bubbles, gold color
-    const canvas = document.getElementById('bubbleCanvas');
-    const ctx = canvas.getContext('2d');
-    function resizeCanvas() {
-      const hero = document.querySelector('.hero');
-      canvas.width = hero.offsetWidth;
-      canvas.height = hero.offsetHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    // Gold bubbles
-    const bubbles = [];
-    for (let i = 0; i < 30; i++) {
-      bubbles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 18 + 6,
-        dx: Math.random() * 1.4 - 0.7,
-        dy: Math.random() * 1.4 - 0.7,
-        opacity: Math.random() * 0.4 + 0.25
-      });
-    }
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let b of bubbles) {
-        ctx.beginPath();
-        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 215, 0, ${b.opacity})`;
-        ctx.fill();
-        b.x += b.dx;
-        b.y += b.dy;
-        if (b.x + b.r > canvas.width || b.x - b.r < 0) b.dx *= -1;
-        if (b.y + b.r > canvas.height || b.y - b.r < 0) b.dy *= -1;
-      }
-      requestAnimationFrame(animate);
-    }
-    animate();
-    // Navbar show/hide on scroll up
-    let lastScrollY = window.scrollY;
-    const navbarContainer = document.getElementById('navbarContainer');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < lastScrollY) {
-        navbarContainer.classList.add('visible');
-      } else {
-        if (!navbarContainer.matches(':hover')) {
-          navbarContainer.classList.remove('visible');
-        }
-      }
-      lastScrollY = window.scrollY;
-    });
-    navbarContainer.classList.add('visible');
-  </script>
-</body>
-</html>
+  </style
