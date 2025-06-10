@@ -16,7 +16,7 @@
       scroll-behavior: smooth;
     }
 
-    /* --- NAVBAR styles copied from index.html --- */
+    /* --- Navbar Styles from index.html --- */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -31,7 +31,6 @@
       pointer-events: none;
       display: flex;
       justify-content: center;
-      /* Ensure enough space for all navbar items */
       max-width: none;
       width: fit-content;
       min-width: 1200px;
@@ -88,7 +87,7 @@
       border-bottom: 2px solid transparent;
       font-size: 0.87rem;
       transition: color 0.2s, background 0.2s, border-color 0.2s;
-      white-space: nowrap; /* Prevent line breaks in nav items */
+      white-space: nowrap;
     }
     .nav-right a:hover,
     .nav-right a:focus {
@@ -156,8 +155,7 @@
       }
     }
 
-    /* --- END NAVBAR styles --- */
-
+    /* --- End Navbar Styles --- */
 
     section {
       max-width: 1200px;
@@ -390,7 +388,7 @@
 </head>
 
 <body>
-  <!-- Navbar HTML copied from index.html -->
+  <!-- Navbar (copied from index.html) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -680,21 +678,6 @@
   </section>
 
   <script>
-    // --- Navbar show on hover and on scroll up (from index.html) ---
-    let lastScrollY = window.scrollY;
-    const navbarContainer = document.getElementById('navbarContainer');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < lastScrollY) {
-        navbarContainer.classList.add('visible');
-      } else {
-        if (!navbarContainer.matches(':hover')) {
-          navbarContainer.classList.remove('visible');
-        }
-      }
-      lastScrollY = window.scrollY;
-    });
-    navbarContainer.classList.add('visible');
-
     // Carousel logic for all carousels on the page
     document.querySelectorAll('.carousel-container').forEach(function(container) {
       const items = container.querySelectorAll('.carousel-item');
@@ -721,3 +704,49 @@
           } else if (i === (activeIndex + 1) % items.length) {
             item.classList.add('next');
             item.style.left = '75%';
+            item.style.opacity = '0.6';
+            item.style.transform = 'scale(0.85)';
+            item.style.zIndex = '5';
+          } else if (i === (activeIndex + 2) % items.length) {
+            item.style.left = '90%';
+            item.style.opacity = '0.4';
+            item.style.transform = 'scale(0.7)';
+            item.style.zIndex = '2';
+          }
+        });
+      }
+
+      if (btnLeft && btnRight && items.length > 0) {
+        btnLeft.addEventListener('click', () => {
+          activeIndex = (activeIndex - 1 + items.length) % items.length;
+          updateCarousel();
+        });
+
+        btnRight.addEventListener('click', () => {
+          activeIndex = (activeIndex + 1) % items.length;
+          updateCarousel();
+        });
+
+        updateCarousel();
+      }
+    });
+
+    // --- Navbar JS from index.html ---
+    // NAVBAR show on hover and on scroll up
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        navbarContainer.classList.add('visible');
+      } else {
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+    navbarContainer.classList.add('visible');
+    // --- End Navbar JS ---
+  </script>
+</body>
+</html>
