@@ -50,17 +50,32 @@
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img {height: 28px; width: 28px;} }
 
-    /* Punchline Animation */
     #team-section {
       position: relative;
-      min-height: 400px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: var(--main-bg1);
+      overflow: hidden;
+      border-radius: 0;
+      margin-bottom: 0;
+      z-index: 3;
     }
     #big-punchline {
       position: absolute; left:0; right:0; top:0; bottom:0; display:flex; align-items:center; justify-content:center; z-index:10;
       font-family: 'Roboto', sans-serif; font-size: 3rem; font-weight: 900; letter-spacing:1.5px; text-align:center; color:#1E3A8A; background:transparent; transition: opacity 1.2s;
+      pointer-events: none;
+    }
+    #big-punchline.vanish {
+      display: none !important;
     }
     #fade-content {
-      opacity:0; transition: opacity 0.7s;
+      opacity:0; 
+      transition: opacity 0.7s;
+      width: 100%;
+      z-index: 2;
     }
     .punchline-wrapper {
       width: 100%;
@@ -93,39 +108,27 @@
       .punchline-wrapper { margin-top: 1.2rem; margin-bottom: 1.2rem;}
       #big-punchline { font-size: 1.6rem; }
     }
-    section {
-      max-width: 1200px;
-      margin: 6rem auto 2rem;
-      padding: 1.5rem;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(200,200,200,0.13);
-    }
-    h1, h2 {
-      color: #1E3A8A;
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
-      letter-spacing: 1px;
-    }
-    h2 { margin-bottom: 2rem; font-weight: 700; font-size: 2.2rem; }
 
-    /* PI Card (white, hover only on image) */
+    /* PI Card (unchanged dimensions/layout) */
     .pi-card-container {
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
+      z-index: 2;
     }
     .pi-card {
       background:#fff;
       border-radius:18px;
       box-shadow:0 8px 32px rgba(0,0,0,0.13);
-      width:420px;
+      width: 420px;
       max-width:98vw;
       display:flex;
       align-items:center;
       padding:2rem 2.5rem;
       gap:2.2rem;
       position:relative;
+      overflow: visible;
     }
     .pi-img-block {
       display:flex;
@@ -133,40 +136,34 @@
       align-items:center;
       justify-content:center;
       position:relative;
+      min-width: 180px;
+      z-index: 2;
     }
     .pi-img {
       width:180px;
       height:180px;
       object-fit:cover;
-      border-radius:16px;
-      box-shadow:0 0 18px rgba(30,58,138,0.13);
+      /* No border-radius, no shadow, no border */
       background:#f7f7f7;
       transition:width 0.4s, height 0.4s;
       cursor:pointer;
-    }
-    .pi-img.shrink {
-      width:120px !important;
-      height:120px !important;
+      z-index: 2;
+      border: none;
     }
     .pi-bio {
       flex:1 1 0;
-      font-size:1.09rem;
-      line-height:1.5;
-      color:#23272f;
+      font-size:1.18rem;
+      line-height:1.7;
+      color:#1E3A8A;
+      font-weight: 500;
       padding-left:1.7rem;
-      opacity:0;
-      pointer-events:none;
-      transition:opacity 0.4s;
-    }
-    .pi-bio.show {
-      opacity:1;
-      pointer-events:auto;
     }
     @media (max-width:900px) {
       .pi-card { flex-direction: column; width: 99vw; max-width: 99vw; padding: 1rem 0.5rem; }
       .pi-bio, .pi-bio.show { padding-left:0; padding-top:1rem; }
       .pi-img-block { margin-bottom:0.8rem; }
     }
+
     /* Other team sections, carousel, etc. ... */
     .pi-container {
       display: flex;
@@ -187,13 +184,13 @@
     .pi-image-block img {
       width: 220px;
       height: 220px;
-      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
       object-fit: cover;
-      box-shadow: 0 0 18px rgba(30,58,138,0.13);
       background: #f7f7f7;
       margin-bottom: 0.5rem;
       margin-right: 0.2rem;
       display: block;
+      border-radius: 0;
+      box-shadow: none;
     }
     .pi-image-block h3 {
       margin: 0.2rem 0 0.2rem 0;
@@ -313,8 +310,8 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(30,58,138,0.13);
+      border-radius: 0;
+      box-shadow: none;
       background: #f7f7f7;
       margin-bottom: 0.4rem;
     }
@@ -432,10 +429,7 @@
               alt="Prof. Lakshmi Narayan"
               class="pi-img"
               id="pi-img"
-              onmouseover="showPIBio()"
-              onmouseout="hidePIBio()"
-              tabindex="0"
-              />
+            />
             <h3 style="margin:0.7rem 0 0 0;color:#1E3A8A;font-size:1.45rem;font-weight:700;letter-spacing:0.3px;text-align:center;">
               Lakshmi Narayan Ramasubramanian
             </h3>
@@ -576,26 +570,16 @@
   </section>
 
   <script>
-    // Punchline fade out, then fade in rest
+    // Punchline fade out, then vanish, then fade in rest
     window.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         document.getElementById('big-punchline').style.opacity = 0;
         setTimeout(() => {
-          document.getElementById('big-punchline').style.display = 'none';
+          document.getElementById('big-punchline').classList.add('vanish');
           document.getElementById('fade-content').style.opacity = 1;
         }, 1200);
       }, 100);
     });
-
-    // PI bio show/hide only on image hover
-    function showPIBio() {
-      document.getElementById('pi-bio').classList.add('show');
-      document.getElementById('pi-img').classList.add('shrink');
-    }
-    function hidePIBio() {
-      document.getElementById('pi-bio').classList.remove('show');
-      document.getElementById('pi-img').classList.remove('shrink');
-    }
 
     // Carousel logic for all carousels on the page
     document.querySelectorAll('.carousel-container').forEach(function(container) {
@@ -603,7 +587,6 @@
       const btnLeft = container.querySelector('.carousel-btn.left');
       const btnRight = container.querySelector('.carousel-btn.right');
       let activeIndex = 0;
-
       function updateCarousel() {
         items.forEach((item, i) => {
           item.classList.remove('active', 'next');
@@ -612,7 +595,6 @@
           item.style.zIndex = '1';
           item.style.transform = 'scale(0.7)';
           item.style.left = '100%';
-
           if (i === activeIndex) {
             item.classList.add('active');
             item.style.position = 'relative';
