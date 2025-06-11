@@ -29,6 +29,29 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+    /* SVG Blob Styling */
+    .corner-blob {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      width: 250px;
+      height: 250px;
+      pointer-events: none;
+      user-select: none;
+    }
+    @media (max-width: 900px) {
+      .corner-blob {
+        width: 140px;
+        height: 140px;
+      }
+    }
+    @media (max-width: 600px) {
+      .corner-blob {
+        width: 85px;
+        height: 85px;
+      }
+    }
     /* --- Navbar Styles --- */
     .navbar-container {
       position: fixed;
@@ -427,6 +450,34 @@
   </style>
 </head>
 <body>
+  <!-- Top-right Blob SVG -->
+  <div class="corner-blob" aria-hidden="true">
+    <svg width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Outer purple-blue gradient -->
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#5E60CE; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#5390D9; stop-opacity:1" />
+        </linearGradient>
+        <!-- Middle cyan gradient -->
+        <linearGradient id="grad2" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#48CAE4; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#4EA8DE; stop-opacity:1" />
+        </linearGradient>
+        <!-- Inner yellow gradient -->
+        <linearGradient id="grad3" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#FFD60A; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#FFC300; stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <!-- Blob layers -->
+      <g transform="translate(300,300)">
+        <path d="M120,-163.6C149.3,-137.2,157.4,-86.2,163.2,-35.2C169,15.8,172.5,66.8,151.5,101.4C130.6,135.9,85.1,154,40.4,168.1C-4.4,182.1,-48.4,192.1,-89.1,177.2C-129.8,162.2,-167.3,122.2,-172.5,80.7C-177.7,39.1,-150.6,-3.9,-132.7,-48.6C-114.8,-93.4,-106,-139.8,-77.6,-165.4C-49.2,-191,-0.9,-195.7,44.9,-188.6C90.7,-181.5,181.5,-162,120,-163.6Z" fill="url(#grad1)" />
+        <path d="M80,-108C106.1,-91.1,132.5,-70.6,143.1,-43.1C153.7,-15.6,148.6,18.9,131.2,50.8C113.8,82.7,84,111.9,51.2,121.2C18.3,130.4,-17.5,119.8,-55.5,106.2C-93.5,92.7,-133.7,76.3,-152.6,46.7C-171.5,17.1,-169,-25.7,-146.6,-55.9C-124.1,-86.1,-81.7,-103.6,-46.5,-111.5C-11.3,-119.4,16.7,-117,47.8,-115.3C78.9,-113.6,112,-112.6,80,-108Z" fill="url(#grad2)" />
+        <path d="M57.6,-72.3C74.7,-64.7,89.9,-49.9,100.4,-31.6C110.9,-13.3,116.7,8.5,104.3,23.4C91.9,38.4,61.3,46.6,38.2,60.6C15.1,74.6,-0.5,94.5,-18.3,92.6C-36.1,90.7,-56.1,66.9,-71.3,42.5C-86.5,18.1,-96.9,-6.9,-92.8,-32.4C-88.7,-57.8,-70.1,-83.6,-46.3,-89.2C-22.4,-94.8,6.7,-80.2,34.2,-72.7C61.8,-65.1,81.5,-64.5,57.6,-72.3Z" fill="url(#grad3)" />
+      </g>
+    </svg>
+  </div>
   <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
