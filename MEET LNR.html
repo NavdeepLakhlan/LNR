@@ -26,11 +26,14 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      width: 100%;
+      box-sizing: border-box;
     }
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
     .navbar-container {
       position: fixed;
@@ -223,7 +226,7 @@
       display: block;
       position: fixed;
       right: 0;
-      top: 180px;
+      top: 200px;
       margin: 0;
       box-shadow: 0 10px 48px #e4e5f3a7;
       border: none;
@@ -548,8 +551,14 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 40px;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      box-sizing: border-box;
     }
-
     .cta-left h1 {
       font-size: 6rem;
       font-weight: 900;
@@ -557,18 +566,15 @@
       margin: 0;
       line-height: 1;
     }
-
     .cta-right {
       max-width: 550px;
     }
-
     .cta-right p {
       font-size: 1.25rem;
       color: #333;
       margin-bottom: 24px;
       line-height: 1.6;
     }
-
     .cta-email {
       background-color: #222;
       color: #fff;
@@ -584,43 +590,38 @@
       transition: transform 0.2s ease;
       text-decoration: none;
     }
-
     .cta-email:hover {
       transform: scale(1.03);
     }
-
     .cta-email svg {
       width: 20px;
       height: 20px;
       fill: white;
     }
-
     .cta-footer-links {
       display: flex;
       gap: 2rem;
       font-size: 16px;
       margin-top: 40px;
     }
-
     .cta-footer-links a {
       color: #222;
       text-decoration: none;
     }
-
     .cta-footer-links a:hover {
       text-decoration: underline;
     }
-
     @media (max-width: 768px) {
       .cta-section {
         flex-direction: column;
         text-align: center;
+        left: 0;
+        margin-left: 0;
+        width: 100vw;
       }
-
       .cta-left h1 {
         font-size: 4rem;
       }
-
       .cta-footer-links {
         justify-content: center;
         flex-wrap: wrap;
