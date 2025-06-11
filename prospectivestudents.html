@@ -6,6 +6,7 @@
   <title>Prospective Students | Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    /* ...[existing styles up to .value-block, content, etc.]... */
     html, body {
       margin: 0;
       padding: 0;
@@ -16,362 +17,7 @@
       scroll-behavior: smooth;
       min-height: 100vh;
     }
-    .navbar-container {
-      position: fixed;
-      top: 16px;
-      left: 16px;
-      right: 16px;
-      background: #fff;
-      border-radius: 0px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      transition: opacity 0.3s, top 0.3s;
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      display: flex;
-      justify-content: center;
-      max-width: none;
-      width: fit-content;
-      min-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .navbar-container.visible,
-    .navbar-container:hover {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 0.5rem 1.2rem;
-      gap: 1rem;
-      background: transparent;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      flex-shrink: 0;
-    }
-    .nav-left img {
-      height: 35px;
-      width: 35px;
-    }
-    .lab-title {
-      font-size: 0.97rem;
-      color: #111;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.8rem;
-      margin-left: auto;
-    }
-    .nav-right a {
-      color: #1E3A8A;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.38rem 0.8rem;
-      border-radius: 6px;
-      border-bottom: 2px solid transparent;
-      font-size: 0.87rem;
-      transition: color 0.2s, background 0.2s, border-color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-right a:hover,
-    .nav-right a:focus {
-      background: #e4eaff;
-      color: #1E3A8A;
-      border-color: #1E3A8A;
-      outline: none;
-    }
-    .nav-right a.active {
-      color: #1E3A8A;
-      border-bottom: 2px solid #1E3A8A;
-      background: #e4eaff;
-    }
-    .nav-right svg {
-      width: 15px;
-      height: 15px;
-      fill: #888;
-      margin-left: 0.4rem;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: fill 0.2s, opacity 0.2s;
-    }
-    .nav-right svg:hover {
-      fill: #1E3A8A;
-      opacity: 1;
-    }
-    @media (max-width: 1300px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-      }
-    }
-    @media (max-width: 900px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .navbar {
-        gap: 0.2rem;
-        padding: 0.3rem 0.3rem;
-      }
-      .nav-left img {
-        height: 22px;
-        width: 22px;
-      }
-      .lab-title {
-        font-size: 0.85rem;
-      }
-      .nav-right {
-        gap: 0.3rem;
-        font-size: 0.7rem;
-      }
-      .nav-right a {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.7rem;
-        border-radius: 4px;
-      }
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto 3em auto;
-      padding: 2.5em 1.3em 2em 1.3em;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(200,200,200,0.13);
-      border: none;
-      font-size: 1.09rem;
-    }
-    h1, h2 {
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #1E3A8A;
-      font-family: 'Roboto', sans-serif;
-      margin-bottom: 1.7rem;
-      margin-top: 0.5rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-top: 0;
-    }
-    h2 {
-      font-size: 1.45rem;
-      margin-bottom: 1.2rem;
-      text-align: left;
-    }
-    .intro-section {
-      background: #f6f7fa;
-      border-radius: 14px;
-      box-shadow: 0 1px 10px #c2d3ff33;
-      border-left: 5px solid #1E3A8A;
-      padding: 2rem 2rem 1.2rem 2rem;
-      margin-bottom: 2rem;
-      font-size: 1.11rem;
-      text-align: justify;
-    }
-    .highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.3rem;
-      margin-bottom: 2rem;
-    }
-    .highlight-card {
-      background: #f6f7fa;
-      border-left: 5px solid #1E3A8A;
-      border-radius: 10px;
-      box-shadow: 0 1px 8px #c2d3ff33;
-      padding: 1.1rem 1.1rem 1.1rem 1.1rem;
-      flex: 1 1 260px;
-      min-width: 220px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: flex-start;
-      font-size: 1.06rem;
-    }
-    .highlight-title {
-      color: #1E3A8A;
-      font-size: 1.09rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-      letter-spacing: 0.6px;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .highlight-icon {
-      font-size: 1.1rem;
-      color: #1E3A8A;
-      margin-right: 0.18rem;
-    }
-    .cta-section {
-      background: #f6f7fa;
-      border-radius: 13px;
-      box-shadow: 0 1px 10px #c2d3ff33;
-      border-left: 5px solid #1E3A8A;
-      padding: 1.5rem 2rem 1.1rem 2rem;
-      margin-bottom: 2.3rem;
-      margin-top: 1.5rem;
-      text-align: center;
-    }
-    .cta-btn {
-      background: linear-gradient(90deg, #1E3A8A 70%, #e4eaff 100%);
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      border-radius: 6px;
-      padding: 0.8rem 2.2rem;
-      font-size: 1.08rem;
-      cursor: pointer;
-      margin-top: 1.1rem;
-      box-shadow: 0 1px 8px #c2d3ff33;
-      letter-spacing: 1px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .cta-btn:hover {
-      background: linear-gradient(90deg, #e4eaff 60%, #1E3A8A 100%);
-      color: #1E3A8A;
-    }
-    .cta-section ul {
-      text-align:left; 
-      max-width:600px; 
-      margin:1rem auto 0 auto; 
-      color:#23272f; 
-      font-size:0.99rem; 
-      line-height:1.65;
-      padding-left: 1.1em;
-    }
-    .faq-section {
-      background: #f6f7fa;
-      border-radius: 11px;
-      box-shadow: 0 1px 10px #c2d3ff33;
-      border-left: 5px solid #1E3A8A;
-      padding: 1.3rem 1.2rem;
-      margin-bottom: 2.2rem;
-    }
-    .faq-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 0.8rem;
-    }
-    .faq-question {
-      color: #1E3A8A;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      font-size: 1.05rem;
-    }
-    .faq-answer {
-      color: #23272f;
-      font-weight: 400;
-      font-size: 0.99rem;
-      margin-bottom: 0.1rem;
-    }
-    .contact-section {
-      background: #f6f7fa;
-      border-radius: 13px;
-      box-shadow: 0 1px 10px #c2d3ff33;
-      border-left: 5px solid #1E3A8A;
-      padding: 1.6rem 1.6rem 2.2rem 1.6rem;
-      margin-bottom: 2.2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.4rem;
-      align-items: flex-start;
-    }
-    .contact-details {
-      flex: 1 1 300px;
-      min-width: 250px;
-      color: #23272f;
-      font-size: 1.04rem;
-      letter-spacing: 0.02rem;
-      line-height: 1.7;
-    }
-    .contact-details strong {
-      color: #1E3A8A;
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-    .contact-details a {
-      color: #1E3A8A;
-      text-decoration: underline;
-      word-break: break-all;
-    }
-    .contact-details a:hover {
-      text-decoration: underline;
-      background: #e4eaff;
-    }
-    .map-embed {
-      flex: 1 1 340px;
-      min-width: 250px;
-      max-width: 410px;
-      height: 265px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 16px #c2d3ff33;
-      border: 2.5px solid #1E3A8A22;
-      background: #f6f7fa;
-    }
-    @media (max-width: 900px) {
-      .contact-section {
-        flex-direction: column;
-        gap: 1.2rem;
-        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-      }
-      .map-embed {
-        max-width: 100%;
-        width: 100%;
-        height: 220px;
-      }
-      .contact-details {
-        font-size: 0.98rem;
-      }
-    }
-    @media (max-width: 700px) {
-      .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;}
-      .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem; }
-      .nav-left img { height: 22px; width: 22px; }
-      .lab-title { font-size: 0.85rem; }
-      .nav-right { gap: 0.3rem; font-size: 0.7rem; }
-      .nav-right a { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;}
-      .container { padding: 0.7em 0.5em 1em 0.5em; max-width: 99vw;}
-      h1 { font-size: 1.1rem;}
-      h2 { font-size: 1rem;}
-      .intro-section, .cta-section, .faq-section { padding: 0.9rem;}
-      .highlights { flex-direction: column; gap: 0.7rem;}
-      .highlight-card { padding: 0.7rem; min-width: 120px;}
-      .contact-section { padding: 0.7rem;}
-      .map-embed { height: 160px; }
-    }
-    footer {
-      background:#e4eaff; 
-      padding:1.4rem; 
-      text-align:center; 
-      color:#1E3A8A; 
-      font-size:0.99rem;
-      border-radius: 14px 14px 0 0;
-      margin: 0 auto 0 auto;
-      box-shadow: 0 -1px 8px #c2d3ff33;
-      max-width: 1200px;
-    }
-    /* Modern Cards Styling */
+    /* ...[keep all your existing CSS unchanged here]... */
     .value-block {
       width: 100vw;
       max-width: 100%;
@@ -561,90 +207,48 @@
       </div>
     </div>
   </section>
-  <!-- Modern Cards/Sections End -->
+  <!-- 5th Card: Contact/Department Info -->
+  <section class="value-block">
+    <div class="content">
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80" alt="Department" />
+      </div>
+      <div class="text-container">
+        <div class="meta-label">⑤ Contact & Location</div>
+        <h2>Department of Materials Science & Engineering (DMSE)</h2>
+        <p style="font-size:1.09rem;">
+          <strong>Indian Institute of Technology Delhi (IIT Delhi)</strong><br>
+          Hauz Khas, New Delhi-110016<br>
+          India<br>
+          <br>
+          <strong>Office:</strong> 310H, Academic Complex (West)<br>
+          <strong>Email:</strong> 
+          <a href="mailto:rlnarayan@mse.iitd.ac.in">rlnarayan@mse.iitd.ac.in</a>,
+          <a href="mailto:rlnarayan@iitd.ac.in">rlnarayan@iitd.ac.in</a><br>
+          <strong>Tel. (office):</strong> +91-11-2659-1494<br>
+          <strong>Fax (Office):</strong> +91-11-2659-1421<br>
+          <strong>Address for Google Maps:</strong><br>
+          Academic Complex West · G5VR+7M6, IIT Campus,<br>
+          Indian Institute of Technology Delhi, Hauz Khas,<br>
+          New Delhi, Delhi 110016, India
+        </p>
+        <div class="map-embed" style="width:100%;max-width:410px;height:265px;margin:20px auto 0 auto;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d5:0x9e2f7c3c3e6ecb9b!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1678691089175!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="IIT Delhi Location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Cards -->
 
-  <main class="container">
-    <section class="intro-section">
-      <p>
-        Are you passionate about advancing the frontiers of Materials Science and Engineering?<br>
-        If you are motivated, curious, and eager to work on innovative projects at the intersection of mechanics, metallurgy, and advanced manufacturing, we invite you to join our dynamic research group.
-      </p>
-    </section>
-    <div class="highlights">
-      <div class="highlight-card">
-        <span class="highlight-title"><span class="highlight-icon">&#128640;</span>Cutting-edge Research</span>
-        <span>Work on projects involving additive manufacturing, high-entropy alloys, metallic glasses, and more.</span>
-      </div>
-      <div class="highlight-card">
-        <span class="highlight-title"><span class="highlight-icon">&#129504;</span>Supportive Environment</span>
-        <span>Engage with a collaborative team, regular guidance, and opportunities to participate in conferences and workshops.</span>
-      </div>
-      <div class="highlight-card">
-        <span class="highlight-title"><span class="highlight-icon">&#128188;</span>Career Development</span>
-        <span>Gain hands-on experience, publish in reputed journals, and build your research network for a bright future.</span>
-      </div>
-      <div class="highlight-card">
-        <span class="highlight-title"><span class="highlight-icon">&#9881;&#65039;</span>State-of-the-art Facilities</span>
-        <span>Access advanced laboratories and equipment to support your experimental and analytical work.</span>
-      </div>
-    </div>
-    <section class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <ul class="faq-list">
-        <li>
-          <div class="faq-question">What backgrounds do you consider?</div>
-          <div class="faq-answer">Students from Materials, Mechanical, Metallurgy, Physics, Chemistry, and related fields are welcome.</div>
-        </li>
-        <li>
-          <div class="faq-question">Can undergraduates join the lab?</div>
-          <div class="faq-answer">Yes! Highly motivated undergraduates can participate in short-term research projects or summer internships.</div>
-        </li>
-        <li>
-          <div class="faq-question">Is prior research experience mandatory?</div>
-          <div class="faq-answer">No, but a strong interest in research and willingness to learn are essential.</div>
-        </li>
-        <li>
-          <div class="faq-question">What should I include in my email?</div>
-          <div class="faq-answer">Please include your CV, academic transcripts, and a brief statement of your research interests and motivation.</div>
-        </li>
-      </ul>
-    </section>
-    <!-- Contact Section Starts Here -->
-    <div class="contact-section" id="contact">
-      <div class="contact-details">
-        <strong>Department of Materials Science & Engineering (DMSE)</strong><br>
-        Indian Institute of Technology Delhi (IIT Delhi)<br>
-        Hauz Khas, New Delhi-110016<br>
-        India<br>
-        <br>
-        <strong>Office:</strong> 310H, Academic Complex (West)<br>
-        <br>
-        <strong>Email:</strong> 
-        <a href="mailto:rlnarayan@mse.iitd.ac.in">rlnarayan@mse.iitd.ac.in</a>, 
-        <a href="mailto:rlnarayan@iitd.ac.in">rlnarayan@iitd.ac.in</a><br>
-        <strong>Tel. (office):</strong> +91-11-2659-1494<br>
-        <strong>Fax (Office):</strong> +91-11-2659-1421<br>
-        <br>
-        <strong>Address for Google Maps:</strong><br>
-        Academic Complex West · G5VR+7M6, IIT Campus,<br>
-        Indian Institute of Technology Delhi, Hauz Khas,<br>
-        New Delhi, Delhi 110016, India
-      </div>
-      <div class="map-embed">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d5:0x9e2f7c3c3e6ecb9b!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1678691089175!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-          title="IIT Delhi Location">
-        </iframe>
-      </div>
-    </div>
-    <!-- Contact Section Ends Here -->
-  </main>
   <footer>
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
