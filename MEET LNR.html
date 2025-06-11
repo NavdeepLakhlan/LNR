@@ -156,7 +156,7 @@
       margin: 130px 0 60px 0;
       display: flex;
       flex-direction: row;
-      align-items: stretch;
+      align-items: center;
       justify-content: flex-start;
       min-height: 580px;
       position: relative;
@@ -202,14 +202,15 @@
       font-weight: 400;
       margin-bottom: 0;
     }
-    /* ---- New Right Hero Image ---- */
     .hero-right-img-container {
       display: flex;
       align-items: center;
+      margin-left: auto;
       margin-right: 0;
+      height: 100%;
     }
     .hero-right-img {
-      height: 560px;
+      height: 520px;
       width: auto;
       border-radius: 20px;
       margin-right: 0;
@@ -217,6 +218,13 @@
       background: #fff;
       box-shadow: 0 4px 16px #e4e5f3a7;
       display: block;
+      max-width: 100%;
+    }
+    @media (max-width: 1200px) {
+      .hero-right-img {
+        height: 340px;
+        max-width: 95vw;
+      }
     }
     @media (max-width: 900px) {
       .hero-static-container {
@@ -655,7 +663,6 @@
           I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the me[...]
         </div>
       </div>
-      <!-- Hero right image added here -->
       <div class="hero-right-img-container">
         <img src="hero-right.jpg" alt="Lakshmi Narayan at work" class="hero-right-img" />
       </div>
