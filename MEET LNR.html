@@ -32,6 +32,7 @@
       flex-direction: column;
       align-items: center;
     }
+    /* Nav, Hero (unchanged) */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -230,64 +231,90 @@
       background: #fff;
     }
 
-    /* TEACHING SECTION (carousel+text) */
+    /* TEACHING SECTION */
     .teaching-section {
-      margin: 60px auto 80px auto;
+      margin: 80px auto 20px auto;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0;
+      min-height: 560px;
+    }
+    .teaching-carousel-col {
+      flex: 0 0 620px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-    .teaching-title {
-      font-size: 2.1rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 1.7rem;
-      margin-top: 0.7em;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: relative;
+      min-width: 620px;
     }
     .carousel-container {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
-      gap: 2.5em;
-      margin-bottom: 2.5em;
+      justify-content: flex-start;
+      width: 100%;
+      position: relative;
     }
     .carousel-btn {
-      background: #e0e7ff;
+      background: linear-gradient(135deg, var(--accent3) 60%, var(--accent2));
       border: none;
       border-radius: 50%;
       width: 56px;
       height: 56px;
       font-size: 2.2em;
-      color: #222;
+      color: #23232a;
       cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px #bbb3;
+      box-shadow: 0 4px 14px #b0b0d880, 0 1.5px 4px #fff8;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0 12px;
+      transition: transform 0.18s, box-shadow 0.18s, background 0.15s;
+      outline: none;
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .carousel-btn.left {
+      left: -34px;
+    }
+    .carousel-btn.right {
+      right: -34px;
+    }
+    .carousel-btn:active {
+      transform: translateY(-50%) scale(0.96);
     }
     .carousel-btn:hover {
-      background: var(--accent2);
+      background: linear-gradient(135deg, var(--accent4) 60%, var(--accent2));
+      color: #1E3A8A;
+      box-shadow: 0 4px 24px #9eebb7cc, 0 1.5px 8px #fff8;
     }
     .carousel-image-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       width: 620px;
       height: 540px;
+      border-radius: 36px 0 0 36px;
+      overflow: hidden;
+      box-shadow: 0 10px 48px #e4e5f3a7;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background: #fff;
       position: relative;
     }
     .carousel-image-container img {
       width: 620px;
       height: 540px;
       object-fit: cover;
-      border-radius: 36px 0 0 36px;
-      box-shadow: 0 10px 48px #e4e5f3a7;
+      display: block;
       background: #fff;
       border: none;
-      z-index: 1;
+      border-radius: 36px 0 0 36px;
     }
     .carousel-desc {
       font-size: 1.13em;
@@ -301,19 +328,123 @@
       max-width: 600px;
       word-break: break-word;
       box-shadow: 0 2px 8px #d2d8fc66;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 6px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
-    @media (max-width: 700px) {
-      .carousel-container { flex-direction: column; gap: 1.2em; }
+    .teaching-text-col {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-left: 50px;
+      margin-top: 40px;
+      min-width: 260px;
+      max-width: 580px;
+    }
+    .teaching-title {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--accent1);
+      margin-bottom: 1.1rem;
+      margin-top: 0.5em;
+      text-align: left;
+      width: 100%;
+    }
+    /* Bio section under teaching */
+    .bio-section {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 520px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 10px #d2d8fc33;
+      padding: 24px 28px 20px 28px;
+      font-size: 1.09rem;
+      color: #23232a;
+    }
+    .bio-section p {
+      text-align: justify;
+      margin-top: 0;
+      margin-bottom: 0.95em;
+      line-height: 1.7;
+    }
+    @media (max-width: 1300px) {
+      .teaching-section {
+        max-width: 99vw;
+      }
+      .teaching-carousel-col,
       .carousel-image-container,
       .carousel-image-container img {
         width: 98vw;
-        max-width: 98vw;
-        height: auto;
+        max-width: 620px;
+      }
+    }
+    @media (max-width: 1250px) {
+      .teaching-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .teaching-carousel-col {
+        width: 100vw;
+        min-width: 0;
+        align-items: center;
+      }
+      .teaching-text-col {
+        margin-left: 0;
+        margin-top: 36px;
+        max-width: 97vw;
+      }
+      .carousel-image-container,
+      .carousel-image-container img {
+        width: 90vw;
+        max-width: 480px;
+        height: 260px;
         border-radius: 18px;
       }
-      .carousel-desc { max-width: 95vw; font-size: 1em; }
+      .carousel-btn.left { left: -10px; }
+      .carousel-btn.right { right: -10px; }
     }
-    /* Newsroom & Work sections copied from previous styling */
+    @media (max-width: 700px) {
+      .teaching-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+      }
+      .teaching-carousel-col {
+        min-width: 0;
+        width: 100vw;
+        align-items: center;
+      }
+      .carousel-image-container,
+      .carousel-image-container img {
+        width: 97vw;
+        max-width: 97vw;
+        height: 220px;
+        border-radius: 13px;
+      }
+      .carousel-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4em;
+      }
+      .teaching-text-col {
+        margin-left: 0;
+        margin-top: 1.2em;
+        max-width: 97vw;
+      }
+      .bio-section {
+        padding: 16px 10px 14px 10px;
+        font-size: 1em;
+      }
+    }
+    /* Newsroom, Latest Work, Footer (unchanged) */
     .mentions-section {
       background-color: var(--bg);
       padding: 70px 0 60px 0;
@@ -523,16 +654,32 @@
     <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
   </section>
 
-  <!-- Teaching Section With Carousel -->
+  <!-- Teaching Section With Carousel and Bio -->
   <section class="teaching-section">
-    <div class="teaching-title">Teaching</div>
-    <div class="carousel-container">
-      <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">&#8592;</button>
-      <div class="carousel-image-container">
-        <img id="carousel-img" src="teaching1.jpg" alt="Teaching Image 1">
-        <div class="carousel-desc" id="carousel-desc">Teaching moment 1: Demo description here.</div>
+    <div class="teaching-carousel-col">
+      <div class="carousel-container">
+        <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 24L12 16L20 8" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="carousel-image-container">
+          <img id="carousel-img" src="teaching1.jpg" alt="Teaching Image 1">
+          <div class="carousel-desc" id="carousel-desc">Teaching moment 1: Demo description here.</div>
+        </div>
+        <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
-      <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">&#8594;</button>
+    </div>
+    <div class="teaching-text-col">
+      <div class="teaching-title">Teaching</div>
+      <section class="bio-section">
+        <p>
+          I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making technology intuitive for all.
+        </p>
+        <p>
+          Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build — and I love connecting with curious minds!
+        </p>
+      </section>
     </div>
   </section>
 
