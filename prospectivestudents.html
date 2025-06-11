@@ -14,8 +14,7 @@
       --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
       --text: #222;
-      --card-bg: #fffdf5;
-      --card-shadow: 0 2px 10px rgba(30,30,40,0.08);
+      /* --card-bg and --card-shadow no longer used */
       --cta-bg: #111;
       --cta-hover: #333;
     }
@@ -56,24 +55,22 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap;}
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--navbar-link-hover); border-bottom: 2px solid var(--navbar-link-hover); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img{height:22px;width:22px;} .lab-title{font-size:0.85rem;} .nav-right{gap:0.3rem;font-size:0.7rem;} .nav-right a{padding:0.25rem 0.5rem;font-size:0.7rem;border-radius:4px;} }
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 27px; width: 27px; } }
 
-    .value-block {
+    /* Remove .value-block styles, apply section padding directly */
+    .plain-section {
       width: 100vw;
       max-width: 100%;
-      padding: 80px 20px;
-      background: var(--card-bg);
-      box-shadow: var(--card-shadow);
-      margin-bottom: 60px;
+      padding: 60px 0 30px 0;
+      margin-bottom: 42px;
       font-family: 'Roboto', 'Circular Spotify Text', system-ui, sans-serif;
       box-sizing: border-box;
-      border-radius: 20px;
     }
     .content {
       display: flex;
@@ -152,8 +149,8 @@
       background: var(--cta-hover);
     }
     @media (max-width: 900px) {
-      .value-block {
-        padding: 40px 8px;
+      .plain-section {
+        padding: 32px 0 18px 0;
       }
       .content,
       .content.reverse {
@@ -217,8 +214,8 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- Modern Cards/Sections Start (5 Cards) -->
-  <section class="value-block">
+  <!-- Sections Start (no more card containers) -->
+  <section class="plain-section">
     <div class="content">
       <div class="image-container">
         <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Collaboration" />
@@ -231,7 +228,7 @@
       </div>
     </div>
   </section>
-  <section class="value-block">
+  <section class="plain-section">
     <div class="content reverse">
       <div class="image-container">
         <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Innovation" />
@@ -244,7 +241,7 @@
       </div>
     </div>
   </section>
-  <section class="value-block">
+  <section class="plain-section">
     <div class="content">
       <div class="image-container">
         <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Community" />
@@ -257,7 +254,7 @@
       </div>
     </div>
   </section>
-  <section class="value-block">
+  <section class="plain-section">
     <div class="content reverse">
       <div class="image-container">
         <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Apply" />
@@ -278,12 +275,12 @@
       </div>
     </div>
   </section>
-  <!-- 5th Card: Map and Contact Info -->
-  <section class="value-block">
+  <!-- 5th Section: Map and Contact Info -->
+  <section class="plain-section">
     <div class="content">
       <div class="image-container">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d5:0x9e2f7c3c3e6ecb9b!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1678691089175!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d7%3A0x2b9991e4cc8c1a5c!2sIIT%20Delhi!5e0!3m2!1sen!2sin!4v1683995978236!5m2!1sen!2sin"
           width="100%" 
           height="100%" 
           style="border:0;min-height:265px;" 
@@ -316,7 +313,7 @@
       </div>
     </div>
   </section>
-  <!-- End Cards -->
+  <!-- End Sections -->
 
   <footer>
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
