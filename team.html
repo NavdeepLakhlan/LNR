@@ -48,9 +48,13 @@
       transition: opacity 0.9s;
     }
     #punchlineOverlay.fadeout {
-      opacity: 0;
+      animation: punchline-zoomout 0.9s forwards;
       pointer-events: none;
-      transition: opacity 0.2s;
+    }
+    @keyframes punchline-zoomout {
+      0%   { opacity: 1; transform: scale(1);}
+      60%  { opacity: 1; transform: scale(1.13);}
+      100% { opacity: 0; transform: scale(1.25);}
     }
     #punchlineText {
       font-size: 3.2rem;
@@ -342,7 +346,7 @@
     .hero-carousel-container {
       width: 100vw;
       max-width: 100%;
-      margin: 0 auto -3rem auto;
+      margin: 64px auto 0 auto; /* Top space before the carousel */
       padding: 0;
       position: relative;
       overflow: hidden;
@@ -351,7 +355,7 @@
     .hero-carousel {
       position: relative;
       width: 100%;
-      height: 400px;
+      height: 540px; /* increased height */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -380,7 +384,7 @@
     .hero-slide img {
       width: 100vw;
       max-width: 100%;
-      height: 400px;
+      height: 540px;
       object-fit: cover;
       border-radius: 0px 0px 28px 28px;
       box-shadow: 0 10px 48px #ffd70033, 0 2px 12px #1112;
@@ -417,11 +421,12 @@
     .hero-carousel-btn.right { right: 1.8vw; }
 
     @media (max-width: 900px) {
-      .hero-carousel, .hero-slide img { height: 220px; }
+      .hero-carousel, .hero-slide img { height: 300px; }
     }
     @media (max-width: 600px) {
-      .hero-carousel, .hero-slide img { height: 140px; }
+      .hero-carousel, .hero-slide img { height: 160px; }
       .hero-carousel-btn { font-size: 2rem; padding: 0 0.7rem; }
+      .hero-carousel-container { margin-top: 32px; }
     }
     /* ----------- END HERO IMAGE CAROUSEL STYLES ----------- */
   </style>
@@ -627,7 +632,7 @@
         setTimeout(() => {
           overlay.style.display = 'none';
           mainContent.style.display = 'block';
-        }, 200); // after fade out
+        }, 900); // match animation duration
       }, 1800); // 0.7s fade-in + 0.7s visible
     });
 
