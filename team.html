@@ -40,7 +40,7 @@
       justify-content: center;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.9s; /* changed from 0.6s to 0.7s */
+      transition: opacity 0.9s;
     }
     #punchlineOverlay.visible {
       opacity: 1;
@@ -93,13 +93,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.22s; }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 25px; width: 25px; } .lab-title { font-size: 0.83rem; } }
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 25px; width: 25px; } .lab-title{ font-size: 0.81rem;}}
 
     section {
       max-width: 1200px;
@@ -136,14 +136,13 @@
     .pi-image-block img {
       width: 220px;
       height: 220px;
-      /* Removed clip-path to make rectangular */
       object-fit: cover;
       box-shadow: 0 0 18px rgba(30,58,138,0.13);
       background: #f7f7f7;
       margin-bottom: 0.5rem;
       margin-right: 0.2rem;
       display: block;
-      border-radius: 6px; /* Optional: slightly rounded corners for modern look */
+      border-radius: 6px;
     }
     .pi-image-block h3 {
       margin: 0.2rem 0 0.2rem 0;
@@ -264,10 +263,9 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-radius: 6px; /* Optional: slightly rounded corners */
+      border-radius: 6px;
       background: #f7f7f7;
       margin-bottom: 0.4rem;
-      /* Removed clip-path to make rectangular */
     }
     .carousel-item .pi-image-block,
     .carousel-item .pi-bio {
@@ -339,6 +337,93 @@
     .alumni-list b {
       color:#1E3A8A;
     }
+
+    /* ----------- HERO IMAGE CAROUSEL STYLES ----------- */
+    .hero-carousel-container {
+      width: 100vw;
+      max-width: 100%;
+      margin: 0 auto -3rem auto;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+    }
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #161729;
+    }
+    .hero-slide {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.7s cubic-bezier(.6,.15,.25,1);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      filter: grayscale(0.15) brightness(0.92) contrast(1.11) drop-shadow(0 4px 16px #ffd70066);
+    }
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 2;
+      pointer-events: auto;
+      transition: opacity 1.05s cubic-bezier(.25,1.1,.6,1);
+    }
+    .hero-slide img {
+      width: 100vw;
+      max-width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 0px 0px 28px 28px;
+      box-shadow: 0 10px 48px #ffd70033, 0 2px 12px #1112;
+      border: 0;
+      animation: popin-slide 1.1s cubic-bezier(.2,1.3,.4,1) both;
+    }
+    @keyframes popin-slide {
+      0% { filter: blur(12px) opacity(0.5); transform: scale(1.13); }
+      80% { filter: blur(2px) opacity(1); transform: scale(1.01);}
+      100% { filter: blur(0px) opacity(1); transform: scale(1);}
+    }
+    .hero-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(30,58,138,0.38);
+      border: none;
+      color: #ffd700;
+      font-size: 2.8rem;
+      padding: 0.2rem 1.1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+      z-index: 8;
+      transition: background 0.25s, color 0.25s, box-shadow 0.3s;
+      box-shadow: 0 4px 22px #ffd70033;
+      outline: none;
+    }
+    .hero-carousel-btn:hover {
+      background: #ffd700;
+      color: #1E3A8A;
+    }
+    .hero-carousel-btn.left { left: 1.8vw; }
+    .hero-carousel-btn.right { right: 1.8vw; }
+
+    @media (max-width: 900px) {
+      .hero-carousel, .hero-slide img { height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .hero-carousel, .hero-slide img { height: 140px; }
+      .hero-carousel-btn { font-size: 2rem; padding: 0 0.7rem; }
+    }
+    /* ----------- END HERO IMAGE CAROUSEL STYLES ----------- */
   </style>
 </head>
 <body>
@@ -374,6 +459,28 @@
 
   <!-- Main Content -->
   <div id="mainContent">
+
+    <!-- ================= SUPER COOL HERO CAROUSEL ================= -->
+    <div class="hero-carousel-container" aria-label="Lab Highlights">
+      <button class="hero-carousel-btn left" aria-label="Previous Image">&#10094;</button>
+      <div class="hero-carousel">
+        <div class="hero-slide active">
+          <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=1200&q=80" alt="Lab Cool Moment 1" />
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Lab Cool Moment 2" />
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" alt="Lab Cool Moment 3" />
+        </div>
+        <div class="hero-slide">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" alt="Lab Cool Moment 4" />
+        </div>
+      </div>
+      <button class="hero-carousel-btn right" aria-label="Next Image">&#10095;</button>
+    </div>
+    <!-- ================= END HERO CAROUSEL ================= -->
+
     <!-- PI card in PostDoc format -->
     <section>
       <h2>Principal Investigator (PI)</h2>
@@ -385,8 +492,7 @@
         </div>
         <div class="pi-bio">
           <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his PhD at IISc Bangalore...
-            <br>ORCID: 0000-0002-6178-8124
+            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his PhD in Materials Engineering at Indian Institute of Science, Bangalore, India, in 2014. <br>ORCID: 0000-0002-6178-8124
           </p>
         </div>
       </div>
@@ -402,7 +508,7 @@
           <p>PhD – IIT Kanpur</p>
         </div>
         <div class="pi-bio">
-          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and high entropy alloys.</p>
+          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and much more.</p>
         </div>
       </div>
     </section>
@@ -416,7 +522,7 @@
           <p>Senior Research Fellow (Dec 2023–Ongoing)</p>
         </div>
         <div class="pi-bio">
-          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage applications.</p>
+          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for supercapacitor and battery applications.</p>
         </div>
       </div>
     </section>
@@ -434,7 +540,7 @@
             </div>
             <div class="pi-bio">
               <p>
-                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi as a Ph.D. research scholar in Dec 2019.
+                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi as a Ph.D. scholar in Dec. 2019.
               </p>
             </div>
           </div>
@@ -524,6 +630,43 @@
         }, 200); // after fade out
       }, 1800); // 0.7s fade-in + 0.7s visible
     });
+
+    // ============= HERO IMAGE CAROUSEL LOGIC =============
+    (function(){
+      const slides = document.querySelectorAll('.hero-slide');
+      const btnLeft = document.querySelector('.hero-carousel-btn.left');
+      const btnRight = document.querySelector('.hero-carousel-btn.right');
+      let active = 0;
+      function showSlide(idx) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === idx);
+        });
+      }
+      btnLeft.addEventListener('click', () => {
+        active = (active - 1 + slides.length) % slides.length;
+        showSlide(active);
+      });
+      btnRight.addEventListener('click', () => {
+        active = (active + 1) % slides.length;
+        showSlide(active);
+      });
+      // Touch swipe support for mobile
+      let startX = null;
+      document.querySelector('.hero-carousel').addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+      });
+      document.querySelector('.hero-carousel').addEventListener('touchend', e => {
+        if (startX !== null) {
+          let diff = e.changedTouches[0].clientX - startX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) btnLeft.click();
+            else btnRight.click();
+          }
+        }
+        startX = null;
+      });
+    })();
+    // ============= END HERO IMAGE CAROUSEL LOGIC =============
 
     // Carousel logic for all carousels on the page (unchanged)
     document.querySelectorAll('.carousel-container').forEach(function(container) {
