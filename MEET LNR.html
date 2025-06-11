@@ -165,8 +165,8 @@
     }
     .hero-static-container {
       width: 100vw;
-      max-width: var(--max-width);
-      margin: 130px auto 60px auto;
+      max-width: none;
+      margin: 130px 0 60px 0;
       display: flex;
       flex-direction: row;
       align-items: stretch;
@@ -174,6 +174,7 @@
       min-height: 580px;
       position: relative;
       background: none;
+      overflow: visible;
     }
     .hero-static-text {
       flex: 1 1 0;
@@ -216,21 +217,37 @@
     }
     .hero-static-img {
       width: 460px;
-      height: 460px; /* 510px - 50px */
+      height: 460px;
       border-radius: 36px 0 0 36px;
       object-fit: cover;
       display: block;
-      position: absolute;
+      position: fixed;
       right: 0;
-      top: 50px;
+      top: 180px;
       margin: 0;
       box-shadow: 0 10px 48px #e4e5f3a7;
       border: none;
-      z-index: 1;
+      z-index: 10;
       background: #fff;
+      left: auto;
     }
-
-    /* Teaching Section */
+    @media (max-width: 900px) {
+      .hero-static-img {
+        width: 100vw;
+        height: 260px;
+        border-radius: 0;
+        position: static;
+        margin: 0 auto;
+        top: auto;
+        right: auto;
+        left: auto;
+      }
+      .hero-static-container {
+        flex-direction: column;
+        min-height: unset;
+        margin: 60px 0 30px 0;
+      }
+    }
     .teaching-section {
       margin: 80px auto 20px auto;
       max-width: 1200px;
@@ -522,6 +539,94 @@
       background: #f8cdd5;
       color: #23232a;
     }
+    /* --- CTA Section Styles --- */
+    .cta-section {
+      background-color: #d5ffbd;
+      padding: 80px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .cta-left h1 {
+      font-size: 6rem;
+      font-weight: 900;
+      color: #222;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .cta-right {
+      max-width: 550px;
+    }
+
+    .cta-right p {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .cta-email {
+      background-color: #222;
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .cta-email:hover {
+      transform: scale(1.03);
+    }
+
+    .cta-email svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .cta-footer-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 16px;
+      margin-top: 40px;
+    }
+
+    .cta-footer-links a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .cta-footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .cta-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-left h1 {
+        font-size: 4rem;
+      }
+
+      .cta-footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+    /* --- End CTA Section Styles --- */
     footer {
       margin-top: 40px;
       width: 100%;
@@ -687,6 +792,31 @@
       </div>
     </div>
   </section>
+
+  <!-- CTA SECTION INSERTED HERE -->
+  <section class="cta-section">
+    <div class="cta-left">
+      <h1>Shall<br>we?</h1>
+    </div>
+    <div class="cta-right">
+      <p>
+        Based in France, I work with English and French–speaking teams to create accessible digital experiences and adopt inclusive practices. Want to work together?
+      </p>
+      <a href="mailto:youremail@example.com" class="cta-email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M502.3 190.8L320.8 9.4c-12.5-12.5-32.8-12.5-45.3 0L9.4 275.5c-12.5 12.5-12.5 32.8 0 45.3l182.1 182.1c12.5 12.5 32.8 12.5 45.3 0l273.5-273.5c12.5-12.5 12.5-32.8 0-45.3z"/>
+        </svg>
+        Email me
+      </a>
+      <div class="cta-footer-links">
+        <a href="#">Newsletter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Medium</a>
+      </div>
+    </div>
+  </section>
+  <!-- END CTA SECTION -->
+
   <footer>
     &copy; 2025 Lakshmi Narayan &middot; Designed with love for usability
   </footer>
