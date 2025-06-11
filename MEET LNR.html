@@ -433,11 +433,11 @@
       color: #23232a;
     }
 
-    /* Retained: bio-section, etc */
+    /* BIO and TEACHING SECTIONS */
     .bio-section {
       width: 100%;
       max-width: 700px;
-      margin: 0 auto var(--section-gap) auto;
+      margin: 0 auto 60px auto;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -471,16 +471,123 @@
       text-transform: uppercase;
       font-weight: 700;
     }
+
+    /* TEACHING SECTION (carousel+text) */
+    .teaching-section {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 3em;
+      max-width: 900px;
+      margin: 0 auto 120px auto;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .carousel-container {
+      flex: 0 0 320px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .carousel {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 260px;
+      height: 230px;
+      justify-content: center;
+    }
+    .carousel-image-container {
+      width: 260px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+    }
+    .carousel-image-container img {
+      width: 240px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px #ccc5;
+      margin-bottom: 0.6em;
+      background: #fff;
+    }
+    .carousel-desc {
+      font-size: 0.97em;
+      color: #444;
+      background: #fff4;
+      border-radius: 8px;
+      padding: 6px 10px;
+      margin-top: 0;
+      text-align: center;
+      min-height: 28px;
+    }
+    .carousel-btn {
+      background: #e0e7ff;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 1.5em;
+      color: #222;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px #bbb3;
+      position: absolute;
+      top: 60px;
+      z-index: 2;
+    }
+    .carousel-btn.left { left: -46px; }
+    .carousel-btn.right { right: -46px; }
+    .teaching-content {
+      align-self: flex-start;
+      max-width: 420px;
+    }
     @media (max-width: 900px) {
-      .bio-section {
+      .bio-section, .teaching-section {
         flex-direction: column;
-        gap: 1.7em;
-        text-align: center;
+        align-items: center;
+        gap: 2em;
+        max-width: 97vw;
       }
       .bio-img {
         margin: 0 auto 1.4em auto;
       }
       .bio-content { font-size: 1.06rem;}
+      .carousel-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1.2em;
+      }
+      .carousel {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        justify-content: center;
+      }
+      .carousel-image-container {
+        width: 90vw;
+        max-width: 300px;
+        height: auto;
+      }
+      .carousel-image-container img {
+        width: 90vw;
+        max-width: 300px;
+        height: 150px;
+      }
+      .carousel-btn.left, .carousel-btn.right {
+        position: static;
+        margin: 0 10px;
+        top: unset;
+        left: unset;
+        right: unset;
+      }
+      .teaching-content {
+        max-width: 97vw;
+      }
     }
     footer {
       margin-top: 40px;
@@ -530,11 +637,34 @@
     <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
   </section>
 
-  <!-- Bio Section (retained) -->
+  <!-- Bio Section -->
   <section class="bio-section">
     <img src="profile.jpg" alt="Lakshmi Narayan smiling" class="bio-img" />
     <div class="bio-content">
       <h3>About Lakshmi</h3>
+      <p>
+        I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making technology intuitive for all.
+      </p>
+      <p>
+        Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build — and I love connecting with curious minds!
+      </p>
+    </div>
+  </section>
+
+  <!-- Teaching Section With Carousel -->
+  <section class="teaching-section">
+    <div class="carousel-container">
+      <div class="carousel">
+        <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">&#8592;</button>
+        <div class="carousel-image-container">
+          <img id="carousel-img" src="img1.jpg" alt="Teaching Image 1">
+          <div class="carousel-desc" id="carousel-desc">Description for image 1</div>
+        </div>
+        <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">&#8594;</button>
+      </div>
+    </div>
+    <div class="bio-content teaching-content">
+      <h3>Teaching</h3>
       <p>
         I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making technology intuitive for all.
       </p>
@@ -571,7 +701,7 @@
     </div>
   </section>
 
-  <!-- Latest Work Section (horizontal, non-responsive, no magnify, no images, indexed card 1 and 2) -->
+  <!-- Latest Work Section -->
   <section class="work-section">
     <div class="work-title">Latest Work</div>
     <div class="work-cards">
@@ -658,6 +788,11 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
-  </script>
-</body>
-</html>
+
+    // Carousel for Teaching section
+    const carouselImages = [
+      { src: 'img1.jpg', desc: 'Description for image 1' },
+      { src: 'img2.jpg', desc: 'Description for image 2' },
+      { src: 'img3.jpg', desc: 'Description for image 3' },
+      { src: 'img4.jpg', desc: 'Description for image 4'](#)*
+
