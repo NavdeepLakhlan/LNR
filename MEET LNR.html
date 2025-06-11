@@ -269,6 +269,67 @@
       .hero-static-img { border-radius: 12px;}
     }
 
+    /* FROM THE NEWSROOMS SECTION - CUSTOMIZED */
+    .mentions-section {
+      background-color: var(--bg);
+      padding: 70px 0 60px 0;
+      text-align: center;
+    }
+    .mentions-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2.2rem;
+      color: #222;
+    }
+    .mention-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .mention-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 170px;
+      height: 70px;
+      padding: 1rem 1.1rem;
+      border-radius: 10px;
+      background: var(--accent3);
+      text-decoration: none;
+      color: #1c1c1c;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      box-shadow: none;
+      transition: transform 0.17s, box-shadow 0.17s, background 0.17s;
+      cursor: pointer;
+    }
+    .mention-card .underline-accent {
+      width: 28px;
+      height: 4px;
+      background-color: #8CCB69;
+      border-radius: 99px;
+      margin-bottom: 0.7rem;
+    }
+    .mention-card:hover {
+      transform: scale(1.04);
+      background: var(--accent2);
+      box-shadow: 0 2px 12px #a0c9ac33;
+    }
+    @media (max-width: 600px) {
+      .mention-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+      }
+      .mention-card {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
     /* LATEST WORK: horizontal, non-responsive, no magnify, no images */
     .work-section {
       width: 100%;
@@ -339,7 +400,6 @@
       font-family: 'Inter', Arial, sans-serif;
       font-weight: 400;
     }
-    /* Smaller, tighter text for awards list cards */
     .card-awards-list {
       font-size: 0.83rem;
       line-height: 1.2;
@@ -371,52 +431,6 @@
     .work-link:hover {
       background: #f8cdd5;
       color: #23232a;
-    }
-
-    /* FROM THE NEWSROOMS SECTION */
-    .mentions-section {
-      background-color: var(--bg);
-      padding: 100px 20px;
-      text-align: center;
-    }
-    .mentions-section h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 3rem;
-      color: #222;
-    }
-    .mention-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .mention-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      background-color: #fff;
-      text-decoration: none;
-      color: #1c1c1c;
-      transition: transform 0.2s ease, box-shadow 0.2s;
-      cursor: pointer;
-      font-size: 1.1rem;
-      min-height: 100px;
-    }
-    .mention-card .underline-accent {
-      width: 30px;
-      height: 4px;
-      background-color: #8CCB69;
-      border-radius: 99px;
-      margin-bottom: 1rem;
-    }
-    .mention-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 26px #a0c9ac33;
     }
 
     /* Retained: bio-section, etc */
@@ -530,6 +544,33 @@
     </div>
   </section>
 
+  <!-- FROM THE NEWSROOMS SECTION -->
+  <section class="mentions-section">
+    <h2>From the newsrooms</h2>
+    <div class="mention-grid">
+      <a href="https://example.com/1" class="mention-card">
+        <div class="underline-accent"></div>
+        Nature India
+      </a>
+      <a href="https://example.com/2" class="mention-card">
+        <div class="underline-accent"></div>
+        The Hindu
+      </a>
+      <a href="https://example.com/3" class="mention-card">
+        <div class="underline-accent"></div>
+        Indian Express
+      </a>
+      <a href="https://example.com/4" class="mention-card">
+        <div class="underline-accent"></div>
+        Times of India
+      </a>
+      <a href="https://example.com/5" class="mention-card">
+        <div class="underline-accent"></div>
+        NDTV
+      </a>
+    </div>
+  </section>
+
   <!-- Latest Work Section (horizontal, non-responsive, no magnify, no images, indexed card 1 and 2) -->
   <section class="work-section">
     <div class="work-title">Latest Work</div>
@@ -596,45 +637,6 @@
         </div>
         <a class="work-link" href="#">Learn more</a>
       </div>
-    </div>
-  </section>
-
-  <!-- FROM THE NEWSROOMS SECTION -->
-  <section class="mentions-section">
-    <h2>From the newsrooms</h2>
-    <div class="mention-grid">
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        Nature India
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        The Hindu
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        Indian Express
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        Hindustan Times
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        Times of India
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        NDTV
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        The Wire
-      </a>
-      <a href="#" class="mention-card">
-        <div class="underline-accent"></div>
-        Research Matters
-      </a>
     </div>
   </section>
 
