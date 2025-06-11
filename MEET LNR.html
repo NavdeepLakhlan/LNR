@@ -125,7 +125,8 @@
       opacity: 1;
     }
 
-    /* HERO SECTION IMAGE: updated to use 620x540px */
+    /* Removed .hero-static-img styles as requested */
+
     .hero-static-container {
       width: 100%;
       margin: 130px 0 60px 0;
@@ -185,8 +186,8 @@
       height: 100%;
     }
     .hero-right-img {
-      width: 620px;
-      height: 540px;
+      height: 460px;
+      width: 420px;
       border-radius: 20px 0px 0px 20px;
       margin-right: 0;
       object-fit: cover;
@@ -195,8 +196,24 @@
       display: block;
       max-width: 100%;
     }
-
-    /* CAROUSEL IMAGES: 620x540px */
+    @media (max-width: 1200px) {
+      .hero-right-img {
+        height: 340px;
+        max-width: 95vw;
+      }
+    }
+    @media (max-width: 900px) {
+      .hero-right-img-container {
+        margin: 24px 0 0 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .hero-right-img {
+        width: 100% !important;
+        max-width: 320px;
+        height: auto !important;
+      }
+    }
     .teaching-section {
       margin: 80px auto 20px auto;
       max-width: 1200px;
@@ -274,8 +291,6 @@
       background: #fff;
       border: none;
       border-radius: 36px 0 0 36px;
-      max-width: 100%;
-      max-height: 100%;
     }
     .carousel-desc {
       font-size: 1.13em;
@@ -332,43 +347,6 @@
       margin-bottom: 0.95em;
       line-height: 1.7;
     }
-    /* Responsive Adjustments */
-    @media (max-width: 1300px) {
-      .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;}
-    }
-    @media (max-width: 1200px) {
-      .hero-right-img, .carousel-image-container, .carousel-image-container img {
-        width: 480px;
-        height: 380px;
-      }
-      .teaching-carousel-col, .carousel-image-container { min-width: 480px; width: 480px; }
-    }
-    @media (max-width: 900px) {
-      .hero-static-container {
-        flex-direction: column;
-        min-height: unset;
-      }
-      .hero-right-img-container {
-        margin: 24px 0 0 0;
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .hero-right-img,
-      .carousel-image-container,
-      .carousel-image-container img {
-        width: 100% !important;
-        max-width: 320px;
-        height: auto !important;
-        min-width: 0;
-        min-height: 0;
-      }
-      .teaching-section {
-        flex-direction: column;
-      }
-      .teaching-carousel-col, .carousel-image-container { min-width: 0; width: 100%; }
-    }
-
-    /* The rest of your page styles (mentions, work-section, cta, etc.) unchanged... */
     .mentions-section {
       background-color: #fef8e4;
       padding: 70px 0 60px 0;
@@ -653,7 +631,7 @@
         <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
         <div class="hero-role">I'm a researcher and teacher</div>
         <div class="hero-bio">
-          I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanical behavior of advanced materials.
+          I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanisms of material failure.
         </div>
       </div>
       <div class="hero-right-img-container">
@@ -681,10 +659,10 @@
         <div class="teaching-title">Teaching</div>
         <section class="bio-section">
           <p>
-            I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on impact and inclusion.
+            I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on impact.
           </p>
           <p>
-            Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build, and I mentor — always with curiosity and humility.
+            Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build, and I mentor.
           </p>
         </section>
       </div>
