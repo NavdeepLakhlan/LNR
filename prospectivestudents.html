@@ -3,112 +3,147 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prospective Students | Dhātu-yantra-pravartana Lab</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Prospective Students – DYPP</title>
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f6f7fa;
-      color: #222;
-      font-size: 18px;
-      scroll-behavior: smooth;
-      min-height: 100vh;
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #fff;
+      color: #111;
     }
-    .cards-wrapper {
+
+    .feature-section {
+      width: 100%;
+      padding: 4rem 1rem;
+      background: #fefefe;
+    }
+
+    .feature-block {
       max-width: 1200px;
       margin: 3rem auto;
-      padding: 1rem;
-    }
-    .card {
+      padding: 2rem;
+      border-radius: 24px;
+      background: #fafafa;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       display: flex;
       align-items: center;
       gap: 2rem;
-      margin-bottom: 2.5rem;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 0 16px rgba(0,0,0,0.08);
-      padding: 2rem;
       transition: transform 0.3s ease;
     }
-    .card:hover {
+
+    .feature-block:hover {
       transform: translateY(-5px);
     }
-    .card img {
-      width: 280px;
-      height: 280px;
+
+    .feature-block img {
+      width: 45%;
+      max-height: 400px;
       object-fit: cover;
-      border-radius: 16px;
+      border-radius: 20px;
+      flex-shrink: 0;
     }
-    .card-content {
-      max-width: 600px;
+
+    .feature-text {
+      width: 55%;
     }
-    .card h2 {
-      font-size: 1.9rem;
-      margin: 0 0 1rem;
-      color: #1E3A8A;
+
+    .feature-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
     }
-    .card p {
-      font-size: 1.1rem;
+
+    .feature-text p {
+      font-size: 1.15rem;
       line-height: 1.6;
       color: #333;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.8rem;
     }
-    .card button {
-      padding: 0.7rem 1.6rem;
-      font-size: 1rem;
-      background-color: #1E3A8A;
+
+    .feature-text button {
+      background: #111;
       color: #fff;
+      padding: 0.9rem 1.7rem;
+      font-size: 1rem;
       border: none;
-      border-radius: 30px;
+      border-radius: 40px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
-    .card button:hover {
-      background-color: #3454ba;
+
+    .feature-text button:hover {
+      background: #333;
     }
-    @media (max-width: 768px) {
-      .card {
+
+    .feature-block.reverse {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 900px) {
+      .feature-block,
+      .feature-block.reverse {
         flex-direction: column;
         text-align: center;
+        padding: 1.5rem;
       }
-      .card img {
+
+      .feature-block img,
+      .feature-text {
         width: 100%;
-        height: auto;
       }
-      .card-content {
-        max-width: 100%;
+
+      .feature-text h2 {
+        font-size: 1.6rem;
+      }
+
+      .feature-text p {
+        font-size: 1rem;
+      }
+
+      .feature-text button {
+        padding: 0.8rem 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="cards-wrapper">
-    <div class="card">
-      <img src="FF0D67CC-F2D1-422B-973A-1E146A6BA8BD.png" alt="Who we are">
-      <div class="card-content">
+
+  <section class="feature-section">
+
+    <div class="feature-block">
+      <img src="image1.jpg" alt="People in car" />
+      <div class="feature-text">
         <h2>One band, no solo artists</h2>
         <p>It’s our culture. It’s our values. It’s who we are and what we’re not. It’s why we do things the way we do and why that matters.</p>
         <button>Read our manifesto</button>
       </div>
     </div>
-    <div class="card">
-      <img src="FB254EF4-4EC0-418C-934E-E89464C94A81.png" alt="Where we belong">
-      <div class="card-content">
+
+    <div class="feature-block reverse">
+      <img src="image2.jpg" alt="Person with headphones" />
+      <div class="feature-text">
         <h2>We all have parts to play</h2>
-        <p>We want you to feel like you belong here and can thrive here. No two creators or listeners are the same, so neither are we.</p>
+        <p>We want you to feel like you belong here and can thrive. No two creators or listeners are the same, so neither are we.</p>
         <button>Learn about belonging</button>
       </div>
     </div>
-    <div class="card">
-      <img src="9BF16FB3-CCD2-400B-B098-2ABD6CA51954.png" alt="How we act">
-      <div class="card-content">
+
+    <div class="feature-block">
+      <img src="image3.jpg" alt="Person raising hands" />
+      <div class="feature-text">
         <h2>Listening and learning</h2>
         <p>We’re not just shaping the future of audio. We want to help shape a better future for society and the planet too. Bit by bit. Day by day.</p>
         <button>See our approach</button>
       </div>
     </div>
-  </div>
+
+  </section>
+
 </body>
 </html>
