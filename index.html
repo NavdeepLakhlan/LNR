@@ -46,13 +46,14 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: ... }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--blue); border-bottom: 2px solid var(--blue); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img {... }
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img{height:25px;width:25px;}.lab-title{font-size:0.81rem;} }
+
     .hero {
       min-height: 100vh;
       height: 100vh;
@@ -301,11 +302,18 @@
       </div>
     </div>
   </section>
-  <!-- LAYERED WAVE DIVIDER (only grey wave, from SVG) -->
+  <!-- LAYERED WAVE DIVIDER -->
   <div style="position:relative; margin-top:-5px; z-index:5;">
-    <svg viewBox="0 0 900 600" width="100%" height="120" preserveAspectRatio="none" style="display:block;">
-      <rect x="0" y="0" width="900" height="600" fill="#fef8e4"></rect>
-      <path d="M0 518L37.5 511.2C75 504.3 150 490.7 225 482.7C300 474.7 375 472.3 450 464.3C525 456.3 600 442.7 675 437C750 431.3 825 433.7 862.5 434.8L900 436L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#ececec"></path>
+    <svg viewBox="0 0 1440 220" width="120%" height="350" preserveAspectRatio="none" style="display:block;">
+      <!-- Back wave (lightest) -->
+      <path d="M0,120 Q360,200 720,130 T1440,160 L1440,220 L0,220 Z"
+            fill="#fef8e4" opacity="1"/>
+      <!-- Middle wave -->
+      <path d="M0,100 Q360,230 720,110 T1440,140 L1440,220 L0,220 Z"
+            fill="#ffefb6" opacity="0.87"/>
+      <!-- Front (sharpest) wave, original -->
+      <path d="M0,90 Q360,220 720,110 T1440,130 L1440,220 L0,220 Z"
+            fill="#ececec" opacity="1"/>
     </svg>
   </div>
   <!-- SECOND PAGE: Image left, text right, justified, same background as first -->
@@ -315,7 +323,7 @@
         <img src="your-second-image.jpg" alt="Lab Research 2" />
       </div>
       <div class="second-desc">
-        The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Super...
+        The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys, High-entropy alloys, and others, using experimental mechanics, advanced electron microscopy, and modeling.
       </div>
     </div>
   </section>
