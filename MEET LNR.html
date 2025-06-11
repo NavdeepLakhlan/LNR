@@ -9,17 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fdfcf7;
+      --bg: #fef8e4;
       --text: #23232a;
       --headline: #23232a;
       --accent1: #f8cdd5;   /* pastel pink */
       --accent2: #c0f2e6;   /* pistachio green */
       --accent3: #d2d8fc;   /* pastel blue */
       --accent4: #ffe9b6;   /* pastel yellow */
-      --hero-pastel: var(--accent1);
       --accent-strong: #ffb3b3;
       --nav-bg: #fff;
-      --nav-shadow: 0 2px 20px #2221  ;
+      --nav-shadow: 0 2px 20px #2221;
       --card-hover: #ffe9f2;
       --card-hover2: #e6fdf7;
       --card-radius: 24px;
@@ -42,91 +41,146 @@
       flex-direction: column;
       align-items: center;
     }
-    /* NAVIGATION */
-    nav {
-      width: 100%;
-      max-width: 100vw;
+    /* --- NAVBAR (original style from your site) --- */
+    .navbar-container {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
       background: var(--nav-bg);
-      box-shadow: var(--nav-shadow);
-      position: sticky;
-      top: 0;
-      z-index: 20;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
       display: flex;
       justify-content: center;
-      padding: 0;
-      min-height: 64px;
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .nav-content {
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
-      max-width: var(--max-width);
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
+      background: transparent;
+    }
+    .nav-left {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0.8rem 2rem;
-      box-sizing: border-box;
+      gap: 0.6rem;
+      flex-shrink: 0;
     }
-    .nav-title {
-      font-weight: 900;
-      font-size: 2rem;
-      letter-spacing: 1.8px;
-      color: var(--headline);
-      font-family: var(--font-main);
-      user-select: none;
+    .nav-left img {
+      height: 35px;
+      width: 35px;
     }
-    .nav-links {
+    .lab-title {
+      font-size: 0.97rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    .nav-right {
       display: flex;
-      gap: 2rem;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
     }
-    .nav-links a {
-      font-family: var(--font-main);
-      font-size: 1.02rem;
-      font-weight: 500;
-      color: var(--text);
+    .nav-right a {
+      color: #1E3A8A;
       text-decoration: none;
-      padding: 0.45em 1.1em;
-      border-radius: 18px;
-      transition: background 0.18s;
-      letter-spacing: 0.1em;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
     }
-    .nav-links a:hover, .nav-links a.active {
-      background: var(--accent1);
-      color: var(--headline);
+    .nav-right a:hover,
+    .nav-right a:focus {
+      background: #e4eaff;
+      color: #1E3A8A;
+      border-color: #1E3A8A;
+      outline: none;
     }
-    /* Hamburger menu */
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 2rem;
+    .nav-right a.active {
+      color: #1E3A8A;
+      border-bottom: 2px solid #1E3A8A;
+      background: #e4eaff;
+    }
+    .nav-right svg {
+      width: 15px;
+      height: 15px;
+      fill: #888;
+      margin-left: 0.4rem;
       cursor: pointer;
-      color: var(--headline);
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
     }
-    @media (max-width: 700px) {
-      .nav-content { padding: 0.7rem 1rem; }
-      .nav-title { font-size: 1.3rem; }
-      .nav-links {
-        display: none;
-        position: absolute;
+    .nav-right svg:hover {
+      fill: #1E3A8A;
+      opacity: 1;
+    }
+    @media (max-width: 1300px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
         right: 0;
-        top: 56px;
-        background: var(--nav-bg);
-        flex-direction: column;
-        min-width: 160px;
-        box-shadow: var(--nav-shadow);
-        border-radius: 0 0 14px 14px;
-        gap: 0;
       }
-      .nav-links.show { display: flex; }
-      .nav-links a { padding: 1em 2em; }
-      .nav-hamburger { display: block; }
     }
+    @media (max-width: 900px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .navbar {
+        gap: 0.2rem;
+        padding: 0.3rem 0.3rem;
+      }
+      .nav-left img {
+        height: 22px;
+        width: 22px;
+      }
+      .lab-title {
+        font-size: 0.85rem;
+      }
+      .nav-right {
+        gap: 0.3rem;
+        font-size: 0.7rem;
+      }
+      .nav-right a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        border-radius: 4px;
+      }
+    }
+    /* --- END NAVBAR --- */
 
     /* HERO SECTION */
     .hero-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 56px;
+      margin-top: 120px;
       margin-bottom: var(--section-gap);
       width: 100%;
       max-width: var(--max-width);
@@ -147,7 +201,7 @@
     }
     .hero-headline {
       font-family: var(--font-main);
-      font-size: 3.4rem;
+      font-size: 3.6rem;
       font-weight: 900;
       color: var(--headline);
       margin: 0.1em 0 0.2em 0;
@@ -371,6 +425,9 @@
         gap: 1.2em;
       }
     }
+    @media (max-width: 900px) {
+      .work-section { padding: 0 1vw; }
+    }
     @media (max-width: 700px) {
       .work-cards {
         flex-direction: column;
@@ -378,6 +435,7 @@
         align-items: center;
       }
       .work-card { width: 94vw; min-width: 0; }
+      .hero-headline { font-size: 2.1rem;}
     }
     /* Footer */
     footer {
@@ -392,21 +450,29 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-content">
-      <div class="nav-title">LN</div>
-      <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">☰</button>
-      <div class="nav-links" id="navLinks">
+  <!-- Navigation (original) -->
+  <div class="navbar-container" id="navbarContainer">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="your-logo.png" alt="Lab Logo" />
+        <div class="lab-title">DYPP</div>
+      </div>
+      <div class="nav-right" tabindex="0">
         <a href="index.html">Home</a>
-        <a class="active" href="MEET LNR.html">About</a>
+        <a href="team.html">The&nbsp;Team</a>
+        <a href="Gallary.html">Gallary</a>
         <a href="publications.html">Publications</a>
         <a href="research.html">Research</a>
-        <a href="news.html">News</a>
-        <a href="prospectivestudents.html">Prospective Students</a>
+        <a href="MEET LNR.html" class="active">MEET&nbsp;LNR</a>
+        <a href="news.html">Latest</a>
+        <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
+        <!-- Search icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
+        </svg>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -443,23 +509,20 @@
   <section class="work-section">
     <div class="work-title">Latest Work</div>
     <div class="work-cards">
-      <!-- Card Example 1 -->
       <div class="work-card">
-        <img src="work1.jpg" class="work-img" alt="Screenshot of Project 1" />
+        <img src="work1.jpg" class="work-img" alt="Project 1" />
         <div class="work-card-title">Inclusive Form Patterns</div>
         <div class="work-card-desc">Research and UI kit for building forms that work for everyone, including screen reader and mobile users.</div>
         <a class="work-link" href="#">Start reading</a>
       </div>
-      <!-- Card Example 2 -->
       <div class="work-card">
-        <img src="work2.jpg" class="work-img" alt="Screenshot of Project 2" />
+        <img src="work2.jpg" class="work-img" alt="Project 2" />
         <div class="work-card-title">Color Contrast Checker</div>
         <div class="work-card-desc">A web tool to instantly check and improve color contrast for accessible interfaces.</div>
         <a class="work-link" href="#">Try it now</a>
       </div>
-      <!-- Card Example 3 -->
       <div class="work-card">
-        <img src="work3.jpg" class="work-img" alt="Screenshot of Project 3" />
+        <img src="work3.jpg" class="work-img" alt="Project 3" />
         <div class="work-card-title">Teaching: UX Foundations</div>
         <div class="work-card-desc">My open course for students at IIT Delhi — lectures, labs, and real-world projects.</div>
         <a class="work-link" href="#">Learn more</a>
@@ -471,23 +534,20 @@
     &copy; 2025 Lakshmi Narayan &middot; Designed with love for usability
   </footer>
   <script>
-    // Hamburger menu for mobile
-    function toggleMenu() {
-      var links = document.getElementById('navLinks');
-      if (links.classList.contains('show')) {
-        links.classList.remove('show');
+    // NAVBAR show on hover and on scroll up (original)
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        navbarContainer.classList.add('visible');
       } else {
-        links.classList.add('show');
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
       }
-    }
-    // Close menu on click outside (mobile)
-    document.addEventListener('click', function(e) {
-      var nav = document.getElementById('navLinks');
-      var burger = document.querySelector('.nav-hamburger');
-      if (!nav.contains(e.target) && !burger.contains(e.target)) {
-        nav.classList.remove('show');
-      }
+      lastScrollY = window.scrollY;
     });
+    navbarContainer.classList.add('visible');
   </script>
 </body>
 </html>
