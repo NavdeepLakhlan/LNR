@@ -6,7 +6,6 @@
   <title>Prospective Students | Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ...[existing styles up to .value-block, content, etc.]... */
     html, body {
       margin: 0;
       padding: 0;
@@ -17,7 +16,139 @@
       scroll-behavior: smooth;
       min-height: 100vh;
     }
-    /* ...[keep all your existing CSS unchanged here]... */
+    /* --- Navbar styles (restored, unchanged) --- */
+    .navbar-container {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
+      background: transparent;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+    .nav-left img {
+      height: 35px;
+      width: 35px;
+    }
+    .lab-title {
+      font-size: 0.97rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+    .nav-right a {
+      color: #1E3A8A;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-right a:hover,
+    .nav-right a:focus {
+      background: #e4eaff;
+      color: #1E3A8A;
+      border-color: #1E3A8A;
+      outline: none;
+    }
+    .nav-right a.active {
+      color: #1E3A8A;
+      border-bottom: 2px solid #1E3A8A;
+      background: #e4eaff;
+    }
+    .nav-right svg {
+      width: 15px;
+      height: 15px;
+      fill: #888;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #1E3A8A;
+      opacity: 1;
+    }
+    @media (max-width: 1300px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+      }
+    }
+    @media (max-width: 900px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .navbar {
+        gap: 0.2rem;
+        padding: 0.3rem 0.3rem;
+      }
+      .nav-left img {
+        height: 22px;
+        width: 22px;
+      }
+      .lab-title {
+        font-size: 0.85rem;
+      }
+      .nav-right {
+        gap: 0.3rem;
+        font-size: 0.7rem;
+      }
+      .nav-right a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        border-radius: 4px;
+      }
+    }
+    /* --- Modern Cards Styling --- */
     .value-block {
       width: 100vw;
       max-width: 100%;
@@ -43,13 +174,16 @@
       flex: 1 1 0%;
       min-width: 0;
     }
-    .image-container img {
+    .image-container img, .image-container iframe {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba(30,30,40,0.05);
       display: block;
+      min-height: 265px;
+      min-width: 220px;
+      background: #e4eaff;
     }
     .text-container {
       flex: 1 1 0%;
@@ -107,7 +241,7 @@
         align-items: stretch;
         text-align: center;
       }
-      .text-container, .image-container {
+      .image-container, .text-container {
         max-width: 100%;
       }
       .text-container h2 {
@@ -116,8 +250,24 @@
       .text-container p {
         font-size: 16px;
       }
+      .image-container iframe {
+        aspect-ratio: 1.6/1;
+        min-height: 200px;
+        border-radius: 16px;
+      }
     }
-    /* End Modern Cards Styling */
+    /* --- End Modern Cards Styling --- */
+    footer {
+      background:#e4eaff; 
+      padding:1.4rem; 
+      text-align:center; 
+      color:#1E3A8A; 
+      font-size:0.99rem;
+      border-radius: 14px 14px 0 0;
+      margin: 0 auto 0 auto;
+      box-shadow: 0 -1px 8px #c2d3ff33;
+      max-width: 1200px;
+    }
   </style>
 </head>
 <body>
@@ -146,7 +296,7 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- Modern Cards/Sections Start (4 Cards) -->
+  <!-- Modern Cards/Sections Start (5 Cards) -->
   <section class="value-block">
     <div class="content">
       <div class="image-container">
@@ -207,11 +357,20 @@
       </div>
     </div>
   </section>
-  <!-- 5th Card: Contact/Department Info -->
+  <!-- 5th Card: Map and Contact Info -->
   <section class="value-block">
     <div class="content">
       <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80" alt="Department" />
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d5:0x9e2f7c3c3e6ecb9b!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1678691089175!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style="border:0;min-height:265px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="IIT Delhi Location">
+        </iframe>
       </div>
       <div class="text-container">
         <div class="meta-label">⑤ Contact & Location</div>
@@ -222,7 +381,8 @@
           India<br>
           <br>
           <strong>Office:</strong> 310H, Academic Complex (West)<br>
-          <strong>Email:</strong> 
+          <br>
+          <strong>Email:</strong>
           <a href="mailto:rlnarayan@mse.iitd.ac.in">rlnarayan@mse.iitd.ac.in</a>,
           <a href="mailto:rlnarayan@iitd.ac.in">rlnarayan@iitd.ac.in</a><br>
           <strong>Tel. (office):</strong> +91-11-2659-1494<br>
@@ -232,18 +392,6 @@
           Indian Institute of Technology Delhi, Hauz Khas,<br>
           New Delhi, Delhi 110016, India
         </p>
-        <div class="map-embed" style="width:100%;max-width:410px;height:265px;margin:20px auto 0 auto;">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d5:0x9e2f7c3c3e6ecb9b!2sIndian%20Institute%20of%20Technology%20Delhi!5e0!3m2!1sen!2sin!4v1678691089175!5m2!1sen!2sin" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="IIT Delhi Location">
-          </iframe>
-        </div>
       </div>
     </div>
   </section>
