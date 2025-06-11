@@ -6,23 +6,36 @@
   <title>Meet LNR | R. Lakshmi Narayan</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --gold: #ffd700;
+      --gold-light: #ffefb6;
+      --gold-mid: #ffe68c;
+      --gold-blur: #ffea6e;
+      --main-bg1: #fef8e4;
+      --navbar-link: #1E3A8A;
+      --navbar-link-hover: #1E3A8A;
+      --navbar-bg: #fff;
+      --text: #222;
+      --blue: #1E3A8A;
+    }
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f6f7fa;
-      color: #222;
-      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: var(--main-bg1);
+      color: var(--text);
+      font-size: 20px;
       scroll-behavior: smooth;
       min-height: 100vh;
+      overflow-x: hidden;
     }
-    /* --- Navbar Styles (from team.html) --- */
+    /* --- Navbar Styles --- */
     .navbar-container {
       position: fixed;
       top: 16px;
       left: 16px;
       right: 16px;
-      background: #fff;
+      background: var(--navbar-bg);
       border-radius: 0px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       transition: opacity 0.3s, top 0.3s;
@@ -75,7 +88,7 @@
       margin-left: auto;
     }
     .nav-right a {
-      color: #1E3A8A;
+      color: var(--navbar-link);
       text-decoration: none;
       font-weight: 600;
       padding: 0.38rem 0.8rem;
@@ -88,14 +101,16 @@
     .nav-right a:hover,
     .nav-right a:focus {
       background: #e4eaff;
-      color: #1E3A8A;
-      border-color: #1E3A8A;
+      color: var(--navbar-link-hover);
+      border-color: var(--navbar-link-hover);
       outline: none;
     }
     .nav-right a.active {
-      color: #1E3A8A;
-      border-bottom: 2px solid #1E3A8A;
+      color: var(--blue);
+      border-bottom: 2px solid var(--blue);
       background: #e4eaff;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
     .nav-right svg {
       width: 15px;
@@ -107,7 +122,7 @@
       transition: fill 0.2s, opacity 0.2s;
     }
     .nav-right svg:hover {
-      fill: #1E3A8A;
+      fill: var(--navbar-link-hover);
       opacity: 1;
     }
     @media (max-width: 1300px) {
@@ -149,10 +164,9 @@
       }
     }
     /* --- End Navbar Styles --- */
-
     .meet-header {
       color: #fff;
-      background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
+      background: linear-gradient(90deg, var(--blue) 80%, #e4eaff 100%);
       border-radius: 22px;
       font-size: 2rem;
       font-weight: 800;
@@ -164,11 +178,11 @@
       width: 680px;
       max-width: 95vw;
       text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
-      border: 4px solid #1E3A8A;
+      border: 4px solid var(--blue);
       display: block;
     }
     .meet-header-desc {
-      color: #1E3A8A;
+      color: var(--blue);
       background: #e4eaff;
       border-radius: 8px;
       padding: 0.8rem 1.2rem;
@@ -193,8 +207,8 @@
     h1, h2 {
       font-weight: 700;
       letter-spacing: 1px;
-      color: #1E3A8A;
-      font-family: 'Roboto', sans-serif;
+      color: var(--blue);
+      font-family: 'Roboto', Arial, sans-serif;
       margin-bottom: 1.7rem;
       margin-top: 0.5rem;
       text-align: center;
@@ -209,7 +223,7 @@
       text-align: left;
     }
     h3 {
-      color: #1E3A8A;
+      color: var(--blue);
       font-size: 1.13rem;
       margin-top: 0;
       letter-spacing: 2px;
@@ -233,11 +247,11 @@
       flex-wrap: wrap;
       gap: 2rem;
       align-items: center;
-      background: #f6f7fa;
+      background: var(--main-bg1);
       padding: 2rem 1.5rem;
       border-radius: 16px;
       box-shadow: 0 1px 10px #c2d3ff33;
-      border-left: 5px solid #1E3A8A;
+      border-left: 5px solid var(--blue);
       margin-bottom: 1.7rem;
       animation: fadeinup 0.9s cubic-bezier(.2,1,.22,1);
     }
@@ -255,14 +269,14 @@
     }
     .profile img:hover {
       box-shadow: 0 0 30px #1E3A8A40, 0 2px 14px #000a;
-      border-color: #1E3A8A;
+      border-color: var(--blue);
     }
     .bio {
       flex: 1;
       min-width: 230px;
     }
     .bio h2 {
-      color: #1E3A8A;
+      color: var(--blue);
       font-size: 1.5rem;
       margin-bottom: 0.7rem;
       margin-top: 0;
@@ -279,19 +293,19 @@
     }
     .quote-box {
       background: linear-gradient(100deg, #e4eaff 87%, #1E3A8A18 100%);
-      border-left: 6px solid #1E3A8A;
+      border-left: 6px solid var(--blue);
       border-radius: 9px;
       margin: 2.5rem 0 2rem 0;
       box-shadow: 0 1.5px 10px #1e3a8a11;
       padding: 1.4rem 2.1rem;
       font-style: italic;
-      color: #1E3A8A;
+      color: var(--blue);
       font-size: 1.25rem;
       text-shadow: 0 1px 6px #1e3a8a10;
       animation: fadeinup 1.1s cubic-bezier(.2,1,.22,1);
     }
     .section {
-      background: #f6f7fa;
+      background: var(--main-bg1);
       padding: 2rem 1.5rem 1.7rem 1.5rem;
       margin-top: 2rem;
       border-radius: 14px;
@@ -328,12 +342,12 @@
       line-height: 1.5;
     }
     .awards-list strong, .honors-list strong {
-      color: #1E3A8A;
+      color: var(--blue);
     }
     .awards-section-title {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      color: #1E3A8A;
+      color: var(--blue);
       text-shadow: 0 1px 7px #1e3a8a11;
       font-size: 1.04rem;
       letter-spacing: 1.2px;
@@ -361,7 +375,7 @@
       color: #23272f;
     }
     .teaching-videos h4, .teaching-courses h4 {
-      color: #1E3A8A;
+      color: var(--blue);
       margin: 0 0 0.5rem 0;
       font-size: 1.03rem;
       text-transform: uppercase;
@@ -375,7 +389,7 @@
     .video-placeholder {
       color: #888;
       font-style: italic;
-      background: #f6f7fa;
+      background: var(--main-bg1);
       border-radius: 7px;
       padding: 0.6rem 0.9rem;
       font-size: 0.97rem;
@@ -398,6 +412,7 @@
       to { opacity: 1; transform: translateY(0);}
     }
     @media (max-width: 900px) {
+      html, body { font-size: 16px; }
       .container { padding: 0.4rem;}
       .profile { flex-direction: column; text-align: center; }
       .profile img { width: 60vw; max-width: 220px; height: 60vw; max-height: 220px; margin-bottom: 1.25rem;}
@@ -449,8 +464,8 @@
       <img src="meetlnr.jpg" alt="Prof. R. Lakshmi Narayan">
       <div class="bio">
         <h2>Prof. R. Lakshmi Narayan</h2>
-        <p>Hello! I'm Lakshmi — a curious mind with a passion for materials science, and a firm believer in learning by doing. My journey has taken me across academic institutions, industry collaborations, and around the world.</p>
-        <p>I currently serve as a faculty member at the Department of Materials Science and Engineering, IIT Delhi. I work at the exciting intersection of metal additive manufacturing, microstructure evolution, and materials characterization.</p>
+        <p>Hello! I'm Lakshmi — a curious mind with a passion for materials science, and a firm believer in learning by doing. My journey has taken me across academic institutions, industry collaborations, and research labs in India and abroad.</p>
+        <p>I currently serve as a faculty member at the Department of Materials Science and Engineering, IIT Delhi. I work at the exciting intersection of metal additive manufacturing, microstructure engineering, and mechanical behavior of advanced materials.</p>
       </div>
     </div>
     <div class="quote-box">
@@ -458,13 +473,13 @@
     </div>
     <div class="section">
       <h3>My Teaching Philosophy</h3>
-      <p>Teaching, to me, is more than delivering lectures—it's about mentorship, dialogue, and mutual growth. I strive to create a space where questions are welcomed, mistakes are seen as learning opportunities, and curiosity is the driving force.</p>
-      <p>Whether it’s in the lab or the classroom, I believe in learning by doing. I design courses and projects that bring theory to life—giving students the opportunity to build, break, analyze, and reflect.</p>
+      <p>Teaching, to me, is more than delivering lectures—it's about mentorship, dialogue, and mutual growth. I strive to create a space where questions are welcomed, mistakes are seen as learning opportunities, and curiosity is celebrated.</p>
+      <p>Whether it’s in the lab or the classroom, I believe in learning by doing. I design courses and projects that bring theory to life—giving students the opportunity to build, break, analyze, and discover for themselves.</p>
     </div>
     <div class="section">
       <h3>What Drives Me</h3>
-      <p>Every alloy has a story, every micrograph a message. I find joy in interpreting those stories—be it through fracture surfaces, diffusion gradients, or phase maps. My research is driven by a fascination with how the tiniest details shape the biggest outcomes.</p>
-      <p>I also deeply enjoy collaborative research—my work spans multiple countries, disciplines, and industries. I’ve been privileged to guide young researchers who have gone on to make significant contributions of their own.</p>
+      <p>Every alloy has a story, every micrograph a message. I find joy in interpreting those stories—be it through fracture surfaces, diffusion gradients, or phase maps. My research is driven by a desire to understand the fundamental mechanisms that govern materials behavior.</p>
+      <p>I also deeply enjoy collaborative research—my work spans multiple countries, disciplines, and industries. I’ve been privileged to guide young researchers who have gone on to make significant contributions in academia and industry.</p>
     </div>
     <!-- AWARDS SECTION -->
     <div class="section">
