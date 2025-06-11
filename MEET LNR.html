@@ -29,7 +29,6 @@
       width: 100%;
       position: relative;
       z-index: 2;
-      background: transparent;
     }
     .navbar-container {
       position: fixed;
@@ -127,20 +126,20 @@
 
     /* --- Fixed Hero Portrait --- */
     .hero-static-img {
+      position: fixed;
+      right: 0;
+      top: 180px;
       width: 460px;
       height: 460px;
       border-radius: 36px 0 0 36px;
       object-fit: cover;
       display: block;
-      position: fixed;
-      right: 0;
-      top: 180px;
-      margin: 0;
       box-shadow: 0 10px 48px #e4e5f3a7;
       border: none;
       z-index: 100;
       background: #fff;
       pointer-events: none;
+      /* no overflow, no margin, not inside any container */
     }
     @media (max-width: 1200px) {
       .hero-static-img {
@@ -204,7 +203,6 @@
       font-weight: 400;
       margin-bottom: 0;
     }
-    /* --- Teaching Section, Newsroom, Work, etc. --- */
     .teaching-section {
       margin: 80px auto 20px auto;
       max-width: 1200px;
@@ -615,6 +613,7 @@
       </div>
     </nav>
   </div>
+  <!-- THE FIXED HERO PORTRAIT OUTSIDE PAGE CONTENT -->
   <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
 
   <div class="page-content">
