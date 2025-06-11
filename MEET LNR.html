@@ -32,7 +32,6 @@
       flex-direction: column;
       align-items: center;
     }
-    /* Nav, Hero (unchanged) */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -217,7 +216,7 @@
     }
     .hero-static-img {
       width: 460px;
-      height: 580px;
+      height: 510px;
       border-radius: 36px 0 0 36px;
       object-fit: cover;
       display: block;
@@ -231,7 +230,7 @@
       background: #fff;
     }
 
-    /* TEACHING SECTION */
+    /* Teaching Section */
     .teaching-section {
       margin: 80px auto 20px auto;
       max-width: 1200px;
@@ -281,15 +280,9 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    .carousel-btn.left {
-      left: -34px;
-    }
-    .carousel-btn.right {
-      right: -34px;
-    }
-    .carousel-btn:active {
-      transform: translateY(-50%) scale(0.96);
-    }
+    .carousel-btn.left { left: -34px; }
+    .carousel-btn.right { right: -34px; }
+    .carousel-btn:active { transform: translateY(-50%) scale(0.96);}
     .carousel-btn:hover {
       background: linear-gradient(135deg, var(--accent4) 60%, var(--accent2));
       color: #1E3A8A;
@@ -298,7 +291,7 @@
     .carousel-image-container {
       width: 620px;
       height: 540px;
-      border-radius: 36px 0 0 36px;
+      border-radius: 0px 36px 36px 0px;
       overflow: hidden;
       box-shadow: 0 10px 48px #e4e5f3a7;
       display: flex;
@@ -362,10 +355,10 @@
       margin-top: 10px;
       width: 100%;
       max-width: 520px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 10px #d2d8fc33;
-      padding: 24px 28px 20px 28px;
+      /* background: #fff; removed */
+      /* border-radius: 16px; removed */
+      /* box-shadow: 0 2px 10px #d2d8fc33; removed */
+      padding: 0;
       font-size: 1.09rem;
       color: #23232a;
     }
@@ -440,16 +433,17 @@
         max-width: 97vw;
       }
       .bio-section {
-        padding: 16px 10px 14px 10px;
+        padding: 0;
         font-size: 1em;
       }
     }
-    /* Newsroom, Latest Work, Footer (unchanged) */
+    /* Newsroom, Latest Work, Footer (unchanged except spacing) */
     .mentions-section {
       background-color: var(--bg);
       padding: 70px 0 60px 0;
       text-align: center;
       width: 100%;
+      margin-bottom: 65px; /* add more space before Latest Work */
     }
     .mentions-section h2 {
       font-size: 2rem;
