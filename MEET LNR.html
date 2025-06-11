@@ -269,7 +269,7 @@
       .hero-static-img { border-radius: 12px;}
     }
 
-    /* LATEST WORK: horizontal, non-responsive, no magnify */
+    /* LATEST WORK: horizontal, non-responsive, no magnify, no images */
     .work-section {
       width: 100%;
       max-width: 1200px;
@@ -316,26 +316,12 @@
       margin-bottom: 1.7em;
       cursor: pointer;
       position: relative;
-      /* Remove magnify and z-index on hover for all cards */
-      transition: none;
+      transition: box-shadow 0.18s;
       z-index: 1;
       flex-shrink: 0;
     }
-    /* No hover magnify, no blur for others */
-    /* Only highlight on hover with a soft shadow if desired: */
     .work-card:hover {
       box-shadow: 0 6px 32px #c0f2e7b8, 0 2px 16px #e4e5f3a7;
-    }
-    .work-img {
-      width: 100%;
-      max-width: 220px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 17px;
-      background: #d2d8fc;
-      margin-bottom: 1.1em;
-      box-shadow: 0 2px 12px #bfc0f55c;
-      align-self: center;
     }
     .work-card-title {
       font-size: 1.22rem;
@@ -362,6 +348,10 @@
       text-align: justify;
       font-family: 'Inter', Arial, sans-serif;
       font-weight: 400;
+    }
+    .work-card:first-child {
+      min-height: 850px;
+      height: auto;
     }
     .work-link {
       display: inline-block;
@@ -493,31 +483,31 @@
     </div>
   </section>
 
-  <!-- Latest Work Section (horizontal, non-responsive, no magnify) -->
+  <!-- Latest Work Section (horizontal, non-responsive, no magnify, no images, indexed card 1) -->
   <section class="work-section">
     <div class="work-title">Latest Work</div>
     <div class="work-cards">
       <div class="work-card">
-        <img src="work1.jpg" class="work-img" alt="Achievements" />
         <div class="work-card-title">Awards & Honors</div>
         <div class="work-card-desc card-awards-list">
-          Young Achievers' Award, VNIT Nagpur 2024<br>
-          Excellence in Teaching award, IIT Delhi 2024<br>
-          Veena Arora Early Career Award, IIT Delhi 2022<br>
-          INSA Medal for Young Scientist in October 2021<br>
-          Young Faculty Incentive Fellowship (YFIF) 2019<br>
-          Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.<br>
-          K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.<br>
-          Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)<br>
-          Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)<br>
-          Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.<br>
-          DAAD fellowship for research in Technical University, Berlin (2010-2011).<br>
-          Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.<br>
-          Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.
+          <ol style="padding-left: 1.15em; margin: 0;">
+            <li>Young Achievers' Award, VNIT Nagpur 2024</li>
+            <li>Excellence in Teaching award, IIT Delhi 2024</li>
+            <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
+            <li>INSA Medal for Young Scientist in October 2021</li>
+            <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
+            <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
+            <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
+            <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
+            <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
+            <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
+            <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
+            <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
+            <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
+          </ol>
         </div>
       </div>
       <div class="work-card">
-        <img src="work2.jpg" class="work-img" alt="Project 2" />
         <div class="work-card-title">Color Contrast Checker</div>
         <div class="work-card-desc">
           <b>Instant Contrast Feedback</b><br>
@@ -526,7 +516,6 @@
         <a class="work-link" href="#">Try it now</a>
       </div>
       <div class="work-card">
-        <img src="work3.jpg" class="work-img" alt="Project 3" />
         <div class="work-card-title">Teaching: UX Foundations</div>
         <div class="work-card-desc">
           <b>Open Course</b><br>
