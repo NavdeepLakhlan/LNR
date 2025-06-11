@@ -10,8 +10,7 @@
       box-sizing: border-box;
       padding: 0;
       margin: 0;
-      width: 100%;
-      max-width: 100vw;
+      width: 100vw;
       overflow-x: hidden;
       background: #fef8e4;
       color: #23232a;
@@ -29,6 +28,7 @@
       width: 100%;
       position: relative;
       z-index: 2;
+      background: transparent;
     }
     .navbar-container {
       position: fixed;
@@ -203,41 +203,10 @@
       font-weight: 400;
       margin-bottom: 0;
     }
-    /* --- Teaching Section, Newsroom, Work, etc., unchanged --- */
-    /* ... (all your previous content styles here - see previous completions for these blocks) ... */
 
-    .teaching-section { /* ... (unchanged) ... */ }
-    .teaching-carousel-col { /* ... (unchanged) ... */ }
-    .carousel-container { /* ... (unchanged) ... */ }
-    .carousel-btn { /* ... (unchanged) ... */ }
-    .carousel-btn.left { left: -34px; }
-    .carousel-btn.right { right: -34px; }
-    .carousel-btn:active { transform: translateY(-50%) scale(0.96);}
-    .carousel-btn:hover { /* ... (unchanged) ... */ }
-    .carousel-image-container { /* ... (unchanged) ... */ }
-    .carousel-image-container img { /* ... (unchanged) ... */ }
-    .carousel-desc { /* ... (unchanged) ... */ }
-    .teaching-text-col { /* ... (unchanged) ... */ }
-    .teaching-title { /* ... (unchanged) ... */ }
-    .bio-section { /* ... (unchanged) ... */ }
-    .bio-section p { /* ... (unchanged) ... */ }
-    /* newsroom and work section styles ... (unchanged) ... */
-    .mentions-section { /* ... (unchanged) ... */ }
-    .mentions-section h2 { /* ... (unchanged) ... */ }
-    .mention-grid { /* ... (unchanged) ... */ }
-    .mention-card { /* ... (unchanged) ... */ }
-    .mention-card .underline-accent { /* ... (unchanged) ... */ }
-    .mention-card:hover { /* ... (unchanged) ... */ }
-    .work-section { /* ... (unchanged) ... */ }
-    .work-title { /* ... (unchanged) ... */ }
-    .work-cards { /* ... (unchanged) ... */ }
-    .work-card { /* ... (unchanged) ... */ }
-    .work-card:hover { /* ... (unchanged) ... */ }
-    .work-card-title { /* ... (unchanged) ... */ }
-    .work-card-desc { /* ... (unchanged) ... */ }
-    .card-awards-list { /* ... (unchanged) ... */ }
-    .work-link { /* ... (unchanged) ... */ }
-    .work-link:hover { /* ... (unchanged) ... */ }
+    /* --- Teaching Section, Newsroom, Work, etc. --- */
+    /* ... [keep your previous styles unchanged here, see earlier code] ... */
+
     /* --- CTA Section Full Width, No Scroll --- */
     .cta-section {
       background-color: #d5ffbd;
@@ -357,10 +326,11 @@
       </div>
     </nav>
   </div>
-  <!-- THE FIXED HERO PORTRAIT IS OUTSIDE PAGE CONTENT -->
+  <!-- FIXED HERO PORTRAIT OUTSIDE PAGE CONTENT -->
   <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
 
   <div class="page-content">
+
     <!-- Hero Section -->
     <section class="hero-static-container">
       <div class="hero-static-text">
@@ -532,7 +502,6 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
-
     // Carousel for Teaching section
     const carouselImages = [
       { src: 'teaching1.jpg', desc: 'Teaching moment 1: Demo description here.' },
