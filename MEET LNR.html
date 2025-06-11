@@ -269,7 +269,7 @@
       .hero-static-img { border-radius: 12px;}
     }
 
-    /* LATEST WORK: horizontal, magnify on hover */
+    /* LATEST WORK: horizontal, non-responsive, magnify on hover */
     .work-section {
       width: 100%;
       max-width: 1200px;
@@ -295,18 +295,21 @@
       flex-direction: row;
       gap: 2.2em;
       align-items: stretch;
-      overflow-x: auto;
+      overflow-x: visible;
       padding-bottom: 1em;
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
+      flex-wrap: nowrap;
+      width: max-content;
+      min-width: 100%;
     }
     .work-card {
       background: #fff;
       border-radius: 24px;
       box-shadow: 0 2px 16px #e4e5f3a7;
       padding: 2em 1.3em 1.4em 1.3em;
-      min-width: 320px;
-      width: 320px;
-      min-height: 360px;
+      min-width: 340px;
+      width: 340px;
+      min-height: 370px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -318,14 +321,16 @@
         box-shadow 0.28s cubic-bezier(.28,.84,.42,1.02),
         z-index 0.18s;
       z-index: 1;
+      flex-shrink: 0;
+    }
+    .work-card:first-child {
+      min-height: 850px;
+      height: auto;
     }
     .work-card:hover {
       transform: scale(1.22) translateY(-30px);
       box-shadow: 0 24px 90px 0 #c0f2e7b8, 0 2px 16px #e4e5f3a7;
       z-index: 10;
-    }
-    .work-card:not(:hover) {
-      transition: filter 0.15s;
     }
     .work-cards:hover .work-card:not(:hover) {
       filter: blur(1.5px) brightness(0.92);
@@ -350,12 +355,13 @@
       line-height: 1.2;
     }
     .work-card-desc {
-      font-size: 1.04rem;
+      font-size: 1.11rem;
       color: #686878;
       margin-bottom: 1em;
-      min-height: 42px;
-      line-height: 1.5;
-      text-align: left;
+      line-height: 1.7;
+      text-align: justify;
+      font-family: 'Inter', Arial, sans-serif;
+      font-weight: 400;
     }
     .work-link {
       display: inline-block;
@@ -374,11 +380,6 @@
     .work-link:hover {
       background: #f8cdd5;
       color: #23232a;
-    }
-    @media (max-width: 900px) {
-      .work-section { padding: 0 1vw; }
-      .work-cards { gap: 1.2em; }
-      .work-card { min-width: 92vw; width: 92vw; }
     }
 
     /* Retained: bio-section, etc */
@@ -492,18 +493,28 @@
     </div>
   </section>
 
-  <!-- Latest Work Section (horizontal, magnify on hover) -->
+  <!-- Latest Work Section (horizontal, non-responsive, magnify on hover) -->
   <section class="work-section">
     <div class="work-title">Latest Work</div>
     <div class="work-cards">
       <div class="work-card">
-        <img src="work1.jpg" class="work-img" alt="Project 1" />
-        <div class="work-card-title">Inclusive Form Patterns</div>
+        <img src="work1.jpg" class="work-img" alt="Achievements" />
+        <div class="work-card-title">Awards & Honors</div>
         <div class="work-card-desc">
-          <b>Accessible for Everyone</b><br>
-          This project explores ways to build form interfaces that are easy to use for all, including users with disabilities and on mobile.
+          Young Achievers' Award, VNIT Nagpur 2024<br><br>
+          Excellence in Teaching award, IIT Delhi 2024<br><br>
+          Veena Arora Early Career Award, IIT Delhi 2022<br><br>
+          INSA Medal for Young Scientist in October 2021<br><br>
+          Young Faculty Incentive Fellowship (YFIF) 2019<br><br>
+          Gopalakrishnan- NTU Presidential Post- Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.<br><br>
+          K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.<br><br>
+          Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)<br><br>
+          Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)<br><br>
+          Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.<br><br>
+          DAAD fellowship for research in Technical University, Berlin (2010-2011).<br><br>
+          Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.<br><br>
+          Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.
         </div>
-        <a class="work-link" href="#">Start reading</a>
       </div>
       <div class="work-card">
         <img src="work2.jpg" class="work-img" alt="Project 2" />
