@@ -6,41 +6,37 @@
   <title>Lakshmi Narayan | About</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #fef8e4;
-      --text: #23232a;
-      --headline: #23232a;
-      --accent1: #f8cdd5;
-      --accent2: #c0f2e6;
-      --accent3: #d2d8fc;
-      --accent4: #ffe9b6;
-      --nav-bg: #fff;
-      --font-main: 'Inter', Arial, sans-serif;
-      --max-width: 1200px;
-    }
     html, body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-main);
-      font-size: 18px;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      width: 100%;
       box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      background: #fef8e4;
+      color: #23232a;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 18px;
     }
     body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
+      min-height: 100vh;
+      width: 100vw;
+      position: relative;
     }
+    .page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
     .navbar-container {
       position: fixed;
       top: 16px;
       left: 16px;
       right: 16px;
-      background: var(--nav-bg);
+      background: #fff;
       border-radius: 0px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       transition: opacity 0.3s, top 0.3s;
@@ -128,47 +124,36 @@
       fill: #1E3A8A;
       opacity: 1;
     }
-    @media (max-width: 1300px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
+
+    /* --- Fixed Hero Portrait --- */
+    .hero-static-img {
+      width: 460px;
+      height: 460px;
+      border-radius: 36px 0 0 36px;
+      object-fit: cover;
+      display: block;
+      position: fixed;
+      right: 0;
+      top: 180px;
+      margin: 0;
+      box-shadow: 0 10px 48px #e4e5f3a7;
+      border: none;
+      z-index: 100;
+      background: #fff;
+    }
+    @media (max-width: 1200px) {
+      .hero-static-img {
+        width: 320px;
+        height: 320px;
       }
     }
     @media (max-width: 900px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .navbar {
-        gap: 0.2rem;
-        padding: 0.3rem 0.3rem;
-      }
-      .nav-left img {
-        height: 22px;
-        width: 22px;
-      }
-      .lab-title {
-        font-size: 0.85rem;
-      }
-      .nav-right {
-        gap: 0.3rem;
-        font-size: 0.7rem;
-      }
-      .nav-right a {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.7rem;
-        border-radius: 4px;
+      .hero-static-img {
+        display: none;
       }
     }
     .hero-static-container {
-      width: 100vw;
-      max-width: none;
+      width: 100%;
       margin: 130px 0 60px 0;
       display: flex;
       flex-direction: row;
@@ -218,39 +203,7 @@
       font-weight: 400;
       margin-bottom: 0;
     }
-    .hero-static-img {
-      width: 460px;
-      height: 460px;
-      border-radius: 36px 0 0 36px;
-      object-fit: cover;
-      display: block;
-      position: fixed;
-      right: 0;
-      top: 200px;
-      margin: 0;
-      box-shadow: 0 10px 48px #e4e5f3a7;
-      border: none;
-      z-index: 10;
-      background: #fff;
-      left: auto;
-    }
-    @media (max-width: 900px) {
-      .hero-static-img {
-        width: 100vw;
-        height: 260px;
-        border-radius: 0;
-        position: static;
-        margin: 0 auto;
-        top: auto;
-        right: auto;
-        left: auto;
-      }
-      .hero-static-container {
-        flex-direction: column;
-        min-height: unset;
-        margin: 60px 0 30px 0;
-      }
-    }
+    /* --- Teaching Section --- */
     .teaching-section {
       margin: 80px auto 20px auto;
       max-width: 1200px;
@@ -280,7 +233,7 @@
       position: relative;
     }
     .carousel-btn {
-      background: linear-gradient(135deg, var(--accent3) 60%, var(--accent2));
+      background: linear-gradient(135deg, #d2d8fc 60%, #c0f2e6);
       border: none;
       border-radius: 50%;
       width: 56px;
@@ -304,7 +257,7 @@
     .carousel-btn.right { right: -34px; }
     .carousel-btn:active { transform: translateY(-50%) scale(0.96);}
     .carousel-btn:hover {
-      background: linear-gradient(135deg, var(--accent4) 60%, var(--accent2));
+      background: linear-gradient(135deg, #ffe9b6 60%, #c0f2e6);
       color: #1E3A8A;
       box-shadow: 0 4px 24px #9eebb7cc, 0 1.5px 8px #fff8;
     }
@@ -384,8 +337,9 @@
       margin-bottom: 0.95em;
       line-height: 1.7;
     }
+    /* --- newsroom and work sections --- */
     .mentions-section {
-      background-color: var(--bg);
+      background-color: #fef8e4;
       padding: 70px 0 60px 0;
       text-align: center;
       width: 100%;
@@ -413,7 +367,7 @@
       height: 70px;
       padding: 1rem 1.1rem;
       border-radius: 10px;
-      background: var(--accent3);
+      background: #d2d8fc;
       text-decoration: none;
       color: #1c1c1c;
       font-size: 1rem;
@@ -432,7 +386,7 @@
     }
     .mention-card:hover {
       transform: scale(1.04);
-      background: var(--accent2);
+      background: #c0f2e6;
       box-shadow: 0 2px 12px #a0c9ac33;
     }
     @media (max-width: 600px) {
@@ -542,7 +496,7 @@
       background: #f8cdd5;
       color: #23232a;
     }
-    /* --- CTA Section Styles --- */
+    /* --- CTA Section Full Width, No Scroll --- */
     .cta-section {
       background-color: #d5ffbd;
       padding: 80px 40px;
@@ -558,6 +512,7 @@
       margin-left: -50vw;
       margin-right: -50vw;
       box-sizing: border-box;
+      z-index: 10;
     }
     .cta-left h1 {
       font-size: 6rem;
@@ -611,7 +566,7 @@
     .cta-footer-links a:hover {
       text-decoration: underline;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       .cta-section {
         flex-direction: column;
         text-align: center;
@@ -627,7 +582,6 @@
         flex-wrap: wrap;
       }
     }
-    /* --- End CTA Section Styles --- */
     footer {
       margin-top: 40px;
       width: 100%;
@@ -640,7 +594,6 @@
   </style>
 </head>
 <body>
-  <!-- Navigation (original) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -656,145 +609,147 @@
         <a href="MEET LNR.html" class="active">MEET&nbsp;LNR</a>
         <a href="news.html">Latest</a>
         <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
-        <!-- Search icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
         </svg>
       </div>
     </nav>
   </div>
+  <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
 
-  <!-- Hero Section -->
-  <section class="hero-static-container">
-    <div class="hero-static-text">
-      <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
-      <div class="hero-role">I'm a researcher and teacher</div>
-      <div class="hero-bio">
-        I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanical behavior of advanced materials.
-      </div>
-    </div>
-    <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
-  </section>
+  <div class="page-content">
 
-  <!-- Teaching Section With Carousel and Bio -->
-  <section class="teaching-section">
-    <div class="teaching-carousel-col">
-      <div class="carousel-container">
-        <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 24L12 16L20 8" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="carousel-image-container">
-          <img id="carousel-img" src="teaching1.jpg" alt="Teaching Image 1">
-          <div class="carousel-desc" id="carousel-desc">Teaching moment 1: Demo description here.</div>
-        </div>
-        <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </div>
-    <div class="teaching-text-col">
-      <div class="teaching-title">Teaching</div>
-      <section class="bio-section">
-        <p>
-          I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making science approachable.
-        </p>
-        <p>
-          Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build — and I enjoy all of it!
-        </p>
-      </section>
-    </div>
-  </section>
-
-  <!-- FROM THE NEWSROOMS SECTION -->
-  <section class="mentions-section">
-    <h2>From the newsrooms</h2>
-    <div class="mention-grid">
-      <a href="https://example.com/1" class="mention-card">
-        <div class="underline-accent"></div>
-        Nature India
-      </a>
-      <a href="https://example.com/2" class="mention-card">
-        <div class="underline-accent"></div>
-        The Hindu
-      </a>
-      <a href="https://example.com/3" class="mention-card">
-        <div class="underline-accent"></div>
-        Indian Express
-      </a>
-      <a href="https://example.com/4" class="mention-card">
-        <div class="underline-accent"></div>
-        Times of India
-      </a>
-      <a href="https://example.com/5" class="mention-card">
-        <div class="underline-accent"></div>
-        NDTV
-      </a>
-    </div>
-  </section>
-
-  <!-- At office Section -->
-  <section class="work-section">
-    <div class="work-title">At office</div>
-    <div class="work-cards">
-      <div class="work-card">
-        <div class="work-card-title">Awards & Honors</div>
-        <div class="work-card-desc card-awards-list">
-          <ol style="padding-left: 1.15em; margin: 0;">
-            <li>Young Achievers' Award, VNIT Nagpur 2024</li>
-            <li>Excellence in Teaching award, IIT Delhi 2024</li>
-            <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
-            <li>INSA Medal for Young Scientist in October 2021</li>
-            <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
-            <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
-            <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
-            <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
-            <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
-            <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
-            <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
-            <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
-            <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
-          </ol>
+    <!-- Hero Section -->
+    <section class="hero-static-container">
+      <div class="hero-static-text">
+        <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
+        <div class="hero-role">I'm a researcher and teacher</div>
+        <div class="hero-bio">
+          I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanical behavior of advanced materials.
         </div>
       </div>
-      <div class="work-card">
-        <div class="work-card-title">Positions of Responsibility</div>
-        <div class="work-card-desc card-awards-list">
-          <ol style="padding-left: 1.15em; margin: 0;">
-            <li>Editor, IIM Metal News, 2023</li>
-            <li>PMRF Subject coordinator, 2023</li>
-            <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
-            <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
-            <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
-            <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
-            <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
-            <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
-            <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
-            <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
-            <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
-            <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
-          </ol>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card-title">Teaching: Courses Handled</div>
-        <div class="work-card-desc card-awards-list">
-          <ol style="padding-left: 1.15em; margin: 0;">
-            <li>MLL100 (APL102): Introduction to Materials Science and Engineering</li>
-            <li>MLL714: Fracture Mechanics</li>
-            <li>MLP704: Materials Processing and Characterization Lab</li>
-            <li>MLV705: Special Topics in Materials Engineering</li>
-            <li>MLL711: Mechanical Behavior of Materials (PG)</li>
-            <li>APL753: Properties and Selection of Materials</li>
-            <li>MLL251: Mechanical Behavior of Materials (UG)</li>
-            <li>MLP352: Mechanical Behavior of Materials (UG Lab)</li>
-            <li>NIN100: Introduction to Materials Science and Engineering (UG Non graded)</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA SECTION INSERTED HERE -->
+    <!-- Teaching Section With Carousel and Bio -->
+    <section class="teaching-section">
+      <div class="teaching-carousel-col">
+        <div class="carousel-container">
+          <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 24L12 16L20 8" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-image-container">
+            <img id="carousel-img" src="teaching1.jpg" alt="Teaching Image 1">
+            <div class="carousel-desc" id="carousel-desc">Teaching moment 1: Demo description here.</div>
+          </div>
+          <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="teaching-text-col">
+        <div class="teaching-title">Teaching</div>
+        <section class="bio-section">
+          <p>
+            I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making science approachable.
+          </p>
+          <p>
+            Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build — and I enjoy all of it!
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <!-- FROM THE NEWSROOMS SECTION -->
+    <section class="mentions-section">
+      <h2>From the newsrooms</h2>
+      <div class="mention-grid">
+        <a href="https://example.com/1" class="mention-card">
+          <div class="underline-accent"></div>
+          Nature India
+        </a>
+        <a href="https://example.com/2" class="mention-card">
+          <div class="underline-accent"></div>
+          The Hindu
+        </a>
+        <a href="https://example.com/3" class="mention-card">
+          <div class="underline-accent"></div>
+          Indian Express
+        </a>
+        <a href="https://example.com/4" class="mention-card">
+          <div class="underline-accent"></div>
+          Times of India
+        </a>
+        <a href="https://example.com/5" class="mention-card">
+          <div class="underline-accent"></div>
+          NDTV
+        </a>
+      </div>
+    </section>
+
+    <!-- At office Section -->
+    <section class="work-section">
+      <div class="work-title">At office</div>
+      <div class="work-cards">
+        <div class="work-card">
+          <div class="work-card-title">Awards & Honors</div>
+          <div class="work-card-desc card-awards-list">
+            <ol style="padding-left: 1.15em; margin: 0;">
+              <li>Young Achievers' Award, VNIT Nagpur 2024</li>
+              <li>Excellence in Teaching award, IIT Delhi 2024</li>
+              <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
+              <li>INSA Medal for Young Scientist in October 2021</li>
+              <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
+              <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
+              <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
+              <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
+              <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
+              <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
+              <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
+              <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
+              <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-title">Positions of Responsibility</div>
+          <div class="work-card-desc card-awards-list">
+            <ol style="padding-left: 1.15em; margin: 0;">
+              <li>Editor, IIM Metal News, 2023</li>
+              <li>PMRF Subject coordinator, 2023</li>
+              <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
+              <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
+              <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
+              <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
+              <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
+              <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
+              <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
+              <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
+              <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
+              <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
+            </ol>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-title">Teaching: Courses Handled</div>
+          <div class="work-card-desc card-awards-list">
+            <ol style="padding-left: 1.15em; margin: 0;">
+              <li>MLL100 (APL102): Introduction to Materials Science and Engineering</li>
+              <li>MLL714: Fracture Mechanics</li>
+              <li>MLP704: Materials Processing and Characterization Lab</li>
+              <li>MLV705: Special Topics in Materials Engineering</li>
+              <li>MLL711: Mechanical Behavior of Materials (PG)</li>
+              <li>APL753: Properties and Selection of Materials</li>
+              <li>MLL251: Mechanical Behavior of Materials (UG)</li>
+              <li>MLP352: Mechanical Behavior of Materials (UG Lab)</li>
+              <li>NIN100: Introduction to Materials Science and Engineering (UG Non graded)</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA SECTION (full-bleed) -->
   <section class="cta-section">
     <div class="cta-left">
       <h1>Shall<br>we?</h1>
@@ -816,7 +771,6 @@
       </div>
     </div>
   </section>
-  <!-- END CTA SECTION -->
 
   <footer>
     &copy; 2025 Lakshmi Narayan &middot; Designed with love for usability
