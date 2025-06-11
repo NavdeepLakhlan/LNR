@@ -15,13 +15,8 @@
       --accent3: #d2d8fc;
       --accent4: #ffe9b6;
       --nav-bg: #fff;
-      --nav-shadow: 0 2px 20px #2221;
-      --card-hover: #ffe9f2;
-      --card-hover2: #e6fdf7;
-      --card-radius: 24px;
-      --card-shadow: 0 2px 16px #e4e5f3a7;
       --font-main: 'Inter', Arial, sans-serif;
-      --max-width: 900px;
+      --max-width: 1200px;
       --section-gap: 120px;
     }
     html, body {
@@ -170,131 +165,104 @@
       }
     }
 
-    /* HERO SECTION - Two columns, left: headline+bio, right: rectangular image */
+    /* HERO SECTION */
     .hero-flex {
       display: flex;
       flex-direction: row;
+      align-items: stretch;
       max-width: var(--max-width);
       width: 100%;
       margin-top: 125px;
       margin-bottom: 60px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2.7em;
+      gap: 3.5em;
       padding: 0 2vw;
     }
-    .hero-left {
-      flex: 1.3;
+    .hero-profile-rect {
+      width: 460px;
+      height: 580px;
+      background: #fff;
+      border-radius: 48px;
+      box-shadow: 0 10px 48px #e4e5f3a7;
+      object-fit: cover;
+      border: 6px solid var(--accent2);
+      display: block;
+      align-self: flex-start;
+      margin: 0;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .hero-profile-rect:hover {
+      transform: scale(1.015) translateY(-4px);
+      box-shadow: 0 24px 90px #c0f2e788;
+    }
+    .hero-right {
+      flex: 1;
       min-width: 0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       justify-content: center;
       text-align: left;
-      margin-left: 2vw;
+      margin-left: 3vw;
     }
     .hero-main-headline {
-      font-size: 2.7rem;
+      font-size: 3.3rem;
       font-weight: 800;
       letter-spacing: -1px;
       color: var(--headline);
-      margin-bottom: 0.3em;
+      margin-bottom: 0.25em;
       margin-top: 0;
       text-align: left;
       line-height: 1.1;
       white-space: nowrap;
     }
     .hero-role {
-      font-size: 1.45rem;
-      font-weight: 800;
+      font-size: 2rem;
+      font-weight: 900;
       color: #1E3A8A;
-      margin-bottom: 0.5em;
-      letter-spacing: 0.01em;
+      margin-bottom: 0.6em;
+      letter-spacing: 0.02em;
       text-align: left;
     }
     .hero-bio {
-      font-size: 1rem;
+      font-size: 1.11rem;
       color: #3a3a3a;
       line-height: 1.7;
-      max-width: 440px;
-      margin-right: 1vw;
-      text-align: left;
+      max-width: 600px;
+      text-align: justify;
       font-weight: 400;
       margin-bottom: 0;
     }
-    .hero-profile-rect {
-      flex: 0 0 230px;
-      align-self: flex-end;
-      width: 230px;
-      height: 290px;
-      background: #fff;
-      border-radius: 28px;
-      box-shadow: 0 6px 32px #e4e5f3a7;
-      object-fit: cover;
-      border: 5px solid var(--accent2);
-      display: block;
-      transition: transform 0.18s, box-shadow 0.18s;
-      margin-left: 2vw;
-      margin-right: 0;
-    }
-    .hero-profile-rect:hover {
-      transform: scale(1.025) translateY(-4px);
-      box-shadow: 0 16px 70px #c0f2e788;
+    @media (max-width: 1200px) {
+      .hero-flex {max-width: 100vw;}
+      .hero-profile-rect { width: 340px; height: 420px;}
+      .hero-right {margin-left: 2vw;}
+      .hero-main-headline {font-size: 2.25rem;}
+      .hero-role {font-size: 1.2rem;}
     }
     @media (max-width: 900px) {
       .hero-flex {
         flex-direction: column;
-        gap: 1.7em;
+        gap: 2em;
         align-items: stretch;
         margin-top: 100px;
         margin-bottom: 40px;
         padding: 0 2vw;
       }
       .hero-profile-rect {
-        margin: 0 auto 0 auto;
+        width: 92vw; max-width: 400px; height: auto; aspect-ratio: 10/13;
+        margin-bottom: 1.2em;
         align-self: center;
       }
-      .hero-left {
-        align-items: flex-start;
-        text-align: left;
-        margin-left: 0;
-      }
-      .hero-main-headline { font-size: 2.1rem;}
+      .hero-right { margin-left: 0; }
+      .hero-main-headline { font-size: 1.7rem;}
       .hero-role { font-size: 1.1rem;}
     }
-    @media (max-width: 500px) {
-      .hero-profile-rect { width: 100%; max-width: 220px; height: 180px;}
-      .hero-main-headline { font-size: 1.3rem;}
+    @media (max-width: 640px) {
+      .hero-profile-rect { width: 99vw; max-width: 99vw; min-width: 0; border-radius: 18px;}
+      .hero-main-headline { font-size: 1.1rem;}
+      .hero-role { font-size: 1rem;}
     }
 
-    /* Other sections retained as before */
-    .currently-section {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto var(--section-gap) auto;
-      text-align: center;
-    }
-    .currently-title {
-      font-size: 1.2rem;
-      letter-spacing: 0.18em;
-      color: var(--accent3);
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 0.5em;
-    }
-    .currently-role {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--headline);
-      margin-bottom: 0.3em;
-    }
-    .currently-org {
-      font-size: 1.1rem;
-      color: var(--accent2);
-      font-weight: 500;
-      letter-spacing: 0.09em;
-    }
-
+    /* Retained: bio-section, work-section, etc. */
     .bio-section {
       width: 100%;
       max-width: 700px;
@@ -479,26 +447,19 @@
     </nav>
   </div>
 
-  <!-- Hero Section: headline, bio, picture -->
+  <!-- Hero Section: image left, text right -->
   <section class="hero-flex">
-    <div class="hero-left">
+    <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-profile-rect" />
+    <div class="hero-right">
       <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
       <div class="hero-role">I'm a researcher and teacher</div>
       <div class="hero-bio">
         I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanical behavior of advanced materials. I believe in making science accessible and exciting, and in empowering students and collaborators to reach their full potential. I enjoy solving complex problems and fostering a spirit of curiosity and inquiry in all my pursuits.
       </div>
     </div>
-    <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-profile-rect" />
   </section>
 
-  <!-- Currently Section -->
-  <section class="currently-section">
-    <div class="currently-title">Currently</div>
-    <div class="currently-role">Associate Professor, Materials Science</div>
-    <div class="currently-org">IIT Delhi</div>
-  </section>
-
-  <!-- Bio Section -->
+  <!-- Bio Section (retained) -->
   <section class="bio-section">
     <img src="profile.jpg" alt="Lakshmi Narayan smiling" class="bio-img" />
     <div class="bio-content">
@@ -512,7 +473,7 @@
     </div>
   </section>
 
-  <!-- Latest Work Section -->
+  <!-- Latest Work Section (retained) -->
   <section class="work-section">
     <div class="work-title">Latest Work</div>
     <div class="work-cards">
