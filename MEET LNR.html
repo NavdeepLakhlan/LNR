@@ -269,222 +269,19 @@
       .hero-static-img { border-radius: 12px;}
     }
 
-    /* FROM THE NEWSROOMS SECTION - CUSTOMIZED */
-    .mentions-section {
-      background-color: var(--bg);
-      padding: 70px 0 60px 0;
-      text-align: center;
-    }
-    .mentions-section h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 2.2rem;
-      color: #222;
-    }
-    .mention-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 1.3rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .mention-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      width: 170px;
-      height: 70px;
-      padding: 1rem 1.1rem;
-      border-radius: 10px;
-      background: var(--accent3);
-      text-decoration: none;
-      color: #1c1c1c;
-      font-size: 1rem;
-      font-weight: 500;
-      border: none;
-      box-shadow: none;
-      transition: transform 0.17s, box-shadow 0.17s, background 0.17s;
-      cursor: pointer;
-    }
-    .mention-card .underline-accent {
-      width: 28px;
-      height: 4px;
-      background-color: #8CCB69;
-      border-radius: 99px;
-      margin-bottom: 0.7rem;
-    }
-    .mention-card:hover {
-      transform: scale(1.04);
-      background: var(--accent2);
-      box-shadow: 0 2px 12px #a0c9ac33;
-    }
-    @media (max-width: 600px) {
-      .mention-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-      }
-      .mention-card {
-        width: 100%;
-        min-width: 0;
-      }
-    }
-
-    /* LATEST WORK: horizontal, non-responsive, no magnify, no images */
-    .work-section {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto 120px auto;
-      text-align: left;
-      overflow-x: auto;
-      padding-bottom: 2em;
-      position: relative;
-      z-index: 2;
-    }
-    .work-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #23232a;
-      margin-bottom: 1.5em;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      font-family: 'Inter', Arial, sans-serif;
-      margin-left: 1vw;
-    }
-    .work-cards {
-      display: flex;
-      flex-direction: row;
-      gap: 2.2em;
-      align-items: stretch;
-      overflow-x: visible;
-      padding-bottom: 1em;
-      scroll-behavior: auto;
-      flex-wrap: nowrap;
-      width: max-content;
-      min-width: 100%;
-    }
-    .work-card {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 16px #e4e5f3a7;
-      padding: 2em 1.3em 1.4em 1.3em;
-      min-width: 340px;
-      width: 340px;
-      min-height: 370px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 1.7em;
-      cursor: pointer;
-      position: relative;
-      transition: box-shadow 0.18s;
-      z-index: 1;
-      flex-shrink: 0;
-    }
-    .work-card:hover {
-      box-shadow: 0 6px 32px #c0f2e7b8, 0 2px 16px #e4e5f3a7;
-    }
-    .work-card-title {
-      font-size: 1.22rem;
-      font-weight: 700;
-      color: #23232a;
-      margin-bottom: 0.5em;
-      line-height: 1.2;
-    }
-    .work-card-desc {
-      font-size: 1.11rem;
-      color: #686878;
-      margin-bottom: 1em;
-      line-height: 1.7;
-      text-align: justify;
-      font-family: 'Inter', Arial, sans-serif;
-      font-weight: 400;
-    }
-    .card-awards-list {
-      font-size: 0.83rem;
-      line-height: 1.2;
-      letter-spacing: -0.4px;
-      margin-bottom: 1em;
-      text-align: justify;
-      font-family: 'Inter', Arial, sans-serif;
-      font-weight: 400;
-    }
-    .work-card:first-child,
-    .work-card:nth-child(2) {
-      min-height: 850px;
-      height: auto;
-    }
-    .work-link {
-      display: inline-block;
-      margin-top: auto;
-      padding: 0.6em 1.3em;
-      background: #c0f2e6;
-      color: #23232a;
-      border-radius: 13px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background 0.18s;
-      box-shadow: 0 2px 8px #c0f2e7a6;
-      letter-spacing: 0.1em;
-    }
-    .work-link:hover {
-      background: #f8cdd5;
-      color: #23232a;
-    }
-
-    /* BIO and TEACHING SECTIONS */
-    .bio-section {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto 60px auto;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 3.5em;
-    }
-    .bio-img {
-      flex: 0 0 150px;
-      min-width: 120px;
-      max-width: 220px;
-      width: 22vw;
-      height: 22vw;
-      max-height: 220px;
-      border-radius: 34% 66% 63% 37% / 54% 53% 47% 46%;
-      object-fit: cover;
-      box-shadow: 0 6px 36px #f7caff4a;
-      margin-right: 2.2em;
-      border: 4px solid var(--accent2);
-      background: #fff;
-    }
-    .bio-content {
-      flex: 1;
-      font-size: 1.22rem;
-      line-height: 1.7;
-      color: #23232a;
-    }
-    .bio-content h3 {
-      color: var(--accent1);
-      font-size: 1.2rem;
-      margin-bottom: 0.7em;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
     /* TEACHING SECTION (carousel+text) */
     .teaching-section {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       gap: 3em;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto 120px auto;
       width: 100%;
       justify-content: space-between;
     }
     .carousel-container {
-      flex: 0 0 320px;
+      flex: 0 0 460px;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -493,13 +290,13 @@
       display: flex;
       align-items: center;
       position: relative;
-      width: 260px;
-      height: 230px;
+      width: 460px;
+      height: 580px;
       justify-content: center;
     }
     .carousel-image-container {
-      width: 260px;
-      height: 200px;
+      width: 460px;
+      height: 580px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -507,56 +304,78 @@
       position: relative;
     }
     .carousel-image-container img {
-      width: 240px;
-      height: 150px;
+      width: 460px;
+      height: 580px;
       object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 4px 16px #ccc5;
-      margin-bottom: 0.6em;
+      border-radius: 36px 0 0 36px;
+      box-shadow: 0 10px 48px #e4e5f3a7;
+      margin-bottom: 0.8em;
       background: #fff;
+      border: none;
+      z-index: 1;
     }
     .carousel-desc {
-      font-size: 0.97em;
+      font-size: 1.1em;
       color: #444;
       background: #fff4;
       border-radius: 8px;
-      padding: 6px 10px;
+      padding: 10px 14px;
       margin-top: 0;
       text-align: center;
-      min-height: 28px;
+      min-height: 32px;
+      max-width: 420px;
+      word-break: break-word;
     }
     .carousel-btn {
       background: #e0e7ff;
       border: none;
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-size: 1.5em;
+      width: 46px;
+      height: 46px;
+      font-size: 2em;
       color: #222;
       cursor: pointer;
       transition: background 0.2s;
       box-shadow: 0 2px 8px #bbb3;
       position: absolute;
-      top: 60px;
+      top: 260px;
       z-index: 2;
     }
-    .carousel-btn.left { left: -46px; }
-    .carousel-btn.right { right: -46px; }
+    .carousel-btn.left { left: -56px; }
+    .carousel-btn.right { right: -56px; }
     .teaching-content {
       align-self: flex-start;
       max-width: 420px;
+      font-size: 1.22rem;
+      line-height: 1.7;
+      color: #23232a;
+    }
+    .teaching-content h3 {
+      color: var(--accent1);
+      font-size: 1.2rem;
+      margin-bottom: 0.7em;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    @media (max-width: 1300px) {
+      .teaching-section {
+        max-width: 98vw;
+      }
+      .carousel-container,
+      .carousel,
+      .carousel-image-container {
+        width: 98vw;
+        max-width: 460px;
+      }
     }
     @media (max-width: 900px) {
-      .bio-section, .teaching-section {
+      .teaching-section {
         flex-direction: column;
         align-items: center;
         gap: 2em;
         max-width: 97vw;
       }
-      .bio-img {
-        margin: 0 auto 1.4em auto;
-      }
-      .bio-content { font-size: 1.06rem;}
       .carousel-container {
         width: 100%;
         justify-content: center;
@@ -570,13 +389,14 @@
       }
       .carousel-image-container {
         width: 90vw;
-        max-width: 300px;
+        max-width: 340px;
         height: auto;
       }
       .carousel-image-container img {
         width: 90vw;
-        max-width: 300px;
-        height: 150px;
+        max-width: 340px;
+        height: 260px;
+        border-radius: 18px;
       }
       .carousel-btn.left, .carousel-btn.right {
         position: static;
@@ -589,15 +409,8 @@
         max-width: 97vw;
       }
     }
-    footer {
-      margin-top: 40px;
-      width: 100%;
-      text-align: center;
-      color: #888;
-      background: none;
-      font-size: 1rem;
-      padding-bottom: 2.7em;
-    }
+    /* ... other styles for mentions-section, work-section, etc. remain unchanged ... */
+    /* (Paste the rest of your styles for newsrooms, work-section, footer, etc. here) */
   </style>
 </head>
 <body>
@@ -637,33 +450,19 @@
     <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
   </section>
 
-  <!-- Bio Section -->
-  <section class="bio-section">
-    <img src="profile.jpg" alt="Lakshmi Narayan smiling" class="bio-img" />
-    <div class="bio-content">
-      <h3>About Lakshmi</h3>
-      <p>
-        I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making technology intuitive for all.
-      </p>
-      <p>
-        Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build — and I love connecting with curious minds!
-      </p>
-    </div>
-  </section>
-
   <!-- Teaching Section With Carousel -->
   <section class="teaching-section">
     <div class="carousel-container">
       <div class="carousel">
         <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">&#8592;</button>
         <div class="carousel-image-container">
-          <img id="carousel-img" src="img1.jpg" alt="Teaching Image 1">
-          <div class="carousel-desc" id="carousel-desc">Description for image 1</div>
+          <img id="carousel-img" src="teaching1.jpg" alt="Teaching Image 1">
+          <div class="carousel-desc" id="carousel-desc">Teaching moment 1: Demo description here.</div>
         </div>
         <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">&#8594;</button>
       </div>
     </div>
-    <div class="bio-content teaching-content">
+    <div class="teaching-content">
       <h3>Teaching</h3>
       <p>
         I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on making technology intuitive for all.
@@ -675,100 +474,7 @@
   </section>
 
   <!-- FROM THE NEWSROOMS SECTION -->
-  <section class="mentions-section">
-    <h2>From the newsrooms</h2>
-    <div class="mention-grid">
-      <a href="https://example.com/1" class="mention-card">
-        <div class="underline-accent"></div>
-        Nature India
-      </a>
-      <a href="https://example.com/2" class="mention-card">
-        <div class="underline-accent"></div>
-        The Hindu
-      </a>
-      <a href="https://example.com/3" class="mention-card">
-        <div class="underline-accent"></div>
-        Indian Express
-      </a>
-      <a href="https://example.com/4" class="mention-card">
-        <div class="underline-accent"></div>
-        Times of India
-      </a>
-      <a href="https://example.com/5" class="mention-card">
-        <div class="underline-accent"></div>
-        NDTV
-      </a>
-    </div>
-  </section>
-
-  <!-- Latest Work Section -->
-  <section class="work-section">
-    <div class="work-title">Latest Work</div>
-    <div class="work-cards">
-      <div class="work-card">
-        <div class="work-card-title">Awards & Honors</div>
-        <div class="work-card-desc card-awards-list">
-          <ol style="padding-left: 1.15em; margin: 0;">
-            <li>Young Achievers' Award, VNIT Nagpur 2024</li>
-            <li>Excellence in Teaching award, IIT Delhi 2024</li>
-            <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
-            <li>INSA Medal for Young Scientist in October 2021</li>
-            <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
-            <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
-            <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
-            <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
-            <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
-            <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
-            <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
-            <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
-            <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card-title">Awards, Honors & Positions of Responsibility</div>
-        <div class="work-card-desc card-awards-list">
-          <ol style="padding-left: 1.15em; margin: 0;">
-            <li>INSA Young Scientist Award celebration - hosted by students</li>
-            <li>Young Achievers' Award, VNIT Nagpur 2024</li>
-            <li>Excellence in Teaching award, IIT Delhi 2024</li>
-            <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
-            <li>INSA Medal for Young Scientist in October 2021</li>
-            <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
-            <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
-            <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
-            <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
-            <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
-            <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
-            <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
-            <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
-            <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
-            <li><b>Honors and positions of responsibility:</b></li>
-            <li>Editor, IIM Metal News, 2023</li>
-            <li>PMRF Subject coordinator, 2023</li>
-            <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
-            <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
-            <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
-            <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
-            <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
-            <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
-            <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
-            <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
-            <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
-            <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
-          </ol>
-        </div>
-      </div>
-      <div class="work-card">
-        <div class="work-card-title">Teaching: UX Foundations</div>
-        <div class="work-card-desc">
-          <b>Open Course</b><br>
-          My public course for students at IIT Delhi — includes recorded lectures, hands-on labs, and real-world projects.
-        </div>
-        <a class="work-link" href="#">Learn more</a>
-      </div>
-    </div>
-  </section>
+  <!-- (Your newsrooms, latest work, and footer sections remain unchanged, paste them here) -->
 
   <footer>
     &copy; 2025 Lakshmi Narayan &middot; Designed with love for usability
@@ -791,8 +497,33 @@
 
     // Carousel for Teaching section
     const carouselImages = [
-      { src: 'img1.jpg', desc: 'Description for image 1' },
-      { src: 'img2.jpg', desc: 'Description for image 2' },
-      { src: 'img3.jpg', desc: 'Description for image 3' },
-      { src: 'img4.jpg', desc: 'Description for image 4'](#)*
-
+      { src: 'teaching1.jpg', desc: 'Teaching moment 1: Demo description here.' },
+      { src: 'teaching2.jpg', desc: 'Teaching moment 2: Demo description here.' },
+      { src: 'teaching3.jpg', desc: 'Teaching moment 3: Demo description here.' },
+      { src: 'teaching4.jpg', desc: 'Teaching moment 4: Demo description here.' },
+      { src: 'teaching5.jpg', desc: 'Teaching moment 5: Demo description here.' },
+      { src: 'teaching6.jpg', desc: 'Teaching moment 6: Demo description here.' },
+      { src: 'teaching7.jpg', desc: 'Teaching moment 7: Demo description here.' },
+      { src: 'teaching8.jpg', desc: 'Teaching moment 8: Demo description here.' },
+      { src: 'teaching9.jpg', desc: 'Teaching moment 9: Demo description here.' },
+      { src: 'teaching10.jpg', desc: 'Teaching moment 10: Demo description here.' }
+    ];
+    let currentIndex = 0;
+    function updateCarousel() {
+      document.getElementById('carousel-img').src = carouselImages[currentIndex].src;
+      document.getElementById('carousel-img').alt = 'Teaching Image ' + (currentIndex + 1);
+      document.getElementById('carousel-desc').textContent = carouselImages[currentIndex].desc;
+    }
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+      updateCarousel();
+    }
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % carouselImages.length;
+      updateCarousel();
+    }
+    // Initial load
+    updateCarousel();
+  </script>
+</body>
+</html>
