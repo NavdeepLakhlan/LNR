@@ -174,7 +174,7 @@
       flex-direction: row;
       align-items: stretch;
       justify-content: flex-start;
-      min-height: 530px;
+      min-height: 580px;
       position: relative;
       background: none;
     }
@@ -218,9 +218,9 @@
       margin-bottom: 0;
     }
     .hero-static-img {
-      width: 480px;
+      width: 460px;
       height: 580px;
-      border-radius: 36px;
+      border-radius: 36px 0 0 36px;
       object-fit: cover;
       display: block;
       position: absolute;
@@ -247,9 +247,10 @@
       }
       .hero-static-img {
         position: static;
-        width: 100vw;
+        width: 94vw;
         height: auto;
-        max-width: 100vw;
+        max-width: 98vw;
+        min-width: 0;
         margin: 0 auto 1.2em auto;
         border-radius: 18px;
         box-shadow: 0 6px 36px #e4e5f3a7;
@@ -268,7 +269,119 @@
       .hero-static-img { border-radius: 12px;}
     }
 
-    /* Retained: bio-section, work-section, etc. */
+    /* LATEST WORK: horizontal, magnify on hover */
+    .work-section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 120px auto;
+      text-align: left;
+      overflow-x: auto;
+      padding-bottom: 2em;
+      position: relative;
+      z-index: 2;
+    }
+    .work-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #23232a;
+      margin-bottom: 1.5em;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-family: 'Inter', Arial, sans-serif;
+      margin-left: 1vw;
+    }
+    .work-cards {
+      display: flex;
+      flex-direction: row;
+      gap: 2.2em;
+      align-items: stretch;
+      overflow-x: auto;
+      padding-bottom: 1em;
+      scroll-behavior: smooth;
+    }
+    .work-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 16px #e4e5f3a7;
+      padding: 2em 1.3em 1.4em 1.3em;
+      min-width: 320px;
+      width: 320px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1.7em;
+      cursor: pointer;
+      position: relative;
+      transition:
+        transform 0.28s cubic-bezier(.28,.84,.42,1.02),
+        box-shadow 0.28s cubic-bezier(.28,.84,.42,1.02),
+        z-index 0.18s;
+      z-index: 1;
+    }
+    .work-card:hover {
+      transform: scale(1.22) translateY(-30px);
+      box-shadow: 0 24px 90px 0 #c0f2e7b8, 0 2px 16px #e4e5f3a7;
+      z-index: 10;
+    }
+    .work-card:not(:hover) {
+      transition: filter 0.15s;
+    }
+    .work-cards:hover .work-card:not(:hover) {
+      filter: blur(1.5px) brightness(0.92);
+      z-index: 1;
+    }
+    .work-img {
+      width: 100%;
+      max-width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 17px;
+      background: #d2d8fc;
+      margin-bottom: 1.1em;
+      box-shadow: 0 2px 12px #bfc0f55c;
+      align-self: center;
+    }
+    .work-card-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: #23232a;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+    }
+    .work-card-desc {
+      font-size: 1.04rem;
+      color: #686878;
+      margin-bottom: 1em;
+      min-height: 42px;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .work-link {
+      display: inline-block;
+      margin-top: auto;
+      padding: 0.6em 1.3em;
+      background: #c0f2e6;
+      color: #23232a;
+      border-radius: 13px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.18s;
+      box-shadow: 0 2px 8px #c0f2e7a6;
+      letter-spacing: 0.1em;
+    }
+    .work-link:hover {
+      background: #f8cdd5;
+      color: #23232a;
+    }
+    @media (max-width: 900px) {
+      .work-section { padding: 0 1vw; }
+      .work-cards { gap: 1.2em; }
+      .work-card { min-width: 92vw; width: 92vw; }
+    }
+
+    /* Retained: bio-section, etc */
     .bio-section {
       width: 100%;
       max-width: 700px;
@@ -316,106 +429,6 @@
         margin: 0 auto 1.4em auto;
       }
       .bio-content { font-size: 1.06rem;}
-    }
-    .work-section {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto var(--section-gap) auto;
-      text-align: center;
-    }
-    .work-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--headline);
-      margin-bottom: 1.5em;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      font-family: var(--font-main);
-    }
-    .work-cards {
-      display: flex;
-      gap: 2.2em;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: stretch;
-    }
-    .work-card {
-      background: #fff;
-      border-radius: 24px;
-      box-shadow: 0 2px 16px #e4e5f3a7;
-      padding: 2em 1.3em 1.4em 1.3em;
-      width: 300px;
-      min-height: 330px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1.7em;
-      transition: background 0.18s, box-shadow 0.18s, transform 0.2s;
-      cursor: pointer;
-      position: relative;
-    }
-    .work-card:hover {
-      background: var(--accent1);
-      box-shadow: 0 8px 40px #ffe2eea3;
-      transform: translateY(-3px) scale(1.02);
-    }
-    .work-img {
-      width: 100%;
-      max-width: 220px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 17px;
-      background: var(--accent3);
-      margin-bottom: 1.1em;
-      box-shadow: 0 2px 12px #bfc0f55c;
-    }
-    .work-card-title {
-      font-size: 1.22rem;
-      font-weight: 700;
-      color: var(--headline);
-      margin-bottom: 0.5em;
-      line-height: 1.2;
-    }
-    .work-card-desc {
-      font-size: 0.98rem;
-      color: #686878;
-      margin-bottom: 1em;
-      min-height: 42px;
-      line-height: 1.5;
-    }
-    .work-link {
-      display: inline-block;
-      margin-top: auto;
-      padding: 0.6em 1.3em;
-      background: var(--accent2);
-      color: var(--headline);
-      border-radius: 13px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background 0.18s;
-      box-shadow: 0 2px 8px #c0f2e7a6;
-      letter-spacing: 0.1em;
-    }
-    .work-link:hover {
-      background: var(--accent1);
-      color: var(--headline);
-    }
-    @media (max-width: 1000px) {
-      .work-cards {
-        gap: 1.2em;
-      }
-    }
-    @media (max-width: 900px) {
-      .work-section { padding: 0 1vw; }
-    }
-    @media (max-width: 700px) {
-      .work-cards {
-        flex-direction: column;
-        gap: 1.2em;
-        align-items: center;
-      }
-      .work-card { width: 94vw; min-width: 0; }
     }
     footer {
       margin-top: 40px;
@@ -479,26 +492,35 @@
     </div>
   </section>
 
-  <!-- Latest Work Section (retained) -->
+  <!-- Latest Work Section (horizontal, magnify on hover) -->
   <section class="work-section">
     <div class="work-title">Latest Work</div>
     <div class="work-cards">
       <div class="work-card">
         <img src="work1.jpg" class="work-img" alt="Project 1" />
         <div class="work-card-title">Inclusive Form Patterns</div>
-        <div class="work-card-desc">Research and UI kit for building forms that work for everyone, including screen reader and mobile users.</div>
+        <div class="work-card-desc">
+          <b>Accessible for Everyone</b><br>
+          This project explores ways to build form interfaces that are easy to use for all, including users with disabilities and on mobile.
+        </div>
         <a class="work-link" href="#">Start reading</a>
       </div>
       <div class="work-card">
         <img src="work2.jpg" class="work-img" alt="Project 2" />
         <div class="work-card-title">Color Contrast Checker</div>
-        <div class="work-card-desc">A web tool to instantly check and improve color contrast for accessible interfaces.</div>
+        <div class="work-card-desc">
+          <b>Instant Contrast Feedback</b><br>
+          A tool for designers and developers to instantly check and fix color contrast for accessible web content.
+        </div>
         <a class="work-link" href="#">Try it now</a>
       </div>
       <div class="work-card">
         <img src="work3.jpg" class="work-img" alt="Project 3" />
         <div class="work-card-title">Teaching: UX Foundations</div>
-        <div class="work-card-desc">My open course for students at IIT Delhi — lectures, labs, and real-world projects.</div>
+        <div class="work-card-desc">
+          <b>Open Course</b><br>
+          My public course for students at IIT Delhi — includes recorded lectures, hands-on labs, and real-world projects.
+        </div>
         <a class="work-link" href="#">Learn more</a>
       </div>
     </div>
