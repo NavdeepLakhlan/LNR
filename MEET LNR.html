@@ -166,32 +166,34 @@
     }
 
     /* HERO SECTION */
-    .hero-flex {
+    .hero-static-container {
+      width: 100vw;
+      max-width: var(--max-width);
+      margin: 130px auto 60px auto;
       display: flex;
       flex-direction: row;
       align-items: stretch;
-      max-width: var(--max-width);
-      width: 100%;
-      margin-top: 125px;
-      margin-bottom: 60px;
-      gap: 3.5em;
-      padding: 0 2vw;
+      justify-content: flex-start;
       min-height: 530px;
+      position: relative;
+      background: none;
     }
-    .hero-right {
-      flex: 1;
-      min-width: 0;
+    .hero-static-text {
+      flex: 1 1 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: left;
-      margin-left: 2vw;
+      align-items: flex-start;
+      margin-left: 40px;
+      min-width: 300px;
+      max-width: 600px;
+      z-index: 2;
     }
     .hero-main-headline {
       font-size: 3.3rem;
       font-weight: 800;
       letter-spacing: -1px;
-      color: var(--headline);
+      color: #23232a;
       margin-bottom: 0.25em;
       margin-top: 0;
       text-align: left;
@@ -215,54 +217,55 @@
       font-weight: 400;
       margin-bottom: 0;
     }
-    .hero-profile-rect {
+    .hero-static-img {
       width: 460px;
       height: 530px;
-      background: #fff;
       border-radius: 36px;
-      box-shadow: 0 10px 48px #e4e5f3a7;
       object-fit: cover;
       display: block;
-      align-self: flex-end;
-      margin-right: 0;
-      margin-left: auto;
-      transition: transform 0.18s, box-shadow 0.18s;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 0;
+      box-shadow: 0 10px 48px #e4e5f3a7;
       border: none;
+      z-index: 1;
+      background: #fff;
     }
-    .hero-profile-rect:hover {
-      transform: scale(1.015) translateY(-4px);
-      box-shadow: 0 24px 90px #c0f2e788;
-    }
-    @media (max-width: 1200px) {
-      .hero-flex {max-width: 100vw;}
-      .hero-profile-rect { width: 340px; height: 400px;}
-      .hero-right {margin-left: 2vw;}
-      .hero-main-headline {font-size: 2.25rem;}
-      .hero-role {font-size: 1.2rem;}
+    @media (max-width: 1300px) {
+      .hero-static-container { max-width: 100vw; }
     }
     @media (max-width: 900px) {
-      .hero-flex {
+      .hero-static-container {
         flex-direction: column;
-        gap: 2em;
-        align-items: stretch;
+        min-height: unset;
         margin-top: 100px;
         margin-bottom: 40px;
-        padding: 0 2vw;
-        min-height: unset;
+        padding: 0;
+        position: relative;
+        height: auto;
       }
-      .hero-profile-rect {
-        width: 92vw; max-width: 400px; height: auto; aspect-ratio: 10/13;
-        margin-bottom: 1.2em;
-        align-self: center;
+      .hero-static-img {
+        position: static;
+        width: 94vw;
+        height: auto;
+        max-width: 98vw;
+        margin: 0 auto 1.2em auto;
+        border-radius: 18px;
+        box-shadow: 0 6px 36px #e4e5f3a7;
       }
-      .hero-right { margin-left: 0; }
-      .hero-main-headline { font-size: 1.7rem;}
-      .hero-role { font-size: 1.1rem;}
+      .hero-static-text {
+        margin-left: 6vw;
+        margin-top: 1.5em;
+      }
+      .hero-main-headline { font-size: 2rem;}
+      .hero-role { font-size: 1.15rem;}
     }
-    @media (max-width: 640px) {
-      .hero-profile-rect { width: 99vw; max-width: 99vw; min-width: 0; border-radius: 18px;}
-      .hero-main-headline { font-size: 1.1rem;}
+    @media (max-width: 600px) {
+      .hero-main-headline { font-size: 1.2rem;}
       .hero-role { font-size: 1rem;}
+      .hero-static-text { margin-left: 4vw;}
+      .hero-static-img { border-radius: 12px;}
     }
 
     /* Retained: bio-section, work-section, etc. */
@@ -338,8 +341,8 @@
     }
     .work-card {
       background: #fff;
-      border-radius: var(--card-radius);
-      box-shadow: var(--card-shadow);
+      border-radius: 24px;
+      box-shadow: 0 2px 16px #e4e5f3a7;
       padding: 2em 1.3em 1.4em 1.3em;
       width: 300px;
       min-height: 330px;
@@ -352,7 +355,7 @@
       position: relative;
     }
     .work-card:hover {
-      background: var(--card-hover);
+      background: var(--accent1);
       box-shadow: 0 8px 40px #ffe2eea3;
       transform: translateY(-3px) scale(1.02);
     }
@@ -450,16 +453,16 @@
     </nav>
   </div>
 
-  <!-- Hero Section: image right, text left -->
-  <section class="hero-flex">
-    <div class="hero-right">
+  <!-- Hero Section: image right, text left, static and non-responsive -->
+  <section class="hero-static-container">
+    <div class="hero-static-text">
       <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
       <div class="hero-role">I'm a researcher and teacher</div>
       <div class="hero-bio">
         I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanical behavior of advanced materials. I believe in making science accessible and exciting, and in empowering students and collaborators to reach their full potential. I enjoy solving complex problems and fostering a spirit of curiosity and inquiry in all my pursuits.
       </div>
     </div>
-    <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-profile-rect" />
+    <img src="profile.jpg" alt="Lakshmi Narayan portrait" class="hero-static-img" />
   </section>
 
   <!-- Bio Section (retained) -->
