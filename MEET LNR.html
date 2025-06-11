@@ -216,13 +216,12 @@
     }
     .hero-static-img {
       width: 460px;
-      height: 510px;
+      height: 460px; /* 510px - 50px */
       border-radius: 36px 0 0 36px;
       object-fit: cover;
       display: block;
       position: absolute;
       right: 0;
-      /* shifted lower */
       top: 50px;
       margin: 0;
       box-shadow: 0 10px 48px #e4e5f3a7;
@@ -345,13 +344,12 @@
       font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: 1px;
-      color: #000 !important; /* changed to black */
+      color: #000 !important;
       margin-bottom: 1.1rem;
       margin-top: 0.5em;
       text-align: left;
       width: 100%;
     }
-    /* Bio section under teaching */
     .bio-section {
       margin-top: 10px;
       width: 100%;
@@ -366,83 +364,12 @@
       margin-bottom: 0.95em;
       line-height: 1.7;
     }
-    @media (max-width: 1300px) {
-      .teaching-section {
-        max-width: 99vw;
-      }
-      .teaching-carousel-col,
-      .carousel-image-container,
-      .carousel-image-container img {
-        width: 98vw;
-        max-width: 620px;
-      }
-    }
-    @media (max-width: 1250px) {
-      .teaching-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .teaching-carousel-col {
-        width: 100vw;
-        min-width: 0;
-        align-items: center;
-      }
-      .teaching-text-col {
-        margin-left: 0;
-        margin-top: 36px;
-        max-width: 97vw;
-      }
-      .carousel-image-container,
-      .carousel-image-container img {
-        width: 90vw;
-        max-width: 480px;
-        height: 260px;
-        border-radius: 18px;
-      }
-      .carousel-btn.left { left: -10px; }
-      .carousel-btn.right { right: -10px; }
-    }
-    @media (max-width: 700px) {
-      .teaching-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5em;
-      }
-      .teaching-carousel-col {
-        min-width: 0;
-        width: 100vw;
-        align-items: center;
-      }
-      .carousel-image-container,
-      .carousel-image-container img {
-        width: 97vw;
-        max-width: 97vw;
-        height: 220px;
-        border-radius: 13px;
-      }
-      .carousel-btn {
-        width: 44px;
-        height: 44px;
-        font-size: 1.4em;
-      }
-      .teaching-text-col {
-        margin-left: 0;
-        margin-top: 1.2em;
-        max-width: 97vw;
-      }
-      .bio-section {
-        padding: 0;
-        font-size: 1em;
-      }
-    }
-
-    /* Newsroom, At office, Footer (unchanged except spacing) */
     .mentions-section {
       background-color: var(--bg);
       padding: 70px 0 60px 0;
       text-align: center;
       width: 100%;
-      margin-bottom: 65px; /* add more space before At office */
+      margin-bottom: 65px;
     }
     .mentions-section h2 {
       font-size: 2rem;
@@ -516,8 +443,6 @@
       letter-spacing: 0.07em;
       text-transform: uppercase;
       font-family: 'Inter', Arial, sans-serif;
-      margin-left: 1vw;
-      /* center align */
       text-align: center;
       margin-left: 0;
     }
@@ -540,7 +465,6 @@
       padding: 2em 1.3em 1.4em 1.3em;
       min-width: 340px;
       width: 340px;
-      /* remove min-height so cards fit content */
       height: auto;
       display: flex;
       flex-direction: column;
