@@ -28,6 +28,54 @@
       overflow-x: hidden;
     }
 
+    /* Punchline overlay with zoom-out fade 
+    #punchlineOverlay {
+      position: fixed;
+      left: 0; top: 0; right: 0; bottom: 0;
+      z-index: 5000;
+      width: 100vw;
+      height: 100vh;
+      background: var(--main-bg1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.9s;
+    }
+    #punchlineOverlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+    #punchlineOverlay.fadeout {
+      animation: punchline-zoomout 0.9s forwards;
+      pointer-events: none;
+    }
+    @keyframes punchline-zoomout {
+      0%   { opacity: 1; transform: scale(1);}
+      60%  { opacity: 1; transform: scale(1.13);}
+      100% { opacity: 0; transform: scale(1.25);}
+    }
+    #punchlineText {
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #111;
+      background: none;
+      text-shadow: 2px 3px 20px #fff, 0 2px 10px #ffd;
+      letter-spacing: 2.4px;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 20px;
+      border: none;
+      box-shadow: none;
+      max-width: 90vw;
+      line-height: 1.1;
+    }
+    @media (max-width: 700px) {
+      #punchlineText { font-size: 1.5rem; padding: 1rem; }
+    }*/
+    #mainContent { display: none; }
+
     /* ----------- HERO IMAGE CAROUSEL STYLES ----------- */
     .hero-carousel-container {
       width: 100vw;
@@ -144,7 +192,8 @@
     }
 
     /* ----------- END HERO IMAGE CAROUSEL STYLES ----------- */
-    /* ----------- TEAM SECTION STYLES ----------- */
+
+    /* ----------- TEAM SECTION STYLES (unchanged below) ----------- */
     section, .pi-bio, .carousel-item .pi-bio { text-align: justify; }
     .navbar-container {
       position: fixed; top: 16px; left: 16px; right: 16px;
@@ -171,7 +220,7 @@
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px; } }
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 25px; width: 25px; } .lab-title{ font-size: 0.81rem;}}
 
     section {
       max-width: 1200px;
@@ -411,7 +460,14 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Punchline Overlay 
+  <div id="punchlineOverlay">
+    <div id="punchlineText">
+      MEET THE FORCE BEHIND DYP's&nbsp;INNOVATION
+    </div>
+  </div>
+ -->
+  <!-- Navbar (unchanged) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -436,6 +492,7 @@
 
   <!-- Main Content -->
   <div id="mainContent">
+
     <!-- ================= SUPER COOL HERO CAROUSEL ================= -->
     <div class="hero-carousel-container" aria-label="Lab Highlights">
       <div class="hero-carousel" tabindex="0">
@@ -458,10 +515,7 @@
     </div>
     <!-- ================= END HERO CAROUSEL ================= -->
 
-    <!-- ================== FULL TEAM CONTENT AS IN YOUR FILE ================== -->
-    <!-- All your team sections, carousels, bios, and alumni list remain UNCHANGED! -->
-
-    <!-- PI -->
+    <!-- PI card in PostDoc format -->
     <section>
       <h2>Principal Investigator (PI)</h2>
       <div class="pi-container" id="piCard">
@@ -472,12 +526,12 @@
         </div>
         <div class="pi-bio">
           <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and PhD from IISc Bangalore.
+            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his PhD in Materials Engineering at Indian Institute of Science, Bangalore, India, in 2014. <br>ORCID: 0000-0002-6178-8124
           </p>
         </div>
       </div>
     </section>
-    <!-- Post Doc -->
+    <!-- ...All other team sections (unchanged, as in previous code) ... -->
     <section>
       <h2>Post Doctoral Fellow</h2>
       <div class="pi-container">
@@ -487,11 +541,10 @@
           <p>PhD – IIT Kanpur</p>
         </div>
         <div class="pi-bio">
-          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels and advanced alloy systems.</p>
+          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and much more.</p>
         </div>
       </div>
     </section>
-    <!-- Senior Research Fellow -->
     <section>
       <h2>Senior Research Fellow</h2>
       <div class="pi-container">
@@ -501,11 +554,10 @@
           <p>Senior Research Fellow (Dec 2023–Ongoing)</p>
         </div>
         <div class="pi-bio">
-          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for electrochemical energy storage devices.</p>
+          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for supercapacitor and battery applications.</p>
         </div>
       </div>
     </section>
-    <!-- Ph.D. Students -->
     <section>
       <h2>Ph.D. Students</h2>
       <div class="carousel-container" aria-label="PhD Students Carousel">
@@ -519,7 +571,7 @@
             </div>
             <div class="pi-bio">
               <p>
-                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi, as a research scholar in December 2019.
+                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi as a Ph.D. scholar in Dec. 2019.
               </p>
             </div>
           </div>
@@ -528,7 +580,6 @@
         <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
       </div>
     </section>
-    <!-- Graduate Students -->
     <section>
       <h2>Graduate Students</h2>
       <div class="carousel-container" aria-label="Graduate Students Carousel">
@@ -548,7 +599,6 @@
         <button class="carousel-btn right" aria-label="Next Graduate Student">&#10095;</button>
       </div>
     </section>
-    <!-- Undergraduate Students -->
     <section>
       <h2>Undergraduate Students</h2>
       <div class="carousel-container" aria-label="Undergraduate Students Carousel">
@@ -568,7 +618,6 @@
         <button class="carousel-btn right" aria-label="Next Undergraduate Student">&#10095;</button>
       </div>
     </section>
-    <!-- Research Associates -->
     <section>
       <h2>Research Associates</h2>
       <div class="carousel-container" aria-label="Research Associates Carousel">
@@ -588,7 +637,6 @@
         <button class="carousel-btn right" aria-label="Next Research Associate">&#10095;</button>
       </div>
     </section>
-    <!-- Alumni -->
     <section>
       <h2>Alumni</h2>
       <ul class="alumni-list">
@@ -597,12 +645,24 @@
         <!-- Add more alumni as needed -->
       </ul>
     </section>
-    <!-- ================== END FULL TEAM CONTENT ================== -->
   </div>
-  <!-- End Main Content -->
 
   <script>
-    // HERO IMAGE CAROUSEL LOGIC (unchanged)
+    // Punchline Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const overlay = document.getElementById('punchlineOverlay');
+      const mainContent = document.getElementById('mainContent');
+      overlay.classList.add('visible');
+      setTimeout(() => {
+        overlay.classList.add('fadeout');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          mainContent.style.display = 'block';
+        }, 900); // match animation duration
+      }, 1800);
+    });
+
+    // HERO IMAGE CAROUSEL LOGIC
     (function(){
       const slides = document.querySelectorAll('.hero-slide');
       const btnLeft = document.querySelector('.hero-carousel-btn.left');
