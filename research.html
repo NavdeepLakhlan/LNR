@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=320, initial-scale=1.0"/>
   <title>Research | Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -23,7 +23,6 @@
       width: 100vw;
       overflow-x: hidden;
     }
-    /* --- Navbar Styles --- */
     .navbar-container {
       position: fixed;
       top: 16px;
@@ -316,8 +315,6 @@
         font-size: 0.95rem;
       }
     }
-    /* --- End Hero Section Styles --- */
-    /* --- Three Cards Styles --- */
     .section-heading {
       text-align: center;
       font-size: 2rem;
@@ -340,6 +337,8 @@
     .card {
       background: #f8f8f8;
       width: 320px;
+      min-width: 320px;
+      max-width: 320px;
       padding: 2rem 1.2rem 2.5rem;
       border-radius: 0.5rem;
       text-align: center;
@@ -364,15 +363,9 @@
       z-index: 2;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
-    .card:nth-child(1)::before {
-      background-image: url('fatigue.jpg');
-    }
-    .card:nth-child(2)::before {
-      background-image: url('fracture.jpg');
-    }
-    .card:nth-child(3)::before {
-      background-image: url('creep.jpg');
-    }
+    .card:nth-child(1)::before { background-image: url('fatigue.jpg'); }
+    .card:nth-child(2)::before { background-image: url('fracture.jpg'); }
+    .card:nth-child(3)::before { background-image: url('creep.jpg'); }
     .card h3 {
       font-size: 1.1rem;
       font-weight: 700;
@@ -394,9 +387,10 @@
       }
       .card {
         width: 90%;
+        min-width: 0;
+        max-width: 100vw;
       }
     }
-    /* --- End Three Cards Styles --- */
     /* --- Dropdown Cards Styles --- */
     .dropdown-cards-container {
       display: flex;
@@ -415,6 +409,9 @@
       margin: 0;
       font-family: 'Inter', sans-serif;
       transition: box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
     .dropdown-card button {
       width: 100%;
@@ -431,6 +428,8 @@
       text-align: left;
       letter-spacing: 0.5px;
       box-sizing: border-box;
+      min-width: 320px;
+      max-width: 320px;
     }
     .dropdown-card button:hover, .dropdown-card button.active {
       background: #294ba1;
@@ -445,6 +444,9 @@
       border-radius: 0 0 12px 12px;
       animation: fadeinup 0.6s cubic-bezier(.2,1,.22,1);
       text-align: justify;
+      min-width: 320px;
+      max-width: 320px;
+      box-sizing: border-box;
     }
     .dropdown-card.open .dropdown-content {
       display: block;
@@ -465,24 +467,16 @@
       border-left: 5px solid #1E3A8A;
       text-align: justify;
     }
-    .grants-subtitle {
+    .grants-subtitle, .consultancies-subtitle {
       margin-top: 1.3rem;
       margin-bottom: 0.45rem;
       font-size: 1.1rem;
       font-weight: 700;
-      color: #1E3A8A;
       letter-spacing: 0.1px;
       text-align: left;
     }
-    .consultancies-subtitle {
-      margin-top: 1.3rem;
-      margin-bottom: 0.45rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #ff4e4e;
-      letter-spacing: 0.1px;
-      text-align: left;
-    }
+    .grants-subtitle { color: #1E3A8A; }
+    .consultancies-subtitle { color: #ff4e4e; }
     @media (max-width: 1100px) {
       .dropdown-cards-container {
         flex-wrap: wrap;
@@ -493,20 +487,27 @@
         max-width: 500px;
         min-width: 0;
       }
+      .dropdown-card button, .dropdown-content {
+        min-width: 0;
+        max-width: 500px;
+      }
     }
     @media (max-width: 700px) {
-      .dropdown-cards-container {
+      .dropdown-cards-container, .cards-container {
         flex-direction: column;
         align-items: center;
         gap: 1.2rem;
       }
-      .dropdown-card {
+      .dropdown-card, .card {
         width: 97vw;
         min-width: 0;
         max-width: 99vw;
       }
+      .dropdown-card button, .dropdown-content {
+        min-width: 0;
+        max-width: 99vw;
+      }
     }
-    /* --- End Dropdown Cards Styles --- */
     footer {
       background:#e4eaff;
       padding:1.4rem;
@@ -659,7 +660,7 @@
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
   <script>
-    // NAVBAR show on hover and on scroll up (from team.html)
+    // Navbar show on hover and on scroll up
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
@@ -678,9 +679,7 @@
     function toggleDropdown(btn) {
       const card = btn.parentElement;
       const isOpen = card.classList.contains('open');
-      // Close all dropdowns first
       document.querySelectorAll('.dropdown-card').forEach(c => c.classList.remove('open'));
-      // Toggle current
       if (!isOpen) card.classList.add('open');
     }
 
