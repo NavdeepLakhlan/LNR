@@ -28,7 +28,6 @@
       overflow-x: hidden;
     }
 
-
     /* ----------- HERO IMAGE CAROUSEL STYLES ----------- */
     .hero-carousel-container {
       width: 100vw;
@@ -167,13 +166,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; trans[...]
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
-    .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right a.active { color: #ffd700; border-bottom: 2px solid #ffd700; background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px;} }
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left i[...]
     section {
       max-width: 1200px;
       margin: 6rem auto 2rem;
@@ -457,14 +456,16 @@
       text-align: left;
       flex: 1;
     }
+    /* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+    /* FONT SIZE CHANGES FOR MEET THE TEAM CARDS ONLY */
     .team-card-content h3 {
-      font-size: 1.5rem;
+      font-size: 1.15rem; /* decreased from 1.5rem */
       font-weight: 700;
       color: #0d1b2a;
       margin: 0 0 0.3rem;
     }
     .team-card-content h4 {
-      font-size: 0.85rem;
+      font-size: 0.7rem; /* decreased from 0.85rem */
       font-weight: 600;
       color: #637087;
       letter-spacing: 1px;
@@ -472,12 +473,13 @@
       margin: 0 0 0.8rem;
     }
     .team-card-content p {
-      font-size: 1.05rem;
+      font-size: 0.82rem; /* decreased from 1.05rem */
       font-weight: 400;
       color: #333333;
       line-height: 1.5;
       margin: 0;
     }
+    /* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */
     .team-scroll-btn {
       position: absolute;
       top: 50%;
@@ -573,210 +575,257 @@
         </div>
         <div class="pi-bio">
           <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and received his Ph.D. from the Indian Institute of Science, Bangalore in 2014. His research interests include advanced materials, mechanical behavior of materials, and nanotechnology.
+            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and PhD at Indian Institute of Science (IISc), Bangalore. He is currently an Assistant Professor in the Department of Materials Science and Metallurgical Engineering, Indian Institute of Technology Hyderabad, India.
           </p>
         </div>
       </div>
     </section>
     <section>
-  
-
-    Team Section (MEET THE TEAM, unique classes, 7 cards, no background, bigger, no radius) -->
-    <section class="team-section">
-      <h2>Meet the Team</h2>
-      <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
-      <div class="team-carousel" id="teamCarousel">
-        <div class="team-card">
-          <img src="dr-ashwani-kumar.jpg" alt="Erin Atkinson">
-          <div class="team-card-content">
-            <h3>Ashwani Kumar, PhD</h3>
-            <h4>Postdoctral Researcher</h4>
-            <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels and studying the tribological behavior of additively manufactured metal matrix composites. Currently, he is working on the mechanical behavior of super 304H steel and additively manufactured Al-Sc alloys.</p>
+      <!-- Team Section (MEET THE TEAM, unique classes, 13 cards, no background, bigger, no radius) -->
+      <section class="team-section">
+        <h2>Meet the Team</h2>
+        <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
+        <div class="team-carousel" id="teamCarousel">
+          <div class="team-card">
+            <img src="dr-ashwani-kumar.jpg" alt="Erin Atkinson">
+            <div class="team-card-content">
+              <h3>Ashwani Kumar, PhD</h3>
+              <h4>Postdoctral Researcher</h4>
+              <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and more.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="amey.jpg" alt="Samuel Durosaro">
+            <div class="team-card-content">
+              <h3>Amey Raghuvir Parnaik</h3>
+              <h4>PhD Student</h4>
+              <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from IIT Bombay.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="j-vigneshwaran.jpg" alt="Narmeen Hashim">
+            <div class="team-card-content">
+              <h3>J. Vigneshwaran</h3>
+              <h4>Senior Research Fellow</h4>
+              <p>Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage devices.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="ashwani.jpg" alt="Alex Johnson">
+            <div class="team-card-content">
+              <h3>Ashwani</h3>
+              <h4>PhD Student</h4>
+              <p>Ashwani has done B.tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Hyderabad.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="simran.jpg" alt="Lucy Chen">
+            <div class="team-card-content">
+              <h3>Simran Nath</h3>
+              <h4>PhD Student</h4>
+              <p>Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department of MSE, IITH.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="karthik.jpg" alt="Mohit Singh">
+            <div class="team-card-content">
+              <h3>Karthik</h3>
+              <h4>PhD Student</h4>
+              <p>Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint guidance of faculty at IIT Hyderabad and Tohoku University, Japan.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="akash.jpg" alt="Fatima Rahman">
+            <div class="team-card-content">
+              <h3>Akash Mishra</h3>
+              <h4>PhD Student</h4>
+              <p>Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department of MSE, IITH.</p>
+            </div>
+          </div>
+          <!-- 6 more cards below -->
+          <div class="team-card">
+            <img src="member8.jpg" alt="Team Member 8">
+            <div class="team-card-content">
+              <h3>Member Name 8</h3>
+              <h4>PhD Student</h4>
+              <p>Short info about member 8.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="member9.jpg" alt="Team Member 9">
+            <div class="team-card-content">
+              <h3>Member Name 9</h3>
+              <h4>Postdoctoral Fellow</h4>
+              <p>Short info about member 9.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="member10.jpg" alt="Team Member 10">
+            <div class="team-card-content">
+              <h3>Member Name 10</h3>
+              <h4>Research Associate</h4>
+              <p>Short info about member 10.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="member11.jpg" alt="Team Member 11">
+            <div class="team-card-content">
+              <h3>Member Name 11</h3>
+              <h4>PhD Student</h4>
+              <p>Short info about member 11.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="member12.jpg" alt="Team Member 12">
+            <div class="team-card-content">
+              <h3>Member Name 12</h3>
+              <h4>PhD Student</h4>
+              <p>Short info about member 12.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="member13.jpg" alt="Team Member 13">
+            <div class="team-card-content">
+              <h3>Member Name 13</h3>
+              <h4>PhD Student</h4>
+              <p>Short info about member 13.</p>
+            </div>
           </div>
         </div>
-        <div class="team-card">
-          <img src="amey.jpg" alt="Samuel Durosaro">
-          <div class="team-card-content">
-            <h3>Amey Raghuvir Parnaik</h3>
-            <h4>PhD Student</h4>
-            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from the National Institute of Technology, Warangal. He joined the Department of Material Science and Engineering, IIT Delhi, in December 2020 as a Ph.D. research scholar. His research project involves a study on the mechanical behavior of additively manufactured alloys for aerospace application.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <img src="j-vigneshwaran.jpg" alt="Narmeen Hashim">
-          <div class="team-card-content">
-            <h3>J. Vigneshwaran</h3>
-            <h4>Senior Research Fellow</h4>
-            <p>Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage devices. Currently, he is working on the MXene and MXene-based polymer/metal oxide heterostructure electrodes for asymmetric supercapacitor coin cell or cylindrical cell assembly. He completed his Master of Physics from PSG College of Arts and Science, Coimbatore in 2014 and also received his MPhil in nanoscience and technology from PSG Institute of Advanced Studies, Coimbatore in 2016. He defended his Ph.D. in July 2024 at Madurai Kamaraj University, Madurai, Tamilnadu and is a Research Fellow the Department of Materials Science and Engineering (DMSE), IIT Delhi since December 2023.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <img src="ashwani.jpg" alt="Alex Johnson">
-          <div class="team-card-content">
-            <h3>Ashwani</h3>
-            <h4>PhD Student</h4>
-            <p>Ashwani has done B.tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi as a Research Scholar. He is working on the structural and mechanical properties of Additive manufactured maraging steels</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <img src="simran.jpg" alt="Lucy Chen">
-          <div class="team-card-content">
-            <h3>Simran Nath</h3>
-            <h4>PhD Student</h4>
-            <p>Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department of Materials Science and Engineering, IIT Delhi, in December 2022 as a Ph.D. research scholar. She is working on the microstructural and mechanical properties of TiN and La2O3 reinforced 4043 Al-Si alloy via Wire-arc additive manufacturing.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <img src="karthik.jpg" alt="Mohit Singh">
-          <div class="team-card-content">
-            <h3>Karthik</h3>
-            <h4>PhD Student</h4>
-            <p>Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint supervision of Prof. Jayant Jain.</p>
-          </div>
-        </div>
-        <div class="team-card">
-          <img src="akash.jpg" alt="Fatima Rahman">
-          <div class="team-card-content">
-            <h3>Akash Mishra</h3>
-            <h4>PhD Student</h4>
-            <p>Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department of Materials Science and Engineering, IIT Delhi from January 2024. For his B.Tech thesis, he designed Ni-based microlattice structures that can be additively manufactured and used for manufacturing gas turbine blades that are used in aerospace industries. His research area involves study on the mechanical behavior of additively manufactured alloys for aerospace application.</p>
-          </div>
-        </div>
-      </div>
-      <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
+        <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
+      </section>
+      <script>
+        const teamCarousel = document.getElementById("teamCarousel");
+        function scrollTeam(direction) {
+          const cardWidth = 340 + 16; // width + margin gap
+          teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+        }
+      </script>
     </section>
+
     <script>
-      const teamCarousel = document.getElementById("teamCarousel");
-      function scrollTeam(direction) {
-        const cardWidth = 340 + 16; // width + margin gap
-        teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-      }
-    </script>
-  </div>
-
-  <script>
-    // Punchline Animation
-    document.addEventListener('DOMContentLoaded', function() {
-      const overlay = document.getElementById('punchlineOverlay');
-      const mainContent = document.getElementById('mainContent');
-      overlay.classList.add('visible');
-      setTimeout(() => {
-        overlay.classList.add('fadeout');
+      // Punchline Animation
+      document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById('punchlineOverlay');
+        const mainContent = document.getElementById('mainContent');
+        overlay.classList.add('visible');
         setTimeout(() => {
-          overlay.style.display = 'none';
-          mainContent.style.display = 'block';
-        }, 900); // match animation duration
-      }, 1800);
-    });
+          overlay.classList.add('fadeout');
+          setTimeout(() => {
+            overlay.style.display = 'none';
+            mainContent.style.display = 'block';
+          }, 900); // match animation duration
+        }, 1800);
+      });
 
-    // HERO IMAGE CAROUSEL LOGIC
-    (function(){
-      const slides = document.querySelectorAll('.hero-slide');
-      const btnLeft = document.querySelector('.hero-carousel-btn.left');
-      const btnRight = document.querySelector('.hero-carousel-btn.right');
-      const desc = document.getElementById('heroDescription');
-      let active = 0;
+      // HERO IMAGE CAROUSEL LOGIC
+      (function(){
+        const slides = document.querySelectorAll('.hero-slide');
+        const btnLeft = document.querySelector('.hero-carousel-btn.left');
+        const btnRight = document.querySelector('.hero-carousel-btn.right');
+        const desc = document.getElementById('heroDescription');
+        let active = 0;
 
-      function showSlide(idx) {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === idx);
-        });
-        desc.textContent = slides[idx].getAttribute('data-description') || '';
-      }
-      btnLeft.addEventListener('click', () => {
-        active = (active - 1 + slides.length) % slides.length;
-        showSlide(active);
-      });
-      btnRight.addEventListener('click', () => {
-        active = (active + 1) % slides.length;
-        showSlide(active);
-      });
-      // Touch swipe support for mobile
-      let startX = null;
-      document.querySelector('.hero-carousel').addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-      });
-      document.querySelector('.hero-carousel').addEventListener('touchend', e => {
-        if (startX !== null) {
-          let diff = e.changedTouches[0].clientX - startX;
-          if (Math.abs(diff) > 50) {
-            if (diff > 0) btnLeft.click();
-            else btnRight.click();
-          }
+        function showSlide(idx) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === idx);
+          });
+          desc.textContent = slides[idx].getAttribute('data-description') || '';
         }
-        startX = null;
-      });
-      // Initialize description
-      showSlide(active);
-    })();
-
-    // Carousel logic for all carousels on the page (unchanged)
-    document.querySelectorAll('.carousel-container').forEach(function(container) {
-      const items = container.querySelectorAll('.carousel-item');
-      const btnLeft = container.querySelector('.carousel-btn.left');
-      const btnRight = container.querySelector('.carousel-btn.right');
-      let activeIndex = 0;
-
-      function updateCarousel() {
-        items.forEach((item, i) => {
-          item.classList.remove('active', 'next');
-          item.style.position = 'absolute';
-          item.style.opacity = '0';
-          item.style.zIndex = '1';
-          item.style.transform = 'scale(0.7)';
-          item.style.left = '100%';
-
-          if (i === activeIndex) {
-            item.classList.add('active');
-            item.style.position = 'relative';
-            item.style.left = '0';
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-            item.style.zIndex = '10';
-          } else if (i === (activeIndex + 1) % items.length) {
-            item.classList.add('next');
-            item.style.left = '75%';
-            item.style.opacity = '0.6';
-            item.style.transform = 'scale(0.85)';
-            item.style.zIndex = '5';
-          } else if (i === (activeIndex + 2) % items.length) {
-            item.style.left = '90%';
-            item.style.opacity = '0.4';
-            item.style.transform = 'scale(0.7)';
-            item.style.zIndex = '2';
-          }
-        });
-      }
-
-      if (btnLeft && btnRight && items.length > 0) {
         btnLeft.addEventListener('click', () => {
-          activeIndex = (activeIndex - 1 + items.length) % items.length;
-          updateCarousel();
+          active = (active - 1 + slides.length) % slides.length;
+          showSlide(active);
         });
-
         btnRight.addEventListener('click', () => {
-          activeIndex = (activeIndex + 1) % items.length;
-          updateCarousel();
+          active = (active + 1) % slides.length;
+          showSlide(active);
         });
+        // Touch swipe support for mobile
+        let startX = null;
+        document.querySelector('.hero-carousel').addEventListener('touchstart', e => {
+          startX = e.touches[0].clientX;
+        });
+        document.querySelector('.hero-carousel').addEventListener('touchend', e => {
+          if (startX !== null) {
+            let diff = e.changedTouches[0].clientX - startX;
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) btnLeft.click();
+              else btnRight.click();
+            }
+          }
+          startX = null;
+        });
+        // Initialize description
+        showSlide(active);
+      })();
 
-        updateCarousel();
-      }
-    });
+      // Carousel logic for all carousels on the page (unchanged)
+      document.querySelectorAll('.carousel-container').forEach(function(container) {
+        const items = container.querySelectorAll('.carousel-item');
+        const btnLeft = container.querySelector('.carousel-btn.left');
+        const btnRight = container.querySelector('.carousel-btn.right');
+        let activeIndex = 0;
 
-    // Navbar JS
-    let lastScrollY = window.scrollY;
-    const navbarContainer = document.getElementById('navbarContainer');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < lastScrollY) {
-        navbarContainer.classList.add('visible');
-      } else {
-        if (!navbarContainer.matches(':hover')) {
-          navbarContainer.classList.remove('visible');
+        function updateCarousel() {
+          items.forEach((item, i) => {
+            item.classList.remove('active', 'next');
+            item.style.position = 'absolute';
+            item.style.opacity = '0';
+            item.style.zIndex = '1';
+            item.style.transform = 'scale(0.7)';
+            item.style.left = '100%';
+
+            if (i === activeIndex) {
+              item.classList.add('active');
+              item.style.position = 'relative';
+              item.style.left = '0';
+              item.style.opacity = '1';
+              item.style.transform = 'scale(1)';
+              item.style.zIndex = '10';
+            } else if (i === (activeIndex + 1) % items.length) {
+              item.classList.add('next');
+              item.style.left = '75%';
+              item.style.opacity = '0.6';
+              item.style.transform = 'scale(0.85)';
+              item.style.zIndex = '5';
+            } else if (i === (activeIndex + 2) % items.length) {
+              item.style.left = '90%';
+              item.style.opacity = '0.4';
+              item.style.transform = 'scale(0.7)';
+              item.style.zIndex = '2';
+            }
+          });
         }
-      }
-      lastScrollY = window.scrollY;
-    });
-    navbarContainer.classList.add('visible');
-  </script>
+
+        if (btnLeft && btnRight && items.length > 0) {
+          btnLeft.addEventListener('click', () => {
+            activeIndex = (activeIndex - 1 + items.length) % items.length;
+            updateCarousel();
+          });
+
+          btnRight.addEventListener('click', () => {
+            activeIndex = (activeIndex + 1) % items.length;
+            updateCarousel();
+          });
+
+          updateCarousel();
+        }
+      });
+
+      // Navbar JS
+      let lastScrollY = window.scrollY;
+      const navbarContainer = document.getElementById('navbarContainer');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY < lastScrollY) {
+          navbarContainer.classList.add('visible');
+        } else {
+          if (!navbarContainer.matches(':hover')) {
+            navbarContainer.classList.remove('visible');
+          }
+        }
+        lastScrollY = window.scrollY;
+      });
+      navbarContainer.classList.add('visible');
+    </script>
 </body>
 </html>
