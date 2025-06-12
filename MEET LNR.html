@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- The root of the HTML document, with English language -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lakshmi Narayan | About</title>
+  <meta charset="UTF-8" /> <!-- Specifies the character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Ensures responsive scaling on all devices -->
+  <title>Lakshmi Narayan | About</title> <!-- Title shown on browser tab -->
+  <!-- Google Fonts link for 'Inter' font family with multiple weights -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    /* ================= GENERAL LAYOUT AND TYPOGRAPHY ================== */
+    html, body { /* Reset margin/padding, set background, font, and box model for all content */
       box-sizing: border-box;
       padding: 0;
       margin: 0;
@@ -18,12 +20,12 @@
       font-family: 'Inter', Arial, sans-serif;
       font-size: 18px;
     }
-    body {
+    body { /* Set minimum height and make body fill viewport width */
       min-height: 100vh;
       width: 100vw;
       position: relative;
     }
-    .page-content {
+    .page-content { /* Container for main content, centered, responsive width */
       max-width: 1200px;
       margin: 0 auto;
       width: 100%;
@@ -31,7 +33,9 @@
       z-index: 2;
       background: transparent;
     }
-    .navbar-container {
+
+    /* ================= NAVBAR STYLES ================== */
+    .navbar-container { /* Main navbar wrapper: fixed at top, with shadow and transitions */
       position: fixed;
       top: 16px;
       left: 16px;
@@ -52,11 +56,11 @@
       margin-right: auto;
     }
     .navbar-container.visible,
-    .navbar-container:hover {
+    .navbar-container:hover { /* Show navbar on scroll up or hover */
       opacity: 1;
       pointer-events: auto;
     }
-    .navbar {
+    .navbar { /* Flex row for navbar content */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -65,30 +69,30 @@
       gap: 1rem;
       background: transparent;
     }
-    .nav-left {
+    .nav-left { /* Left part of navbar: logo and title */
       display: flex;
       align-items: center;
       gap: 0.6rem;
       flex-shrink: 0;
     }
-    .nav-left img {
+    .nav-left img { /* Logo image size */
       height: 35px;
       width: 35px;
     }
-    .lab-title {
+    .lab-title { /* Lab title next to logo */
       font-size: 0.97rem;
       color: #111;
       font-weight: 700;
       letter-spacing: 0.8px;
     }
-    .nav-right {
+    .nav-right { /* Right part: navigation links */
       display: flex;
       align-items: center;
       gap: 0.7rem;
       font-size: 0.8rem;
       margin-left: auto;
     }
-    .nav-right a {
+    .nav-right a { /* Style for navbar links */
       color: #1E3A8A;
       text-decoration: none;
       font-weight: 600;
@@ -100,18 +104,18 @@
       white-space: nowrap;
     }
     .nav-right a:hover,
-    .nav-right a:focus {
+    .nav-right a:focus { /* Highlight navbar link on hover or focus */
       background: #e4eaff;
       color: #1E3A8A;
       border-color: #1E3A8A;
       outline: none;
     }
-    .nav-right a.active {
+    .nav-right a.active { /* Special highlight for active page link */
       color: #1E3A8A;
       border-bottom: 2px solid #1E3A8A;
       background: #e4eaff;
     }
-    .nav-right svg {
+    .nav-right svg { /* Search icon style */
       width: 15px;
       height: 15px;
       fill: #888;
@@ -120,12 +124,13 @@
       opacity: 0.7;
       transition: fill 0.2s, opacity 0.2s;
     }
-    .nav-right svg:hover {
+    .nav-right svg:hover { /* Highlight search icon on hover */
       fill: #1E3A8A;
       opacity: 1;
     }
 
-    .hero-static-container {
+    /* ================= HERO SECTION STYLES ================== */
+    .hero-static-container { /* Contains hero text and image */
       width: 100%;
       margin: 130px 0 60px 0;
       display: flex;
@@ -137,7 +142,7 @@
       background: none;
       overflow: visible;
     }
-    .hero-static-text {
+    .hero-static-text { /* Left column: main intro text */
       flex: 1 1 0;
       display: flex;
       flex-direction: column;
@@ -148,7 +153,7 @@
       max-width: 600px;
       z-index: 2;
     }
-    .hero-main-headline {
+    .hero-main-headline { /* Large name headline */
       font-size: 3.3rem;
       font-weight: 800;
       letter-spacing: -1px;
@@ -159,7 +164,7 @@
       line-height: 1.1;
       white-space: nowrap;
     }
-    .hero-role {
+    .hero-role { /* Subtitle for role */
       font-size: 2rem;
       font-weight: 900;
       color: #1E3A8A;
@@ -167,7 +172,7 @@
       letter-spacing: 0.02em;
       text-align: left;
     }
-    .hero-bio {
+    .hero-bio { /* Bio paragraph under role */
       font-size: 1.11rem;
       color: #3a3a3a;
       line-height: 1.7;
@@ -176,14 +181,14 @@
       font-weight: 400;
       margin-bottom: 0;
     }
-    .hero-right-img-container {
+    .hero-right-img-container { /* Right column: hero image */
       display: flex;
       align-items: center;
       margin-left: auto;
       margin-right: 0;
       height: 100%;
     }
-    .hero-right-img {
+    .hero-right-img { /* Style for hero image */
       height: 460px;
       width: 420px;
       border-radius: 20px 0px 0px 20px;
@@ -194,25 +199,17 @@
       display: block;
       max-width: 100%;
     }
+    /* Responsive adjustments for hero image */
     @media (max-width: 1200px) {
-      .hero-right-img {
-        height: 340px;
-        max-width: 95vw;
-      }
+      .hero-right-img { height: 340px; max-width: 95vw; }
     }
     @media (max-width: 900px) {
-      .hero-right-img-container {
-        margin: 24px 0 0 0;
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .hero-right-img {
-        width: 100% !important;
-        max-width: 320px;
-        height: auto !important;
-      }
+      .hero-right-img-container { margin: 24px 0 0 0; width: 100%; justify-content: flex-start; }
+      .hero-right-img { width: 100% !important; max-width: 320px; height: auto !important; }
     }
-    .teaching-section {
+
+    /* ================= TEACHING SECTION/CAROUSEL ================== */
+    .teaching-section { /* Container for teaching section: carousel + bio */
       margin: 80px auto 20px auto;
       max-width: 1200px;
       width: 100%;
@@ -223,7 +220,7 @@
       gap: 0;
       min-height: 560px;
     }
-    .teaching-carousel-col {
+    .teaching-carousel-col { /* Left: carousel column */
       flex: 0 0 620px;
       display: flex;
       flex-direction: column;
@@ -232,7 +229,7 @@
       position: relative;
       min-width: 620px;
     }
-    .carousel-container {
+    .carousel-container { /* Carousel controls and image row */
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -240,7 +237,7 @@
       width: 100%;
       position: relative;
     }
-    .carousel-btn {
+    .carousel-btn { /* Carousel navigation buttons */
       background: linear-gradient(135deg, #d2d8fc 60%, #c0f2e6);
       border: none;
       border-radius: 50%;
@@ -264,12 +261,12 @@
     .carousel-btn.left { left: -34px; }
     .carousel-btn.right { right: -34px; }
     .carousel-btn:active { transform: translateY(-50%) scale(0.96);}
-    .carousel-btn:hover {
+    .carousel-btn:hover { /* Button hover effect */
       background: linear-gradient(135deg, #ffe9b6 60%, #c0f2e6);
       color: #1E3A8A;
       box-shadow: 0 4px 24px #9eebb7cc, 0 1.5px 8px #fff8;
     }
-    .carousel-image-container {
+    .carousel-image-container { /* Holds the carousel image and description */
       width: 620px;
       height: 540px;
       border-radius: 0px 36px 36px 0px;
@@ -281,7 +278,7 @@
       background: #fff;
       position: relative;
     }
-    .carousel-image-container img {
+    .carousel-image-container img { /* Carousel image style */
       width: 620px;
       height: 540px;
       object-fit: cover;
@@ -290,7 +287,7 @@
       border: none;
       border-radius: 36px 0 0 36px;
     }
-    .carousel-desc {
+    .carousel-desc { /* Carousel image description */
       font-size: 1.13em;
       color: #444;
       background: #fff8;
@@ -310,7 +307,7 @@
       right: 0;
       bottom: 0;
     }
-    .teaching-text-col {
+    .teaching-text-col { /* Right: teaching bio column */
       flex: 1 1 0;
       display: flex;
       flex-direction: column;
@@ -321,7 +318,7 @@
       min-width: 260px;
       max-width: 580px;
     }
-    .teaching-title {
+    .teaching-title { /* Section heading for teaching */
       font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: 1px;
@@ -331,7 +328,7 @@
       text-align: left;
       width: 100%;
     }
-    .bio-section {
+    .bio-section { /* Style for teaching bio paragraphs */
       margin-top: 10px;
       width: 100%;
       max-width: 520px;
@@ -339,33 +336,35 @@
       font-size: 1.09rem;
       color: #23232a;
     }
-    .bio-section p {
+    .bio-section p { /* Bio paragraph spacing */
       text-align: justify;
       margin-top: 0;
       margin-bottom: 0.95em;
       line-height: 1.7;
     }
-    .mentions-section {
+
+    /* ================= NEWSROOMS MENTIONS SECTION ================== */
+    .mentions-section { /* Newsroom mentions background and spacing */
       background-color: #fef8e4;
       padding: 70px 0 60px 0;
       text-align: center;
       width: 100%;
       margin-bottom: 65px;
     }
-    .mentions-section h2 {
+    .mentions-section h2 { /* Section title */
       font-size: 2rem;
       font-weight: 600;
       margin-bottom: 2.2rem;
       color: #222;
     }
-    .mention-grid {
+    .mention-grid { /* Grid of newsroom cards */
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 1.3rem;
       max-width: 900px;
       margin: 0 auto;
     }
-    .mention-card {
+    .mention-card { /* Individual newsroom card style */
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -384,29 +383,25 @@
       transition: transform 0.17s, box-shadow 0.17s, background 0.17s;
       cursor: pointer;
     }
-    .mention-card .underline-accent {
+    .mention-card .underline-accent { /* Color bar on each card */
       width: 28px;
       height: 4px;
       background-color: #8CCB69;
       border-radius: 99px;
       margin-bottom: 0.7rem;
     }
-    .mention-card:hover {
+    .mention-card:hover { /* Card hover effect */
       transform: scale(1.04);
       background: #c0f2e6;
       box-shadow: 0 2px 12px #a0c9ac33;
     }
-    @media (max-width: 600px) {
-      .mention-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-      }
-      .mention-card {
-        width: 100%;
-        min-width: 0;
-      }
+    @media (max-width: 600px) { /* Responsive: stack cards on small screens */
+      .mention-grid { grid-template-columns: 1fr; max-width: 300px; }
+      .mention-card { width: 100%; min-width: 0; }
     }
-    .work-section {
+
+    /* ================= "AT OFFICE" DROPDOWN SECTION ================== */
+    .work-section { /* Container for At Office section */
       width: 100%;
       max-width: 1200px;
       margin: 0 auto 120px auto;
@@ -416,7 +411,7 @@
       position: relative;
       z-index: 2;
     }
-    .work-title {
+    .work-title { /* Title of At Office section */
       font-size: 1.5rem;
       font-weight: 800;
       color: #23232a;
@@ -427,7 +422,7 @@
       text-align: center;
       margin-left: 0;
     }
-    .work-cards {
+    .work-cards { /* Flex row to hold dropdown cards horizontally */
       display: flex;
       flex-direction: row;
       gap: 2em;
@@ -436,23 +431,23 @@
       width: 100%;
       min-width: unset;
       padding-bottom: 1em;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Allow wrapping on small screens */
     }
-    .dropdown-card {
+    .dropdown-card { /* Each dropdown card: background, rounded, shadow */
       background: #fff;
       box-shadow: 0 2px 16px #e4e5f3a7;
       border-radius: 18px;
       margin-bottom: 0.6em;
       padding: 0;
       overflow: hidden;
-      min-width: 320px;
-      max-width: 380px;
+      min-width: 320px; /* Minimum width for each card */
+      max-width: 380px; /* Maximum width for each card */
       width: 100%;
       flex: 1 1 320px;
       display: flex;
       flex-direction: column;
     }
-    .dropdown-btn {
+    .dropdown-btn { /* Button at top of each card to toggle dropdown */
       width: 100%;
       text-align: left;
       padding: 1.1em 1.5em;
@@ -466,24 +461,24 @@
       border-bottom: 1px solid #e6e6e6;
       transition: background 0.18s;
     }
-    .dropdown-btn:hover, .dropdown-btn.active {
+    .dropdown-btn:hover, .dropdown-btn.active { /* Button hover and active state */
       background: #c0f2e6;
       color: #1E3A8A;
     }
-    .dropdown-content {
+    .dropdown-content { /* Dropdown content, hidden by default */
       display: none;
       padding: 1.1em 1.5em 1.25em 1.5em;
       background: #fff;
       animation: fadeIn 0.35s;
     }
-    .dropdown-content.show {
+    .dropdown-content.show { /* Show dropdown content when toggled */
       display: block;
     }
-    @keyframes fadeIn {
+    @keyframes fadeIn { /* Animation for dropdown appearing */
       from { opacity: 0; transform: translateY(-8px);}
       to { opacity: 1; transform: translateY(0);}
     }
-    /* Responsive: stack cards on mobile */
+    /* Responsive: stack cards on mobile screens */
     @media (max-width: 1100px) {
       .work-cards {
         flex-direction: column;
@@ -495,7 +490,7 @@
         min-width: 0;
       }
     }
-    .work-card-desc {
+    .work-card-desc { /* Style for dropdown content text */
       font-size: 1.11rem;
       color: #686878;
       margin-bottom: 1em;
@@ -504,7 +499,7 @@
       font-family: 'Inter', Arial, sans-serif;
       font-weight: 400;
     }
-    .card-awards-list {
+    .card-awards-list { /* Slightly smaller font for award/responsibility lists */
       font-size: 0.83rem;
       line-height: 1.2;
       letter-spacing: -0.4px;
@@ -513,25 +508,9 @@
       font-family: 'Inter', Arial, sans-serif;
       font-weight: 400;
     }
-    .work-link {
-      display: inline-block;
-      margin-top: auto;
-      padding: 0.6em 1.3em;
-      background: #c0f2e6;
-      color: #23232a;
-      border-radius: 13px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: background 0.18s;
-      box-shadow: 0 2px 8px #c0f2e7a6;
-      letter-spacing: 0.1em;
-    }
-    .work-link:hover {
-      background: #f8cdd5;
-      color: #23232a;
-    }
-    .cta-section {
+
+    /* ================= CTA SECTION (CALL TO ACTION) ================== */
+    .cta-section { /* Full-width section at bottom for contact CTA */
       background-color: #d5ffbd;
       padding: 80px 40px;
       display: flex;
@@ -548,14 +527,14 @@
       box-sizing: border-box;
       z-index: 10;
     }
-    .cta-left h1 {
+    .cta-left h1 { /* Large heading in CTA */
       font-size: 6rem;
       font-weight: 900;
       color: #222;
       margin: 0;
       line-height: 1;
     }
-    .cta-right {
+    .cta-right { /* Right column of CTA */
       max-width: 550px;
     }
     .cta-right p {
@@ -564,7 +543,7 @@
       margin-bottom: 24px;
       line-height: 1.6;
     }
-    .cta-email {
+    .cta-email { /* CTA email button */
       background-color: #222;
       color: #fff;
       border: none;
@@ -579,15 +558,9 @@
       transition: transform 0.2s ease;
       text-decoration: none;
     }
-    .cta-email:hover {
-      transform: scale(1.03);
-    }
-    .cta-email svg {
-      width: 20px;
-      height: 20px;
-      fill: white;
-    }
-    .cta-footer-links {
+    .cta-email:hover { transform: scale(1.03); }
+    .cta-email svg { width: 20px; height: 20px; fill: white; }
+    .cta-footer-links { /* Links under CTA */
       display: flex;
       gap: 2rem;
       font-size: 16px;
@@ -597,9 +570,7 @@
       color: #222;
       text-decoration: none;
     }
-    .cta-footer-links a:hover {
-      text-decoration: underline;
-    }
+    .cta-footer-links a:hover { text-decoration: underline; }
     @media (max-width: 1000px) {
       .cta-section {
         flex-direction: column;
@@ -608,14 +579,13 @@
         margin-left: 0;
         width: 100vw;
       }
-      .cta-left h1 {
-        font-size: 4rem;
-      }
+      .cta-left h1 { font-size: 4rem; }
       .cta-footer-links {
         justify-content: center;
         flex-wrap: wrap;
       }
     }
+    /* ================= FOOTER ================== */
     footer {
       margin-top: 40px;
       width: 100%;
@@ -628,13 +598,15 @@
   </style>
 </head>
 <body>
+  <!-- ================= NAVBAR ================== -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
-        <img src="your-logo.png" alt="Lab Logo" />
-        <div class="lab-title">DYPP</div>
+        <img src="your-logo.png" alt="Lab Logo" /> <!-- Lab logo image -->
+        <div class="lab-title">DYPP</div> <!-- Lab title text -->
       </div>
       <div class="nav-right" tabindex="0">
+        <!-- Navigation links -->
         <a href="index.html">Home</a>
         <a href="team.html">The&nbsp;Team</a>
         <a href="publications.html">Publications</a>
@@ -648,42 +620,45 @@
       </div>
     </nav>
   </div>
-  <!-- THE FIXED HERO PORTRAIT OUTSIDE PAGE CONTENT -->
- 
+  <!-- ================= MAIN PAGE CONTENT ================== -->
   <div class="page-content">
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION (INTRO) ===== -->
     <section class="hero-static-container">
       <div class="hero-static-text">
-        <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
-        <div class="hero-role">I'm a researcher and teacher</div>
+        <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div> <!-- Main headline -->
+        <div class="hero-role">I'm a researcher and teacher</div> <!-- Role subtitle -->
         <div class="hero-bio">
           I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanics of materials. I strive to bridge the gap between fundamental science and impactful engineering solutions.
         </div>
       </div>
       <div class="hero-right-img-container">
-        <img src="hero-right.jpg" alt="Lakshmi Narayan at work" class="hero-right-img" />
+        <img src="hero-right.jpg" alt="Lakshmi Narayan at work" class="hero-right-img" /> <!-- Hero image -->
       </div>
     </section>
-
-    <!-- Teaching Section With Carousel and Bio -->
+    <!-- ===== TEACHING SECTION (CAROUSEL + BIO) ===== -->
     <section class="teaching-section">
       <div class="teaching-carousel-col">
         <div class="carousel-container">
+          <!-- Carousel left button -->
           <button class="carousel-btn left" onclick="prevSlide()" aria-label="Previous image">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M20 24L12 16L20 8" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <div class="carousel-image-container">
+            <!-- Carousel image -->
             <img id="carousel-img" src="teaching1.jpg" alt="Teaching Image 1">
+            <!-- Carousel description -->
             <div class="carousel-desc" id="carousel-desc">Teaching moment 1: Demo description here.</div>
           </div>
+          <!-- Carousel right button -->
           <button class="carousel-btn right" onclick="nextSlide()" aria-label="Next image">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M12 8L20 16L12 24" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
       </div>
       <div class="teaching-text-col">
-        <div class="teaching-title">Teaching</div>
+        <div class="teaching-title">Teaching</div> <!-- Section title -->
         <section class="bio-section">
+          <!-- Short teaching bio paragraphs -->
           <p>
             I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on empowering others to do their best work.
           </p>
@@ -693,11 +668,11 @@
         </section>
       </div>
     </section>
-
-    <!-- FROM THE NEWSROOMS SECTION -->
+    <!-- ===== FROM THE NEWSROOMS SECTION ===== -->
     <section class="mentions-section">
       <h2>From the newsrooms</h2>
       <div class="mention-grid">
+        <!-- Each card links to a newsroom article -->
         <a href="https://example.com/1" class="mention-card">
           <div class="underline-accent"></div>
           Nature India
@@ -720,11 +695,11 @@
         </a>
       </div>
     </section>
-
-    <!-- At office Section (DROPDOWNS HORIZONTAL) -->
+    <!-- ===== AT OFFICE SECTION: HORIZONTAL DROPDOWNS ===== -->
     <section class="work-section">
       <div class="work-title">At office</div>
       <div class="work-cards">
+        <!-- Each dropdown card contains a button and hidden content -->
         <div class="dropdown-card">
           <button class="dropdown-btn">Awards & Honors</button>
           <div class="dropdown-content">
@@ -789,49 +764,53 @@
       </div>
     </section>
   </div>
-
-  <!-- CTA SECTION (full-bleed, outside .page-content) -->
+  <!-- ===== CALL TO ACTION SECTION ===== -->
   <section class="cta-section">
     <div class="cta-left">
-      <h1>Shall<br>we?</h1>
+      <h1>Shall<br>we?</h1> <!-- Large heading for CTA -->
     </div>
     <div class="cta-right">
       <p>
         Based in France, I work with English and French–speaking teams to create accessible digital experiences and adopt inclusive practices. Want to work together?
       </p>
       <a href="mailto:youremail@example.com" class="cta-email">
+        <!-- Email icon SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M502.3 190.8L320.8 9.4c-12.5-12.5-32.8-12.5-45.3 0L9.4 275.5c-12.5 12.5-12.5 32.8 0 45.3l182.1 182.1c12.5 12.5 32.8 12.5 45.3 0l273.5-273.5c12.5-12.5 12.5-32.8 0-45.3z"/>
         </svg>
         Email me
       </a>
       <div class="cta-footer-links">
+        <!-- Social links -->
         <a href="#">Google Scholar</a>
         <a href="#">LinkedIn</a>
         <a href="#">Medium</a>
       </div>
     </div>
   </section>
-
+  <!-- ===== FOOTER ===== -->
   <footer>
     &copy; 2025 Lakshmi Narayan &middot; Designed with love for usability
   </footer>
+  <!-- ===================== JAVASCRIPT SECTION ===================== -->
   <script>
-    // NAVBAR show on hover and on scroll up (original)
-    let lastScrollY = window.scrollY;
-    const navbarContainer = document.getElementById('navbarContainer');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY < lastScrollY) {
-        navbarContainer.classList.add('visible');
-      } else {
-        if (!navbarContainer.matches(':hover')) {
+    // NAVBAR: Show on hover or scroll up
+    let lastScrollY = window.scrollY; // Track last scroll position
+    const navbarContainer = document.getElementById('navbarContainer'); // Navbar element
+    window.addEventListener('scroll', () => { // On scroll event
+      if (window.scrollY < lastScrollY) { // If scrolling up
+        navbarContainer.classList.add('visible'); // Show navbar
+      } else { // If scrolling down
+        if (!navbarContainer.matches(':hover')) { // Hide if not hovered
           navbarContainer.classList.remove('visible');
         }
       }
-      lastScrollY = window.scrollY;
+      lastScrollY = window.scrollY; // Update last scroll position
     });
-    navbarContainer.classList.add('visible');
-    // Carousel for Teaching section
+    navbarContainer.classList.add('visible'); // Show navbar by default
+
+    // ===================== TEACHING CAROUSEL FUNCTIONALITY =====================
+    // List of carousel images and descriptions
     const carouselImages = [
       { src: 'teaching1.jpg', desc: 'Teaching moment 1: Demo description here.' },
       { src: 'teaching2.jpg', desc: 'Teaching moment 2: Demo description here.' },
@@ -844,34 +823,39 @@
       { src: 'teaching9.jpg', desc: 'Teaching moment 9: Demo description here.' },
       { src: 'teaching10.jpg', desc: 'Teaching moment 10: Demo description here.' }
     ];
-    let currentIndex = 0;
+    let currentIndex = 0; // Index of current carousel image
+    // Update carousel image and description to match current index
     function updateCarousel() {
       document.getElementById('carousel-img').src = carouselImages[currentIndex].src;
       document.getElementById('carousel-img').alt = 'Teaching Image ' + (currentIndex + 1);
       document.getElementById('carousel-desc').textContent = carouselImages[currentIndex].desc;
     }
+    // Move to previous carousel image
     function prevSlide() {
       currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
       updateCarousel();
     }
+    // Move to next carousel image
     function nextSlide() {
       currentIndex = (currentIndex + 1) % carouselImages.length;
       updateCarousel();
     }
-    updateCarousel();
+    updateCarousel(); // Initialize carousel to first image
 
-    // DROPDOWN JS for "At Office" section
+    // ===================== DROPDOWN FUNCTIONALITY FOR OFFICE SECTION =====================
+    // Add click listeners to all dropdown buttons
     document.querySelectorAll('.dropdown-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        // Close all dropdowns except this one
+        // Close all dropdowns except the one clicked
         document.querySelectorAll('.dropdown-content').forEach(function(cont) {
           if (cont !== btn.nextElementSibling) cont.classList.remove('show');
         });
+        // Remove 'active' class from other buttons
         document.querySelectorAll('.dropdown-btn').forEach(function(otherBtn) {
           if (otherBtn !== btn) otherBtn.classList.remove('active');
         });
 
-        // Toggle this dropdown
+        // Toggle this dropdown open/closed
         btn.classList.toggle('active');
         btn.nextElementSibling.classList.toggle('show');
       });
