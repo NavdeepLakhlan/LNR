@@ -55,14 +55,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: background 0.2s, color 0.2s, border-color 0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--navbar-link-hover); border-bottom: 2px solid var(--navbar-link-hover); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 27px; width: 27px; } }
-
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px; } .lab-title { font-size: 0.84rem;} .nav-right { gap: 0.4rem; font-size: 0.75rem;} }
     /* Remove .value-block styles, apply section padding directly */
     .plain-section {
       width: 100vw;
@@ -187,6 +186,59 @@
       box-shadow: 0 -1px 8px #c2d3ff33;
       max-width: 1200px;
     }
+    /* Accordion styles */
+    .accordion-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      font-family: 'Roboto', sans-serif;
+    }
+    .accordion-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #0f1e36;
+    }
+    .accordion-title em {
+      font-style: italic;
+      color: #1b3b89;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+    .accordion-button {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1rem;
+      cursor: pointer;
+      color: #1e3a8a;
+      position: relative;
+    }
+    .accordion-button::after {
+      content: '+';
+      position: absolute;
+      right: 1rem;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .accordion-item.active .accordion-button::after {
+      content: '−';
+    }
+    .accordion-content {
+      display: none;
+      padding: 0 1rem 1.2rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -235,8 +287,29 @@
       <div class="text-container">
         <div class="meta-label">② What we offer</div>
         <h2>Opportunities for every student</h2>
-        <p>From world-class faculty to hands-on research, we provide resources and support to help you reach your goals and make an impact.</p>
-        <a href="#" class="cta">Explore programs</a>
+        <!-- DROPDOWN REPLACEMENT STARTS -->
+        <div class="accordion-container">
+          <h2 class="accordion-title">Learn more about <strong>how to</strong> <em>apply!</em></h2>
+          <div class="accordion-item">
+            <button class="accordion-button">Postdoctoral Scholars</button>
+            <div class="accordion-content">
+              We’re always open to working with highly motivated postdocs. If you're interested in fatigue, fracture, or creep in materials science, reach out to discuss project ideas or external fellowships.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Graduate Students</button>
+            <div class="accordion-content">
+              Interested in pursuing an M.Tech or Ph.D. with us? We welcome curious minds ready to dive into structural materials research. See the <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">IIT Delhi Admissions</a> page for official application info.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Undergraduate Students</button>
+            <div class="accordion-content">
+              Students from IIT Delhi can apply for short-term research or summer projects. If you’re eager to learn and explore materials science research, email us to get started!
+            </div>
+          </div>
+        </div>
+        <!-- DROPDOWN REPLACEMENT ENDS -->
       </div>
     </div>
   </section>
@@ -279,7 +352,7 @@
     <div class="content">
       <div class="image-container">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d7%3A0x2b9991e4cc8c1a5c!2sIIT%20Delhi!5e0!3m2!1sen!2sin!4v1683995978236!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.913698896032!2d77.19168455812803!3d28.545047453862085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce25f1fc0a6d7:0xb6e2b67b91c3e4b9!2sIIT%20Delhi!5e0!3m2!1sen!2sin!4v1683127891501!5m2!1sen!2sin" 
           width="100%" 
           height="100%" 
           style="border:0;min-height:265px;" 
@@ -332,6 +405,13 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
+    // Accordion dropdown
+    document.querySelectorAll('.accordion-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
