@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Research | Dhātu-yantra-pravartana Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
@@ -267,6 +268,86 @@
     }
     /* --- End Hero Section Styles --- */
 
+    /* --- Three Cards Styles --- */
+    .section-heading {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #a88afc;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: #f8f8f8;
+      width: 320px;
+      padding: 2rem 1.2rem 2.5rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      z-index: 1;
+      font-family: 'Inter', sans-serif;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #ff4d4d;
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+    .card:nth-child(1)::before {
+      background-image: url('fatigue.jpg'); /* replace with real image path */
+    }
+    .card:nth-child(2)::before {
+      background-image: url('fracture.jpg');
+    }
+    .card:nth-child(3)::before {
+      background-image: url('creep.jpg');
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 80px;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+      letter-spacing: 0.5px;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: #333;
+      line-height: 1.6;
+      text-align: left;
+    }
+    @media (max-width: 1000px) {
+      .cards-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+      }
+    }
+    /* --- End Three Cards Styles --- */
+
     .section {
       margin-bottom: 2.1rem;
       padding: 1.7rem 2.2rem 1.7rem 2.2rem;
@@ -451,6 +532,30 @@
     </div>
   </section>
   <!-- Hero Section End -->
+
+  <!-- Three Cards Section Start -->
+  <h2 class="section-heading">Themes in our work:</h2>
+  <div class="cards-container">
+    <div class="card">
+      <h3>FATIGUE</h3>
+      <p>
+        We investigate the fatigue behavior of metallic materials under cyclic loading conditions. Our research focuses on understanding crack initiation and propagation mechanisms, especially in additively manufactured alloys, to enhance life prediction and structural integrity.
+      </p>
+    </div>
+    <div class="card">
+      <h3>FRACTURE</h3>
+      <p>
+        Fracture mechanics plays a key role in evaluating material performance. We study how defects, microstructure, and loading conditions influence crack growth and catastrophic failure, aiming to develop materials with improved toughness and damage tolerance.
+      </p>
+    </div>
+    <div class="card">
+      <h3>CREEP</h3>
+      <p>
+        Our work explores time-dependent deformation and failure under sustained stress and high temperature. We analyze creep mechanisms in engineering alloys to support long-term reliability in applications like aerospace, power plants, and structural components.
+      </p>
+    </div>
+  </div>
+  <!-- Three Cards Section End -->
 
   <main>
     <div class="section">
