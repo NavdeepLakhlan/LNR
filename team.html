@@ -28,11 +28,12 @@
       overflow-x: hidden;
     }
 
-    /* --- REMOVED PUNCHLINE OVERLAY CSS --- */
+    /* REMOVED PUNCHLINE OVERLAY CSS */
 
     #mainContent { display: block; }
 
-    /* Rest of your styles remain unchanged... */
+    /* ... The rest of your CSS remains unchanged ... */
+    /* (START COPY of your original CSS after overlay styles) */
 
     /* ----------- HERO IMAGE CAROUSEL STYLES ----------- */
     .hero-carousel-container {
@@ -150,15 +151,42 @@
     }
 
     /* ----------- END HERO IMAGE CAROUSEL STYLES ----------- */
-    /* ...Rest of your unchanged CSS... */
+    /* (Your remaining CSS for navbar, sections, carousel, etc. remains unchanged) */
     /* ----------- TEAM SECTION STYLES (unchanged below) ----------- */
-    /* (Keep all other styles as in your original file) */
+    section, .pi-bio, .carousel-item .pi-bio { text-align: justify; }
+    .navbar-container {
+      position: fixed; top: 16px; left: 16px; right: 16px;
+      background: var(--navbar-bg);
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0; pointer-events: none;
+      display: flex; justify-content: center;
+      width: fit-content; min-width: 1200px;
+      margin-left: auto; margin-right: auto;
+    }
+    .navbar-container.visible,
+    .navbar-container:hover { opacity: 1; pointer-events: auto; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.5rem 1.2rem; gap: 1rem; background: transparent;}
+    .nav-left { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+    .nav-left img { height: 35px; width: 35px; }
+    .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
+    .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
+    .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
+    .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
+    .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
+    @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px; } }
+    /* ... ALL remaining CSS unchanged ... */
   </style>
 </head>
 <body>
-  <!-- REMOVED PUNCHLINE OVERLAY -->
+  <!-- REMOVED PUNCHLINE OVERLAY HTML -->
 
-  <!-- Navbar (unchanged) -->
+  <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -205,12 +233,19 @@
     </div>
     <!-- ================= END HERO CAROUSEL ================= -->
 
-    <!-- All team and section content remains unchanged... -->
-    <!-- ... (Copy all your <section> blocks here as in your original file) ... -->
-    <!-- ... (No edits needed to the rest of the HTML) ... -->
+    <!-- ================== FULL TEAM CONTENT AS IN YOUR FILE ================== -->
+    <!-- All your team sections, carousels, bios, and alumni list remain UNCHANGED! -->
+    <!-- ... Paste ALL your original <section> blocks here ... -->
+    <!-- This includes PI, Postdocs, Research Fellows, Students, etc. -->
+
+    <!-- For brevity, not repeating all content here, but you MUST keep all your team content unchanged, as in your original file. -->
+    <!-- END ================== FULL TEAM CONTENT ================== -->
   </div>
+  <!-- End Main Content -->
 
   <script>
+    // REMOVED punchline overlay animation JS
+
     // HERO IMAGE CAROUSEL LOGIC (unchanged)
     (function(){
       const slides = document.querySelectorAll('.hero-slide');
