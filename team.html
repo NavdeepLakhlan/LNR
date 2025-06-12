@@ -27,7 +27,6 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-
     /* Punchline overlay with zoom-out fade 
     #punchlineOverlay {
       position: fixed;
@@ -457,10 +456,10 @@
       color:#1E3A8A;
     }
 
-    /* ----------- MEET THE TEAM SECTION (unique) ----------- */
+    /* ----------- MEET THE TEAM SECTION (unique, bigger, no radius) ----------- */
     .team-section {
       padding: 3rem 0;
-      background-color: #d0e7f7;
+      background: transparent;
       position: relative;
       text-align: center;
     }
@@ -483,19 +482,21 @@
       display: none;
     }
     .team-card {
-      flex: 0 0 276px;
+      flex: 0 0 340px;
       background: #fff;
-      border-radius: 12px;
+      border-radius: 0;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      border: 1.5px solid #dbeafe;
     }
     .team-card img {
       width: 100%;
-      height: 355px;
+      height: 440px;
       object-fit: cover;
+      border-radius: 0;
     }
     .team-card-content {
       padding: 1.2rem;
@@ -503,13 +504,13 @@
       flex: 1;
     }
     .team-card-content h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: #0d1b2a;
       margin: 0 0 0.3rem;
     }
     .team-card-content h4 {
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: #637087;
       letter-spacing: 1px;
@@ -517,7 +518,7 @@
       margin: 0 0 0.8rem;
     }
     .team-card-content p {
-      font-size: 0.87rem;
+      font-size: 1.05rem;
       font-weight: 400;
       color: #333333;
       line-height: 1.5;
@@ -545,6 +546,16 @@
     }
     .team-scroll-right {
       right: 1rem;
+    }
+    @media (max-width: 800px) {
+      .team-card {
+        flex: 0 0 80vw;
+      }
+      .team-card img {
+        height: 48vw;
+        min-height: 240px;
+        max-height: 360px;
+      }
     }
   </style>
 </head>
@@ -734,7 +745,7 @@
       </ul>
     </section>
 
-    <!-- Team Section (MEET THE TEAM, unique classes) -->
+    <!-- Team Section (MEET THE TEAM, unique classes, 7 cards, no background, bigger, no radius) -->
     <section class="team-section">
       <h2>Meet the Team</h2>
       <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
@@ -763,14 +774,45 @@
             <p>Narmeen studies neural circuits in insects to investigate how stress influences behavior and experiences.</p>
           </div>
         </div>
-        <!-- Add more team cards below as needed -->
+        <div class="team-card">
+          <img src="alex.jpg" alt="Alex Johnson">
+          <div class="team-card-content">
+            <h3>Alex Johnson</h3>
+            <h4>Lab Technician</h4>
+            <p>Alex supports daily lab operations and assists with experiments across all ongoing research projects.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="lucy.jpg" alt="Lucy Chen">
+          <div class="team-card-content">
+            <h3>Lucy Chen</h3>
+            <h4>Graduate Researcher</h4>
+            <p>Lucy is investigating sustainable energy storage solutions and advanced electrode materials.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="mohit.jpg" alt="Mohit Singh">
+          <div class="team-card-content">
+            <h3>Mohit Singh</h3>
+            <h4>Data Analyst</h4>
+            <p>Mohit handles data processing, visualization, and statistical analysis for the group’s experiments.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="fatima.jpg" alt="Fatima Rahman">
+          <div class="team-card-content">
+            <h3>Fatima Rahman</h3>
+            <h4>Junior Researcher</h4>
+            <p>Fatima contributes to literature reviews and supports fieldwork for the lab’s environmental projects.</p>
+          </div>
+        </div>
       </div>
       <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
     </section>
     <script>
       const teamCarousel = document.getElementById("teamCarousel");
       function scrollTeam(direction) {
-        const cardWidth = 276 + 16; // width + margin gap
+        const cardWidth = 340 + 16; // width + margin gap
         teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
       }
     </script>
