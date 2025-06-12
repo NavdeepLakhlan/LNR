@@ -1,344 +1,509 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="">
-    <meta charset="utf-8" />
-    <title>Research | Dhātu-yantra-pravartana Lab</title>
-    <!-- Favicon and SEO Meta -->
-    <link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/6577417dd1138c01e63a752b/438e491a-887d-49fb-9198-b22e90746c57/favicon.ico">
-    <meta name="description" content="Current projects, grants, consultancies, collaborations, media, and research infrastructure at Dhātu-yantra-pravartana Lab.">
-    <!-- Preconnects and Fonts (from Res.html) -->
-    <link rel="preconnect" href="https://images.squarespace-cdn.com">
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
-    <!-- Squarespace/Typekit Example (keep or replace with your own font) -->
-    <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1749578172414-BR2HRM5QY85P3RNH0UVV/static.css">
-    <!-- Custom Lab Font (optional, remove if not used) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        background-color: #f6f7fa;
-        color: #222;
-        font-size: 18px;
-        margin: 0;
-        padding: 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research | Dhātu-yantra-pravartana Lab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f6f7fa;
+      color: #222;
+      font-size: 18px;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+    /* --- Navbar Styles (from team.html) --- */
+    .navbar-container {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
+      background: transparent;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+    .nav-left img {
+      height: 35px;
+      width: 35px;
+    }
+    .lab-title {
+      font-size: 0.97rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+    .nav-right a {
+      color: #1E3A8A;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-right a:hover,
+    .nav-right a:focus {
+      background: #e4eaff;
+      color: #1E3A8A;
+      border-color: #1E3A8A;
+      outline: none;
+    }
+    .nav-right a.active {
+      color: #1E3A8A;
+      border-bottom: 2px solid #1E3A8A;
+      background: #e4eaff;
+    }
+    .nav-right svg {
+      width: 15px;
+      height: 15px;
+      fill: #888;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #1E3A8A;
+      opacity: 1;
+    }
+    @media (max-width: 1300px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
       }
-      main {
-        max-width: 1200px;
-        margin: 0 auto 3em auto;
-        min-height: 100vh;
-        font-size: 1.09rem;
-        padding: 0;
+    }
+    @media (max-width: 900px) {
+      .navbar-container {
+        min-width: 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
       }
+      .navbar {
+        gap: 0.2rem;
+        padding: 0.3rem 0.3rem;
+      }
+      .nav-left img {
+        height: 22px;
+        width: 22px;
+      }
+      .lab-title {
+        font-size: 0.85rem;
+      }
+      .nav-right {
+        gap: 0.3rem;
+        font-size: 0.7rem;
+      }
+      .nav-right a {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        border-radius: 4px;
+      }
+    }
+    /* --- End Navbar Styles --- */
+
+    .research-header {
+      color: #fff;
+      background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
+      border-radius: 22px;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 1.5px;
+      padding: 2.3rem 2rem 2.1rem 2rem;
+      box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
+      margin: 7.5rem auto 2.2rem auto;
+      width: 680px;
+      max-width: 95vw;
+      text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
+      border: 4px solid #1E3A8A;
+      display: block;
+    }
+    .research-header-desc {
+      color: #1E3A8A;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.11rem;
+      margin: 0 auto 2.2rem auto;
+      max-width: 680px;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      box-shadow: 0 2px 14px rgba(30,58,138,0.07);
+    }
+    main {
+      padding: 0;
+      max-width: 1200px;
+      margin: 0 auto 3em auto;
+      min-height: 100vh;
+      font-size: 1.09rem;
+    }
+    h1, h2 {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #1E3A8A;
+      margin-top: 1.5rem;
+      margin-bottom: 0.7rem;
+      text-shadow: none;
+      display: block;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 0;
+      margin-bottom: 1.7rem;
+      border-bottom: none;
+      padding-bottom: 0;
+      width: 100%;
+      text-transform: none;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.45rem;
+      border-bottom: none;
+      width: 100%;
+      padding-bottom: 0.1rem;
+      text-transform: none;
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    .section {
+      margin-bottom: 2.1rem;
+      padding: 1.7rem 2.2rem 1.7rem 2.2rem;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(200,200,200,0.13);
+      border: none;
+      animation: fadeinup 0.8s cubic-bezier(.2,1,.22,1);
+    }
+    @keyframes fadeinup {
+      from { opacity: 0; transform: translateY(35px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    ul, .collab-list, .consult-list, .projects-list, .grants-list {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .projects-list, .grants-list, .consult-list, .collab-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+    .projects-list li, .grants-list li, .consult-list li, .collab-list li {
+      background: #f6f7fa;
+      padding: 0.85rem 1.3rem;
+      border-radius: 7px;
+      box-shadow: 0 1px 6px 0 #c2d3ff33;
+      font-size: 1.04rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      position: relative;
+      border-left: 5px solid #1E3A8A;
+    }
+    .grants-subtitle {
+      color: #1E3A8A;
+      margin-top: 1.3rem;
+      margin-bottom: 0.45rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+    }
+    .gallery, .videos, .facilities-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      min-height: 35px;
+      margin-top: 0.7rem;
+      justify-content: flex-start;
+    }
+    .gallery img, .facilities-gallery img, .facility-card img {
+      border-radius: 8px;
+      box-shadow: 0 1px 10px #c2d3ff33;
+      max-width: 200px;
+      max-height: 120px;
+      width: 200px;
+      height: 120px;
+      border: 2.5px solid #1E3A8A22;
+      object-fit: cover;
+      background: #f6f7fa;
+      display: block;
+    }
+    .gallery-placeholder, .videos-placeholder, .facilities-placeholder {
+      color: #445;
+      font-style: italic;
+      font-size: 1.07rem;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.7rem 1.1rem;
+      box-shadow: 0 1px 5px #c2d3ff33;
+    }
+    .videos iframe {
+      border-radius: 8px;
+      box-shadow: 0 1px 12px #c2d3ff33;
+      width: 320px;
+      height: 180px;
+      border: 2.5px solid #1E3A8A22;
+      background: #f6f7fa;
+    }
+    .facilities-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 0.7rem;
+    }
+    .facility-card {
+      background: #f6f7fa;
+      border-radius: 8px;
+      box-shadow: 0 1.5px 8px #c2d3ff44;
+      padding: 1rem 1rem 1.2rem 1rem;
+      min-width: 170px;
+      flex: 1 1 210px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0.7rem;
+      font-size: 1.02rem;
+      border-left: 5px solid #1E3A8A22;
+    }
+    .facility-card h3 {
+      color: #1E3A8A;
+      font-size: 1.13rem;
+      margin: 0 0 0.4rem 0;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.37rem;
+      letter-spacing: 0.7px;
+    }
+    .facility-placeholder {
+      color: #445;
+      font-style: italic;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      margin-top: 0.2rem;
+      font-size: 0.99rem;
+    }
+    @media (max-width: 900px) {
       .research-header {
-        color: #fff;
-        background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
-        border-radius: 22px;
-        font-size: 2rem;
-        font-weight: 800;
-        text-align: center;
-        letter-spacing: 1.5px;
-        padding: 2.3rem 2rem 2.1rem 2rem;
-        box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
-        margin: 7.5rem auto 2.2rem auto;
-        width: 680px;
-        max-width: 95vw;
-        text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
-        border: 4px solid #1E3A8A;
-        display: block;
+        font-size: 1.1rem;
+        padding: 1.3rem 0.4rem 1.1rem 0.4rem;
+        min-width: unset;
+        width: 99vw;
       }
       .research-header-desc {
-        color: #1E3A8A;
-        background: #e4eaff;
-        border-radius: 8px;
-        padding: 0.8rem 1.2rem;
-        font-size: 1.11rem;
-        margin: 0 auto 2.2rem auto;
-        max-width: 680px;
-        text-align: center;
-        font-weight: 500;
-        letter-spacing: 0.3px;
-        box-shadow: 0 2px 14px rgba(30,58,138,0.07);
+        font-size: 0.98rem;
+        padding: 0.7rem 0.4rem;
+        max-width: 99vw;
       }
-      .section {
-        margin-bottom: 2.1rem;
-        padding: 1.7rem 2.2rem 1.7rem 2.2rem;
-        border-radius: 14px;
-        background: #fff;
-        box-shadow: 0 0 20px rgba(200,200,200,0.13);
-        border: none;
-        animation: fadeinup 0.8s cubic-bezier(.2,1,.22,1);
-      }
-      @keyframes fadeinup {
-        from { opacity: 0; transform: translateY(35px);}
-        to { opacity: 1; transform: translateY(0);}
-      }
-      h1, h2 {
-        font-weight: 700;
-        letter-spacing: 1px;
-        color: #1E3A8A;
-        margin-top: 1.5rem;
-        margin-bottom: 0.7rem;
-        text-shadow: none;
-        display: block;
-        align-items: center;
-        gap: 0.45rem;
-        font-family: 'Roboto', sans-serif;
-      }
-      h1 {
-        font-size: 2.2rem;
-        margin-top: 0;
-        margin-bottom: 1.7rem;
-        border-bottom: none;
-        padding-bottom: 0;
-        width: 100%;
-        text-transform: none;
-        letter-spacing: 1px;
-        text-align: center;
-      }
-      h2 {
-        font-size: 1.45rem;
-        border-bottom: none;
-        width: 100%;
-        padding-bottom: 0.1rem;
-        text-transform: none;
-        margin-bottom: 1.2rem;
-        text-align: left;
-      }
-      ul, .collab-list, .consult-list, .projects-list, .grants-list {
-        margin: 0.5rem 0 0 0;
-        padding: 0;
-        list-style: none;
-      }
-      .projects-list, .grants-list, .consult-list, .collab-list {
-        display: grid;
-        gap: 0.7rem;
-      }
-      .projects-list li, .grants-list li, .consult-list li, .collab-list li {
-        background: #f6f7fa;
-        padding: 0.85rem 1.3rem;
-        border-radius: 7px;
-        box-shadow: 0 1px 6px 0 #c2d3ff33;
-        font-size: 1.04rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 0.7rem;
-        position: relative;
-        border-left: 5px solid #1E3A8A;
-      }
-      .grants-subtitle {
-        color: #1E3A8A;
-        margin-top: 1.3rem;
-        margin-bottom: 0.45rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        letter-spacing: 0.1px;
-      }
-      .gallery, .videos, .facilities-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.2rem;
-        min-height: 35px;
-        margin-top: 0.7rem;
-        justify-content: flex-start;
-      }
-      .gallery img, .facilities-gallery img, .facility-card img {
-        border-radius: 8px;
-        box-shadow: 0 1px 10px #c2d3ff33;
-        max-width: 200px;
-        max-height: 120px;
-        width: 200px;
-        height: 120px;
-        border: 2.5px solid #1E3A8A22;
-        object-fit: cover;
-        background: #f6f7fa;
-        display: block;
-      }
-      .videos iframe {
-        border-radius: 8px;
-        box-shadow: 0 1px 12px #c2d3ff33;
-        width: 320px;
-        height: 180px;
-        border: 2.5px solid #1E3A8A22;
-        background: #f6f7fa;
-      }
-      .facilities-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        margin-top: 0.7rem;
-      }
-      .facility-card {
-        background: #f6f7fa;
-        border-radius: 8px;
-        box-shadow: 0 1.5px 8px #c2d3ff44;
-        padding: 1rem 1rem 1.2rem 1rem;
-        min-width: 170px;
-        flex: 1 1 210px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 0.7rem;
-        font-size: 1.02rem;
-        border-left: 5px solid #1E3A8A22;
-      }
-      .facility-card h3 {
-        color: #1E3A8A;
-        font-size: 1.13rem;
-        margin: 0 0 0.4rem 0;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 0.37rem;
-        letter-spacing: 0.7px;
-      }
-      footer {
-        background:#e4eaff; 
-        padding:1.4rem; 
-        text-align:center; 
-        color:#1E3A8A; 
-        font-size:0.99rem;
-        border-radius: 14px 14px 0 0;
-        margin: 0 auto 0 auto;
-        box-shadow: 0 -1px 8px #c2d3ff33;
-        max-width: 1200px;
-      }
-      @media (max-width: 900px) {
-        .research-header {
-          font-size: 1.1rem;
-          padding: 1.3rem 0.4rem 1.1rem 0.4rem;
-          min-width: unset;
-          width: 99vw;
-        }
-        .research-header-desc {
-          font-size: 0.98rem;
-          padding: 0.7rem 0.4rem;
-          max-width: 99vw;
-        }
-        .section { padding: 0.7rem;}
-        h1 { font-size: 1.1rem;}
-        h2 { font-size: 1rem;}
-        .facility-card { min-width: 100px; padding: 0.5rem;}
-        .gallery img, .facilities-gallery img, .facility-card img { max-width: 100px; max-height: 60px; width: 100px; height: 60px;}
-        .videos iframe { width: 180px; height: 100px;}
-        main {padding: 0;}
-      }
-    </style>
-  </head>
-  <body>
-    <!-- HEADER/NAVIGATION (Res.html style, adjust as needed for your lab) -->
-    <header>
-      <div style="background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.08);padding:1.5rem 0 1.5rem 0;display:flex;align-items:center;justify-content:center;">
-        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;">
-          <img src="your-logo.png" alt="Lab Logo" style="height:40px;width:40px;margin-right:1rem;">
-          <span style="font-size:1.25rem;font-weight:700;letter-spacing:1.2px;color:#1E3A8A;">Dhātu-yantra-pravartana Lab</span>
-        </a>
-        <nav style="margin-left:auto;display:flex;gap:1.5rem;">
-          <a href="index.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">Home</a>
-          <a href="team.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">The&nbsp;Team</a>
-          <a href="Gallary.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">Gallary</a>
-          <a href="publications.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">Publications</a>
-          <a href="research.html" style="color:#fff;background:#1E3A8A;padding:0.3rem 1rem;border-radius:6px;font-weight:700;text-decoration:none;">Research</a>
-          <a href="MEET LNR.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">MEET&nbsp;LNR</a>
-          <a href="news.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">Latest</a>
-          <a href="prospectivestudents.html" style="color:#1E3A8A;text-decoration:none;font-weight:600;">Prospective&nbsp;Students</a>
-        </nav>
+      .section { padding: 0.7rem;}
+      h1 { font-size: 1.1rem;}
+      h2 { font-size: 1rem;}
+      .facility-card { min-width: 100px; padding: 0.5rem;}
+      .gallery img, .facilities-gallery img, .facility-card img { max-width: 100px; max-height: 60px; width: 100px; height: 60px;}
+      .videos iframe { width: 180px; height: 100px;}
+      main {padding: 0;}
+    }
+    footer {
+      background:#e4eaff; 
+      padding:1.4rem; 
+      text-align:center; 
+      color:#1E3A8A; 
+      font-size:0.99rem;
+      border-radius: 14px 14px 0 0;
+      margin: 0 auto 0 auto;
+      box-shadow: 0 -1px 8px #c2d3ff33;
+      max-width: 1200px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (from team.html) -->
+  <div class="navbar-container" id="navbarContainer">
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="your-logo.png" alt="Lab Logo" />
+        <div class="lab-title">DYPP</div>
       </div>
-    </header>
+      <div class="nav-right" tabindex="0">
+        <a href="index.html">Home</a>
+        <a href="team.html">The&nbsp;Team</a>
+        <a href="Gallary.html">Gallary</a>
+        <a href="publications.html">Publications</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="MEET LNR.html">MEET&nbsp;LNR</a>
+        <a href="news.html">Latest</a>
+        <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
+        <!-- Search icon (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
+        </svg>
+      </div>
+    </nav>
+  </div>
+  <!-- End Navbar -->
 
-    <!-- MAIN CONTENT (from your original research.html) -->
-    <div class="research-header">
-      Research at Dhātu-yantra-pravartana Lab
+  <div class="research-header">
+    Research at Dhātu-yantra-pravartana Lab
+  </div>
+  <div class="research-header-desc">
+    Current projects, grants, consultancies, collaborations, media, and research infrastructure.
+  </div>
+
+  <main>
+    <div class="section">
+      <h2>Current Research Projects</h2>
+      <ul class="projects-list">
+        <li>Fracture and Fatigue of BMGs and BMG composites</li>
+        <li>Structure-Property correlations in 3D printed Maraging steels</li>
+        <li>Mechanical behaviour of Heusler alloys</li>
+        <li>Fracture of Mg alloys (with Prof. Jayant Jain)</li>
+        <li>Mechanical behavior of 3D printed high entropy alloys</li>
+        <li>Fracture and fatigue of reactor pressure vessel steels</li>
+        <li>Mechanical behaviour of SLM Al-Sc alloys</li>
+        <li>Fracture and Fatigue of 3D printed Ti alloys</li>
+      </ul>
     </div>
-    <div class="research-header-desc">
-      Current projects, grants, consultancies, collaborations, media, and research infrastructure.
+    <div class="section">
+      <h2>Research Grants (as PI)</h2>
+      <ul class="grants-list">
+        <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing).</li>
+        <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology, (2024- Ongoing).</li>
+        <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 120 Lakh, DST SERB (2024-2027).</li>
+        <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
+        <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
+        <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
+      </ul>
+      <div class="grants-subtitle">Research Grants (as co-PI)</div>
+      <ul class="grants-list">
+        <li>"Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
+        <li>"Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
+      </ul>
     </div>
-    <main>
-      <div class="section">
-        <h2>Current Research Projects</h2>
-        <ul class="projects-list">
-          <li>Fracture and Fatigue of BMGs and BMG composites</li>
-          <li>Structure-Property correlations in 3D printed Maraging steels</li>
-          <li>Mechanical behaviour of Heusler alloys</li>
-          <li>Fracture of Mg alloys (with Prof. Jayant Jain)</li>
-          <li>Mechanical behavior of 3D printed high entropy alloys</li>
-          <li>Fracture and fatigue of reactor pressure vessel steels</li>
-          <li>Mechanical behaviour of SLM Al-Sc alloys</li>
-          <li>Fracture and Fatigue of 3D printed Ti alloys</li>
-        </ul>
+    <div class="section">
+      <h2>Consultancies</h2>
+      <ul class="consult-list">
+        <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
+        <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
+        <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
+      </ul>
+      <div style="margin-top:0.7rem;color:#445;font-size:1.03rem;">
+        We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancies undertaken.
       </div>
-      <div class="section">
-        <h2>Research Grants (as PI)</h2>
-        <ul class="grants-list">
-          <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing).</li>
-          <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology (2022-2024).</li>
-          <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 190 Lakh, DST, (2023-2026).</li>
-          <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
-          <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
-          <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
-        </ul>
-        <div class="grants-subtitle">Research Grants (as co-PI)</div>
-        <ul class="grants-list">
-          <li>"Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
-          <li>"Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
-        </ul>
+    </div>
+    <div class="section">
+      <h2>Collaborations</h2>
+      <ul class="collab-list">
+        <li>NTU Singapore</li>
+        <li>Shenyang National Laboratory, China</li>
+        <li>Xi'an Jiaotong University, China</li>
+        <li>Cyient Technologies</li>
+        <li>Dalian Jiaotong University, Dalian</li>
+        <li>HZB, Dresden</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Research Videos</h2>
+      <div class="videos">
+        <!-- YouTube video embed demo (replace src with your own) -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Demo Research Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
       </div>
-      <div class="section">
-        <h2>Consultancies</h2>
-        <ul class="consult-list">
-          <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
-          <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
-          <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
-        </ul>
-        <div style="margin-top:0.7rem;color:#445;font-size:1.03rem;">
-          We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancies handled by our lab.
+    </div>
+    <div class="section">
+      <h2>Research Gallery</h2>
+      <div class="gallery">
+        <!-- Demo image, replace src with your own -->
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Demo Research Photo">
+      </div>
+    </div>
+    <div class="section">
+      <h2>Research Facilities</h2>
+      <div class="facilities-list">
+        <div class="facility-card">
+          <h3>INDUSTRON NANOGURU NG50</h3>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
+        </div>
+        <div class="facility-card">
+          <h3>ROTATING BENDING FATIGUE TESTING MACHINE</h3>
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
         </div>
       </div>
-      <div class="section">
-        <h2>Collaborations</h2>
-        <ul class="collab-list">
-          <li>NTU Singapore</li>
-          <li>Shenyang National Laboratory, China</li>
-          <li>Xi'an Jiaotong University, China</li>
-          <li>Cyient Technologies</li>
-          <li>Dalian Jiaotong University, Dalian</li>
-          <li>HZB, Dresden</li>
-        </ul>
-      </div>
-      <div class="section">
-        <h2>Research Videos</h2>
-        <div class="videos">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-              title="Demo Research Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-        </div>
-      </div>
-      <div class="section">
-        <h2>Research Gallery</h2>
-        <div class="gallery">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Demo Research Photo">
-        </div>
-      </div>
-      <div class="section">
-        <h2>Research Facilities</h2>
-        <div class="facilities-list">
-          <div class="facility-card">
-            <h3>INDUSTRON NANOGURU NG50</h3>
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
-          </div>
-          <div class="facility-card">
-            <h3>ROTATING BENDING FATIGUE TESTING MACHINE</h3>
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer>
-      &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
-    </footer>
-  </body>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
+  </footer>
+  <script>
+    // NAVBAR show on hover and on scroll up (from team.html)
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        navbarContainer.classList.add('visible');
+      } else {
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+    navbarContainer.classList.add('visible');
+  </script>
+</body>
 </html>
