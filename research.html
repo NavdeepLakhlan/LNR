@@ -206,28 +206,54 @@
       pointer-events: auto;
       z-index: 2;
     }
+
     .hero-carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(30,58,138,0.78);
-      color: #fff;
-      border: none;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      font-size: 1.8rem;
+      border: none;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 2.6rem;
+      color: #fff;
       cursor: pointer;
       z-index: 10;
-      transition: background 0.2s;
-      opacity: 0.85;
+      background: linear-gradient(135deg, rgba(116, 84, 255, 0.96) 80%, #00f0ff 120%);
+      box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;
+      transition: transform 0.13s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+      border: 3px solid #fff4;
+      opacity: 0.93;
+      filter: drop-shadow(0 2px 18px #7b43ff77);
+      animation: heroBtnGlow 2.3s infinite alternate;
+      user-select: none;
     }
-    .hero-carousel-btn.left { left: 22px; }
-    .hero-carousel-btn.right { right: 22px; }
-    .hero-carousel-btn:hover { background: #1E3A8A; }
+    @keyframes heroBtnGlow {
+      0% { box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;}
+      60% { box-shadow: 0 0 42px #a88afcbb, 0 0 90px #00e7ff77;}
+      100% { box-shadow: 0 0 18px #a88afc77, 0 0 44px #00e7ff44;}
+    }
+    .hero-carousel-btn.left { left: 32px; }
+    .hero-carousel-btn.right { right: 32px; }
+    .hero-carousel-btn:hover, .hero-carousel-btn:focus {
+      background: linear-gradient(135deg, #00f0ff 20%, #a88afc 80%);
+      color: #fff;
+      box-shadow: 0 0 70px #00f0ff99, 0 0 80px #a88afc99;
+      transform: scale(1.09) rotate(-4deg);
+    }
+    .hero-carousel-btn:active {
+      transform: scale(0.97) rotate(2deg);
+      background: linear-gradient(135deg, #a88afc 80%, #00f0ff 120%);
+    }
+    @media (max-width: 900px) {
+      .hero-carousel-btn { width: 36px; height: 36px; font-size: 1.35rem; }
+      .hero-carousel-btn.left { left: 6px; }
+      .hero-carousel-btn.right { right: 6px; }
+    }
 
     .hero-content-on-image {
       position: relative;
@@ -236,8 +262,6 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      /*background: rgba(15,29,52,0.34);*/
-      /* removed semi-transparent background */
       box-shadow: none;
       padding: 2.2rem 2.5rem;
       max-width: 700px;
@@ -302,9 +326,6 @@
       .hero .description {
         font-size: 0.95rem;
       }
-      .hero-carousel-btn { width: 34px; height: 34px; font-size: 1.2rem; }
-      .hero-carousel-btn.left { left: 6px; }
-      .hero-carousel-btn.right { right: 6px; }
     }
     /* --- End Hero Section Styles --- */
     /* --- Three Cards Styles --- */
@@ -314,7 +335,7 @@
       font-weight: 800;
       color: #a88afc;
       margin-top: 3rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.7rem;
       font-family: 'Inter', sans-serif;
     }
     .cards-container {
@@ -325,7 +346,7 @@
       flex-wrap: wrap;
       max-width: 1200px;
       margin: auto;
-      margin-bottom: 2.5rem; /* Added extra space after cards */
+      margin-bottom: 3.5rem; /* Extra space after cards */
     }
     .card {
       background: #f8f8f8;
@@ -460,6 +481,14 @@
       color: #1E3A8A;
       letter-spacing: 0.1px;
     }
+    .consultancies-subtitle {
+      margin-top: 1.3rem;
+      margin-bottom: 0.45rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ff4e4e;
+      letter-spacing: 0.1px;
+    }
     @media (max-width: 1100px) {
       .dropdown-cards-container {
         flex-wrap: wrap;
@@ -571,7 +600,7 @@
   <div class="dropdown-cards-container">
     <!-- Current Research Projects -->
     <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Research Projects</button>
+      <button type="button" onclick="toggleDropdown(this)">Current Research Projects</button>
       <div class="dropdown-content">
         <ul class="projects-list">
           <li>Fracture and Fatigue of BMGs and BMG composites</li>
@@ -587,7 +616,7 @@
     </div>
     <!-- Research Grants (as PI) -->
     <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Research Grants</button>
+      <button type="button" onclick="toggleDropdown(this)">Research Grants (as PI)</button>
       <div class="dropdown-content">
         <ul class="grants-list">
           <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing)</li>
@@ -601,6 +630,12 @@
         <ul class="grants-list">
           <li>"Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
           <li>"Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
+        </ul>
+        <div class="consultancies-subtitle">Consultancies</div>
+        <ul class="consult-list">
+          <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
+          <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
+          <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
         </ul>
       </div>
     </div>
