@@ -177,13 +177,15 @@
     .pi-flex-text {
       flex: 1;
       padding-right: 24px;
+      margin-left: 32px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      text-align: justify;
     }
     .pi-flex-text h2 {
       color: #1E3A8A;
-      text-align: left;
+      text-align: justify;
       font-family: 'Roboto', sans-serif;
       letter-spacing: 1px;
       font-weight: 700;
@@ -197,7 +199,7 @@
       line-height: 1.5;
       margin-top: 0.5em;
       margin-bottom: 0;
-      text-align: left;
+      text-align: justify;
     }
     .pi-flex-img {
       flex: 0 0 auto;
@@ -218,7 +220,7 @@
     @media (max-width: 900px) {
       .pi-flex-custom { flex-direction: column; align-items: center; }
       .pi-flex-img img { width: 220px; height: 220px; margin: 0 auto; }
-      .pi-flex-text { padding-right: 0; }
+      .pi-flex-text { padding-right: 0; margin-left: 0; }
       .pi-flex-text h2 { text-align: center; }
       .pi-flex-text p { text-align: center; }
     }
