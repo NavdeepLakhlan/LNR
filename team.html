@@ -43,7 +43,7 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: background 0.2s, color 0.2s; }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: color 0.2s, background 0.2s, border 0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
@@ -162,89 +162,65 @@
       .hero-description { font-size: 0.75rem; }
     }
 
-    /* PI SECTION */
-    section {
-      max-width: 1200px;
-      margin: 6rem auto 2rem;
-      padding: 1.5rem;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(200,200,200,0.13);
-    }
-    h1, h2 {
-      color: #1E3A8A;
-      text-align: center;
-      font-family: 'Roboto', sans-serif;
-      letter-spacing: 1px;
-    }
-    h2 { margin-bottom: 2rem; font-weight: 700; font-size: 2.2rem; }
-    .pi-container {
+    /* PI SECTION OVERRIDE FOR CUSTOM LAYOUT */
+    .pi-flex-custom {
       display: flex;
       align-items: flex-start;
-      gap: 2.3rem;
-      margin-top: 1.5rem;
-      justify-content: flex-start;
-      position: relative;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 40px;
+      background: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      border: none !important;
     }
-    .pi-image-block {
-      flex: 0 0 240px;
-      text-align: left;
+    .pi-flex-text {
+      flex: 1;
+      padding-right: 24px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      margin-left: 25px;
+      justify-content: flex-start;
     }
-    .pi-image-block img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      box-shadow: 0 0 18px rgba(30,58,138,0.13);
-      background: #f7f7f7;
-      margin-bottom: 0.5rem;
-      margin-right: 0.2rem;
-      display: block;
-      border-radius: 6px;
-    }
-    .pi-image-block h3 {
-      margin: 0.2rem 0 0.2rem 0;
+    .pi-flex-text h2 {
       color: #1E3A8A;
-      font-size: 1.45rem;
+      text-align: left;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1px;
       font-weight: 700;
-      letter-spacing: 0.3px;
-      text-align: left;
+      font-size: 2.2rem;
+      margin-bottom: 0.2em;
+      margin-top: 0;
     }
-    .pi-image-block p {
-      font-size: 1.04rem;
-      color: #445;
-      margin: 0;
-      text-align: left;
-    }
-    .pi-bio:not(.pi-bio-hover) {
-      flex: 1 1 400px;
+    .pi-flex-text p {
+      color: #23272f;
       font-size: 1.09rem;
       line-height: 1.5;
-      color: #23272f;
-      padding-top: 0.1rem;
-      padding-left: 0.1rem;
-      text-align: justify;
-      display: block !important;
+      margin-top: 0.5em;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .pi-flex-img {
+      flex: 0 0 auto;
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    .pi-flex-img img {
+      width: 440px;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 0;
+      display: block;
     }
     @media (max-width: 900px) {
-      .pi-container { flex-direction: column; gap: 1.2rem; align-items: center; }
-      .pi-image-block {
-        align-items: center;
-        text-align: center;
-        margin-left: 0;
-      }
-      .pi-image-block img {
-        width: 155px;
-        height: 155px;
-      }
-      .pi-bio:not(.pi-bio-hover) {
-        text-align: justify;
-        padding-top: 0.6rem;
-        padding-left: 0;
-      }
+      .pi-flex-custom { flex-direction: column; align-items: center; }
+      .pi-flex-img img { width: 220px; height: 220px; margin: 0 auto; }
+      .pi-flex-text { padding-right: 0; }
+      .pi-flex-text h2 { text-align: center; }
+      .pi-flex-text p { text-align: center; }
     }
 
     /* MEET THE TEAM SECTION */
@@ -392,21 +368,18 @@
     <!-- ================= END HERO CAROUSEL ================= -->
 
     <!-- PI Section -->
-    <section>
-      <h2>Principal Investigator (PI)</h2>
-      <div class="pi-container" id="piCard">
-        <div class="pi-image-block">
-          <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
-          <h3>Lakshmi Narayan Ramasubramanian</h3>
-          <p>PhD – IISc Bangalore , B.Tech. – VNIT Nagpur</p>
-        </div>
-        <div class="pi-bio">
-          <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and PhD at Indian Institute of Science (IISc), Bangalore. He is currently an Assistant Professor in the Department of Materials Science and Metallurgical Engineering, Indian Institute of Technology Hyderabad, India.
-          </p>
-        </div>
+    <div class="pi-flex-custom">
+      <div class="pi-flex-text">
+        <h2>Lakshmi Narayan Ramasubramanian</h2>
+        <p>
+          Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his Ph.D. in Materials Engineering at the Indian Institute of Science, Bangalore, in 2015. He is the Principal Investigator (PI) of the group. His research focuses on advanced materials processing, structural materials, and the development of novel metallic systems. Dr. Ramasubramanian has published extensively and is dedicated to mentoring young researchers and students in the field.
+        </p>
       </div>
-    </section>
+      <div class="pi-flex-img">
+        <img src="images/Lakshmi_Narayan_Ramasubramanian.jpg" alt="Lakshmi Narayan Ramasubramanian" />
+      </div>
+    </div>
+    <!-- End PI Section -->
 
     <!-- Meet The Team Section -->
     <section class="team-section">
@@ -418,7 +391,7 @@
           <div class="team-card-content">
             <h3>Ashwani Kumar, PhD</h3>
             <h4>Postdoctral Researcher</h4>
-            <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and more.</p>
+            <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex sta...</p>
           </div>
         </div>
         <div class="team-card">
@@ -426,7 +399,7 @@
           <div class="team-card-content">
             <h3>Amey Raghuvir Parnaik</h3>
             <h4>PhD Student</h4>
-            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from IIT Bombay.</p>
+            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology fro...</p>
           </div>
         </div>
         <div class="team-card">
@@ -434,7 +407,7 @@
           <div class="team-card-content">
             <h3>J. Vigneshwaran</h3>
             <h4>Senior Research Fellow</h4>
-            <p>Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage devices.</p>
+            <p>Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation fo...</p>
           </div>
         </div>
         <div class="team-card">
@@ -442,7 +415,7 @@
           <div class="team-card-content">
             <h3>Ashwani</h3>
             <h4>PhD Student</h4>
-            <p>Ashwani has done B.tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Hyderabad.</p>
+            <p>Ashwani has done B.tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, II...</p>
           </div>
         </div>
         <div class="team-card">
@@ -450,7 +423,7 @@
           <div class="team-card-content">
             <h3>Simran Nath</h3>
             <h4>PhD Student</h4>
-            <p>Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department of MSE, IITH.</p>
+            <p>Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department o...</p>
           </div>
         </div>
         <div class="team-card">
@@ -458,7 +431,7 @@
           <div class="team-card-content">
             <h3>Karthik</h3>
             <h4>PhD Student</h4>
-            <p>Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint guidance of faculty at IIT Hyderabad and Tohoku University, Japan.</p>
+            <p>Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint...</p>
           </div>
         </div>
         <div class="team-card">
@@ -466,7 +439,7 @@
           <div class="team-card-content">
             <h3>Akash Mishra</h3>
             <h4>PhD Student</h4>
-            <p>Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department of MSE, IITH.</p>
+            <p>Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department ...</p>
           </div>
         </div>
         <div class="team-card">
@@ -474,42 +447,42 @@
           <div class="team-card-content">
             <h3>Sukmaji Indro Cahyano</h3>
             <h4>PhD Student</h4>
-            <p>Currently, he has been working in the mechanical engineering department, Faculty of Engineering, at Sebelas Maret University and continues his study in the doctorate program Gadjah Mada University. His research interests are solid mechanics, additive manufacturing, and 3D printing technology, and he works under the joint supervision of Profs. Muslim Mahardika and Budi Arifvianto</p>
+            <p>Currently, he has been working in the mechanical engineering department, Faculty of Engineering, at Sebelas Maret University and continues his study in the doctorate program Gadjah...</p>
           </div>
         </div><div class="team-card">
           <img src="kishore.jpg" alt="Amey Raghuvir Parnaik">
           <div class="team-card-content">
             <h3>Kishore Kumar J</h3>
             <h4>PhD Student</h4>
-            <p>Currently, he has been working in the mechanical engineering department, Faculty of Engineering, at Sebelas Maret University and continues his study in the doctorate program Gadjah Mada University. His research interests are solid mechanics, additive manufacturing, and 3D printing technology, and he works under the joint supervision of Profs. Muslim Mahardika and Budi Arifvianto</p>
+            <p>Currently, he has been working in the mechanical engineering department, Faculty of Engineering, at Sebelas Maret University and continues his study in the doctorate program Gadjah...</p>
           </div>
         </div><div class="team-card">
           <img src="amey.jpg" alt="Amey Raghuvir Parnaik">
           <div class="team-card-content">
             <h3>Shantanu Jain</h3>
             <h4>PhD Student</h4>
-            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from IIT Bombay.</p>
+            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology fro...</p>
           </div>
         </div><div class="team-card">
           <img src="amey.jpg" alt="Amey Raghuvir Parnaik">
           <div class="team-card-content">
             <h3>Amey Raghuvir Parnaik</h3>
             <h4>PhD Student</h4>
-            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from IIT Bombay.</p>
+            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology fro...</p>
           </div>
         </div><div class="team-card">
           <img src="amey.jpg" alt="Amey Raghuvir Parnaik">
           <div class="team-card-content">
             <h3>Amey Raghuvir Parnaik</h3>
             <h4>PhD Student</h4>
-            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from IIT Bombay.</p>
+            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology fro...</p>
           </div>
         </div><div class="team-card">
           <img src="amey.jpg" alt="Amey Raghuvir Parnaik">
           <div class="team-card-content">
             <h3>Amey Raghuvir Parnaik</h3>
             <h4>PhD Student</h4>
-            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from IIT Bombay.</p>
+            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology fro...</p>
           </div>
         </div>
         <!-- Add more team cards as needed -->
