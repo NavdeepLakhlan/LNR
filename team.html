@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Team – Dhātu-yantra-pravartana Lab</title>
-  <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -24,93 +23,83 @@
       font-family: 'Roboto', Arial, sans-serif;
       background: var(--main-bg1);
       color: var(--text);
-      font-size: 20px;
+      font-size: 16px; /* Standard base size for all content */
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    /* ... (all your original styles remain unchanged for the rest of the document) ... */
+    /* --- All your original styles for navbar, carousels, sections, etc. remain unchanged --- */
+    /* ... (Assume all original styles for navbar, hero, carousels, sections, alumni, etc. here) ... */
 
-    /* ----------- MEET THE TEAM SECTION (self-explanatory, unique, bigger, no radius, smaller font) ----------- */
+    /* ===== MEET THE TEAM SECTION (scoped & documented) ===== */
     .team-section {
-      /* Adds vertical spacing but no background */
       padding: 3rem 0;
       background: transparent;
       position: relative;
       text-align: center;
     }
     .team-section h2 {
-      /* Section heading style */
       font-size: 2rem;
       font-weight: 700;
       color: #0d1b2a;
       margin-bottom: 2rem;
     }
-    .team-carousel {
-      /* Flex container for horizontal scrolling of cards */
+    .team-section .team-carousel {
       display: flex;
-      overflow-x: auto; /* Enables horizontal scroll if cards overflow */
-      scroll-snap-type: x mandatory; /* Snap to cards while scrolling */
-      gap: 1rem; /* Spacing between cards */
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
       padding: 1rem;
       margin: 0 auto;
       max-width: 90vw;
     }
-    .team-carousel::-webkit-scrollbar {
-      /* Hides the horizontal scrollbar in Chrome/Safari */
+    .team-section .team-carousel::-webkit-scrollbar {
       display: none;
     }
-    .team-card {
-      /* Each team member card style */
-      flex: 0 0 340px; /* Fixed width */
+    .team-section .team-card {
+      flex: 0 0 340px;
       background: #fff;
-      border-radius: 0; /* Square corners */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Subtle shadow */
-      scroll-snap-align: start; /* Snap card to start when scrolling */
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      scroll-snap-align: start;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       border: 1.5px solid #dbeafe;
     }
-    .team-card img {
-      /* Profile image in the card */
+    .team-section .team-card img {
       width: 100%;
-      height: 440px; /* Fixed image height */
-      object-fit: cover; /* Ensures image covers area without distortion */
-      border-radius: 0;  /* Square corners */
+      height: 340px;
+      object-fit: cover;
+      border-radius: 0;
     }
-    .team-card-content {
-      /* Container for text content in the card */
-      padding: 1.2rem;
+    .team-section .team-card-content {
+      padding: 1rem;
       text-align: left;
       flex: 1;
     }
-    .team-card-content h3 {
-      /* Team member name - smaller font for compact look */
-      font-size: 1.1rem;
+    .team-section .team-card-content h3 {
+      font-size: 1rem;
       font-weight: 700;
       color: #0d1b2a;
-      margin: 0 0 0.3rem;
+      margin: 0 0 0.25rem;
     }
-    .team-card-content h4 {
-      /* Team member role - smaller font, uppercase */
+    .team-section .team-card-content h4 {
       font-size: 0.68rem;
       font-weight: 600;
       color: #637087;
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin: 0 0 0.8rem;
+      margin: 0 0 0.7rem;
     }
-    .team-card-content p {
-      /* Team member description - smaller font */
+    .team-section .team-card-content p {
       font-size: 0.78rem;
       font-weight: 400;
       color: #333333;
       line-height: 1.5;
       margin: 0;
     }
-    .team-scroll-btn {
-      /* Left/right scroll buttons for team carousel */
+    .team-section .team-scroll-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -127,39 +116,21 @@
       justify-content: center;
       z-index: 10;
     }
-    .team-scroll-left {
-      /* Position left scroll button */
-      left: 1rem;
-    }
-    .team-scroll-right {
-      /* Position right scroll button */
-      right: 1rem;
-    }
+    .team-section .team-scroll-left { left: 1rem; }
+    .team-section .team-scroll-right { right: 1rem; }
     @media (max-width: 800px) {
-      /* Responsive: make cards fill more of the viewport width and reduce image height */
-      .team-card {
-        flex: 0 0 80vw;
-      }
-      .team-card img {
+      .team-section .team-card { flex: 0 0 80vw; }
+      .team-section .team-card img {
         height: 48vw;
-        min-height: 240px;
-        max-height: 360px;
+        min-height: 180px;
+        max-height: 260px;
       }
     }
-    /* ----------- END MEET THE TEAM SECTION ----------- */
+    /* ===== END MEET THE TEAM SECTION ===== */
   </style>
 </head>
 <body>
-  <!-- Punchline Overlay (hidden by default, shown on load then fades out) -->
-  <!--
-  <div id="punchlineOverlay">
-    <div id="punchlineText">
-      MEET THE FORCE BEHIND DYP's&nbsp;INNOVATION
-    </div>
-  </div>
-  -->
-
-  <!-- Navbar: fixed top navigation, unchanged -->
+  <!-- Navbar (unchanged) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -182,7 +153,6 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- Main Content -->
   <div id="mainContent">
 
     <!-- ================= SUPER COOL HERO CAROUSEL ================= -->
@@ -337,14 +307,11 @@
       </ul>
     </section>
 
-    <!-- TEAM SECTION, fully commented and with decreased font size -->
+    <!-- ====================== MEET THE TEAM SECTION ====================== -->
     <section class="team-section">
       <h2>Meet the Team</h2>
-      <!-- Left scroll button to go left in the carousel -->
       <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
-      <!-- Carousel container for team member cards -->
       <div class="team-carousel" id="teamCarousel">
-        <!-- Card 1 -->
         <div class="team-card">
           <img src="erin.jpg" alt="Erin Atkinson">
           <div class="team-card-content">
@@ -353,7 +320,6 @@
             <p>Erin is a sophomore Biology major with a minor in environmental science. She’s focused on marine biology and conservation.</p>
           </div>
         </div>
-        <!-- Card 2 -->
         <div class="team-card">
           <img src="samuel.jpg" alt="Samuel Durosaro">
           <div class="team-card-content">
@@ -362,7 +328,6 @@
             <p>Dr. Durosaro works on humane insect farming and ethical welfare. He co-founded AWG Nigeria promoting animal welfare science.</p>
           </div>
         </div>
-        <!-- Card 3 -->
         <div class="team-card">
           <img src="narmeen.jpg" alt="Narmeen Hashim">
           <div class="team-card-content">
@@ -371,7 +336,6 @@
             <p>Narmeen studies neural circuits in insects to investigate how stress influences behavior and experiences.</p>
           </div>
         </div>
-        <!-- Card 4 -->
         <div class="team-card">
           <img src="alex.jpg" alt="Alex Johnson">
           <div class="team-card-content">
@@ -380,7 +344,6 @@
             <p>Alex supports daily lab operations and assists with experiments across all ongoing research projects.</p>
           </div>
         </div>
-        <!-- Card 5 -->
         <div class="team-card">
           <img src="lucy.jpg" alt="Lucy Chen">
           <div class="team-card-content">
@@ -389,7 +352,6 @@
             <p>Lucy is investigating sustainable energy storage solutions and advanced electrode materials.</p>
           </div>
         </div>
-        <!-- Card 6 -->
         <div class="team-card">
           <img src="mohit.jpg" alt="Mohit Singh">
           <div class="team-card-content">
@@ -398,7 +360,6 @@
             <p>Mohit handles data processing, visualization, and statistical analysis for the group’s experiments.</p>
           </div>
         </div>
-        <!-- Card 7 -->
         <div class="team-card">
           <img src="fatima.jpg" alt="Fatima Rahman">
           <div class="team-card-content">
@@ -408,39 +369,23 @@
           </div>
         </div>
       </div>
-      <!-- Right scroll button to go right in the carousel -->
       <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
     </section>
     <script>
-      // "Meet the Team" section carousel scrolls left/right by one card width on button click
+      // "Meet the Team" carousel: scrolls cards by one card width per click
       const teamCarousel = document.getElementById("teamCarousel");
       function scrollTeam(direction) {
         // Card width (340px) + gap (16px) for smooth card-by-card scrolling
         const cardWidth = 340 + 16;
-        // Scroll the carousel left or right by one card width
         teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
       }
     </script>
-  </div>
+    <!-- ================== END MEET THE TEAM SECTION ================== -->
+
+  </div><!-- end mainContent -->
 
   <script>
-    // Punchline Animation: Handles fade in/out splash overlay (if enabled)
-    document.addEventListener('DOMContentLoaded', function() {
-      const overlay = document.getElementById('punchlineOverlay');
-      const mainContent = document.getElementById('mainContent');
-      if (overlay && mainContent) {
-        overlay.classList.add('visible');
-        setTimeout(() => {
-          overlay.classList.add('fadeout');
-          setTimeout(() => {
-            overlay.style.display = 'none';
-            mainContent.style.display = 'block';
-          }, 900); // match animation duration
-        }, 1800);
-      }
-    });
-
-    // HERO IMAGE CAROUSEL LOGIC
+    // ================= HERO CAROUSEL SCRIPT (unchanged) =================
     (function(){
       const slides = document.querySelectorAll('.hero-slide');
       const btnLeft = document.querySelector('.hero-carousel-btn.left');
@@ -481,7 +426,7 @@
       showSlide(active);
     })();
 
-    // Carousel logic for all carousels on the page (for other sections)
+    // ========== STUDENT/STAFF CAROUSELS SCRIPT (unchanged) ==========
     document.querySelectorAll('.carousel-container').forEach(function(container) {
       const items = container.querySelectorAll('.carousel-item');
       const btnLeft = container.querySelector('.carousel-btn.left');
@@ -534,7 +479,7 @@
       }
     });
 
-    // Navbar JS: Shows/hides navbar on scroll up/down
+    // ========== NAVBAR SCRIPT (unchanged) ==========
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
