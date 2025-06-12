@@ -150,6 +150,93 @@
     }
     /* --- End Navbar Styles --- */
 
+    /* --- Hero Section Styles --- */
+    .hero {
+      position: relative;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/34/Insect_brain_cross_section.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 70vh;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 6vw;
+      color: white;
+      margin-top: 5.5rem;
+      margin-bottom: 2.5rem;
+      border-radius: 24px;
+      box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
+      overflow: hidden;
+      z-index: 10;
+      max-width: 1200px;
+      width: calc(100vw - 32px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .overlay {
+      max-width: 680px;
+      z-index: 2;
+      background: rgba(30,58,138,0.38);
+      border-radius: 22px;
+      padding: 2.6rem 2.2rem;
+      box-shadow: 0 2px 18px rgba(30,58,138,0.15);
+      backdrop-filter: blur(2px);
+    }
+    .hero .subheading {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #FF4E4E;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.5px;
+      font-family: 'Roboto', sans-serif;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      margin-bottom: 1.1rem;
+      margin-top: 0;
+      text-shadow: 1px 2px 10px rgba(30,58,138,0.17);
+    }
+    .hero .description {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+      color: #f3f3f3;
+      font-family: 'Roboto', sans-serif;
+      text-shadow: 1px 2px 10px rgba(30,58,138,0.07);
+    }
+    @media (max-width: 900px) {
+      .hero {
+        height: auto;
+        min-height: 180px;
+        padding: 1.2rem 1rem;
+        border-radius: 16px;
+        margin-top: 3.5rem;
+        margin-bottom: 1.3rem;
+        width: 97vw;
+      }
+      .hero .overlay {
+        padding: 1.2rem 1rem;
+        border-radius: 11px;
+      }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .hero .description {
+        font-size: 1rem;
+      }
+      .hero .subheading {
+        font-size: 1rem;
+      }
+    }
+    /* --- End Hero Section Styles --- */
+
     .research-header {
       color: #fff;
       background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
@@ -160,7 +247,7 @@
       letter-spacing: 1.5px;
       padding: 2.3rem 2rem 2.1rem 2rem;
       box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
-      margin: 7.5rem auto 2.2rem auto;
+      margin: 1.2rem auto 2.2rem auto;
       width: 680px;
       max-width: 95vw;
       text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
@@ -395,6 +482,18 @@
     </nav>
   </div>
   <!-- End Navbar -->
+
+  <!-- Hero Section Start -->
+  <section class="hero">
+    <div class="overlay">
+      <p class="subheading">Our research</p>
+      <h1>Breaking new ground in insect neurobiology &amp; welfare</h1>
+      <p class="description">
+        We are a team of neuroanatomists and physiologists using an interdisciplinary lens to address big questions in insect biology.
+      </p>
+    </div>
+  </section>
+  <!-- Hero Section End -->
 
   <div class="research-header">
     Research at Dhātu-yantra-pravartana Lab
