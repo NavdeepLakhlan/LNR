@@ -599,6 +599,50 @@
       font-size: 1rem;
       padding-bottom: 2.7em;
     }
+
+    /* DROPDOWN styles for the At Office section */
+    .dropdown-card {
+      background: #fff;
+      box-shadow: 0 2px 16px #e4e5f3a7;
+      border-radius: 18px;
+      margin-bottom: 0.6em;
+      padding: 0;
+      overflow: hidden;
+      max-width: 600px;
+      width: 100%;
+    }
+    .dropdown-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1em 1.5em;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #23232a;
+      background: #d2d8fc;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-bottom: 1px solid #e6e6e6;
+      transition: background 0.18s;
+    }
+    .dropdown-btn:hover, .dropdown-btn.active {
+      background: #c0f2e6;
+      color: #1E3A8A;
+    }
+    .dropdown-content {
+      display: none;
+      padding: 1.1em 1.5em 1.25em 1.5em;
+      background: #fff;
+      animation: fadeIn 0.35s;
+    }
+    .dropdown-content.show {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    /* END DROPDOWN styles */
   </style>
 </head>
 <body>
@@ -631,7 +675,7 @@
         <div class="hero-main-headline">Hi, I'm Lakshmi Narayan</div>
         <div class="hero-role">I'm a researcher and teacher</div>
         <div class="hero-bio">
-          I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanisms of material failure.
+          I am passionate about advancing materials science and engineering through both research and education. My work spans metal additive manufacturing, microstructure engineering, and the mechanics of materials. I strive to bridge the gap between fundamental science and impactful engineering solutions.
         </div>
       </div>
       <div class="hero-right-img-container">
@@ -659,10 +703,10 @@
         <div class="teaching-title">Teaching</div>
         <section class="bio-section">
           <p>
-            I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on impact.
+            I'm Lakshmi — a passionate advocate for accessible and user-centered design. My journey weaves through academia, creative industries, and collaborative research, always with a focus on empowering others to do their best work.
           </p>
           <p>
-            Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build, and I mentor.
+            Whether in the lab or online, I believe great design is both kind and bold: anticipating needs, removing friction, and empowering users of every background. I teach, I learn, I build, and I love sharing these experiences with students and collaborators.
           </p>
         </section>
       </div>
@@ -695,63 +739,69 @@
       </div>
     </section>
 
-    <!-- At office Section -->
+    <!-- At office Section (DROPDOWNS ADDED) -->
     <section class="work-section">
       <div class="work-title">At office</div>
-      <div class="work-cards">
-        <div class="work-card">
-          <div class="work-card-title">Awards & Honors</div>
-          <div class="work-card-desc card-awards-list">
-            <ol style="padding-left: 1.15em; margin: 0;">
-              <li>Young Achievers' Award, VNIT Nagpur 2024</li>
-              <li>Excellence in Teaching award, IIT Delhi 2024</li>
-              <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
-              <li>INSA Medal for Young Scientist in October 2021</li>
-              <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
-              <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
-              <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
-              <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
-              <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
-              <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
-              <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
-              <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
-              <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
-            </ol>
+      <div class="work-cards" style="flex-direction: column; gap: 1.1em; min-width:unset; width:100%;">
+        <div class="dropdown-card">
+          <button class="dropdown-btn">Awards & Honors</button>
+          <div class="dropdown-content">
+            <div class="work-card-desc card-awards-list">
+              <ol style="padding-left: 1.15em; margin: 0;">
+                <li>Young Achievers' Award, VNIT Nagpur 2024</li>
+                <li>Excellence in Teaching award, IIT Delhi 2024</li>
+                <li>Veena Arora Early Career Award, IIT Delhi 2022</li>
+                <li>INSA Medal for Young Scientist in October 2021</li>
+                <li>Young Faculty Incentive Fellowship (YFIF) 2019</li>
+                <li>Gopalakrishnan- NTU Presidential Post-Doctoral Fellowship in Nanyang Technological University, Singapore, 2018.</li>
+                <li>K.P. Abraham Gold medal for Best PhD thesis in Department of Materials Engineering, Indian Institute of Science, 2014-15.</li>
+                <li>Winner, NTU 3 Minute Thesis (NTU-3MT) competition, 2019 (Post-Doctoral Category)</li>
+                <li>Outstanding reviewer award for Scripta Materialia, (twice: 2014 and 2019) and Acta Materialia, (thrice: 2018, 2020 and 2021) and Transactions of IIM (2022)</li>
+                <li>Publons Peer Review award for featuring in the top 1% reviewers in Materials Science, 2018 and 2019.</li>
+                <li>DAAD fellowship for research in Technical University, Berlin (2010-2011).</li>
+                <li>Best poster award at conference for research, innovation and leadership at the crossroads of science and engineering and medicine 2016, at iMdea, Madrid, Spain.</li>
+                <li>Among 20 scientists chosen across India in various disciplines to attend China Innotour program for Young Scientists 2019, Kunming-Shanghai.</li>
+              </ol>
+            </div>
           </div>
         </div>
-        <div class="work-card">
-          <div class="work-card-title">Positions of Responsibility</div>
-          <div class="work-card-desc card-awards-list">
-            <ol style="padding-left: 1.15em; margin: 0;">
-              <li>Editor, IIM Metal News, 2023</li>
-              <li>PMRF Subject coordinator, 2023</li>
-              <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
-              <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
-              <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
-              <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
-              <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
-              <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
-              <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
-              <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
-              <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
-              <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
-            </ol>
+        <div class="dropdown-card">
+          <button class="dropdown-btn">Positions of Responsibility</button>
+          <div class="dropdown-content">
+            <div class="work-card-desc card-awards-list">
+              <ol style="padding-left: 1.15em; margin: 0;">
+                <li>Editor, IIM Metal News, 2023</li>
+                <li>PMRF Subject coordinator, 2023</li>
+                <li>Member, Executive Committee, Indian Institute of Metals (IIM)- Delhi Chapter (2022-23)</li>
+                <li>Faculty Coordinator, Enterpreneurship development club (eDC), IIT Delhi (2023- Present)</li>
+                <li>Faculty Coordinator, Materials Science and Engineering Society, IIT Delhi (2023- Present)</li>
+                <li>Member, Internal Complaints Committee, IIT Delhi (2023- Present)</li>
+                <li>Member, Department UG Committee, IIT Delhi (2023- Present)</li>
+                <li>Core member, IIT Open House committee, IIT Delhi (2023)</li>
+                <li>Member, Faculty Search Committee, DMSE, IIT Delhi (2023- Present)</li>
+                <li>Faculty coordinator, Adventure Club, IIT Delhi (2022-2023)</li>
+                <li>Member, Space committee, DMSE, IIT Delhi (2023)</li>
+                <li>Coordinator, Alumni relations, DMSE, IIT Delhi (2023)</li>
+              </ol>
+            </div>
           </div>
         </div>
-        <div class="work-card">
-          <div class="work-card-title">Teaching: Courses Handled</div>
-          <div class="work-card-desc card-awards-list">
-            <ol style="padding-left: 1.15em; margin: 0;">
-              <li>MLL100 (APL102): Introduction to Materials Science and Engineering</li>
-              <li>MLL714: Fracture Mechanics</li>
-              <li>MLP704: Materials Processing and Characterization Lab</li>
-              <li>MLV705: Special Topics in Materials Engineering</li>
-              <li>MLL711: Mechanical Behavior of Materials (PG)</li>
-              <li>APL753: Properties and Selection of Materials</li>
-              <li>MLL251: Mechanical Behavior of Materials (UG)</li>
-              <li>MLP352: Mechanical Behavior of Materials (UG Lab)</li>
-              <li>NIN100: Introduction to Materials Science and Engineering (UG Non graded)</li>
-            </ol>
+        <div class="dropdown-card">
+          <button class="dropdown-btn">Teaching: Courses Handled</button>
+          <div class="dropdown-content">
+            <div class="work-card-desc card-awards-list">
+              <ol style="padding-left: 1.15em; margin: 0;">
+                <li>MLL100 (APL102): Introduction to Materials Science and Engineering</li>
+                <li>MLL714: Fracture Mechanics</li>
+                <li>MLP704: Materials Processing and Characterization Lab</li>
+                <li>MLV705: Special Topics in Materials Engineering</li>
+                <li>MLL711: Mechanical Behavior of Materials (PG)</li>
+                <li>APL753: Properties and Selection of Materials</li>
+                <li>MLL251: Mechanical Behavior of Materials (UG)</li>
+                <li>MLP352: Mechanical Behavior of Materials (UG Lab)</li>
+                <li>NIN100: Introduction to Materials Science and Engineering (UG Non graded)</li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
@@ -827,6 +877,23 @@
       updateCarousel();
     }
     updateCarousel();
+
+    // DROPDOWN JS for "At Office" section
+    document.querySelectorAll('.dropdown-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // Close all dropdowns except this one
+        document.querySelectorAll('.dropdown-content').forEach(function(cont) {
+          if (cont !== btn.nextElementSibling) cont.classList.remove('show');
+        });
+        document.querySelectorAll('.dropdown-btn').forEach(function(otherBtn) {
+          if (otherBtn !== btn) otherBtn.classList.remove('active');
+        });
+
+        // Toggle this dropdown
+        btn.classList.toggle('active');
+        btn.nextElementSibling.classList.toggle('show');
+      });
+    });
   </script>
 </body>
 </html>
