@@ -184,6 +184,59 @@
       box-shadow: 0 -1px 8px #c2d3ff33;
       max-width: 1200px;
     }
+    /* Accordion styles */
+    .accordion-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      font-family: 'Roboto', sans-serif;
+    }
+    .accordion-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #0f1e36;
+    }
+    .accordion-title em {
+      font-style: italic;
+      color: #1b3b89;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+    .accordion-button {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1rem;
+      cursor: pointer;
+      color: #1e3a8a;
+      position: relative;
+    }
+    .accordion-button::after {
+      content: '+';
+      position: absolute;
+      right: 1rem;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .accordion-item.active .accordion-button::after {
+      content: '−';
+    }
+    .accordion-content {
+      display: none;
+      padding: 0 1rem 1.2rem;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -210,7 +263,7 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- Sections Start (no more card containers) -->
+  <!-- Sections Start -->
   <section class="plain-section">
     <div class="content">
       <div class="image-container">
@@ -224,14 +277,33 @@
       </div>
     </div>
   </section>
-  <!-- SECOND SECTION: IMAGE + TEXT with only image (the former "Opportunities" section), all text removed -->
   <section class="plain-section">
     <div class="content reverse">
       <div class="image-container">
         <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Innovation" />
       </div>
       <div class="text-container">
-        <!-- All text content intentionally removed as per user instruction -->
+        <!-- Accordion dropdowns only, no headings or extra text -->
+        <div class="accordion-container">
+          <div class="accordion-item">
+            <button class="accordion-button">Postdoctoral Scholars</button>
+            <div class="accordion-content">
+              We’re always open to working with highly motivated postdocs. If you're interested in fatigue, fracture, or creep in materials science, reach out to discuss project ideas or external fellowships.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Graduate Students</button>
+            <div class="accordion-content">
+              Interested in pursuing an M.Tech or Ph.D. with us? We welcome curious minds ready to dive into structural materials research. See the <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">IIT Delhi Admissions</a> page for official application info.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-button">Undergraduate Students</button>
+            <div class="accordion-content">
+              Students from IIT Delhi can apply for short-term research or summer projects. If you’re eager to learn and explore materials science research, email us to get started!
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -293,6 +365,13 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
+    // Accordion dropdown
+    document.querySelectorAll('.accordion-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
