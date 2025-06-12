@@ -206,7 +206,6 @@
       pointer-events: auto;
       z-index: 2;
     }
-
     .hero-carousel-btn {
       position: absolute;
       top: 50%;
@@ -224,13 +223,13 @@
       z-index: 10;
       background: linear-gradient(135deg, rgba(116, 84, 255, 0.96) 80%, #00f0ff 120%);
       box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;
-      transition: transform 0.13s, box-shadow 0.2s, background 0.2s;
       outline: none;
       border: 3px solid #fff4;
       opacity: 0.93;
       filter: drop-shadow(0 2px 18px #7b43ff77);
       animation: heroBtnGlow 2.3s infinite alternate;
       user-select: none;
+      transition: none;
     }
     @keyframes heroBtnGlow {
       0% { box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;}
@@ -239,22 +238,29 @@
     }
     .hero-carousel-btn.left { left: 32px; }
     .hero-carousel-btn.right { right: 32px; }
-    .hero-carousel-btn:hover, .hero-carousel-btn:focus {
-      background: linear-gradient(135deg, #00f0ff 20%, #a88afc 80%);
+    /* Remove hover/active/focus effect */
+    .hero-carousel-btn:hover, .hero-carousel-btn:focus, .hero-carousel-btn:active {
+      background: linear-gradient(135deg, rgba(116, 84, 255, 0.96) 80%, #00f0ff 120%);
       color: #fff;
-      box-shadow: 0 0 70px #00f0ff99, 0 0 80px #a88afc99;
-      transform: scale(1.09) rotate(-4deg);
+      box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;
+      transform: translateY(-50%);
     }
-    .hero-carousel-btn:active {
-      transform: scale(0.97) rotate(2deg);
-      background: linear-gradient(135deg, #a88afc 80%, #00f0ff 120%);
+    .hero-carousel-btn svg {
+      width: 2.1em;
+      height: 2.1em;
+      display: block;
+      pointer-events: none;
+      /* Arrow color */
+      stroke: #fff;
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 8px #00f0ff88) drop-shadow(0 0 18px #a88afc77);
     }
     @media (max-width: 900px) {
       .hero-carousel-btn { width: 36px; height: 36px; font-size: 1.35rem; }
       .hero-carousel-btn.left { left: 6px; }
       .hero-carousel-btn.right { right: 6px; }
+      .hero-carousel-btn svg { width: 1.2em; height: 1.2em; }
     }
-
     .hero-content-on-image {
       position: relative;
       z-index: 20;
@@ -560,8 +566,16 @@
       <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Hero Image 2">
       <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" alt="Hero Image 3">
     </div>
-    <button class="hero-carousel-btn left" onclick="switchHeroImage(-1)" aria-label="Previous image">&#8592;</button>
-    <button class="hero-carousel-btn right" onclick="switchHeroImage(1)" aria-label="Next image">&#8594;</button>
+    <button class="hero-carousel-btn left" onclick="switchHeroImage(-1)" aria-label="Previous image">
+      <svg viewBox="0 0 32 32" fill="none">
+        <polyline points="20 8 12 16 20 24" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="hero-carousel-btn right" onclick="switchHeroImage(1)" aria-label="Next image">
+      <svg viewBox="0 0 32 32" fill="none">
+        <polyline points="12 8 20 16 12 24" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
     <div class="hero-content-on-image">
       <p class="subheading">Our research</p>
       <h1>Breaking new ground in insect neurobiology &amp; welfare</h1>
@@ -637,20 +651,6 @@
           <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
           <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
         </ul>
-      </div>
-    </div>
-    <!-- Consultancies -->
-    <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Consultancies</button>
-      <div class="dropdown-content">
-        <ul class="consult-list">
-          <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
-          <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
-          <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
-        </ul>
-        <div style="margin-top:0.7rem;color:#445;font-size:1.03rem;">
-          We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancies performed recently.
-        </div>
       </div>
     </div>
     <!-- Collaborations -->
