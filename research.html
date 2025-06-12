@@ -157,7 +157,7 @@
         border-radius: 4px;
       }
     }
-    /* --- Hero Section Styles (text over image) --- */
+    /* --- Hero Carousel Section --- */
     .hero {
       position: relative;
       width: 100vw;
@@ -165,10 +165,6 @@
       right: 0;
       margin-left: 0;
       margin-right: 0;
-      background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       height: 70vh;
       min-height: 340px;
       display: flex;
@@ -181,30 +177,72 @@
       box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
       overflow: hidden;
       z-index: 10;
-      padding-left: 6vw;
-      padding-right: 3vw;
+      padding-left: 0;
+      padding-right: 0;
       box-sizing: border-box;
+      background: #111;
     }
-    .hero::before {
-      content: '';
+    .hero-image-carousel {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      background: rgba(12, 32, 60, 0.45);
       z-index: 1;
+    }
+    .hero-image-carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: opacity 0.6s;
+      position: absolute;
+      top: 0; left: 0;
+      opacity: 0;
       pointer-events: none;
     }
+    .hero-image-carousel img.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .hero-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(30,58,138,0.78);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s;
+      opacity: 0.85;
+    }
+    .hero-carousel-btn.left { left: 22px; }
+    .hero-carousel-btn.right { right: 22px; }
+    .hero-carousel-btn:hover { background: #1E3A8A; }
+
     .hero-content-on-image {
       position: relative;
-      z-index: 2;
+      z-index: 20;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      height: auto;
-      max-width: 700px;
+      background: rgba(15,29,52,0.34);
+      box-shadow: 0 8px 44px 0 rgba(60,60,100,0.18);
       padding: 2.2rem 2.5rem;
+      max-width: 700px;
+      margin-left: 6vw;
+      margin-top: 0;
+      border-radius: 18px;
     }
     .hero .subheading {
       font-size: 1.25rem;
@@ -241,9 +279,8 @@
     }
     @media (max-width: 900px) {
       .hero {
-        height: auto;
-        min-height: 180px;
-        padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+        height: 300px;
+        min-height: 160px;
         margin-top: 3.5rem;
         margin-bottom: 1.3rem;
         width: 100vw;
@@ -253,6 +290,7 @@
       .hero-content-on-image {
         max-width: 98vw;
         padding: 1rem 0.7rem;
+        margin-left: 4vw;
       }
       .hero h1 {
         font-size: 1.3rem;
@@ -263,6 +301,9 @@
       .hero .description {
         font-size: 0.95rem;
       }
+      .hero-carousel-btn { width: 34px; height: 34px; font-size: 1.2rem; }
+      .hero-carousel-btn.left { left: 6px; }
+      .hero-carousel-btn.right { right: 6px; }
     }
     /* --- End Hero Section Styles --- */
     /* --- Three Cards Styles --- */
@@ -440,66 +481,6 @@
       }
     }
     /* --- End Dropdown Cards Styles --- */
-    .gallery, .videos, .facilities-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      min-height: 35px;
-      margin-top: 0.7rem;
-      justify-content: flex-start;
-    }
-    .gallery img, .facilities-gallery img, .facility-card img {
-      border-radius: 8px;
-      box-shadow: 0 1px 10px #c2d3ff33;
-      max-width: 200px;
-      max-height: 120px;
-      width: 100%;
-      height: auto;
-      border: 2.5px solid #1E3A8A22;
-      object-fit: cover;
-      background: #f6f7fa;
-      display: block;
-    }
-    .videos iframe {
-      border-radius: 8px;
-      box-shadow: 0 1px 12px #c2d3ff33;
-      width: 320px;
-      height: 180px;
-      border: 2.5px solid #1E3A8A22;
-      background: #f6f7fa;
-      max-width: 100%;
-    }
-    .facilities-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 0.7rem;
-    }
-    .facility-card {
-      background: #f6f7fa;
-      border-radius: 8px;
-      box-shadow: 0 1.5px 8px #c2d3ff44;
-      padding: 1rem 1rem 1.2rem 1rem;
-      min-width: 170px;
-      flex: 1 1 210px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 0.7rem;
-      font-size: 1.02rem;
-      border-left: 5px solid #1E3A8A22;
-      box-sizing: border-box;
-    }
-    .facility-card h3 {
-      color: #1E3A8A;
-      font-size: 1.13rem;
-      margin: 0 0 0.4rem 0;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.37rem;
-      letter-spacing: 0.7px;
-    }
     footer {
       background:#e4eaff;
       padding:1.4rem;
@@ -541,8 +522,15 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- Hero Section Start (text over image) -->
+  <!-- Hero Section Start (carousel) -->
   <section class="hero">
+    <div class="hero-image-carousel">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" class="active" alt="Hero Image 1">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Hero Image 2">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" alt="Hero Image 3">
+    </div>
+    <button class="hero-carousel-btn left" onclick="switchHeroImage(-1)" aria-label="Previous image">&#8592;</button>
+    <button class="hero-carousel-btn right" onclick="switchHeroImage(1)" aria-label="Next image">&#8594;</button>
     <div class="hero-content-on-image">
       <p class="subheading">Our research</p>
       <h1>Breaking new ground in insect neurobiology &amp; welfare</h1>
@@ -581,7 +569,7 @@
   <div class="dropdown-cards-container">
     <!-- Current Research Projects -->
     <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Research Projects</button>
+      <button type="button" onclick="toggleDropdown(this)">Current Research Projects</button>
       <div class="dropdown-content">
         <ul class="projects-list">
           <li>Fracture and Fatigue of BMGs and BMG composites</li>
@@ -597,7 +585,7 @@
     </div>
     <!-- Research Grants (as PI) -->
     <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Research Grants</button>
+      <button type="button" onclick="toggleDropdown(this)">Research Grants (as PI)</button>
       <div class="dropdown-content">
         <ul class="grants-list">
           <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing)</li>
@@ -645,38 +633,6 @@
   </div>
   <!-- Dropdown Cards Section End -->
 
-  <main>
-    <div class="section">
-      <h2>Research Videos</h2>
-      <div class="videos">
-        <!-- YouTube video embed demo (replace src with your own) -->
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="Demo Research Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="section">
-      <h2>Research Gallery</h2>
-      <div class="gallery">
-        <!-- Demo image, replace src with your own -->
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Demo Research Photo">
-      </div>
-    </div>
-    <div class="section">
-      <h2>Research Facilities</h2>
-      <div class="facilities-list">
-        <div class="facility-card">
-          <h3>INDUSTRON NANOGURU NG50</h3>
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
-        </div>
-        <div class="facility-card">
-          <h3>ROTATING BENDING FATIGUE TESTING MACHINE</h3>
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
-        </div>
-      </div>
-    </div>
-  </main>
   <footer>
     &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
   </footer>
@@ -705,6 +661,38 @@
       // Toggle current
       if (!isOpen) card.classList.add('open');
     }
+
+    // HERO IMAGE CAROUSEL LOGIC
+    const heroImages = [
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80"
+    ];
+    let heroCurrent = 0;
+    const heroImgs = document.querySelectorAll(".hero-image-carousel img");
+    function showHeroImg(idx) {
+      heroImgs.forEach((img, i) => {
+        img.classList.toggle("active", i === idx);
+      });
+    }
+    function switchHeroImage(dir) {
+      heroCurrent = (heroCurrent + dir + heroImages.length) % heroImages.length;
+      showHeroImg(heroCurrent);
+    }
+    // Optional: swipe events for mobile
+    let startX = null;
+    document.querySelector(".hero").addEventListener("touchstart", function(e) {
+      startX = e.touches[0].clientX;
+    });
+    document.querySelector(".hero").addEventListener("touchend", function(e) {
+      if(startX === null) return;
+      let endX = e.changedTouches[0].clientX;
+      if(Math.abs(endX - startX) > 20) {
+        if(endX < startX) switchHeroImage(1);
+        else switchHeroImage(-1);
+      }
+      startX = null;
+    });
   </script>
 </body>
 </html>
