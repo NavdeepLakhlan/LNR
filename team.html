@@ -28,8 +28,6 @@
       overflow-x: hidden;
     }
 
-    #mainContent { display: block; }
-
     /* ----------- HERO IMAGE CAROUSEL STYLES ----------- */
     .hero-carousel-container {
       width: 100vw;
@@ -146,7 +144,7 @@
     }
 
     /* ----------- END HERO IMAGE CAROUSEL STYLES ----------- */
-    /* ----------- TEAM SECTION STYLES (unchanged below) ----------- */
+    /* ----------- TEAM SECTION STYLES ----------- */
     section, .pi-bio, .carousel-item .pi-bio { text-align: justify; }
     .navbar-container {
       position: fixed; top: 16px; left: 16px; right: 16px;
@@ -174,7 +172,242 @@
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px; } }
-    /* ... ALL remaining CSS unchanged ... */
+
+    section {
+      max-width: 1200px;
+      margin: 6rem auto 2rem;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(200,200,200,0.13);
+    }
+    h1, h2 {
+      color: #1E3A8A;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1px;
+    }
+    h2 { margin-bottom: 2rem; font-weight: 700; font-size: 2.2rem; }
+    .pi-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 2.3rem;
+      margin-top: 1.5rem;
+      justify-content: flex-start;
+      position: relative;
+    }
+    .pi-image-block {
+      flex: 0 0 240px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 25px;
+    }
+    .pi-image-block img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      box-shadow: 0 0 18px rgba(30,58,138,0.13);
+      background: #f7f7f7;
+      margin-bottom: 0.5rem;
+      margin-right: 0.2rem;
+      display: block;
+      border-radius: 6px;
+    }
+    .pi-image-block h3 {
+      margin: 0.2rem 0 0.2rem 0;
+      color: #1E3A8A;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-align: left;
+    }
+    .pi-image-block p {
+      font-size: 1.04rem;
+      color: #445;
+      margin: 0;
+      text-align: left;
+    }
+    .pi-bio:not(.pi-bio-hover) {
+      flex: 1 1 400px;
+      font-size: 1.09rem;
+      line-height: 1.5;
+      color: #23272f;
+      padding-top: 0.1rem;
+      padding-left: 0.1rem;
+      text-align: justify;
+      display: block !important;
+    }
+    @media (max-width: 900px) {
+      .pi-container { flex-direction: column; gap: 1.2rem; align-items: center; }
+      .pi-image-block {
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
+      }
+      .pi-image-block img {
+        width: 155px;
+        height: 155px;
+      }
+      .pi-bio:not(.pi-bio-hover) {
+        text-align: justify;
+        padding-top: 0.6rem;
+        padding-left: 0;
+      }
+    }
+    .carousel-container {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      user-select: none;
+    }
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      height: 540px;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-item {
+      flex: 0 0 90%;
+      margin: 0 2vw;
+      background: #f9fafb;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(200,200,200,0.14);
+      color: #333;
+      opacity: 0.3;
+      transform: scale(0.8);
+      transition: all 0.6s cubic-bezier(0.77,0,0.18,1);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform-origin: center center;
+      padding: 2rem 2.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      min-height: 400px;
+      height: 520px;
+      box-sizing: border-box;
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: scale(0.95);}
+      to   { opacity: 1; transform: scale(1);}
+    }
+    .carousel-item.active {
+      opacity: 1;
+      position: relative;
+      left: 0;
+      flex: 0 0 98%;
+      transform: scale(1);
+      color: #1E3A8A;
+      box-shadow: 0 0 30px rgba(30,58,138,0.11);
+      z-index: 10;
+      background: #fff;
+      animation: fadeInCard 0.6s;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(30,58,138,0.13);
+      border: none;
+      color: #1E3A8A;
+      font-size: 2rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+      z-index: 20;
+      box-shadow: 0 0 5px rgba(30,58,138,0.11);
+    }
+    .carousel-btn:hover {
+      background: #1E3A8A;
+      color: #fff;
+    }
+    .carousel-btn.left { left: -30px; }
+    .carousel-btn.right { right: -30px; }
+    .carousel-item .pi-image-block img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #f7f7f7;
+      margin-bottom: 0.4rem;
+    }
+    .carousel-item .pi-image-block,
+    .carousel-item .pi-bio {
+      text-align: left;
+    }
+    .carousel-item .pi-image-block h3 {
+      margin: 0.3rem 0 0.5rem;
+      font-weight: 700;
+      color: #1E3A8A;
+      font-size: 1.45rem;
+      text-align: left;
+    }
+    .carousel-item .pi-image-block p {
+      margin: 0;
+      font-weight: 500;
+      font-style: italic;
+      color: #445;
+      text-align: left;
+    }
+    .carousel-item .pi-bio {
+      flex: 1;
+      font-size: 1.08rem;
+      line-height: 1.45;
+      color: #23272f;
+      text-align: justify;
+    }
+    @media (max-width: 768px) {
+      .carousel {
+        height: auto;
+        flex-wrap: nowrap;
+      }
+      .carousel-item {
+        position: relative !important;
+        flex: 0 0 98%;
+        margin: 0 10px;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        box-shadow: none !important;
+        color: #1E3A8A !important;
+        background: #fff !important;
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        min-height: 340px !important;
+        height: auto !important;
+      }
+      .pi-image-block, .carousel-item .pi-image-block {
+        margin-bottom: 1rem;
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
+      }
+      .carousel-item .pi-image-block img,
+      .pi-image-block img {
+        width: 110px !important;
+        height: 110px !important;
+      }
+    }
+    .alumni-list {
+      max-width:900px;
+      margin:1rem auto;
+      background:#fff;
+      border-radius:10px;
+      padding:2rem;
+      box-shadow:0 0 10px rgba(200,200,200,0.13);
+      color:#1E3A8A;
+      font-size:1rem;
+    }
+    .alumni-list b {
+      color:#1E3A8A;
+    }
   </style>
 </head>
 <body>
