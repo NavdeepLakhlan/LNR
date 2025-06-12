@@ -210,56 +210,39 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 64px;
-      height: 64px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      border: none;
+      border: 1.5px solid #fff;
+      background: rgba(255,255,255,0.18);
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.6rem;
-      color: #fff;
+      font-size: 1.4rem;
       cursor: pointer;
       z-index: 10;
-      background: linear-gradient(135deg, rgba(116, 84, 255, 0.96) 80%, #00f0ff 120%);
-      box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;
       outline: none;
-      border: 3px solid #fff4;
-      opacity: 0.93;
-      filter: drop-shadow(0 2px 18px #7b43ff77);
-      animation: heroBtnGlow 2.3s infinite alternate;
-      user-select: none;
+      padding: 0;
+      box-shadow: none;
       transition: none;
+      opacity: 0.95;
     }
-    @keyframes heroBtnGlow {
-      0% { box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;}
-      60% { box-shadow: 0 0 42px #a88afcbb, 0 0 90px #00e7ff77;}
-      100% { box-shadow: 0 0 18px #a88afc77, 0 0 44px #00e7ff44;}
-    }
-    .hero-carousel-btn.left { left: 32px; }
-    .hero-carousel-btn.right { right: 32px; }
-    /* Remove hover/active/focus effect */
-    .hero-carousel-btn:hover, .hero-carousel-btn:focus, .hero-carousel-btn:active {
-      background: linear-gradient(135deg, rgba(116, 84, 255, 0.96) 80%, #00f0ff 120%);
-      color: #fff;
-      box-shadow: 0 0 20px #a88afc77, 0 0 44px #00e7ff33;
-      transform: translateY(-50%);
-    }
+    .hero-carousel-btn.left { left: 22px; }
+    .hero-carousel-btn.right { right: 22px; }
     .hero-carousel-btn svg {
-      width: 2.1em;
-      height: 2.1em;
+      width: 1.5em;
+      height: 1.5em;
       display: block;
-      pointer-events: none;
-      /* Arrow color */
       stroke: #fff;
       stroke-width: 2.5;
-      filter: drop-shadow(0 0 8px #00f0ff88) drop-shadow(0 0 18px #a88afc77);
+      fill: none;
     }
     @media (max-width: 900px) {
-      .hero-carousel-btn { width: 36px; height: 36px; font-size: 1.35rem; }
+      .hero-carousel-btn { width: 28px; height: 28px; font-size: 1rem; }
       .hero-carousel-btn.left { left: 6px; }
       .hero-carousel-btn.right { right: 6px; }
-      .hero-carousel-btn svg { width: 1.2em; height: 1.2em; }
+      .hero-carousel-btn svg { width: 1em; height: 1em; }
     }
     .hero-content-on-image {
       position: relative;
@@ -352,7 +335,7 @@
       flex-wrap: wrap;
       max-width: 1200px;
       margin: auto;
-      margin-bottom: 3.5rem; /* Extra space after cards */
+      margin-bottom: 3.5rem;
     }
     .card {
       background: #f8f8f8;
@@ -382,7 +365,7 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
     .card:nth-child(1)::before {
-      background-image: url('fatigue.jpg'); /* replace with real image path */
+      background-image: url('fatigue.jpg');
     }
     .card:nth-child(2)::before {
       background-image: url('fracture.jpg');
@@ -426,9 +409,9 @@
       background: #f8f8f8;
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(30,58,138,0.09);
-      width: 265px;
-      min-width: 220px;
-      max-width: 340px;
+      width: 320px;
+      min-width: 320px;
+      max-width: 320px;
       margin: 0;
       font-family: 'Inter', sans-serif;
       transition: box-shadow 0.2s;
@@ -464,7 +447,6 @@
     .dropdown-card.open .dropdown-content {
       display: block;
     }
-    /* For lists inside the dropdowns */
     .dropdown-content ul {
       list-style: none;
       padding: 0;
@@ -567,14 +549,10 @@
       <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" alt="Hero Image 3">
     </div>
     <button class="hero-carousel-btn left" onclick="switchHeroImage(-1)" aria-label="Previous image">
-      <svg viewBox="0 0 32 32" fill="none">
-        <polyline points="20 8 12 16 20 24" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <svg viewBox="0 0 32 32"><polyline points="20 8 12 16 20 24" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <button class="hero-carousel-btn right" onclick="switchHeroImage(1)" aria-label="Next image">
-      <svg viewBox="0 0 32 32" fill="none">
-        <polyline points="12 8 20 16 12 24" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <svg viewBox="0 0 32 32"><polyline points="12 8 20 16 12 24" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <div class="hero-content-on-image">
       <p class="subheading">Our research</p>
