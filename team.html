@@ -184,6 +184,7 @@
       flex-direction: column;
       justify-content: flex-start;
       text-align: justify;
+      max-width: 480px; /* reduce width of text */
     }
     .pi-flex-text h2 {
       color: #1E3A8A;
@@ -191,13 +192,13 @@
       font-family: 'Roboto', sans-serif;
       letter-spacing: 1px;
       font-weight: 700;
-      font-size: 1.25rem; /* reduced font size */
+      font-size: 1.25rem;
       margin-bottom: 0.2em;
       margin-top: 0;
     }
     .pi-flex-text p {
       color: #23272f;
-      font-size: 0.93rem; /* reduced font size */
+      font-size: 0.93rem;
       line-height: 1.5;
       margin-top: 0.5em;
       margin-bottom: 0;
@@ -221,8 +222,8 @@
     }
     @media (max-width: 900px) {
       .pi-flex-custom { flex-direction: column; align-items: center; }
-      .pi-flex-img img { width: 220px; height: 220px; margin: 0 auto; }
-      .pi-flex-text { padding-right: 0; margin-left: 0; }
+      .pi-flex-img img { width: 220px; height: 245px; margin: 0 auto; }
+      .pi-flex-text { padding-right: 0; margin-left: 0; max-width: 98vw; }
       .pi-flex-text h2 { text-align: center; }
       .pi-flex-text p { text-align: center; }
     }
