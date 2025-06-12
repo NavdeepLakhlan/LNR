@@ -14,7 +14,6 @@
       --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
       --text: #222;
-      /* --card-bg and --card-shadow no longer used */
       --cta-bg: #111;
       --cta-hover: #333;
     }
@@ -62,7 +61,6 @@
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
     @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px; } .lab-title { font-size: 0.84rem;} .nav-right { gap: 0.4rem; font-size: 0.75rem;} }
-    /* Remove .value-block styles, apply section padding directly */
     .plain-section {
       width: 100vw;
       max-width: 100%;
@@ -186,59 +184,6 @@
       box-shadow: 0 -1px 8px #c2d3ff33;
       max-width: 1200px;
     }
-    /* Accordion styles */
-    .accordion-container {
-      max-width: 700px;
-      margin: 3rem auto;
-      font-family: 'Roboto', sans-serif;
-    }
-    .accordion-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: #0f1e36;
-    }
-    .accordion-title em {
-      font-style: italic;
-      color: #1b3b89;
-    }
-    .accordion-item {
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 1rem;
-    }
-    .accordion-button {
-      background: none;
-      border: none;
-      width: 100%;
-      text-align: left;
-      font-size: 1.2rem;
-      font-weight: 700;
-      padding: 1rem;
-      cursor: pointer;
-      color: #1e3a8a;
-      position: relative;
-    }
-    .accordion-button::after {
-      content: '+';
-      position: absolute;
-      right: 1rem;
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-    .accordion-item.active .accordion-button::after {
-      content: '−';
-    }
-    .accordion-content {
-      display: none;
-      padding: 0 1rem 1.2rem;
-      font-size: 0.98rem;
-      line-height: 1.6;
-      color: #333;
-    }
-    .accordion-item.active .accordion-content {
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -279,71 +224,14 @@
       </div>
     </div>
   </section>
+  <!-- SECOND SECTION: IMAGE + TEXT with only image (the former "Opportunities" section), all text removed -->
   <section class="plain-section">
     <div class="content reverse">
       <div class="image-container">
         <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Innovation" />
       </div>
       <div class="text-container">
-        <div class="meta-label">② What we offer</div>
-        <h2>Opportunities for every student</h2>
-        <!-- DROPDOWN REPLACEMENT STARTS -->
-        <div class="accordion-container">
-          <h2 class="accordion-title">Learn more about <strong>how to</strong> <em>apply!</em></h2>
-          <div class="accordion-item">
-            <button class="accordion-button">Postdoctoral Scholars</button>
-            <div class="accordion-content">
-              We’re always open to working with highly motivated postdocs. If you're interested in fatigue, fracture, or creep in materials science, reach out to discuss project ideas or external fellowships.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-button">Graduate Students</button>
-            <div class="accordion-content">
-              Interested in pursuing an M.Tech or Ph.D. with us? We welcome curious minds ready to dive into structural materials research. See the <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">IIT Delhi Admissions</a> page for official application info.
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-button">Undergraduate Students</button>
-            <div class="accordion-content">
-              Students from IIT Delhi can apply for short-term research or summer projects. If you’re eager to learn and explore materials science research, email us to get started!
-            </div>
-          </div>
-        </div>
-        <!-- DROPDOWN REPLACEMENT ENDS -->
-      </div>
-    </div>
-  </section>
-  <section class="plain-section">
-    <div class="content">
-      <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Community" />
-      </div>
-      <div class="text-container">
-        <div class="meta-label">③ Our community</div>
-        <h2>Together, we achieve more</h2>
-        <p>Join a vibrant, supportive community where you’ll form lasting friendships, collaborate on meaningful projects, and grow together.</p>
-        <a href="#" class="cta">Meet our students</a>
-      </div>
-    </div>
-  </section>
-  <section class="plain-section">
-    <div class="content reverse">
-      <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Apply" />
-      </div>
-      <div class="text-container">
-        <div class="meta-label">④ How to Apply</div>
-        <h2>Ready to Join?</h2>
-        <p>
-          We welcome applications from motivated B.Tech, M.Tech, and Ph.D. aspirants. If you are interested in joining the lab:
-        </p>
-        <ul style="text-align:left; max-width:600px; margin:1rem auto 1rem auto; color:#23272f; font-size:1rem; line-height:1.65; padding-left:1.1em;">
-          <li>Check ongoing research areas on the <a href="research.html">Research</a> page.</li>
-          <li>Send your CV and a brief statement of purpose to <a href="mailto:labhead@email.com">labhead@email.com</a> (replace with actual email).</li>
-          <li>For Ph.D./PG admissions, refer to the <a href="https://home.iitd.ac.in/pg-admissions.php" target="_blank">IIT Delhi Admissions Portal</a>.</li>
-        </ul>
-        <a href="mailto:labhead@email.com" class="cta" style="margin-bottom:10px;">Apply Now</a>
-        <div style="color:#1E3A8A; font-size:0.93rem; margin-top:0.7rem;">We encourage applications from all backgrounds and are committed to fostering a diverse academic environment.</div>
+        <!-- All text content intentionally removed as per user instruction -->
       </div>
     </div>
   </section>
@@ -405,13 +293,6 @@
       lastScrollY = window.scrollY;
     });
     navbarContainer.classList.add('visible');
-    // Accordion dropdown
-    document.querySelectorAll('.accordion-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('active');
-      });
-    });
   </script>
 </body>
 </html>
