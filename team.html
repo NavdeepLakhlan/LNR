@@ -27,7 +27,8 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-    /* ... [unchanged CSS above] ... */
+
+    /* ... all your original styles ... */
 
     /* ----------- MEET THE TEAM SECTION (unique, bigger, no radius) ----------- */
     .team-section {
@@ -77,13 +78,13 @@
       flex: 1;
     }
     .team-card-content h3 {
-      font-size: 1.15rem; /* decreased */
+      font-size: 1.15rem;
       font-weight: 700;
       color: #0d1b2a;
       margin: 0 0 0.3rem;
     }
     .team-card-content h4 {
-      font-size: 0.74rem; /* decreased */
+      font-size: 0.74rem;
       font-weight: 600;
       color: #637087;
       letter-spacing: 1px;
@@ -91,7 +92,7 @@
       margin: 0 0 0.8rem;
     }
     .team-card-content p {
-      font-size: 0.93rem; /* decreased */
+      font-size: 0.93rem;
       font-weight: 400;
       color: #333333;
       line-height: 1.5;
@@ -130,11 +131,13 @@
         max-height: 360px;
       }
     }
-    /* ... [keep the rest of the CSS unchanged] ... */
+    /* ----------- END MEET THE TEAM SECTION ----------- */
+
+    /* ... keep all your other styles unchanged ... */
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar (unchanged) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -319,20 +322,19 @@
   <!-- End Main Content -->
 
   <script>
+    // ============ TEAM CAROUSEL SCROLL ============
     const teamCarousel = document.getElementById("teamCarousel");
     function scrollTeam(direction) {
       const cardWidth = 340 + 16; // width + margin gap
       teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
     }
-
-    // HERO IMAGE CAROUSEL LOGIC
+    // ============ HERO IMAGE CAROUSEL LOGIC ============
     (function(){
       const slides = document.querySelectorAll('.hero-slide');
       const btnLeft = document.querySelector('.hero-carousel-btn.left');
       const btnRight = document.querySelector('.hero-carousel-btn.right');
       const desc = document.getElementById('heroDescription');
       let active = 0;
-
       function showSlide(idx) {
         slides.forEach((slide, i) => {
           slide.classList.toggle('active', i === idx);
@@ -365,8 +367,7 @@
       // Initialize description
       showSlide(active);
     })();
-
-    // Navbar JS
+    // ============ NAVBAR SCROLL VISIBILITY ============
     let lastScrollY = window.scrollY;
     const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
