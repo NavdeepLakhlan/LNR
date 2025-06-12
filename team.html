@@ -27,8 +27,8 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
+    /* ... [unchanged CSS above] ... */
 
-    /* ... other styles unchanged ... */
     /* ----------- MEET THE TEAM SECTION (unique, bigger, no radius) ----------- */
     .team-section {
       padding: 3rem 0;
@@ -130,11 +130,11 @@
         max-height: 360px;
       }
     }
-    /* ... keep the rest of the CSS unchanged ... */
+    /* ... [keep the rest of the CSS unchanged] ... */
   </style>
 </head>
 <body>
-  <!-- Navbar (unchanged) -->
+  <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -198,152 +198,132 @@
         </div>
       </div>
     </section>
-    <section>
 
-<!-- Team Section (MEET THE TEAM, unique classes, 13 cards, font-size decreased) -->
-<section class="team-section">
-  <h2>Meet the Team</h2>
-  <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
-  <div class="team-carousel" id="teamCarousel">
-    <div class="team-card">
-      <img src="dr-ashwani-kumar.jpg" alt="Ashwani Kumar, PhD">
-      <div class="team-card-content">
-        <h3>Ashwani Kumar, PhD</h3>
-        <h4>Postdoctoral Researcher</h4>
-        <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and related materials.</p>
+    <!-- ================= MEET THE TEAM SECTION (MODIFIED) ================= -->
+    <section class="team-section">
+      <h2>Meet the Team</h2>
+      <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
+      <div class="team-carousel" id="teamCarousel">
+        <div class="team-card">
+          <img src="dr-ashwani-kumar.jpg" alt="Ashwani Kumar, PhD">
+          <div class="team-card-content">
+            <h3>Ashwani Kumar, PhD</h3>
+            <h4>Postdoctoral Researcher</h4>
+            <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and related materials.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="amey.jpg" alt="Amey Raghuvir Parnaik">
+          <div class="team-card-content">
+            <h3>Amey Raghuvir Parnaik</h3>
+            <h4>PhD Student</h4>
+            <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from the same institute. He is currently working on microstructural evolution in advanced alloys.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="j-vigneshwaran.jpg" alt="J. Vigneshwaran">
+          <div class="team-card-content">
+            <h3>J. Vigneshwaran</h3>
+            <h4>Senior Research Fellow</h4>
+            <p>Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage applications.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="ashwani.jpg" alt="Ashwani">
+          <div class="team-card-content">
+            <h3>Ashwani</h3>
+            <h4>PhD Student</h4>
+            <p>Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Kanpur for his doctoral research.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="simran.jpg" alt="Simran Nath">
+          <div class="team-card-content">
+            <h3>Simran Nath</h3>
+            <h4>PhD Student</h4>
+            <p>Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department of Material Science and Engineering, IIT Kanpur, for her doctoral studies.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="karthik.jpg" alt="Karthik">
+          <div class="team-card-content">
+            <h3>Karthik</h3>
+            <h4>PhD Student</h4>
+            <p>Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint supervision of Prof. L.N. Ramasubramanian and Prof. S. Kumar.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="akash.jpg" alt="Akash Mishra">
+          <div class="team-card-content">
+            <h3>Akash Mishra</h3>
+            <h4>PhD Student</h4>
+            <p>Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department of Material Science and Engineering, IIT Kanpur.</p>
+          </div>
+        </div>
+        <!-- 6 new team members below -->
+        <div class="team-card">
+          <img src="rajat.jpg" alt="Rajat Singh">
+          <div class="team-card-content">
+            <h3>Rajat Singh</h3>
+            <h4>PhD Student</h4>
+            <p>Rajat completed his M.Tech. in Materials Science from IIT Kanpur and is currently working on the modeling of high-temperature deformation in advanced alloys.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="priya.jpg" alt="Priya Sharma">
+          <div class="team-card-content">
+            <h3>Priya Sharma</h3>
+            <h4>Junior Research Fellow</h4>
+            <p>Priya's interests lie in nanomaterials and their applications in catalysis. She is currently investigating synthesis and surface modification techniques for enhanced catalytic performance.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="arjun.jpg" alt="Arjun Patel">
+          <div class="team-card-content">
+            <h3>Arjun Patel</h3>
+            <h4>PhD Student</h4>
+            <p>Arjun is working in the area of additive manufacturing of metals, focusing on process optimization and microstructure-property relationships in 3D printed alloys.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="sonali.jpg" alt="Sonali Verma">
+          <div class="team-card-content">
+            <h3>Sonali Verma</h3>
+            <h4>PhD Student</h4>
+            <p>Sonali is investigating corrosion mechanisms in high-entropy alloys with a focus on electrochemical testing and advanced characterization techniques.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="mukesh.jpg" alt="Mukesh Kumar">
+          <div class="team-card-content">
+            <h3>Mukesh Kumar</h3>
+            <h4>Junior Research Fellow</h4>
+            <p>Mukesh's research involves powder metallurgy and consolidation of refractory alloys for high-temperature structural applications.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="shreya.jpg" alt="Shreya Nair">
+          <div class="team-card-content">
+            <h3>Shreya Nair</h3>
+            <h4>Research Associate</h4>
+            <p>Shreya is engaged in advanced microscopy and electron backscatter diffraction (EBSD) studies to understand microstructural evolution in novel metallic systems.</p>
+          </div>
+        </div>
+        <!-- End of 6 new team members -->
       </div>
-    </div>
-    <div class="team-card">
-      <img src="amey.jpg" alt="Amey Raghuvir Parnaik">
-      <div class="team-card-content">
-        <h3>Amey Raghuvir Parnaik</h3>
-        <h4>PhD Student</h4>
-        <p>Amey has completed his bachelor's in Mechanical Engineering from Jawaharlal Nehru Engineering College, Aurangabad, Maharashtra, and pursued his master's in Materials Technology from the same institute. He is currently working on microstructural evolution in advanced alloys.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="j-vigneshwaran.jpg" alt="J. Vigneshwaran">
-      <div class="team-card-content">
-        <h3>J. Vigneshwaran</h3>
-        <h4>Senior Research Fellow</h4>
-        <p>Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage applications.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="ashwani.jpg" alt="Ashwani">
-      <div class="team-card-content">
-        <h3>Ashwani</h3>
-        <h4>PhD Student</h4>
-        <p>Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Kanpur for his doctoral research.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="simran.jpg" alt="Simran Nath">
-      <div class="team-card-content">
-        <h3>Simran Nath</h3>
-        <h4>PhD Student</h4>
-        <p>Simran Nath completed her MTech in Materials Engineering from IISc Bangalore and her BTech in Metallurgical and Materials Engineering from NIT Srinagar. She joined the Department of Material Science and Engineering, IIT Kanpur, for her doctoral studies.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="karthik.jpg" alt="Karthik">
-      <div class="team-card-content">
-        <h3>Karthik</h3>
-        <h4>PhD Student</h4>
-        <p>Karthik Kumar completed his B.Tech. from NIT Puducherry and his M.S. (R) from IIT Delhi. He is currently working on the development of high-strength novel Al alloys under the joint supervision of Prof. L.N. Ramasubramanian and Prof. S. Kumar.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="akash.jpg" alt="Akash Mishra">
-      <div class="team-card-content">
-        <h3>Akash Mishra</h3>
-        <h4>PhD Student</h4>
-        <p>Akash completed his B.Tech. in Metallurgical and Materials Science Engineering at National Institute of Technology, Rourkela, India in 2023 and is pursuing his PhD from Department of Material Science and Engineering, IIT Kanpur.</p>
-      </div>
-    </div>
-
-    <!-- 6 new team members below -->
-    <div class="team-card">
-      <img src="rajat.jpg" alt="Rajat Singh">
-      <div class="team-card-content">
-        <h3>Rajat Singh</h3>
-        <h4>PhD Student</h4>
-        <p>Rajat completed his M.Tech. in Materials Science from IIT Kanpur and is currently working on the modeling of high-temperature deformation in advanced alloys.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="priya.jpg" alt="Priya Sharma">
-      <div class="team-card-content">
-        <h3>Priya Sharma</h3>
-        <h4>Junior Research Fellow</h4>
-        <p>Priya's interests lie in nanomaterials and their applications in catalysis. She is currently investigating synthesis and surface modification techniques for enhanced catalytic performance.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="arjun.jpg" alt="Arjun Patel">
-      <div class="team-card-content">
-        <h3>Arjun Patel</h3>
-        <h4>PhD Student</h4>
-        <p>Arjun is working in the area of additive manufacturing of metals, focusing on process optimization and microstructure-property relationships in 3D printed alloys.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="sonali.jpg" alt="Sonali Verma">
-      <div class="team-card-content">
-        <h3>Sonali Verma</h3>
-        <h4>PhD Student</h4>
-        <p>Sonali is investigating corrosion mechanisms in high-entropy alloys with a focus on electrochemical testing and advanced characterization techniques.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="mukesh.jpg" alt="Mukesh Kumar">
-      <div class="team-card-content">
-        <h3>Mukesh Kumar</h3>
-        <h4>Junior Research Fellow</h4>
-        <p>Mukesh's research involves powder metallurgy and consolidation of refractory alloys for high-temperature structural applications.</p>
-      </div>
-    </div>
-    <div class="team-card">
-      <img src="shreya.jpg" alt="Shreya Nair">
-      <div class="team-card-content">
-        <h3>Shreya Nair</h3>
-        <h4>Research Associate</h4>
-        <p>Shreya is engaged in advanced microscopy and electron backscatter diffraction (EBSD) studies to understand microstructural evolution in novel metallic systems.</p>
-      </div>
-    </div>
-    <!-- End of 6 new team members -->
-
-  </div>
-  <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
-</section>
-
-<script>
-  const teamCarousel = document.getElementById("teamCarousel");
-  function scrollTeam(direction) {
-    const cardWidth = 340 + 16; // width + margin gap
-    teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-  }
-</script>
+      <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
+    </section>
+    <!-- ================= END MEET THE TEAM SECTION ================= -->
 
   </div>
+  <!-- End Main Content -->
 
   <script>
-    // ... other JS unchanged, keep your original scripts ...
-    // Punchline Animation
-    document.addEventListener('DOMContentLoaded', function() {
-      const overlay = document.getElementById('punchlineOverlay');
-      const mainContent = document.getElementById('mainContent');
-      if (overlay) {
-        overlay.classList.add('visible');
-        setTimeout(() => {
-          overlay.classList.add('fadeout');
-          setTimeout(() => {
-            overlay.style.display = 'none';
-            mainContent.style.display = 'block';
-          }, 900); // match animation duration
-        }, 1800);
-      }
-    });
+    const teamCarousel = document.getElementById("teamCarousel");
+    function scrollTeam(direction) {
+      const cardWidth = 340 + 16; // width + margin gap
+      teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
 
     // HERO IMAGE CAROUSEL LOGIC
     (function(){
@@ -385,59 +365,6 @@
       // Initialize description
       showSlide(active);
     })();
-
-    // Carousel logic for all carousels on the page (unchanged)
-    document.querySelectorAll('.carousel-container').forEach(function(container) {
-      const items = container.querySelectorAll('.carousel-item');
-      const btnLeft = container.querySelector('.carousel-btn.left');
-      const btnRight = container.querySelector('.carousel-btn.right');
-      let activeIndex = 0;
-
-      function updateCarousel() {
-        items.forEach((item, i) => {
-          item.classList.remove('active', 'next');
-          item.style.position = 'absolute';
-          item.style.opacity = '0';
-          item.style.zIndex = '1';
-          item.style.transform = 'scale(0.7)';
-          item.style.left = '100%';
-
-          if (i === activeIndex) {
-            item.classList.add('active');
-            item.style.position = 'relative';
-            item.style.left = '0';
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-            item.style.zIndex = '10';
-          } else if (i === (activeIndex + 1) % items.length) {
-            item.classList.add('next');
-            item.style.left = '75%';
-            item.style.opacity = '0.6';
-            item.style.transform = 'scale(0.85)';
-            item.style.zIndex = '5';
-          } else if (i === (activeIndex + 2) % items.length) {
-            item.style.left = '90%';
-            item.style.opacity = '0.4';
-            item.style.transform = 'scale(0.7)';
-            item.style.zIndex = '2';
-          }
-        });
-      }
-
-      if (btnLeft && btnRight && items.length > 0) {
-        btnLeft.addEventListener('click', () => {
-          activeIndex = (activeIndex - 1 + items.length) % items.length;
-          updateCarousel();
-        });
-
-        btnRight.addEventListener('click', () => {
-          activeIndex = (activeIndex + 1) % items.length;
-          updateCarousel();
-        });
-
-        updateCarousel();
-      }
-    });
 
     // Navbar JS
     let lastScrollY = window.scrollY;
