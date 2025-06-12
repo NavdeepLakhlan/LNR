@@ -149,6 +149,225 @@
       }
     }
     /* --- End Navbar Styles --- */
+
+    .research-header {
+      color: #fff;
+      background: linear-gradient(90deg, #1E3A8A 80%, #e4eaff 100%);
+      border-radius: 22px;
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: 1.5px;
+      padding: 2.3rem 2rem 2.1rem 2rem;
+      box-shadow: 0 6px 32px 0 rgba(30,58,138,0.13);
+      margin: 7.5rem auto 2.2rem auto;
+      width: 680px;
+      max-width: 95vw;
+      text-shadow: 1px 2px 12px rgba(30,58,138,0.13);
+      border: 4px solid #1E3A8A;
+      display: block;
+    }
+    .research-header-desc {
+      color: #1E3A8A;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.11rem;
+      margin: 0 auto 2.2rem auto;
+      max-width: 680px;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      box-shadow: 0 2px 14px rgba(30,58,138,0.07);
+    }
+    main {
+      padding: 0;
+      max-width: 1200px;
+      margin: 0 auto 3em auto;
+      min-height: 100vh;
+      font-size: 1.09rem;
+    }
+    h1, h2 {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #1E3A8A;
+      margin-top: 1.5rem;
+      margin-bottom: 0.7rem;
+      text-shadow: none;
+      display: block;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 0;
+      margin-bottom: 1.7rem;
+      border-bottom: none;
+      padding-bottom: 0;
+      width: 100%;
+      text-transform: none;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.45rem;
+      border-bottom: none;
+      width: 100%;
+      padding-bottom: 0.1rem;
+      text-transform: none;
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    .section {
+      margin-bottom: 2.1rem;
+      padding: 1.7rem 2.2rem 1.7rem 2.2rem;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(200,200,200,0.13);
+      border: none;
+      animation: fadeinup 0.8s cubic-bezier(.2,1,.22,1);
+    }
+    @keyframes fadeinup {
+      from { opacity: 0; transform: translateY(35px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    ul, .collab-list, .consult-list, .projects-list, .grants-list {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .projects-list, .grants-list, .consult-list, .collab-list {
+      display: grid;
+      gap: 0.7rem;
+    }
+    .projects-list li, .grants-list li, .consult-list li, .collab-list li {
+      background: #f6f7fa;
+      padding: 0.85rem 1.3rem;
+      border-radius: 7px;
+      box-shadow: 0 1px 6px 0 #c2d3ff33;
+      font-size: 1.04rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      position: relative;
+      border-left: 5px solid #1E3A8A;
+    }
+    .grants-subtitle {
+      color: #1E3A8A;
+      margin-top: 1.3rem;
+      margin-bottom: 0.45rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+    }
+    .gallery, .videos, .facilities-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      min-height: 35px;
+      margin-top: 0.7rem;
+      justify-content: flex-start;
+    }
+    .gallery img, .facilities-gallery img, .facility-card img {
+      border-radius: 8px;
+      box-shadow: 0 1px 10px #c2d3ff33;
+      max-width: 200px;
+      max-height: 120px;
+      width: 200px;
+      height: 120px;
+      border: 2.5px solid #1E3A8A22;
+      object-fit: cover;
+      background: #f6f7fa;
+      display: block;
+    }
+    .gallery-placeholder, .videos-placeholder, .facilities-placeholder {
+      color: #445;
+      font-style: italic;
+      font-size: 1.07rem;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.7rem 1.1rem;
+      box-shadow: 0 1px 5px #c2d3ff33;
+    }
+    .videos iframe {
+      border-radius: 8px;
+      box-shadow: 0 1px 12px #c2d3ff33;
+      width: 320px;
+      height: 180px;
+      border: 2.5px solid #1E3A8A22;
+      background: #f6f7fa;
+    }
+    .facilities-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 0.7rem;
+    }
+    .facility-card {
+      background: #f6f7fa;
+      border-radius: 8px;
+      box-shadow: 0 1.5px 8px #c2d3ff44;
+      padding: 1rem 1rem 1.2rem 1rem;
+      min-width: 170px;
+      flex: 1 1 210px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0.7rem;
+      font-size: 1.02rem;
+      border-left: 5px solid #1E3A8A22;
+    }
+    .facility-card h3 {
+      color: #1E3A8A;
+      font-size: 1.13rem;
+      margin: 0 0 0.4rem 0;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.37rem;
+      letter-spacing: 0.7px;
+    }
+    .facility-placeholder {
+      color: #445;
+      font-style: italic;
+      background: #e4eaff;
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+      margin-top: 0.2rem;
+      font-size: 0.99rem;
+    }
+    @media (max-width: 900px) {
+      .research-header {
+        font-size: 1.1rem;
+        padding: 1.3rem 0.4rem 1.1rem 0.4rem;
+        min-width: unset;
+        width: 99vw;
+      }
+      .research-header-desc {
+        font-size: 0.98rem;
+        padding: 0.7rem 0.4rem;
+        max-width: 99vw;
+      }
+      .section { padding: 0.7rem;}
+      h1 { font-size: 1.1rem;}
+      h2 { font-size: 1rem;}
+      .facility-card { min-width: 100px; padding: 0.5rem;}
+      .gallery img, .facilities-gallery img, .facility-card img { max-width: 100px; max-height: 60px; width: 100px; height: 60px;}
+      .videos iframe { width: 180px; height: 100px;}
+      main {padding: 0;}
+    }
+    footer {
+      background:#e4eaff; 
+      padding:1.4rem; 
+      text-align:center; 
+      color:#1E3A8A; 
+      font-size:0.99rem;
+      border-radius: 14px 14px 0 0;
+      margin: 0 auto 0 auto;
+      box-shadow: 0 -1px 8px #c2d3ff33;
+      max-width: 1200px;
+    }
   </style>
 </head>
 <body>
@@ -177,124 +396,99 @@
   </div>
   <!-- End Navbar -->
 
-  <!-- BEGIN: Res.html body content -->
-  <div
-    id="siteWrapper"
-    class="clearfix site-wrapper"
-  >
-    <div id="floatingCart" class="floating-cart hidden">
-      <a href="/cart" class="icon icon--stroke icon--fill icon--cart sqs-custom-cart">
-        <span class="Cart-inner">
-          <svg class="icon icon--cart" width="61" height="49" viewBox="0 0 61 49">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H13.6362C14.3878 0.5 15.0234 1.05632 15.123 1.80135L16.431 11.5916H59C59.5122 11.5916 59.989 11.8529 60.2645 12.2C60.5399 12.5471 60.5034 13.1108 60.1807 13.4217L50.0454 23.0199L52.7285 44.588C52.8161 45.2876 52.1957 45.8927 51.5 45.7352L16.5 38.053C16.0135 37.9486 15.7197 37.4543 15.9276 37.0116L19.0559 30.2046H13.6362C12.8846 30.2046 12.249 29.6483 12.1494 28.9033L10.8414 19.113H2C1.17157 19.113 0.5 18.4414 0.5 17.613V2Z" />
-            <path d="M18.589 35H49.7083L60 13H16L18.589 35Z" />
-            <path d="M21 49C23.2091 49 25 47.2091 25 45C25 42.7909 23.2091 41 21 41C18.7909 41 17 42.7909 17 45C17 47.2091 18.7909 49 21 49Z" />
-            <path d="M45 49C47.2091 49 49 47.2091 49 45C49 42.7909 47.2091 41 45 41C42.7909 41 41 42.7909 41 45C41 47.2091 42.7909 49 45 49Z" />
-          </svg>
-          <div class="legacy-cart icon-cart-quantity">
-            <span class="sqs-cart-quantity">0</span>
-          </div>
-        </span>
-      </a>
+  <div class="research-header">
+    Research at Dhātu-yantra-pravartana Lab
+  </div>
+  <div class="research-header-desc">
+    Current projects, grants, consultancies, collaborations, media, and research infrastructure.
+  </div>
+
+  <main>
+    <div class="section">
+      <h2>Current Research Projects</h2>
+      <ul class="projects-list">
+        <li>Fracture and Fatigue of BMGs and BMG composites</li>
+        <li>Structure-Property correlations in 3D printed Maraging steels</li>
+        <li>Mechanical behaviour of Heusler alloys</li>
+        <li>Fracture of Mg alloys (with Prof. Jayant Jain)</li>
+        <li>Mechanical behavior of 3D printed high entropy alloys</li>
+        <li>Fracture and fatigue of reactor pressure vessel steels</li>
+        <li>Mechanical behaviour of SLM Al-Sc alloys</li>
+        <li>Fracture and Fatigue of 3D printed Ti alloys</li>
+      </ul>
     </div>
-    <header>
-      <!-- Example header image/logo/title for the research lab -->
-      <div style="padding: 3rem 0 1.5rem 0; text-align: center;">
-        <img src="https://images.squarespace-cdn.com/content/v1/6577417dd1138c01e63a752b/bfd3be03-805a-481f-ade9-1b0ca0cca312/BarrettLab-Logos_Horizontal-Color.png?format=1500w" alt="Barrett Lab Logo" style="max-width: 330px; width: 80%; height: auto;"/>
-        <h1 style="font-size: 2.5rem; font-weight: bold; margin: 1.5rem 0 0.7rem 0; color: #1E3A8A; letter-spacing: 2px;">Research — Barrett Lab</h1>
-        <div style="font-size:1.22rem; color:#334; max-width:600px; margin:0 auto; line-height:1.6;">
-          Welcome to the Barrett Lab research page. Here you can find details about our ongoing research projects, grants, consultancies, collaborations, media, and research infrastructure.
-        </div>
+    <div class="section">
+      <h2>Research Grants (as PI)</h2>
+      <ul class="grants-list">
+        <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing).</li>
+        <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology, (2024- Ongoing).</li>
+        <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 120 Lakh, DST SERB (2024-2027).</li>
+        <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
+        <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
+        <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
+      </ul>
+      <div class="grants-subtitle">Research Grants (as co-PI)</div>
+      <ul class="grants-list">
+        <li>"Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
+        <li>"Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Consultancies</h2>
+      <ul class="consult-list">
+        <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
+        <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
+        <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
+      </ul>
+      <div style="margin-top:0.7rem;color:#445;font-size:1.03rem;">
+        We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancies undertaken.
       </div>
-    </header>
-    <main style="max-width: 900px; margin: 0 auto;">
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Current Research Projects</h2>
-        <ul style="font-size:1.08rem; color:#222; line-height:1.8;">
-          <li>Fracture and Fatigue of BMGs and BMG composites</li>
-          <li>Structure-Property correlations in 3D printed Maraging steels</li>
-          <li>Mechanical behaviour of Heusler alloys</li>
-          <li>Fracture of Mg alloys (with Prof. Jayant Jain)</li>
-          <li>Mechanical behavior of 3D printed high entropy alloys</li>
-          <li>Fracture and fatigue of reactor pressure vessel steels</li>
-          <li>Mechanical behaviour of SLM Al-Sc alloys</li>
-          <li>Fracture and Fatigue of 3D printed Ti alloys</li>
-        </ul>
-      </section>
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Research Grants (as PI)</h2>
-        <ul style="font-size:1.08rem; color:#222; line-height:1.8;">
-          <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing).</li>
-          <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology, (2023-2026).</li>
-          <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 120 Lakh, DST (2021-2024).</li>
-          <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
-          <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
-          <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
-        </ul>
-        <div style="color: #1E3A8A; font-weight: bold; margin-top: 2rem; margin-bottom: 0.8rem;">Research Grants (as co-PI)</div>
-        <ul style="font-size:1.08rem; color:#222; line-height:1.8;">
-          <li>"Elevating Craftsmanship: Strategies for Lightweighting and Cost Efficiency in Bell Metal Handicrafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
-          <li>"Protecting Heritage: Innovative Eco-Friendly and Cost-Effective Coating Solutions for Rust-Free Iron Crafts", 40 Lakh, Ministry of Tribal affairs, (2025- Ongoing).</li>
-        </ul>
-      </section>
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Consultancies</h2>
-        <ul style="font-size:1.08rem; color:#222; line-height:1.8;">
-          <li>Failure of filter metal head, ArKE filters (PI), New Delhi (Completed), Rs. 3.5 Lakh</li>
-          <li>Alloy development for Vedanta Aluminium (co-PI), Jharasaguda, Odisha, Rs. 42 Lakh (Completed).</li>
-          <li>Fatigue of steel, Senvion ltd, 4 lakh (Completed).</li>
-        </ul>
-        <div style="margin-top:0.7rem;color:#445;font-size:1.03rem;">
-          We conduct failure analysis of engineering components using non-destructive investigative tools and offer remedies and solutions for the same. The following are some of the industrial consultancies undertaken by the lab.
-        </div>
-      </section>
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Collaborations</h2>
-        <ul style="font-size:1.08rem; color:#222; line-height:1.8;">
-          <li>NTU Singapore</li>
-          <li>Shenyang National Laboratory, China</li>
-          <li>Xi'an Jiaotong University, China</li>
-          <li>Cyient Technologies</li>
-          <li>Dalian Jiaotong University, Dalian</li>
-          <li>HZB, Dresden</li>
-        </ul>
-      </section>
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Research Videos</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:1.2rem;min-height:35px;justify-content:flex-start;">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+    </div>
+    <div class="section">
+      <h2>Collaborations</h2>
+      <ul class="collab-list">
+        <li>NTU Singapore</li>
+        <li>Shenyang National Laboratory, China</li>
+        <li>Xi'an Jiaotong University, China</li>
+        <li>Cyient Technologies</li>
+        <li>Dalian Jiaotong University, Dalian</li>
+        <li>HZB, Dresden</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>Research Videos</h2>
+      <div class="videos">
+        <!-- YouTube video embed demo (replace src with your own) -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
                 title="Demo Research Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="border-radius:8px;box-shadow:0 1px 12px #c2d3ff33;width:320px;height:180px;border:2.5px solid #1E3A8A22;background:#f6f7fa;"></iframe>
+                allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="section">
+      <h2>Research Gallery</h2>
+      <div class="gallery">
+        <!-- Demo image, replace src with your own -->
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Demo Research Photo">
+      </div>
+    </div>
+    <div class="section">
+      <h2>Research Facilities</h2>
+      <div class="facilities-list">
+        <div class="facility-card">
+          <h3>INDUSTRON NANOGURU NG50</h3>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
         </div>
-      </section>
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Research Gallery</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:1.2rem;min-height:35px;justify-content:flex-start;">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Demo Research Photo" style="border-radius:8px;box-shadow:0 1px 10px #c2d3ff33;max-width:200px;max-height:120px;width:200px;height:120px;border:2.5px solid #1E3A8A22;object-fit:cover;background:#f6f7fa;display:block;">
+        <div class="facility-card">
+          <h3>ROTATING BENDING FATIGUE TESTING MACHINE</h3>
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo">
         </div>
-      </section>
-      <section style="background: #fff; border-radius: 16px; box-shadow: 0 4px 28px #c2d3ff33; padding: 2.5rem 2.6rem 2.3rem 2.6rem; margin-bottom: 2.5rem;">
-        <h2 style="color: #1E3A8A; font-size: 1.6rem; margin-bottom: 1.1rem;">Research Facilities</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:0.7rem;">
-          <div style="background:#f6f7fa;border-radius:8px;box-shadow:0 1.5px 8px #c2d3ff44;padding:1rem 1rem 1.2rem 1rem;min-width:170px;flex:1 1 210px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:0.7rem;font-size:1.02rem;border-left:5px solid #1E3A8A22;">
-            <h3 style="color:#1E3A8A;font-size:1.13rem;margin:0 0 0.4rem 0;font-weight:700;display:flex;align-items:center;gap:0.37rem;letter-spacing:0.7px;">INDUSTRON NANOGURU NG50</h3>
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo" style="border-radius:8px;box-shadow:0 1px 10px #c2d3ff33;max-width:200px;max-height:120px;width:200px;height:120px;border:2.5px solid #1E3A8A22;object-fit:cover;background:#f6f7fa;display:block;">
-          </div>
-          <div style="background:#f6f7fa;border-radius:8px;box-shadow:0 1.5px 8px #c2d3ff44;padding:1rem 1rem 1.2rem 1rem;min-width:170px;flex:1 1 210px;display:flex;flex-direction:column;align-items:flex-start;margin-bottom:0.7rem;font-size:1.02rem;border-left:5px solid #1E3A8A22;">
-            <h3 style="color:#1E3A8A;font-size:1.13rem;margin:0 0 0.4rem 0;font-weight:700;display:flex;align-items:center;gap:0.37rem;letter-spacing:0.7px;">ROTATING BENDING FATIGUE TESTING MACHINE</h3>
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Demo Facility Photo" style="border-radius:8px;box-shadow:0 1px 10px #c2d3ff33;max-width:200px;max-height:120px;width:200px;height:120px;border:2.5px solid #1E3A8A22;object-fit:cover;background:#f6f7fa;display:block;">
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer style="background:#e4eaff; padding:1.4rem; text-align:center; color:#1E3A8A; font-size:0.99rem; border-radius: 14px 14px 0 0; margin: 0 auto 0 auto; box-shadow: 0 -1px 8px #c2d3ff33; max-width: 900px;">
-      &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
-    </footer>
-  </div>
-  <!-- END Res.html body content -->
-
+      </div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Dhātu-yantra-pravartana Lab | IIT Delhi
+  </footer>
   <script>
     // NAVBAR show on hover and on scroll up (from team.html)
     let lastScrollY = window.scrollY;
