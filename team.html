@@ -214,14 +214,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; trans[...]
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
-    .nav-right a.active { color: #ffd700; border-bottom: 2px solid #ffd700; background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left i[...]
-
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 28px; width: 28px;} }
     section {
       max-width: 1200px;
       margin: 6rem auto 2rem;
@@ -457,22 +456,21 @@
     .alumni-list b {
       color:#1E3A8A;
     }
-    /* === TEAM SECTION - USER PROVIDED CODE === */
+
+    /* ----------- MEET THE TEAM SECTION (unique) ----------- */
     .team-section {
       padding: 3rem 0;
       background-color: #d0e7f7;
       position: relative;
       text-align: center;
     }
-
     .team-section h2 {
       font-size: 2rem;
       font-weight: 700;
       color: #0d1b2a;
       margin-bottom: 2rem;
     }
-
-    .carousel {
+    .team-carousel {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -481,10 +479,9 @@
       margin: 0 auto;
       max-width: 90vw;
     }
-    .carousel::-webkit-scrollbar {
+    .team-carousel::-webkit-scrollbar {
       display: none;
     }
-
     .team-card {
       flex: 0 0 276px;
       background: #fff;
@@ -495,26 +492,22 @@
       flex-direction: column;
       overflow: hidden;
     }
-
     .team-card img {
       width: 100%;
       height: 355px;
       object-fit: cover;
     }
-
     .team-card-content {
       padding: 1.2rem;
       text-align: left;
       flex: 1;
     }
-
     .team-card-content h3 {
       font-size: 1.25rem;
       font-weight: 700;
       color: #0d1b2a;
       margin: 0 0 0.3rem;
     }
-
     .team-card-content h4 {
       font-size: 0.75rem;
       font-weight: 600;
@@ -523,7 +516,6 @@
       text-transform: uppercase;
       margin: 0 0 0.8rem;
     }
-
     .team-card-content p {
       font-size: 0.87rem;
       font-weight: 400;
@@ -531,8 +523,7 @@
       line-height: 1.5;
       margin: 0;
     }
-
-    .scroll-btn {
+    .team-scroll-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -549,11 +540,10 @@
       justify-content: center;
       z-index: 10;
     }
-
-    .scroll-left {
+    .team-scroll-left {
       left: 1rem;
     }
-    .scroll-right {
+    .team-scroll-right {
       right: 1rem;
     }
   </style>
@@ -625,12 +615,11 @@
         </div>
         <div class="pi-bio">
           <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 an[...]
+            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and received his Ph.D. from the Indian Institute of Science, Bangalore in 2014. His research interests include advanced materials, mechanical behavior of materials, and nanotechnology.
           </p>
         </div>
       </div>
     </section>
-    <!-- ...All other team sections (unchanged, as in previous code) ... -->
     <section>
       <h2>Post Doctoral Fellow</h2>
       <div class="pi-container">
@@ -640,7 +629,7 @@
           <p>PhD – IIT Kanpur</p>
         </div>
         <div class="pi-bio">
-          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stain[...]
+          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and advanced high strength steels.</p>
         </div>
       </div>
     </section>
@@ -653,7 +642,7 @@
           <p>Senior Research Fellow (Dec 2023–Ongoing)</p>
         </div>
         <div class="pi-bio">
-          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation f[...]
+          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for energy storage devices.</p>
         </div>
       </div>
     </section>
@@ -670,7 +659,7 @@
             </div>
             <div class="pi-bio">
               <p>
-                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, I[...]
+                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi, in Dec. 2019 as a research scholar.
               </p>
             </div>
           </div>
@@ -745,11 +734,11 @@
       </ul>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team Section (MEET THE TEAM, unique classes) -->
     <section class="team-section">
       <h2>Meet the Team</h2>
-      <button class="scroll-btn scroll-left" onclick="scrollTeam(-1)">‹</button>
-      <div class="carousel" id="teamCarousel">
+      <button class="team-scroll-btn team-scroll-left" onclick="scrollTeam(-1)">‹</button>
+      <div class="team-carousel" id="teamCarousel">
         <div class="team-card">
           <img src="erin.jpg" alt="Erin Atkinson">
           <div class="team-card-content">
@@ -776,13 +765,13 @@
         </div>
         <!-- Add more team cards below as needed -->
       </div>
-      <button class="scroll-btn scroll-right" onclick="scrollTeam(1)">›</button>
+      <button class="team-scroll-btn team-scroll-right" onclick="scrollTeam(1)">›</button>
     </section>
     <script>
-      const carousel = document.getElementById("teamCarousel");
+      const teamCarousel = document.getElementById("teamCarousel");
       function scrollTeam(direction) {
         const cardWidth = 276 + 16; // width + margin gap
-        carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+        teamCarousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
       }
     </script>
   </div>
