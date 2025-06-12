@@ -214,13 +214,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; trans[...]
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
-    .nav-right a.active { color: var(--gold); border-bottom: 2px solid var(--gold); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right a.active { color: #ffd700; border-bottom: 2px solid #ffd700; background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img { height: 25px; width: 25px; } .lab-title{ font-size: 0.81rem;}}
+    @media (max-width: 900px)  { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left i[...]
 
     section {
       max-width: 1200px;
@@ -457,6 +457,105 @@
     .alumni-list b {
       color:#1E3A8A;
     }
+    /* === TEAM SECTION - USER PROVIDED CODE === */
+    .team-section {
+      padding: 3rem 0;
+      background-color: #d0e7f7;
+      position: relative;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0d1b2a;
+      margin-bottom: 2rem;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 1rem;
+      margin: 0 auto;
+      max-width: 90vw;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .team-card {
+      flex: 0 0 276px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 355px;
+      object-fit: cover;
+    }
+
+    .team-card-content {
+      padding: 1.2rem;
+      text-align: left;
+      flex: 1;
+    }
+
+    .team-card-content h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0d1b2a;
+      margin: 0 0 0.3rem;
+    }
+
+    .team-card-content h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #637087;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 0 0 0.8rem;
+    }
+
+    .team-card-content p {
+      font-size: 0.87rem;
+      font-weight: 400;
+      color: #333333;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.35);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .scroll-left {
+      left: 1rem;
+    }
+    .scroll-right {
+      right: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -526,7 +625,7 @@
         </div>
         <div class="pi-bio">
           <p>
-            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and his PhD in Materials Engineering at Indian Institute of Science, Bangalore, India, in 2014. <br>ORCID: 0000-0002-6178-8124
+            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 an[...]
           </p>
         </div>
       </div>
@@ -541,7 +640,7 @@
           <p>PhD – IIT Kanpur</p>
         </div>
         <div class="pi-bio">
-          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels, and much more.</p>
+          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stain[...]
         </div>
       </div>
     </section>
@@ -554,7 +653,7 @@
           <p>Senior Research Fellow (Dec 2023–Ongoing)</p>
         </div>
         <div class="pi-bio">
-          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for supercapacitor and battery applications.</p>
+          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation f[...]
         </div>
       </div>
     </section>
@@ -571,7 +670,7 @@
             </div>
             <div class="pi-bio">
               <p>
-                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi as a Ph.D. scholar in Dec. 2019.
+                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, I[...]
               </p>
             </div>
           </div>
@@ -645,6 +744,47 @@
         <!-- Add more alumni as needed -->
       </ul>
     </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <h2>Meet the Team</h2>
+      <button class="scroll-btn scroll-left" onclick="scrollTeam(-1)">‹</button>
+      <div class="carousel" id="teamCarousel">
+        <div class="team-card">
+          <img src="erin.jpg" alt="Erin Atkinson">
+          <div class="team-card-content">
+            <h3>Erin Atkinson</h3>
+            <h4>Undergraduate Researcher</h4>
+            <p>Erin is a sophomore Biology major with a minor in environmental science. She’s focused on marine biology and conservation.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="samuel.jpg" alt="Samuel Durosaro">
+          <div class="team-card-content">
+            <h3>Samuel Durosaro, PhD</h3>
+            <h4>Postdoctoral Scholar</h4>
+            <p>Dr. Durosaro works on humane insect farming and ethical welfare. He co-founded AWG Nigeria promoting animal welfare science.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="narmeen.jpg" alt="Narmeen Hashim">
+          <div class="team-card-content">
+            <h3>Narmeen Hashim</h3>
+            <h4>PhD Student</h4>
+            <p>Narmeen studies neural circuits in insects to investigate how stress influences behavior and experiences.</p>
+          </div>
+        </div>
+        <!-- Add more team cards below as needed -->
+      </div>
+      <button class="scroll-btn scroll-right" onclick="scrollTeam(1)">›</button>
+    </section>
+    <script>
+      const carousel = document.getElementById("teamCarousel");
+      function scrollTeam(direction) {
+        const cardWidth = 276 + 16; // width + margin gap
+        carousel.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+      }
+    </script>
   </div>
 
   <script>
