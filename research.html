@@ -236,8 +236,9 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      background: rgba(15,29,52,0.34);
-      box-shadow: 0 8px 44px 0 rgba(60,60,100,0.18);
+      /*background: rgba(15,29,52,0.34);*/
+      /* removed semi-transparent background */
+      box-shadow: none;
       padding: 2.2rem 2.5rem;
       max-width: 700px;
       margin-left: 6vw;
@@ -324,6 +325,7 @@
       flex-wrap: wrap;
       max-width: 1200px;
       margin: auto;
+      margin-bottom: 2.5rem; /* Added extra space after cards */
     }
     .card {
       background: #f8f8f8;
@@ -569,7 +571,7 @@
   <div class="dropdown-cards-container">
     <!-- Current Research Projects -->
     <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Current Research Projects</button>
+      <button type="button" onclick="toggleDropdown(this)">Research Projects</button>
       <div class="dropdown-content">
         <ul class="projects-list">
           <li>Fracture and Fatigue of BMGs and BMG composites</li>
@@ -585,7 +587,7 @@
     </div>
     <!-- Research Grants (as PI) -->
     <div class="dropdown-card">
-      <button type="button" onclick="toggleDropdown(this)">Research Grants (as PI)</button>
+      <button type="button" onclick="toggleDropdown(this)">Research Grants</button>
       <div class="dropdown-content">
         <ul class="grants-list">
           <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing)</li>
