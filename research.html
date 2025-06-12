@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --card-width: 320px;
+    }
     html, body {
       margin: 0;
       padding: 0;
@@ -336,9 +339,9 @@
     }
     .card {
       background: #f8f8f8;
-      width: 320px;
-      min-width: 320px;
-      max-width: 320px;
+      width: var(--card-width);
+      min-width: var(--card-width);
+      max-width: var(--card-width);
       padding: 2rem 1.2rem 2.5rem;
       border-radius: 0.5rem;
       text-align: center;
@@ -403,9 +406,9 @@
       background: #f8f8f8;
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(30,58,138,0.09);
-      width: 320px;
-      min-width: 320px;
-      max-width: 320px;
+      width: var(--card-width);
+      min-width: var(--card-width);
+      max-width: var(--card-width);
       margin: 0;
       font-family: 'Inter', sans-serif;
       transition: box-shadow 0.2s;
@@ -414,7 +417,9 @@
       align-items: stretch;
     }
     .dropdown-card button {
-      width: 100%;
+      width: var(--card-width);
+      min-width: var(--card-width);
+      max-width: var(--card-width);
       background: #1E3A8A;
       color: #fff;
       border: none;
@@ -428,8 +433,7 @@
       text-align: left;
       letter-spacing: 0.5px;
       box-sizing: border-box;
-      min-width: 320px;
-      max-width: 320px;
+      display: block;
     }
     .dropdown-card button:hover, .dropdown-card button.active {
       background: #294ba1;
@@ -444,8 +448,9 @@
       border-radius: 0 0 12px 12px;
       animation: fadeinup 0.6s cubic-bezier(.2,1,.22,1);
       text-align: justify;
-      min-width: 320px;
-      max-width: 320px;
+      width: var(--card-width);
+      min-width: var(--card-width);
+      max-width: var(--card-width);
       box-sizing: border-box;
     }
     .dropdown-card.open .dropdown-content {
@@ -490,6 +495,7 @@
       .dropdown-card button, .dropdown-content {
         min-width: 0;
         max-width: 500px;
+        width: 100%;
       }
     }
     @media (max-width: 700px) {
@@ -506,6 +512,7 @@
       .dropdown-card button, .dropdown-content {
         min-width: 0;
         max-width: 99vw;
+        width: 100%;
       }
     }
     footer {
@@ -578,19 +585,19 @@
     <div class="card">
       <h3>FATIGUE</h3>
       <p>
-        We investigate the fatigue behavior of metallic materials under cyclic loading conditions. Our research focuses on understanding crack initiation and propagation mechanisms, especially in additively manufactured alloys, to enhance life prediction and structural integrity.
+        We investigate the fatigue behavior of metallic materials under cyclic loading conditions. Our research focuses on understanding crack initiation and propagation mechanisms, especially in[...]
       </p>
     </div>
     <div class="card">
       <h3>FRACTURE</h3>
       <p>
-        Fracture mechanics plays a key role in evaluating material performance. We study how defects, microstructure, and loading conditions influence crack growth and catastrophic failure, aiming to develop materials with improved toughness and damage tolerance.
+        Fracture mechanics plays a key role in evaluating material performance. We study how defects, microstructure, and loading conditions influence crack growth and catastrophic failure, aimin[...]
       </p>
     </div>
     <div class="card">
       <h3>CREEP</h3>
       <p>
-        Our work explores time-dependent deformation and failure under sustained stress and high temperature. We analyze creep mechanisms in engineering alloys to support long-term reliability in applications like aerospace, power plants, and structural components.
+        Our work explores time-dependent deformation and failure under sustained stress and high temperature. We analyze creep mechanisms in engineering alloys to support long-term reliability in[...]
       </p>
     </div>
   </div>
@@ -619,9 +626,9 @@
       <button type="button" onclick="toggleDropdown(this)">Research Grants</button>
       <div class="dropdown-content">
         <ul class="grants-list">
-          <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025- Ongoing)</li>
-          <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology (2024- Ongoing).</li>
-          <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 67 Lakh, Department of Science and Technology (2023- Ongoing).</li>
+          <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025-[...]</li>
+          <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Techno[...]</li>
+          <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs[...]</li>
           <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
           <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
           <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
