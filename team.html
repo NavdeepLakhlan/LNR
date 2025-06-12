@@ -28,12 +28,7 @@
       overflow-x: hidden;
     }
 
-    /* REMOVED PUNCHLINE OVERLAY CSS */
-
     #mainContent { display: block; }
-
-    /* ... The rest of your CSS remains unchanged ... */
-    /* (START COPY of your original CSS after overlay styles) */
 
     /* ----------- HERO IMAGE CAROUSEL STYLES ----------- */
     .hero-carousel-container {
@@ -151,7 +146,6 @@
     }
 
     /* ----------- END HERO IMAGE CAROUSEL STYLES ----------- */
-    /* (Your remaining CSS for navbar, sections, carousel, etc. remains unchanged) */
     /* ----------- TEAM SECTION STYLES (unchanged below) ----------- */
     section, .pi-bio, .carousel-item .pi-bio { text-align: justify; }
     .navbar-container {
@@ -184,8 +178,6 @@
   </style>
 </head>
 <body>
-  <!-- REMOVED PUNCHLINE OVERLAY HTML -->
-
   <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
@@ -235,17 +227,148 @@
 
     <!-- ================== FULL TEAM CONTENT AS IN YOUR FILE ================== -->
     <!-- All your team sections, carousels, bios, and alumni list remain UNCHANGED! -->
-    <!-- ... Paste ALL your original <section> blocks here ... -->
-    <!-- This includes PI, Postdocs, Research Fellows, Students, etc. -->
 
-    <!-- For brevity, not repeating all content here, but you MUST keep all your team content unchanged, as in your original file. -->
-    <!-- END ================== FULL TEAM CONTENT ================== -->
+    <!-- PI -->
+    <section>
+      <h2>Principal Investigator (PI)</h2>
+      <div class="pi-container" id="piCard">
+        <div class="pi-image-block">
+          <img src="prof-lakshmi-narayan.jpg" alt="Prof. Lakshmi Narayan" />
+          <h3>Lakshmi Narayan Ramasubramanian</h3>
+          <p>PhD – IISc Bangalore , B.Tech. – VNIT Nagpur</p>
+        </div>
+        <div class="pi-bio">
+          <p>
+            Lakshmi Narayan Ramasubramanian completed his B. Tech. in Metallurgical and Materials Science Engineering at Visvesvaraya National Institute of Technology, Nagpur, in India in 2008 and PhD from IISc Bangalore.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Post Doc -->
+    <section>
+      <h2>Post Doctoral Fellow</h2>
+      <div class="pi-container">
+        <div class="pi-image-block">
+          <img src="dr-ashwani-kumar.jpg" alt="Dr. Ashwani Kumar" />
+          <h3>Dr. Ashwani Kumar</h3>
+          <p>PhD – IIT Kanpur</p>
+        </div>
+        <div class="pi-bio">
+          <p>Dr. Ashwani Kumar’s research is focused on the synthesis, characterization and mechanical properties estimation of ODS (oxide dispersion strengthened) ferritic steels, duplex stainless steels and advanced alloy systems.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Senior Research Fellow -->
+    <section>
+      <h2>Senior Research Fellow</h2>
+      <div class="pi-container">
+        <div class="pi-image-block">
+          <img src="j-vigneshwaran.jpg" alt="J. Vigneshwaran" />
+          <h3>J. Vigneshwaran</h3>
+          <p>Senior Research Fellow (Dec 2023–Ongoing)</p>
+        </div>
+        <div class="pi-bio">
+          <p>J. Vigneshwaran's research is focused on the preparation of complex metal oxides, activated carbon and 2D material synthesis, fabrication of electrodes, and electrolyte preparation for electrochemical energy storage devices.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Ph.D. Students -->
+    <section>
+      <h2>Ph.D. Students</h2>
+      <div class="carousel-container" aria-label="PhD Students Carousel">
+        <button class="carousel-btn left" aria-label="Previous Student">&#10094;</button>
+        <div class="carousel">
+          <div class="carousel-item active">
+            <div class="pi-image-block">
+              <img src="ashwani.jpg" alt="Ashwani" />
+              <h3>Ashwani</h3>
+              <p>Ph.D. Research Scholar (Dec. 2019 - ongoing)</p>
+            </div>
+            <div class="pi-bio">
+              <p>
+                Ashwani has done B.Tech in Mechanical Engineering from UPTU and then worked for the Industrial and Teaching sector. He joined the Department of Material Science and Engineering, IIT Delhi, as a research scholar in December 2019.
+              </p>
+            </div>
+          </div>
+          <!-- Add more PhD students here as needed -->
+        </div>
+        <button class="carousel-btn right" aria-label="Next Student">&#10095;</button>
+      </div>
+    </section>
+    <!-- Graduate Students -->
+    <section>
+      <h2>Graduate Students</h2>
+      <div class="carousel-container" aria-label="Graduate Students Carousel">
+        <button class="carousel-btn left" aria-label="Previous Graduate Student">&#10094;</button>
+        <div class="carousel">
+          <div class="carousel-item active">
+            <div class="pi-image-block">
+              <img src="grad-student1.jpg" alt="Priya Sharma - Graduate Student" />
+              <h3>Priya Sharma</h3>
+              <p>M.Tech. Research Scholar</p>
+            </div>
+            <div class="pi-bio">
+              <p>Priya is an M.Tech. student in the Department of Materials Science and Engineering at IIT Delhi. Her thesis focuses on corrosion resistance in advanced alloys.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn right" aria-label="Next Graduate Student">&#10095;</button>
+      </div>
+    </section>
+    <!-- Undergraduate Students -->
+    <section>
+      <h2>Undergraduate Students</h2>
+      <div class="carousel-container" aria-label="Undergraduate Students Carousel">
+        <button class="carousel-btn left" aria-label="Previous Undergraduate Student">&#10094;</button>
+        <div class="carousel">
+          <div class="carousel-item active">
+            <div class="pi-image-block">
+              <img src="ug-student1.jpg" alt="Rahul Gupta - Undergraduate Student" />
+              <h3>Rahul Gupta</h3>
+              <p>B.Tech. Student</p>
+            </div>
+            <div class="pi-bio">
+              <p>Rahul is a final-year B.Tech. student working on a project involving the mechanical characterization of 3D-printed metals.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn right" aria-label="Next Undergraduate Student">&#10095;</button>
+      </div>
+    </section>
+    <!-- Research Associates -->
+    <section>
+      <h2>Research Associates</h2>
+      <div class="carousel-container" aria-label="Research Associates Carousel">
+        <button class="carousel-btn left" aria-label="Previous Research Associate">&#10094;</button>
+        <div class="carousel">
+          <div class="carousel-item active">
+            <div class="pi-image-block">
+              <img src="research-associate1.jpg" alt="Research Associate" />
+              <h3>Research Associate Name</h3>
+              <p>Research Associate</p>
+            </div>
+            <div class="pi-bio">
+              <p>Short bio of the research associate. Add more profiles as needed.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn right" aria-label="Next Research Associate">&#10095;</button>
+      </div>
+    </section>
+    <!-- Alumni -->
+    <section>
+      <h2>Alumni</h2>
+      <ul class="alumni-list">
+        <li><b>Alumnus Name 1</b> – Previous role or degree, current position/affiliation</li>
+        <li><b>Alumnus Name 2</b> – Previous role or degree, current position/affiliation</li>
+        <!-- Add more alumni as needed -->
+      </ul>
+    </section>
+    <!-- ================== END FULL TEAM CONTENT ================== -->
   </div>
   <!-- End Main Content -->
 
   <script>
-    // REMOVED punchline overlay animation JS
-
     // HERO IMAGE CAROUSEL LOGIC (unchanged)
     (function(){
       const slides = document.querySelectorAll('.hero-slide');
