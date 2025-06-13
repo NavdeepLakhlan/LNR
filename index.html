@@ -46,13 +46,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transi[...]
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition:0.2s;}
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--blue); border-bottom: 2px solid var(--blue); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img[...]
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img{height:28px;width:28px;} }
     .hero {
       min-height: 100vh;
       height: 100vh;
@@ -218,7 +218,6 @@
       margin: 0;
       max-width: 700px;
     }
-    /* Responsive rules... */
     @media (max-width: 1500px) {
       .hero-content-flex { max-width: 100vw; }
       .hero-rect-img img, .second-img img { width: 580px; height: 320px;}
@@ -259,7 +258,7 @@
     /* ---- WAVE DIVIDER TEXT ---- */
     .wave-divider-text {
       position: absolute;
-      bottom: 10px;
+      bottom: 24px;
       left: 0;
       width: 100%;
       text-align: center;
@@ -267,7 +266,7 @@
       z-index: 10;
     }
     .wave-divider-text span {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
       color: #111;
       letter-spacing: 2px;
@@ -277,7 +276,7 @@
     }
     @media (max-width: 900px) {
       .wave-divider-text span {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -327,8 +326,8 @@
     </div>
   </section>
   <!-- LAYERED WAVE DIVIDER -->
-  <div style="position:relative; margin-top:-5px; z-index:5;">
-    <svg viewBox="0 0 1440 220" width="120%" height="350" preserveAspectRatio="none" style="display:block;">
+  <div style="position:relative; margin-top:-5px; z-index:5; width:100vw; min-height:230px; overflow:hidden;">
+    <svg viewBox="0 0 1440 220" width="100%" height="230" preserveAspectRatio="none" style="display:block;">
       <!-- Back wave (lightest) -->
       <path d="M0,120 Q360,200 720,130 T1440,160 L1440,220 L0,220 Z"
             fill="#f6fbfd" opacity="1"/>
