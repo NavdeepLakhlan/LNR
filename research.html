@@ -8,158 +8,62 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
+      --gold: #ffd700;
+      --gold-light: #ffefb6;
+      --gold-mid: #ffe68c;
+      --gold-blur: #ffea6e;
+      --main-bg1: #f6fbfd;
+      --navbar-link: #1E3A8A;
+      --navbar-link-hover: #1E3A8A;
+      --navbar-bg: #fff;
+      --text: #222;
       --card-width: 320px;
     }
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f6fbfd;
-      color: #222;
-      font-size: 18px;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--main-bg1);
+      color: var(--text);
+      font-size: 20px;
       scroll-behavior: smooth;
+      overflow-x: hidden;
       min-height: 100vh;
       max-width: 100vw;
-      overflow-x: hidden;
     }
     body {
       width: 100vw;
       overflow-x: hidden;
     }
+    /* NAVBAR STYLES */
     .navbar-container {
-      position: fixed;
-      top: 16px;
-      left: 0;
-      right: 0;
-      background: #fff;
+      position: fixed; top: 16px; left: 16px; right: 16px;
+      background: var(--navbar-bg);
       border-radius: 0px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       transition: opacity 0.3s, top 0.3s;
       z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      display: flex;
-      justify-content: center;
-      max-width: 100vw;
-      width: 100vw;
-      margin-left: 0;
-      margin-right: 0;
-      min-width: 0;
-      box-sizing: border-box;
+      opacity: 0; pointer-events: none;
+      display: flex; justify-content: center;
+      width: fit-content; min-width: 1200px;
+      margin-left: auto; margin-right: auto;
     }
     .navbar-container.visible,
-    .navbar-container:hover {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 0.5rem 1.2rem;
-      gap: 1rem;
-      background: transparent;
-      box-sizing: border-box;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      flex-shrink: 0;
-    }
-    .nav-left img {
-      height: 35px;
-      width: 35px;
-    }
-    .lab-title {
-      font-size: 0.97rem;
-      color: #111;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.8rem;
-      margin-left: auto;
-    }
-    .nav-right a {
-      color: #1E3A8A;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.38rem 0.8rem;
-      border-radius: 6px;
-      border-bottom: 2px solid transparent;
-      font-size: 0.87rem;
-      transition: color 0.2s, background 0.2s, border-color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-right a:hover,
-    .nav-right a:focus {
-      background: #e4eaff;
-      color: #1E3A8A;
-      border-color: #1E3A8A;
-      outline: none;
-    }
-    .nav-right a.active {
-      color: #1E3A8A;
-      border-bottom: 2px solid #1E3A8A;
-      background: #e4eaff;
-    }
-    .nav-right svg {
-      width: 15px;
-      height: 15px;
-      fill: #888;
-      margin-left: 0.4rem;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: fill 0.2s, opacity 0.2s;
-    }
-    .nav-right svg:hover {
-      fill: #1E3A8A;
-      opacity: 1;
-    }
-    @media (max-width: 1300px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-      }
-    }
-    @media (max-width: 900px) {
-      .navbar-container {
-        min-width: 0;
-        width: 100vw;
-        left: 0;
-        right: 0;
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .navbar {
-        gap: 0.2rem;
-        padding: 0.3rem 0.3rem;
-      }
-      .nav-left img {
-        height: 22px;
-        width: 22px;
-      }
-      .lab-title {
-        font-size: 0.85rem;
-      }
-      .nav-right {
-        gap: 0.3rem;
-        font-size: 0.7rem;
-      }
-      .nav-right a {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.7rem;
-        border-radius: 4px;
-      }
-    }
-    /* --- Hero Carousel Section --- */
+    .navbar-container:hover { opacity: 1; pointer-events: auto; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.5rem 1.2rem; gap: 1rem; background: transparent;}
+    .nav-left { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+    .nav-left img { height: 35px; width: 35px; }
+    .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
+    .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap;}
+    .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
+    .nav-right a.active { color: #1E3A8A; border-bottom: 2px solid #1E3A8A; background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
+    .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
+    @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img{height: 22px; width: 22px;} .lab-title{font-size: 0.85rem;} .nav-right{gap: 0.3rem; font-size: 0.7rem;} .nav-right a{padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px;} }
+
+    /* PAGE CONTENT STYLES */
     .hero {
       position: relative;
       width: 100vw;
@@ -241,6 +145,29 @@
       fill: none;
     }
     @media (max-width: 900px) {
+      .hero {
+        height: 300px;
+        min-height: 160px;
+        margin-top: 3.5rem;
+        margin-bottom: 1.3rem;
+        width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .hero-content-on-image {
+        max-width: 98vw;
+        padding: 1rem 0.7rem;
+        margin-left: 4vw;
+      }
+      .hero h1 {
+        font-size: 1.3rem;
+      }
+      .hero .subheading {
+        font-size: 1rem;
+      }
+      .hero .description {
+        font-size: 0.95rem;
+      }
       .hero-carousel-btn { width: 28px; height: 28px; font-size: 1rem; }
       .hero-carousel-btn.left { left: 6px; }
       .hero-carousel-btn.right { right: 6px; }
@@ -292,31 +219,6 @@
       text-shadow: 1px 2px 10px rgba(30,58,138,0.17);
       max-width: 600px;
       text-align: left;
-    }
-    @media (max-width: 900px) {
-      .hero {
-        height: 300px;
-        min-height: 160px;
-        margin-top: 3.5rem;
-        margin-bottom: 1.3rem;
-        width: 100vw;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      .hero-content-on-image {
-        max-width: 98vw;
-        padding: 1rem 0.7rem;
-        margin-left: 4vw;
-      }
-      .hero h1 {
-        font-size: 1.3rem;
-      }
-      .hero .subheading {
-        font-size: 1rem;
-      }
-      .hero .description {
-        font-size: 0.95rem;
-      }
     }
     .section-heading {
       text-align: center;
@@ -515,23 +417,26 @@
         width: 100%;
       }
     }
+    /* FOOTER */
     footer {
-      background:#e4eaff;
-      padding:1.4rem;
-      text-align:center;
-      color:#1E3A8A;
-      font-size:0.99rem;
-      border-radius: 14px 14px 0 0;
-      margin: 0 auto 0 auto;
-      box-shadow: 0 -1px 8px #c2d3ff33;
-      max-width: 1200px;
-      width: 100%;
+      background: #111;
+      padding: 1.4rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.93rem;
+      z-index: 2;
+      position: relative;
+      border-radius: 0;
+      margin: 0;
+      box-shadow: none;
+      max-width: 100vw;
+      width: 100vw;
       box-sizing: border-box;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar (from team.html) -->
+  <!-- Navbar -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -541,13 +446,11 @@
       <div class="nav-right" tabindex="0">
         <a href="index.html">Home</a>
         <a href="team.html">The&nbsp;Team</a>
-        
         <a href="publications.html">Publications</a>
         <a href="research.html" class="active">Research</a>
         <a href="MEET LNR.html">MEET&nbsp;LNR</a>
         <a href="news.html">Latest</a>
         <a href="prospectivestudents.html">Join&nbsp;Our&nbsp;Quest</a>
-        <!-- Search icon (SVG) -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
         </svg>
@@ -585,19 +488,19 @@
     <div class="card">
       <h3>FATIGUE</h3>
       <p>
-        We investigate the fatigue behavior of metallic materials under cyclic loading conditions. Our research focuses on understanding crack initiation and propagation mechanisms, especially in[...]
+        We investigate the fatigue behavior of metallic materials under cyclic loading conditions. Our research focuses on understanding crack initiation and propagation mechanisms, especially in advanced alloys and 3D printed metals.
       </p>
     </div>
     <div class="card">
       <h3>FRACTURE</h3>
       <p>
-        Fracture mechanics plays a key role in evaluating material performance. We study how defects, microstructure, and loading conditions influence crack growth and catastrophic failure, aimin[...]
+        Fracture mechanics plays a key role in evaluating material performance. We study how defects, microstructure, and loading conditions influence crack growth and catastrophic failure, aiming to design tougher and more reliable materials.
       </p>
     </div>
     <div class="card">
       <h3>CREEP</h3>
       <p>
-        Our work explores time-dependent deformation and failure under sustained stress and high temperature. We analyze creep mechanisms in engineering alloys to support long-term reliability in[...]
+        Our work explores time-dependent deformation and failure under sustained stress and high temperature. We analyze creep mechanisms in engineering alloys to support long-term reliability in demanding environments.
       </p>
     </div>
   </div>
@@ -626,9 +529,9 @@
       <button type="button" onclick="toggleDropdown(this)">Research Grants</button>
       <div class="dropdown-content">
         <ul class="grants-list">
-          <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025-[...]</li>
-          <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Techno[...]</li>
-          <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs[...]</li>
+          <li>"Synthesis of C-103 alloy powders and its laser powder bed fusion manufacturing for high temperature applications", 1500 Lakh, Aerospace Research and Development board, DRDO, (2025-Ongoing).</li>
+          <li>"Cold spray Additive Manufacturing of flexible printable electronics and their mechanical characterization", Rs. 50 Lakh, India-Taiwan Program of collaboration in Science and Technology, (2023-2026).</li>
+          <li>"Manufacturing Sustainable and Carbon Neutral Steel Structures for Construction Industry using Wire Arc Additive Manufacturing WAAM Static, Dynamic and Fatigue characterization", Rs. 52 Lakh, SERB, (2022-2025).</li>
           <li>Institute seed grant, Rs. 20 Lakh (2019-2020).</li>
           <li>"Fracture and Fatigue of bulk metallic glass composites with transformable β-Ti dendritic reinforcements", Rs. 33 Lakh, Start-up Research Grant, SERB DST (2020-22).</li>
           <li>Institute equipment matching grant, Rs. 22 lakh (2020-2022).</li>
