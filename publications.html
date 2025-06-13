@@ -1,31 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Publications | R. Lakshmi Narayan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
   <style>
-    /* ... (existing styles unchanged) ... */
+    html, body {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      max-width: 100vw;
+      overflow-x: hidden;
+      background: #f6fbfd;
+      color: #23232a;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 18px;
+    }
+    body {
+      min-height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
+    .page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      background: transparent;
+    }
+    /* ========== NAVBAR STYLES ========== */
+    .navbar-container {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      max-width: none;
+      width: fit-content;
+      min-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .navbar-container.visible,
+    .navbar-container:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 1.2rem;
+      gap: 1rem;
+      background: transparent;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+    .nav-left img {
+      height: 35px;
+      width: 35px;
+    }
+    .lab-title {
+      font-size: 0.97rem;
+      color: #111;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.8rem;
+      margin-left: auto;
+    }
+    .nav-right a {
+      color: #1E3A8A;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 6px;
+      border-bottom: 2px solid transparent;
+      font-size: 0.87rem;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-right a:hover,
+    .nav-right a:focus {
+      background: #e4eaff;
+      color: #1E3A8A;
+      border-color: #1E3A8A;
+      outline: none;
+    }
+    .nav-right a.active {
+      color: #1E3A8A;
+      border-bottom: 2px solid #1E3A8A;
+      background: #e4eaff;
+    }
+    .nav-right svg {
+      width: 15px;
+      height: 15px;
+      fill: #888;
+      margin-left: 0.4rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: fill 0.2s, opacity 0.2s;
+    }
+    .nav-right svg:hover {
+      fill: #1E3A8A;
+      opacity: 1;
+    }
+    /* ========== HERO SECTION ========== */
+    .hero-section {
+      position: relative;
+      height: 50vh;
+      overflow: hidden;
+      width: 100%;
+      min-height: 280px;
+      max-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-section img {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+    }
+    .hero-section .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 2;
+    }
+    .hero-content .subhead {
+      margin-top: 80px;
+      font-family: 'Georgia', serif;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .hero-content .mainhead {
+      font-size: 42px;
+      font-weight: bold;
+      font-family: 'Helvetica Neue', sans-serif;
+      max-width: 90%;
+      margin-top: 20px;
+    }
+    .hero-content .scholar-btn {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 24px;
+      border: 2px solid white;
+      color: white;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      background: transparent;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s;
+    }
+    .hero-content .scholar-btn:hover {
+      background: white;
+      color: #1E3A8A;
+      text-decoration: none;
+    }
+    /* ========== PUBLICATIONS HEADER ========== */
+    .pub-header {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-top: 60px;
+      margin-bottom: 0.2em;
+      color: #1E3A8A;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .pub-header-desc {
+      font-size: 1.15rem;
+      color: #23232a;
+      text-align: center;
+      margin-bottom: 2.4em;
+      font-weight: 400;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #e4e5f3a7;
+      min-height: 200px;
+    }
   </style>
 </head>
 <body>
-  <!-- Hero Section (Replicated from Kacar Lab) -->
-  <section style="position: relative; height: 100vh; overflow: hidden;">
-    <img src="A_digital_vector_graphic_features_a_horizontal_div.png" alt="Petri dish background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-    <div style="background-color: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
-
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: white; text-align: center; padding: 0 20px;">
-      <div style="margin-top: 80px; font-family: 'Georgia', serif; font-size: 20px; letter-spacing: 1px;">BROWSE OUR SELECTED PUBLICATIONS BELOW</div>
-      <div style="font-size: 42px; font-weight: bold; font-family: 'Helvetica Neue', sans-serif; max-width: 90%; margin-top: 20px;">Or explore our entire collection online</div>
-      <a href="https://scholar.google.com/citations?hl=en&user=0ldrQFAAAAAJ" target="_blank" style="margin-top: 30px; display: inline-block; padding: 12px 24px; border: 2px solid white; color: white; text-decoration: none; font-family: 'Helvetica Neue', sans-serif; font-size: 16px; transition: all 0.3s ease;">
-        FIND US ON GOOGLE SCHOLAR
-      </a>
-    </div>
-  </section>
-  <!-- End Hero Section -->
-
-  <!-- Navbar (from team.html) -->
+  <!-- ================= NAVBAR ================== -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -35,33 +228,52 @@
       <div class="nav-right" tabindex="0">
         <a href="index.html">Home</a>
         <a href="team.html">The&nbsp;Team</a>
-        <a href="Gallary.html">Gallary</a>
         <a href="publications.html" class="active">Publications</a>
         <a href="research.html">Research</a>
         <a href="MEET LNR.html">MEET&nbsp;LNR</a>
         <a href="news.html">Latest</a>
-        <a href="prospectivestudents.html">Prospective&nbsp;Students</a>
-        <!-- Search icon (SVG) -->
+        <a href="prospectivestudents.html">Join&nbsp;Our&nbsp;Quest</a>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
         </svg>
       </div>
     </nav>
   </div>
-  <!-- End Navbar -->
-
-  <div class="pub-header">
-    Publications
-  </div>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section">
+    <img src="A_digital_vector_graphic_features_a_horizontal_div.png" alt="Petri dish background" />
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <div class="subhead">BROWSE OUR SELECTED PUBLICATIONS BELOW</div>
+      <div class="mainhead">Or explore our entire collection online</div>
+      <a href="https://scholar.google.com/citations?hl=en&user=0ldrQFAAAAAJ" target="_blank" class="scholar-btn">
+        FIND US ON GOOGLE SCHOLAR
+      </a>
+    </div>
+  </section>
+  <!-- ========== PUBLICATIONS HEADER & LIST ========== -->
+  <div class="pub-header">Publications</div>
   <div class="pub-header-desc">
     R. Lakshmi Narayan – Articles, Editorials, Lectures, and More
   </div>
-
   <main class="container" id="main-content" tabindex="-1">
     <!-- ... rest of your content ... -->
   </main>
   <script>
-    // ... (existing JS unchanged)
+    // NAVBAR: Show on hover or scroll up
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < lastScrollY) {
+        navbarContainer.classList.add('visible');
+      } else {
+        if (!navbarContainer.matches(':hover')) {
+          navbarContainer.classList.remove('visible');
+        }
+      }
+      lastScrollY = window.scrollY;
+    });
+    navbarContainer.classList.add('visible');
   </script>
 </body>
 </html>
