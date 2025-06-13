@@ -11,7 +11,7 @@
       --gold-light: #ffefb6;
       --gold-mid: #ffe68c;
       --gold-blur: #ffea6e;
-      --main-bg1: #fef8e4;
+      --main-bg1: #f6fbfd;
       --navbar-link: #1E3A8A;
       --navbar-link-hover: #1E3A8A;
       --navbar-bg: #fff;
@@ -46,14 +46,13 @@
     .nav-left img { height: 35px; width: 35px; }
     .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
     .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
-    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: all 0.2s;}
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transi[...]
     .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
     .nav-right a.active { color: var(--blue); border-bottom: 2px solid var(--blue); background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
     .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
     .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
     @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
-    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img{height:25px;width:25px;}.lab-title{font-size:0.81rem;} }
-
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img[...]
     .hero {
       min-height: 100vh;
       height: 100vh;
@@ -219,6 +218,7 @@
       margin: 0;
       max-width: 700px;
     }
+    /* Responsive rules... */
     @media (max-width: 1500px) {
       .hero-content-flex { max-width: 100vw; }
       .hero-rect-img img, .second-img img { width: 580px; height: 320px;}
@@ -255,6 +255,30 @@
       font-size: 0.93rem;
       z-index: 2;
       position: relative;
+    }
+    /* ---- WAVE DIVIDER TEXT ---- */
+    .wave-divider-text {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .wave-divider-text span {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #111;
+      letter-spacing: 2px;
+      background: none;
+      display: inline-block;
+      text-shadow: 0 2px 12px #fff8;
+    }
+    @media (max-width: 900px) {
+      .wave-divider-text span {
+        font-size: 1.7rem;
+      }
     }
   </style>
 </head>
@@ -307,7 +331,7 @@
     <svg viewBox="0 0 1440 220" width="120%" height="350" preserveAspectRatio="none" style="display:block;">
       <!-- Back wave (lightest) -->
       <path d="M0,120 Q360,200 720,130 T1440,160 L1440,220 L0,220 Z"
-            fill="#fef8e4" opacity="1"/>
+            fill="#f6fbfd" opacity="1"/>
       <!-- Middle wave -->
       <path d="M0,100 Q360,230 720,110 T1440,140 L1440,220 L0,220 Z"
             fill="#ffefb6" opacity="0.87"/>
@@ -315,6 +339,9 @@
       <path d="M0,90 Q360,220 720,110 T1440,130 L1440,220 L0,220 Z"
             fill="#ececec" opacity="1"/>
     </svg>
+    <div class="wave-divider-text">
+      <span>Boldly empirical, Radically compassionate</span>
+    </div>
   </div>
   <!-- SECOND PAGE: Image left, text right, justified, same background as first -->
   <section class="second-page">
@@ -323,7 +350,7 @@
         <img src="your-second-image.jpg" alt="Lab Research 2" />
       </div>
       <div class="second-desc">
-        The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys, High-entropy alloys, and others, using experimental mechanics, advanced electron microscopy, and modeling.
+        The group works on understanding the mechanical behavior at multiple length scales of advanced structural metallic materials, such as 3D printed metals and alloys, Metallic glasses, Superalloys, High Entropy Alloys, and other emerging metallic systems. The group is also interested in deformation physics, additive manufacturing, and structure-property relationships in these materials.
       </div>
     </div>
   </section>
