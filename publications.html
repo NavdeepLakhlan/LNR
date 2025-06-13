@@ -192,6 +192,74 @@
       color: #1E3A8A;
       text-decoration: none;
     }
+    /* ========== Papers Section Styles (NEW) ========== */
+    .papers-section {
+      display: flex;                      /* Two columns side by side */
+      padding: 80px 60px;                 /* Spacing around the section */
+      font-family: Georgia, serif;         /* Serif font for elegance */
+      color: #000;
+      max-width: 1200px;
+      margin: auto;                       /* Center horizontally */
+    }
+    .left-column {
+      width: 30%;                         /* 30% width for left column */
+      padding-right: 40px;                /* Space to right column */
+    }
+    .right-column {
+      width: 70%;                         /* 70% width for right column */
+    }
+    .left-column h2 {
+      font-family: 'Georgia', serif;
+      font-size: 32px;
+      font-weight: bold;
+      color: #2B0B3F;
+      line-height: 1.2;
+      margin-bottom: 40px;
+    }
+    .journal-image {
+      width: 220px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    .right-column h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .paper {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .paper a {
+      color: #5E2CA5;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    /* Responsive styles for small screens */
+    @media (max-width: 768px) {
+      .papers-section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+      .left-column,
+      .right-column {
+        width: 100%;
+        padding: 0;
+      }
+      .left-column {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .journal-image {
+        width: 70%;
+      }
+      .right-column h1,
+      .left-column h2 {
+        text-align: center;
+      }
+    }
     /* ========== Publications Container ========== */
     .container {
       max-width: 1000px;                /* Center and limit width */
@@ -246,6 +314,44 @@
       </a>
     </div>
   </section>
+  <!-- ========== NEW: Papers Section (journal covers and recent research) ========== -->
+  <div class="papers-section">
+    <!-- Left column: journal covers -->
+    <div class="left-column">
+      <h2>JOURNAL<br>COVERS</h2>
+      <img src="your-first-cover.jpg" alt="Trends in Microbiology" class="journal-image" />
+      <img src="your-second-cover.jpg" alt="JACS Cover" class="journal-image" />
+    </div>
+    <!-- Right column: recent papers list -->
+    <div class="right-column">
+      <h1>Some of our recent research papers!</h1>
+      <div class="paper">
+        Rucker, H., Bubphamanee, K., Harris, D., Konhauser, K., Seefeldt, L., Buick, R., & Kacar, B. (2025).
+        Persistent nitrogenase isotope signatures over two billion years of engineered evolution. <i>bioRxiv</i>, 2025-05. <br>
+        <a href="https://www.biorxiv.org/content/10.1101/2025.05.21.655380v1">https://www.biorxiv.org/content/10.1101/2025.05.21.655380v1 PDF</a>
+      </div>
+      <div class="paper">
+        Sobol, M., Ane, C., McMahon, K., & Kacar, B. (2025). Ecological constraints and evolutionary trade-offs shape nitrogen fixation across habitats.
+        <i>bioRxiv</i>, 2025-05. <br>
+        <a href="https://www.biorxiv.org/content/10.1101/2025.05.20.655134v1">https://www.biorxiv.org/content/10.1101/2025.05.20.655134v1 PDF</a>
+      </div>
+      <div class="paper">
+        Klos, A., Sobol, M., Boden, J. S., Stueeken, E. E., Anderson, R. E., Kurt O, K., & Kacar, B. (2025).
+        Biological molybdenum usage stems back to 3.4 billion years ago. <i>bioRxiv</i>, 2025-04. <br>
+        <a href="https://www.biorxiv.org/content/10.1101/2025.04.02.646658v1">https://www.biorxiv.org/content/10.1101/2025.04.02.646658v1 PDF</a>
+      </div>
+      <div class="paper">
+        Cuevas-Zuviría, B., Detemple, F., Amritkar, K., Garcia, A. K., Seefeldt, L. C., Einsle, O., & Kaçar, B. (2025).
+        Nitrogenase structural evolution across Earth’s history. <i>eLife</i>, 14. <br>
+        <a href="https://elifesciences.org/reviewed-preprints/105613">https://elifesciences.org/reviewed-preprints/105613 PDF</a>
+      </div>
+      <div class="paper">
+        Fer, E., Yao, T., McGrath, K. M., Goldman, A. D., & Kaçar, B. (2025).
+        The origins and evolution of translation factors. <i>Trends in Genetics</i>. <br>
+        <a href="https://www.cell.com/trends/genetics/fulltext/S0168-9525(25)00045-9">https://www.cell.com/trends/genetics/fulltext/S0168-9525(25)00045-9 PDF</a>
+      </div>
+    </div>
+  </div>
   <!-- ========== Main Publications List Container (add your publication entries inside) ========== -->
   <main class="container" id="main-content" tabindex="-1">
     <!-- Example publication entry (replace with your actual content) -->
