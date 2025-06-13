@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Publications | R. Lakshmi Narayan</title>
-  <!-- Google Fonts for modern, clean typography -->
+  <!-- Import Google Fonts for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
   <style>
-    /* ========= Base Styles ========= */
+    /* ========== Base Styles ========== */
     html, body {
       box-sizing: border-box;         /* Use border-box sizing for consistency */
       padding: 0;
@@ -21,28 +21,28 @@
       font-size: 18px;
     }
     body {
-      min-height: 100vh;
+      min-height: 100vh;              /* Fill at least the viewport vertically */
       width: 100vw;
       position: relative;
     }
     .page-content {
-      max-width: 1200px;
+      max-width: 1200px;              /* Center content and limit width */
       margin: 0 auto;
       width: 100%;
       position: relative;
       z-index: 2;
       background: transparent;
     }
-    /* ========= Navbar Styles ========= */
+    /* ========== Navbar Styles ========== */
     .navbar-container {
-      position: fixed;                /* Fixed to top of screen */
+      position: fixed;                /* Fixed at the top of the viewport */
       top: 16px; left: 16px; right: 16px;
-      background: #fff;               /* White background */
+      background: #fff;               /* White background for contrast */
       border-radius: 0px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Soft shadow */
       transition: opacity 0.3s, top 0.3s;
-      z-index: 1000;
-      opacity: 0;                     /* Hidden by default */
+      z-index: 1000;                  /* Appear above other content */
+      opacity: 0;                     /* Hidden by default, revealed on scroll/hover */
       pointer-events: none;           /* Non-interactive unless visible */
       display: flex;
       justify-content: center;
@@ -54,11 +54,11 @@
     }
     .navbar-container.visible,
     .navbar-container:hover {
-      opacity: 1;                     /* Show navbar when visible or hovered */
+      opacity: 1;                     /* Show navbar when active */
       pointer-events: auto;
     }
     .navbar {
-      display: flex;
+      display: flex;                  /* Arrange items horizontally */
       justify-content: space-between;
       align-items: center;
       width: 100%;
@@ -67,13 +67,13 @@
       background: transparent;
     }
     .nav-left {
-      display: flex;
+      display: flex;                  /* Logo and title on left */
       align-items: center;
       gap: 0.6rem;
       flex-shrink: 0;
     }
     .nav-left img {
-      height: 35px;
+      height: 35px;                   /* Logo image size */
       width: 35px;
     }
     .lab-title {
@@ -83,14 +83,14 @@
       letter-spacing: 0.8px;
     }
     .nav-right {
-      display: flex;
+      display: flex;                  /* Navigation links on right */
       align-items: center;
       gap: 0.7rem;
       font-size: 0.8rem;
       margin-left: auto;
     }
     .nav-right a {
-      color: #1E3A8A;
+      color: #1E3A8A;                 /* Lab branding color */
       text-decoration: none;
       font-weight: 600;
       padding: 0.38rem 0.8rem;
@@ -113,7 +113,7 @@
       background: #e4eaff;
     }
     .nav-right svg {
-      width: 15px;
+      width: 15px;                    /* Search icon size */
       height: 15px;
       fill: #888;
       margin-left: 0.4rem;
@@ -125,41 +125,41 @@
       fill: #1E3A8A;
       opacity: 1;
     }
-    /* ========= Hero Section ========= */
+    /* ========== Hero Section Styles ========== */
     .hero-section {
-      position: relative;               /* Allows absolute children */
+      position: relative;               /* Allows absolute positioning inside */
       height: 70vh;                     /* 70% of viewport height */
       min-height: 280px;                /* Minimum height for small screens */
       max-height: 700px;                /* Maximum height for large screens */
-      overflow: hidden;                 /* Hide overflow */
+      overflow: hidden;                 /* Hide overflowing content */
       width: 100%;
-      display: flex;
-      align-items: center;              /* Center content vertically */
-      justify-content: center;          /* Center content horizontally */
+      display: flex;                    /* Flex for centering content */
+      align-items: center;              /* Vertical center */
+      justify-content: center;          /* Horizontal center */
     }
     .hero-section img {
-      position: absolute;               /* Fill the hero section */
+      position: absolute;               /* Position image behind everything */
       top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover;                /* No distortion of image */
-      z-index: 0;                       /* Behind overlay/content */
+      object-fit: cover;                /* Cover area without distortion */
+      z-index: 0;                       /* Behind overlay and text */
     }
     .hero-section .overlay {
-      background-color: rgba(0, 0, 0, 0.6); /* Black overlay, 60% opacity */
+      background-color: rgba(0, 0, 0, 0.6); /* Black overlay for contrast */
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
       z-index: 1;                         /* Above image, below text */
     }
     .hero-content {
-      position: relative;
-      display: flex;                      /* Stack content vertically */
+      position: relative;                 /* On top of overlay and image */
+      display: flex;                      /* Stack elements vertically */
       flex-direction: column;
-      align-items: center;                /* Center horizontally */
-      justify-content: center;            /* Center vertically */
+      align-items: center;
+      justify-content: center;
       height: 100%;
       color: white;                       /* White text for contrast */
       text-align: center;
       padding: 0 20px;
-      z-index: 2;                         /* Above overlay and image */
+      z-index: 2;                         /* Appear above overlay/image */
     }
     .hero-content .subhead {
       margin-top: 80px;
@@ -192,29 +192,12 @@
       color: #1E3A8A;
       text-decoration: none;
     }
-    /* ========= Publications Header ========= */
-    .pub-header {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-top: 60px;
-      margin-bottom: 0.2em;
-      color: #1E3A8A;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    .pub-header-desc {
-      font-size: 1.15rem;
-      color: #23232a;
-      text-align: center;
-      margin-bottom: 2.4em;
-      font-weight: 400;
-    }
-    /* ========= Publications Container ========= */
+    /* ========== Publications Container ========== */
     .container {
-      max-width: 1000px;
+      max-width: 1000px;                /* Center and limit width */
       margin: 0 auto;
       padding: 24px;
-      background: #fff;
+      background: #fff;                 /* White card for main content */
       border-radius: 18px;
       box-shadow: 0 2px 12px #e4e5f3a7;
       min-height: 200px;
@@ -222,7 +205,7 @@
   </style>
 </head>
 <body>
-  <!-- ========= Navbar (fixed, scroll/hide/reveal) ========= -->
+  <!-- ========== Navbar (fixed, scroll/hide/reveal) ========== -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -244,13 +227,13 @@
       </div>
     </nav>
   </div>
-  <!-- ========= Hero Section (with image and overlay) ========= -->
+  <!-- ========== Hero Section (main banner with image, overlay, text, and button) ========== -->
   <section class="hero-section">
-    <!-- Background image for hero section -->
+    <!-- Background image for the hero section -->
     <img src="A_digital_vector_graphic_features_a_horizontal_div.png" alt="Petri dish background" />
-    <!-- Overlay for darkening the image -->
+    <!-- Overlay to darken the image and increase text legibility -->
     <div class="overlay"></div>
-    <!-- Main hero content: subheading, headline, and button -->
+    <!-- Central hero content: subheading, main headline, and Google Scholar button -->
     <div class="hero-content">
       <div class="subhead">BROWSE OUR SELECTED PUBLICATIONS BELOW</div>
       <div class="mainhead">Or explore our entire collection online</div>
@@ -263,18 +246,21 @@
       </a>
     </div>
   </section>
-  <!-- ========= Publications Title and Description ========= -->
-  <div class="pub-header">Publications</div>
-  <div class="pub-header-desc">
-    R. Lakshmi Narayan – Articles, Editorials, Lectures, and More
-  </div>
-  <!-- ========= Main Publications List Container ========= -->
+  <!-- ========== Main Publications List Container (add your publication entries inside) ========== -->
   <main class="container" id="main-content" tabindex="-1">
-    <!-- ... rest of your content (publication entries, etc.) ... -->
+    <!-- Example publication entry (replace with your actual content) -->
+    <!--
+    <div class="publication-entry">
+      <h3>Title of Publication</h3>
+      <p>Authors: Name1, Name2, ...</p>
+      <p>Journal, Year</p>
+      <a href="link-to-publication" target="_blank">Read more</a>
+    </div>
+    -->
   </main>
-  <!-- ========= Navbar Scroll/Reveal Script ========= -->
+  <!-- ========== Navbar Scroll/Reveal Script ========== -->
   <script>
-    // Navbar shows on scroll up, hides on scroll down unless hovered
+    // Controls navbar visibility: shows on scroll up, hides on scroll down unless hovered
     let lastScrollY = window.scrollY; // Store last scroll position
     const navbarContainer = document.getElementById('navbarContainer'); // Navbar element reference
     // Listen to window scroll events
@@ -283,14 +269,14 @@
         // Scrolling up: show navbar
         navbarContainer.classList.add('visible');
       } else {
-        // Scrolling down: hide if not hovered
+        // Scrolling down: hide navbar if not hovered
         if (!navbarContainer.matches(':hover')) {
           navbarContainer.classList.remove('visible');
         }
       }
       lastScrollY = window.scrollY; // Update last scroll position
     });
-    // Show navbar on page load
+    // Show navbar on initial page load
     navbarContainer.classList.add('visible');
   </script>
 </body>
