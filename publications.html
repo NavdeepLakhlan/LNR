@@ -2,164 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=320, initial-scale=1.0"/>
   <title>Publications | R. Lakshmi Narayan</title>
-  <!-- Import Google Fonts for a modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <!-- Google Fonts for consistency with research.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* ========== Base Styles ========== */
+    :root {
+      --gold: #ffd700;
+      --gold-light: #ffefb6;
+      --gold-mid: #ffe68c;
+      --gold-blur: #ffea6e;
+      --main-bg1: #f6fbfd;
+      --navbar-link: #1E3A8A;
+      --navbar-link-hover: #1E3A8A;
+      --navbar-bg: #fff;
+      --text: #222;
+      --card-width: 320px;
+    }
     html, body {
-      box-sizing: border-box;         /* Use border-box sizing for consistency */
-      padding: 0;
       margin: 0;
-      width: 100vw;
-      max-width: 100vw;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--main-bg1);
+      color: var(--text);
+      font-size: 20px;
+      scroll-behavior: smooth;
       overflow-x: hidden;
-      background: #f6fbfd;            /* Light background color */
-      color: #23232a;                 /* Main text color */
-      font-family: 'Inter', Arial, sans-serif; /* Modern sans-serif font */
-      font-size: 18px;
+      min-height: 100vh;
+      max-width: 100vw;
     }
     body {
-      min-height: 100vh;              /* Fill at least the viewport vertically */
       width: 100vw;
-      position: relative;
+      overflow-x: hidden;
     }
+    /* NAVBAR STYLES */
+    .navbar-container {
+      position: fixed; top: 16px; left: 16px; right: 16px;
+      background: var(--navbar-bg);
+      border-radius: 0px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: opacity 0.3s, top 0.3s;
+      z-index: 1000;
+      opacity: 0; pointer-events: none;
+      display: flex; justify-content: center;
+      width: fit-content; min-width: 1200px;
+      margin-left: auto; margin-right: auto;
+    }
+    .navbar-container.visible,
+    .navbar-container:hover { opacity: 1; pointer-events: auto; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.5rem 1.2rem; gap: 1rem; background: transparent;}
+    .nav-left { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+    .nav-left img { height: 35px; width: 35px; }
+    .lab-title { font-size: 0.97rem; color: #111; font-weight: 700; letter-spacing: 0.8px; }
+    .nav-right { display: flex; align-items: center; gap: 0.7rem; font-size: 0.8rem; margin-left: auto; }
+    .nav-right a { color: var(--navbar-link); text-decoration: none; font-weight: 600; padding: 0.38rem 0.8rem; border-radius: 6px; border-bottom: 2px solid transparent; font-size: 0.87rem; transition: color 0.2s, background 0.2s, border-color 0.2s; white-space: nowrap;}
+    .nav-right a:hover, .nav-right a:focus { background: #e4eaff; color: var(--navbar-link-hover); border-color: var(--navbar-link-hover); outline: none;}
+    .nav-right a.active { color: #1E3A8A; border-bottom: 2px solid #1E3A8A; background: #e4eaff; font-weight: 700; letter-spacing: 0.2px;}
+    .nav-right svg { width: 15px; height: 15px; fill: #888; margin-left: 0.4rem; cursor: pointer; opacity: 0.7; transition: fill 0.2s, opacity 0.2s;}
+    .nav-right svg:hover { fill: var(--navbar-link-hover); opacity: 1; }
+    @media (max-width: 1300px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0;} }
+    @media (max-width: 900px) { .navbar-container { min-width: 0; width: 100vw; left: 0; right: 0; padding-left: 0; padding-right: 0;} .navbar { gap: 0.2rem; padding: 0.3rem 0.3rem;} .nav-left img{height:28px;width:28px;} }
+    /* PAGE CONTENT STYLES (all original styles below this line stay untouched) */
     .page-content {
-      max-width: 1200px;              /* Center content and limit width */
+      max-width: 1200px;
       margin: 0 auto;
       width: 100%;
       position: relative;
       z-index: 2;
       background: transparent;
     }
-    /* ========== Navbar Styles ========== */
-    .navbar-container {
-      position: fixed;                /* Fixed at the top of the viewport */
-      top: 16px; left: 16px; right: 16px;
-      background: #fff;               /* White background for contrast */
-      border-radius: 0px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Soft shadow */
-      transition: opacity 0.3s, top 0.3s;
-      z-index: 1000;                  /* Appear above other content */
-      opacity: 0;                     /* Hidden by default, revealed on scroll/hover */
-      pointer-events: none;           /* Non-interactive unless visible */
-      display: flex;
-      justify-content: center;
-      max-width: none;
-      width: fit-content;
-      min-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .navbar-container.visible,
-    .navbar-container:hover {
-      opacity: 1;                     /* Show navbar when active */
-      pointer-events: auto;
-    }
-    .navbar {
-      display: flex;                  /* Arrange items horizontally */
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 0.5rem 1.2rem;
-      gap: 1rem;
-      background: transparent;
-    }
-    .nav-left {
-      display: flex;                  /* Logo and title on left */
-      align-items: center;
-      gap: 0.6rem;
-      flex-shrink: 0;
-    }
-    .nav-left img {
-      height: 35px;                   /* Logo image size */
-      width: 35px;
-    }
-    .lab-title {
-      font-size: 0.97rem;
-      color: #111;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-    }
-    .nav-right {
-      display: flex;                  /* Navigation links on right */
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.8rem;
-      margin-left: auto;
-    }
-    .nav-right a {
-      color: #1E3A8A;                 /* Lab branding color */
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.38rem 0.8rem;
-      border-radius: 6px;
-      border-bottom: 2px solid transparent;
-      font-size: 0.87rem;
-      transition: color 0.2s, background 0.2s, border-color 0.2s;
-      white-space: nowrap;
-    }
-    .nav-right a:hover,
-    .nav-right a:focus {
-      background: #e4eaff;
-      color: #1E3A8A;
-      border-color: #1E3A8A;
-      outline: none;
-    }
-    .nav-right a.active {
-      color: #1E3A8A;
-      border-bottom: 2px solid #1E3A8A;
-      background: #e4eaff;
-    }
-    .nav-right svg {
-      width: 15px;                    /* Search icon size */
-      height: 15px;
-      fill: #888;
-      margin-left: 0.4rem;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: fill 0.2s, opacity 0.2s;
-    }
-    .nav-right svg:hover {
-      fill: #1E3A8A;
-      opacity: 1;
-    }
     /* ========== Hero Section Styles ========== */
     .hero-section {
-      position: relative;               /* Allows absolute positioning inside */
-      height: 70vh;                     /* 70% of viewport height */
-      min-height: 280px;                /* Minimum height for small screens */
-      max-height: 700px;                /* Maximum height for large screens */
-      overflow: hidden;                 /* Hide overflowing content */
+      position: relative;
+      height: 70vh;
+      min-height: 280px;
+      max-height: 700px;
+      overflow: hidden;
       width: 100%;
-      display: flex;                    /* Flex for centering content */
-      align-items: center;              /* Vertical center */
-      justify-content: center;          /* Horizontal center */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .hero-section img {
-      position: absolute;               /* Position image behind everything */
-      top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover;                /* Cover area without distortion */
-      z-index: 0;                       /* Behind overlay and text */
-    }
-    .hero-section .overlay {
-      background-color: rgba(0, 0, 0, 0.6); /* Black overlay for contrast */
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      z-index: 1;                         /* Above image, below text */
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero-section .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
     }
     .hero-content {
-      position: relative;                 /* On top of overlay and image */
-      display: flex;                      /* Stack elements vertically */
+      position: relative;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100%;
-      color: white;                       /* White text for contrast */
+      color: white;
       text-align: center;
       padding: 0 20px;
-      z-index: 2;                         /* Appear above overlay/image */
+      z-index: 2;
     }
     .hero-content .subhead {
       margin-top: 80px;
@@ -194,19 +141,19 @@
     }
     /* ========== Papers Section Styles (NEW) ========== */
     .papers-section {
-      display: flex;                      /* Two columns side by side */
-      padding: 80px 60px;                 /* Spacing around the section */
-      font-family: Georgia, serif;         /* Serif font for elegance */
+      display: flex;
+      padding: 80px 60px;
+      font-family: Georgia, serif;
       color: #000;
       max-width: 1200px;
-      margin: auto;                       /* Center horizontally */
+      margin: auto;
     }
     .left-column {
-      width: 30%;                         /* 30% width for left column */
-      padding-right: 40px;                /* Space to right column */
+      width: 30%;
+      padding-right: 40px;
     }
     .right-column {
-      width: 70%;                         /* 70% width for right column */
+      width: 70%;
     }
     .left-column h2 {
       font-family: 'Georgia', serif;
@@ -260,10 +207,26 @@
         text-align: center;
       }
     }
+    /* FOOTER (copied from research.html) */
+    footer {
+      background: #111;
+      padding: 1.4rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.93rem;
+      z-index: 2;
+      position: relative;
+      border-radius: 0;
+      margin: 0;
+      box-shadow: none;
+      max-width: 100vw;
+      width: 100vw;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
-  <!-- ========== Navbar (fixed, scroll/hide/reveal) ========== -->
+  <!-- Navbar (copied from research.html) -->
   <div class="navbar-container" id="navbarContainer">
     <nav class="navbar">
       <div class="nav-left">
@@ -272,13 +235,11 @@
       </div>
       <div class="nav-right" tabindex="0">
         <a href="index.html">Home</a>
-        <a href="team.html">The&nbsp;Team</a>
-        <a href="publications.html" class="active">Publications</a>
         <a href="research.html">Research</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="team.html">About&nbsp;Us</a>
         <a href="MEET LNR.html">MEET&nbsp;LNR</a>
-        <a href="news.html">Latest</a>
         <a href="prospectivestudents.html">Join&nbsp;Our&nbsp;Quest</a>
-        <!-- Search icon SVG (decorative) -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M21 21l-4.35-4.35M17 11a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"/>
         </svg>
@@ -287,11 +248,8 @@
   </div>
   <!-- ========== Hero Section (main banner with image, overlay, text, and button) ========== -->
   <section class="hero-section">
-    <!-- Background image for the hero section -->
     <img src="A_digital_vector_graphic_features_a_horizontal_div.png" alt="Petri dish background" />
-    <!-- Overlay to darken the image and increase text legibility -->
     <div class="overlay"></div>
-    <!-- Central hero content: subheading, main headline, and Google Scholar button -->
     <div class="hero-content">
       <div class="subhead">BROWSE OUR SELECTED PUBLICATIONS BELOW</div>
       <div class="mainhead">Or explore our entire collection online</div>
@@ -312,60 +270,58 @@
       <!-- Updated: Trends in Microbiology cover replaced with new image -->
       <img src="https://ars.els-cdn.com/content/image/X01421123.jpg" alt="Trends in Microbiology" class="journal-image" />
       <img src="https://ars.els-cdn.com/content/image/X13596454.jpg" alt="JACS Cover" class="journal-image" />
-  
     </div>
     <!-- Right column: recent papers list -->
     <div class="right-column">
       <h1>Some of our recent research papers!</h1>
       <div class="paper">
         R.L. Narayan, P.S. Singh, D.C. Hofmann, N. Hutchinson, K.M. Flores, U. Ramamurty,
-On the microstructure–tensile property correlations in bulk metallic glass matrix composites with crystalline dendrites. <i>Acta Materialia</i>, 2025-05. <br>
+        On the microstructure–tensile property correlations in bulk metallic glass matrix composites with crystalline dendrites. <i>Acta Materialia</i>, 2025-05. <br>
         <a href="https://www.sciencedirect.com/science/article/pii/S1359645412004041">https://www.sciencedirect.com/science/article/pii/S1359645412004041</a>
       </div>
       <div class="paper">
         Sheng Huang, R. Lakshmi Narayan, Joel Heang Kuan Tan, Swee Leong Sing, Wai Yee Yeong,
         Resolving the porosity-unmelted inclusion dilemma during in-situ alloying of Ti34Nb via laser powder bed fusion,
         <i>Acta Materialia</i>, 2025. <br>
-        <a href="https://scholar.google.co.in/citations?view_op=view_citation&hl=en&user=AewpPAQAAAAJ&citation_for_view=AewpPAQAAAAJ:pyW8ca7W8N0C">https://scholar.google.co.in/citations?view_op=view_citation&hl=en&user=AewpPAQAAAAJ&citation_for_view=AewpPAQAAAAJ:pyW8ca7W8N0C</a>
+        <a href="https://www.sciencedirect.com/science/article/pii/S1359645420309502">https://www.sciencedirect.com/science/article/pii/S1359645420309502</a>
       </div>
       <div class="paper">
        L. Zhang, R.L. Narayan, H.M. Fu, U. Ramamurty, W.R. Li, Y.D. Li, H.F. Zhang,
-Tuning the microstructure and metastability of β-Ti for simultaneous enhancement of strength and ductility of Ti-based bulk metallic glass composites, <i>Acta Materialia</i>, 2025-04. <br>
+       Tuning the microstructure and metastability of β-Ti for simultaneous enhancement of strength and ductility of Ti-based bulk metallic glass composites, <i>Acta Materialia</i>, 2025-04. <br>
         <a href="https://www.sciencedirect.com/science/article/pii/S1359645419300795">https://www.sciencedirect.com/science/article/pii/S1359645419300795</a>
       </div>
       <div class="paper">
         Yaojie Wen, Baicheng Zhang, Ramasubramanian Lakshmi Narayan, Pei Wang, Xu Song, Hao Zhao, Upadrasta Ramamurty, Xuanhui Qu,
-Laser powder bed fusion of compositionally graded CoCrMo-Inconel 718 <i>Additive Manufacturing</i>, 14. <br>
+        Laser powder bed fusion of compositionally graded CoCrMo-Inconel 718 <i>Additive Manufacturing</i>, 14. <br>
         <a href="https://www.sciencedirect.com/science/article/pii/S2214860421000919">https://www.sciencedirect.com/science/article/pii/S2214860421000919</a>
       </div>
       <div class="paper">
         R.L. Narayan, K. Boopathy, Indrani Sen, D.C. Hofmann, U. Ramamurty,
-On the hardness and elastic modulus of bulk metallic glass matrix composites.
+        On the hardness and elastic modulus of bulk metallic glass matrix composites.
         <i>Scripta Materialia</i>. <br>
         <a href="https://www.sciencedirect.com/science/article/pii/S1359646210003957">https://www.sciencedirect.com/science/article/pii/S1359646210003957</a>
       </div>
     </div>
   </div>
 
-  <!-- ========== Navbar Scroll/Reveal Script ========== -->
+  <footer>
+    &copy; 2025 Dhātu-Yantra-Pravartana Prayogsālā | IIT Delhi
+  </footer>
+  <!-- Navbar Scroll/Reveal Script (copied from research.html) -->
   <script>
-    // Controls navbar visibility: shows on scroll up, hides on scroll down unless hovered
-    let lastScrollY = window.scrollY; // Store last scroll position
-    const navbarContainer = document.getElementById('navbarContainer'); // Navbar element reference
-    // Listen to window scroll events
+    // Navbar show on hover and on scroll up
+    let lastScrollY = window.scrollY;
+    const navbarContainer = document.getElementById('navbarContainer');
     window.addEventListener('scroll', () => {
       if (window.scrollY < lastScrollY) {
-        // Scrolling up: show navbar
         navbarContainer.classList.add('visible');
       } else {
-        // Scrolling down: hide navbar if not hovered
         if (!navbarContainer.matches(':hover')) {
           navbarContainer.classList.remove('visible');
         }
       }
-      lastScrollY = window.scrollY; // Update last scroll position
+      lastScrollY = window.scrollY;
     });
-    // Show navbar on initial page load
     navbarContainer.classList.add('visible');
   </script>
 </body>
